@@ -118,6 +118,11 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="sdh-5G-DXN"/>
+                    <connections>
+                        <outlet property="diaper" destination="dBc-tJ-wGG" id="nIS-Cq-PMG"/>
+                        <outlet property="food" destination="cVb-7R-4Uc" id="CUt-Se-DAe"/>
+                        <outlet property="milkPower" destination="7Yc-wT-jEx" id="4Rg-jl-DsM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0gq-vN-LRa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

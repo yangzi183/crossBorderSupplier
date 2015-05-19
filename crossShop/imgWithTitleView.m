@@ -19,11 +19,13 @@
 */
 
 - (void)configImg: (UIImage *)iconImg withTitle:(NSString *)title {
-    UIImageView *iconImgView = [[UIImageView alloc]initWithFrame:CGRectMake(kIconImgMargin, kIconImgMargin, (self.frame.size.width - 2 * kIconImgMargin), (self.frame.size.width - 2 * kIconImgMargin))];
+    NSLog(@"\r\n width:%f", self.frame.size.width);
+    [self setBackgroundColor:[UIColor clearColor]];
+    UIImageView *iconImgView = [[UIImageView alloc]initWithFrame:CGRectMake(kIconImgMargin, kIconImgMargin, 30, 30)];
     iconImgView.image = iconImg;
     [self addSubview:iconImgView];
     
-    UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, iconImgView.frame.size.height + kIconImgMargin * 2, self.frame.size.width, self.frame.size.height)];
+    UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, iconImgView.frame.size.height + kIconImgMargin * 2, 40, 20)];
     titleLabel.backgroundColor = [UIColor clearColor];
     titleLabel.text = title;
     titleLabel.textAlignment = NSTextAlignmentCenter;

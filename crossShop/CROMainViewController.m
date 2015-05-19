@@ -17,6 +17,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self initUI];
+}
+
+- (void)initUI {
+    UIImage *diaperImg = [UIImage imageNamed:@"column_main"];
+    UIImage *milkImg = [UIImage imageNamed:@"column_main"];
+    UIImage *foodImg = [UIImage imageNamed:@"column_main"];
+    [self.diaper configImg:diaperImg withTitle:@"纸尿裤"];
+    [self.milkPower configImg:milkImg withTitle:@"奶粉"];
+    [self.food configImg:foodImg withTitle:@"辅食"];
+    NSLog(@"\r\n fram:%f", self.diaper.bounds.size.width);
 }
 
 - (void)didReceiveMemoryWarning {
