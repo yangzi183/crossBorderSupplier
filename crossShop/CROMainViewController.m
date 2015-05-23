@@ -30,6 +30,10 @@
     NSLog(@"\r\n fram:%f", self.diaper.bounds.size.width);
 }
 
+- (void)initSpecial {
+    
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
