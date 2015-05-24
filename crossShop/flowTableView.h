@@ -12,7 +12,7 @@
 
 #define kSCROLLVIEWMARGINLEFT       10
 #define kSCROLLVIEWMARGINTOP        5
-#define kSCROLLVIEWHEIGHT           150
+#define kSCROLLVIEWHEIGHT           200
 #define kIMGMARGIN                  5
 #define kSCROLLVIEWWIDTH            scrollView.frame.size.width
 
@@ -20,5 +20,7 @@
     UIScrollView *scrollView;
 }
 @property (strong, nonatomic) NSArray *dataArray;
+
+- (void)configFlowTable;
 
 @end

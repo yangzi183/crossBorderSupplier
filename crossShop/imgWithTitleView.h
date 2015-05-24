@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CROCommonAPI.h"
 
 #define kIconImgWidth               30
 #define kIconImgHeight              30
