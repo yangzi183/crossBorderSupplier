@@ -21,6 +21,6 @@
 }
 @property (strong, nonatomic) NSArray *dataArray;
 
-- (void)configFlowTable;
+- (void)configFlowTable: (CGFloat)withWidth;
 
 @end

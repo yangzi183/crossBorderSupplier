@@ -37,6 +37,8 @@
 		1852EE0B1B0B74F6002AAD43 /* CROMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1852EE0A1B0B74F6002AAD43 /* CROMainViewController.m */; };
 		1852EE0F1B0B7F40002AAD43 /* imgWithTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1852EE0E1B0B7F40002AAD43 /* imgWithTitleView.m */; };
 		186822421B0CC0F70024EF19 /* flowTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 186822411B0CC0F70024EF19 /* flowTableView.m */; };
+		18C37B5C1B134B2E008CE19C /* CROMainTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C37B5A1B134B2E008CE19C /* CROMainTitleTableViewCell.m */; };
+		18C37B5D1B134B2E008CE19C /* CROMainTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C37B5B1B134B2E008CE19C /* CROMainTitleTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +111,9 @@
 		186822401B0CC0F70024EF19 /* flowTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = flowTableView.h; sourceTree = "<group>"; };
 		186822411B0CC0F70024EF19 /* flowTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = flowTableView.m; sourceTree = "<group>"; };
 		186822431B0CCCFA0024EF19 /* commonConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = commonConfig.h; sourceTree = "<group>"; };
+		18C37B591B134B2E008CE19C /* CROMainTitleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CROMainTitleTableViewCell.h; sourceTree = "<group>"; };
+		18C37B5A1B134B2E008CE19C /* CROMainTitleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CROMainTitleTableViewCell.m; sourceTree = "<group>"; };
+		18C37B5B1B134B2E008CE19C /* CROMainTitleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CROMainTitleTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,6 +263,9 @@
 				046CD97D1B10B19D00392F3F /* CROMainDetTableViewCell.h */,
 				046CD97E1B10B19D00392F3F /* CROMainDetTableViewCell.m */,
 				046CD97F1B10B19D00392F3F /* CROMainDetTableViewCell.xib */,
+				18C37B591B134B2E008CE19C /* CROMainTitleTableViewCell.h */,
+				18C37B5A1B134B2E008CE19C /* CROMainTitleTableViewCell.m */,
+				18C37B5B1B134B2E008CE19C /* CROMainTitleTableViewCell.xib */,
 			);
 			name = main;
 			sourceTree = "<group>";
@@ -356,6 +364,7 @@
 			files = (
 				1852EDEE1B0B7398002AAD43 /* Main.storyboard in Resources */,
 				046CD9811B10B19D00392F3F /* CROMainDetTableViewCell.xib in Resources */,
+				18C37B5D1B134B2E008CE19C /* CROMainTitleTableViewCell.xib in Resources */,
 				1852EDF31B0B7398002AAD43 /* LaunchScreen.xib in Resources */,
 				047451EC1B11A089000A57B8 /* testData.plist in Resources */,
 				1852EDF01B0B7398002AAD43 /* Images.xcassets in Resources */,
@@ -385,6 +394,7 @@
 				1852EE0F1B0B7F40002AAD43 /* imgWithTitleView.m in Sources */,
 				046CD9791B1069A700392F3F /* UIView+WebCacheOperation.m in Sources */,
 				046CD96A1B1069A700392F3F /* MKAnnotationView+WebCache.m in Sources */,
+				18C37B5C1B134B2E008CE19C /* CROMainTitleTableViewCell.m in Sources */,
 				046CD9761B1069A700392F3F /* UIImage+WebP.m in Sources */,
 				046CD9461B10597100392F3F /* CROCommonAPI.m in Sources */,
 				046CD9701B1069A700392F3F /* SDWebImageDownloaderOperation.m in Sources */,

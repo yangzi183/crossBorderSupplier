@@ -15,6 +15,6 @@
 
 @interface imgWithTitleView : UIView
 
-- (void)configImg: (UIImage *)iconImg withTitle:(NSString *)title;
+- (void)configImg: (UIImage *)iconImg withTitle:(NSString *)title widthSize:(CGSize)toSize;
 
 @end
