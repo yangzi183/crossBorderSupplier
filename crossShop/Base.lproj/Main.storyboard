@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="uCH-gK-1Me">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="uCH-gK-1Me">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -99,13 +99,20 @@
                         <viewControllerLayoutGuide type="bottom" id="rH8-lw-ET8"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="apd-sa-gbh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="pNM-bx-B67">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="400" height="720"/>
-                                </variation>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="shoppingCartCell" id="Czf-kH-pEH" customClass="CROShoppingCartTableViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Czf-kH-pEH" id="rZv-5r-aPg">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="bXg-bK-NO3" id="jqu-au-Ajx"/>
                                     <outlet property="delegate" destination="bXg-bK-NO3" id="wAY-c5-5AH"/>
@@ -114,16 +121,44 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0t6-hv-PeH">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" red="0.54901960780000003" green="0.54901960780000003" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="720" width="400" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="Nuy-rM-kmI"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Nuy-rM-kmI"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Nuy-rM-kmI"/>
+                                    </mask>
                                 </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pNM-bx-B67" firstAttribute="top" secondItem="apd-sa-gbh" secondAttribute="top" id="D1Z-Ca-yQQ"/>
+                            <constraint firstItem="0t6-hv-PeH" firstAttribute="leading" secondItem="apd-sa-gbh" secondAttribute="leading" id="QHi-r3-lsb"/>
+                            <constraint firstItem="0t6-hv-PeH" firstAttribute="top" secondItem="pNM-bx-B67" secondAttribute="bottom" id="RLW-7F-ASj"/>
+                            <constraint firstAttribute="bottom" secondItem="0t6-hv-PeH" secondAttribute="bottom" id="XLY-fV-9Jn"/>
+                            <constraint firstAttribute="trailing" secondItem="pNM-bx-B67" secondAttribute="trailing" id="Z5y-ja-vKi"/>
+                            <constraint firstAttribute="trailing" secondItem="0t6-hv-PeH" secondAttribute="trailing" id="ec1-7s-niR"/>
+                            <constraint firstItem="pNM-bx-B67" firstAttribute="leading" secondItem="apd-sa-gbh" secondAttribute="leading" id="lUn-wU-pG1"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="pNM-bx-B67"/>
                                 <exclude reference="0t6-hv-PeH"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="D1Z-Ca-yQQ"/>
+                                <exclude reference="Z5y-ja-vKi"/>
+                                <exclude reference="lUn-wU-pG1"/>
+                                <exclude reference="QHi-r3-lsb"/>
+                                <exclude reference="RLW-7F-ASj"/>
+                                <exclude reference="XLY-fV-9Jn"/>
+                                <exclude reference="ec1-7s-niR"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -131,9 +166,22 @@
                                 <include reference="pNM-bx-B67"/>
                                 <include reference="0t6-hv-PeH"/>
                             </mask>
+                            <mask key="constraints">
+                                <include reference="D1Z-Ca-yQQ"/>
+                                <include reference="Z5y-ja-vKi"/>
+                                <include reference="lUn-wU-pG1"/>
+                                <include reference="QHi-r3-lsb"/>
+                                <include reference="RLW-7F-ASj"/>
+                                <include reference="XLY-fV-9Jn"/>
+                                <include reference="ec1-7s-niR"/>
+                            </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="z60-hq-UaZ"/>
+                    <connections>
+                        <outlet property="shopBootomView" destination="0t6-hv-PeH" id="SkU-fE-ykt"/>
+                        <outlet property="tableView" destination="pNM-bx-B67" id="2pV-84-2xr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Z9-4L-aap" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
