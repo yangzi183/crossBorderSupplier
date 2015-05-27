@@ -8,7 +8,9 @@
 
 #import "flowTableView.h"
 
-@implementation flowTableView
+@implementation flowTableView {
+    CGFloat srcollWidth;
+}
 
 /*
 // Only override drawRect: if you perform custom drawing.
@@ -17,7 +19,8 @@
     // Drawing code
 }
 */
-- (void)configFlowTable {
+- (void)configFlowTable: (CGFloat)withWidth{
+    srcollWidth = withWidth;
     [self initSrcollView];
 }
 
@@ -31,8 +34,8 @@
 
 - (void)initSrcollView {
     self.backgroundColor = [UIColor whiteColor];
-    scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
-    NSLog(@"\r\n x:%f,width:%f,selfwidth:%f, scroll:%f", self.frame.origin.x, screenWidth, self.bounds.size.width, self.frame.size.width);
+    scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, srcollWidth, self.frame.size.height)];
+    //NSLog(@"\r\n x:%f,width:%f,selfwidth:%f, scroll:%f", self.frame.origin.x, screenWidth, self.bounds.size.width, self.frame.size.width);
     scrollView.delegate = self;
     scrollView.clipsToBounds = YES;
     scrollView.showsHorizontalScrollIndicator = NO;
@@ -66,7 +69,7 @@
         
         CGFloat width = (imgWidth + kIMGMARGIN) * dataArray.count;
         width = x;
-        NSLog(@"\r\n width:%f", width);
+        //NSLog(@"\r\n width:%f", width);
         scrollView.contentSize = CGSizeMake(width, scrollView.frame.size.height);
     }
     _dataArray = dataArray;
