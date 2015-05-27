@@ -8,10 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "CROGoodsItem.h"
+#import <SBJson4.h>
+//#import <SBJson4Parser.h>
 
 @interface CROShoppingCart : NSObject
 
 @property (strong, nonatomic) NSMutableArray *goodsArray;
 
++ (CROShoppingCart *) shareInstance;
 - (NSMutableArray *)getAllGoods;
+
 @end

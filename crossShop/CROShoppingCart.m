@@ -21,8 +21,21 @@ static CROShoppingCart *CROShoppingCartInstance;
 
 - (NSMutableArray *)getAllGoods {
     self.goodsArray = [[NSMutableArray alloc]init];
-    NSDictionary *goodsDic = [[NSDictionary alloc]init];
-    NSArray *arrayWithDispatch = goodsDic[@"dispatchs"];
+    NSString *jsonPath = [[NSBundle mainBundle]pathForResource:@"test1" ofType:@"js"];
+   // NSString *jsonStr = [NSString stringWithContentsOfFile:jsonPath encoding:NSUTF8StringEncoding error:nil];
+    //NSLog(@"\r\n jsonStr:%@", jsonStr);
+    SBJson4ValueBlock parserBlock = ^(id item, BOOL *stop) {
+        if ([item isKindOfClass:[NSArray class]]) {
+            self.goodsArray = [NSMutableArray arrayWithArray:item];
+            //NSLog(@"\r\n array:%@", item);
+        }
+    };
+    SBJson4ErrorBlock parserError = ^(NSError *error) {
+        NSLog(@"\r\n error:%@", error);
+    };
+    SBJson4Parser *jsonParser = [SBJson4Parser parserWithBlock:parserBlock allowMultiRoot:NO unwrapRootArray:NO errorHandler:parserError];
+    
+    [jsonParser parse:[NSData dataWithContentsOfFile:jsonPath]];
     
     return self.goodsArray;
 }

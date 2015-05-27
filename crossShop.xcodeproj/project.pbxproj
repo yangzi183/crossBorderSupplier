@@ -27,6 +27,10 @@
 		046CD9801B10B19D00392F3F /* CROMainDetTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 046CD97E1B10B19D00392F3F /* CROMainDetTableViewCell.m */; };
 		046CD9811B10B19D00392F3F /* CROMainDetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046CD97F1B10B19D00392F3F /* CROMainDetTableViewCell.xib */; };
 		047451EC1B11A089000A57B8 /* testData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 047451EB1B11A089000A57B8 /* testData.plist */; };
+		04B9F3F11B156AEB0011DBC2 /* test1.js in Resources */ = {isa = PBXBuildFile; fileRef = 04B9F3F01B156AEB0011DBC2 /* test1.js */; };
+		04B9F48F1B159BBC0011DBC2 /* CROShoppingCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B9F48E1B159BBC0011DBC2 /* CROShoppingCartViewController.m */; };
+		04B9F4931B15A1830011DBC2 /* CROShoppingCartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B9F4911B15A1830011DBC2 /* CROShoppingCartTableViewCell.m */; };
+		04B9F4941B15A1830011DBC2 /* CROShoppingCartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04B9F4921B15A1830011DBC2 /* CROShoppingCartTableViewCell.xib */; };
 		1852EDE51B0B7398002AAD43 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1852EDE41B0B7398002AAD43 /* main.m */; };
 		1852EDE81B0B7398002AAD43 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1852EDE71B0B7398002AAD43 /* AppDelegate.m */; };
 		1852EDEB1B0B7398002AAD43 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1852EDEA1B0B7398002AAD43 /* ViewController.m */; };
@@ -41,6 +45,7 @@
 		186822421B0CC0F70024EF19 /* flowTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 186822411B0CC0F70024EF19 /* flowTableView.m */; };
 		18C37B5C1B134B2E008CE19C /* CROMainTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C37B5A1B134B2E008CE19C /* CROMainTitleTableViewCell.m */; };
 		18C37B5D1B134B2E008CE19C /* CROMainTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C37B5B1B134B2E008CE19C /* CROMainTitleTableViewCell.xib */; };
+		E157F128C00E4833EA2510B1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B1768BA20F32EB1A0367CCF3 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +98,12 @@
 		046CD97E1B10B19D00392F3F /* CROMainDetTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CROMainDetTableViewCell.m; sourceTree = "<group>"; };
 		046CD97F1B10B19D00392F3F /* CROMainDetTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CROMainDetTableViewCell.xib; sourceTree = "<group>"; };
 		047451EB1B11A089000A57B8 /* testData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = testData.plist; sourceTree = "<group>"; };
+		04B9F3F01B156AEB0011DBC2 /* test1.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = test1.js; sourceTree = "<group>"; };
+		04B9F48D1B159BBC0011DBC2 /* CROShoppingCartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CROShoppingCartViewController.h; sourceTree = "<group>"; };
+		04B9F48E1B159BBC0011DBC2 /* CROShoppingCartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CROShoppingCartViewController.m; sourceTree = "<group>"; };
+		04B9F4901B15A1830011DBC2 /* CROShoppingCartTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CROShoppingCartTableViewCell.h; sourceTree = "<group>"; };
+		04B9F4911B15A1830011DBC2 /* CROShoppingCartTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CROShoppingCartTableViewCell.m; sourceTree = "<group>"; };
+		04B9F4921B15A1830011DBC2 /* CROShoppingCartTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CROShoppingCartTableViewCell.xib; sourceTree = "<group>"; };
 		1852EDDF1B0B7398002AAD43 /* crossShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = crossShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1852EDE31B0B7398002AAD43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1852EDE41B0B7398002AAD43 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -120,6 +131,9 @@
 		18C37B591B134B2E008CE19C /* CROMainTitleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CROMainTitleTableViewCell.h; sourceTree = "<group>"; };
 		18C37B5A1B134B2E008CE19C /* CROMainTitleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CROMainTitleTableViewCell.m; sourceTree = "<group>"; };
 		18C37B5B1B134B2E008CE19C /* CROMainTitleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CROMainTitleTableViewCell.xib; sourceTree = "<group>"; };
+		34446429E39BC9286F961D41 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		B1768BA20F32EB1A0367CCF3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF8E83F789A0394138B110CC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +141,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E157F128C00E4833EA2510B1 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +155,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03CC434F1611121AF35DA214 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FF8E83F789A0394138B110CC /* Pods.debug.xcconfig */,
+				34446429E39BC9286F961D41 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		046CD9431B10594300392F3F /* commonAPI */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,8 +217,21 @@
 			isa = PBXGroup;
 			children = (
 				047451EB1B11A089000A57B8 /* testData.plist */,
+				04B9F3F01B156AEB0011DBC2 /* test1.js */,
 			);
 			name = "used source";
+			sourceTree = "<group>";
+		};
+		04B9F48C1B159B1A0011DBC2 /* Shopping Cart */ = {
+			isa = PBXGroup;
+			children = (
+				04B9F48D1B159BBC0011DBC2 /* CROShoppingCartViewController.h */,
+				04B9F48E1B159BBC0011DBC2 /* CROShoppingCartViewController.m */,
+				04B9F4901B15A1830011DBC2 /* CROShoppingCartTableViewCell.h */,
+				04B9F4911B15A1830011DBC2 /* CROShoppingCartTableViewCell.m */,
+				04B9F4921B15A1830011DBC2 /* CROShoppingCartTableViewCell.xib */,
+			);
+			name = "Shopping Cart";
 			sourceTree = "<group>";
 		};
 		1852EDD61B0B7398002AAD43 = {
@@ -203,6 +240,8 @@
 				1852EDE11B0B7398002AAD43 /* crossShop */,
 				1852EDFB1B0B7398002AAD43 /* crossShopTests */,
 				1852EDE01B0B7398002AAD43 /* Products */,
+				03CC434F1611121AF35DA214 /* Pods */,
+				930131CC0EBED13AB773B2AC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -218,6 +257,7 @@
 		1852EDE11B0B7398002AAD43 /* crossShop */ = {
 			isa = PBXGroup;
 			children = (
+				04B9F48C1B159B1A0011DBC2 /* Shopping Cart */,
 				18639BDC1B14B49400FA259B /* model */,
 				047451EA1B11A040000A57B8 /* used source */,
 				046CD9481B1069A700392F3F /* SDWebImage */,
@@ -300,6 +340,14 @@
 			name = model;
 			sourceTree = "<group>";
 		};
+		930131CC0EBED13AB773B2AC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B1768BA20F32EB1A0367CCF3 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -307,9 +355,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1852EE021B0B7398002AAD43 /* Build configuration list for PBXNativeTarget "crossShop" */;
 			buildPhases = (
+				E5D729D0EAC657EEB9B44D9A /* Check Pods Manifest.lock */,
 				1852EDDB1B0B7398002AAD43 /* Sources */,
 				1852EDDC1B0B7398002AAD43 /* Frameworks */,
 				1852EDDD1B0B7398002AAD43 /* Resources */,
+				FD208CFA56FB6E223FA65F2E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -384,8 +434,10 @@
 				046CD9811B10B19D00392F3F /* CROMainDetTableViewCell.xib in Resources */,
 				18C37B5D1B134B2E008CE19C /* CROMainTitleTableViewCell.xib in Resources */,
 				1852EDF31B0B7398002AAD43 /* LaunchScreen.xib in Resources */,
+				04B9F4941B15A1830011DBC2 /* CROShoppingCartTableViewCell.xib in Resources */,
 				047451EC1B11A089000A57B8 /* testData.plist in Resources */,
 				1852EDF01B0B7398002AAD43 /* Images.xcassets in Resources */,
+				04B9F3F11B156AEB0011DBC2 /* test1.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,6 +450,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		E5D729D0EAC657EEB9B44D9A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FD208CFA56FB6E223FA65F2E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1852EDDB1B0B7398002AAD43 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -406,6 +491,7 @@
 				046CD9781B1069A700392F3F /* UIImageView+WebCache.m in Sources */,
 				046CD9741B1069A700392F3F /* UIImage+GIF.m in Sources */,
 				046CD96D1B1069A700392F3F /* SDWebImageCompat.m in Sources */,
+				04B9F48F1B159BBC0011DBC2 /* CROShoppingCartViewController.m in Sources */,
 				046CD9731B1069A700392F3F /* UIButton+WebCache.m in Sources */,
 				046CD9751B1069A700392F3F /* UIImage+MultiFormat.m in Sources */,
 				046CD9721B1069A700392F3F /* SDWebImagePrefetcher.m in Sources */,
@@ -416,6 +502,7 @@
 				046CD9761B1069A700392F3F /* UIImage+WebP.m in Sources */,
 				18639BE21B14B83700FA259B /* CROShoppingCart.m in Sources */,
 				046CD9461B10597100392F3F /* CROCommonAPI.m in Sources */,
+				04B9F4931B15A1830011DBC2 /* CROShoppingCartTableViewCell.m in Sources */,
 				046CD9701B1069A700392F3F /* SDWebImageDownloaderOperation.m in Sources */,
 				046CD96E1B1069A700392F3F /* SDWebImageDecoder.m in Sources */,
 				046CD9801B10B19D00392F3F /* CROMainDetTableViewCell.m in Sources */,
@@ -553,6 +640,7 @@
 		};
 		1852EE031B0B7398002AAD43 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF8E83F789A0394138B110CC /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = crossShop/Info.plist;
@@ -563,6 +651,7 @@
 		};
 		1852EE041B0B7398002AAD43 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34446429E39BC9286F961D41 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = crossShop/Info.plist;
