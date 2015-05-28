@@ -8,6 +8,7 @@
 
 #import "CROShoppingCartViewController.h"
 
+static NSString *shoppingCartCell = @"shoppingCartCell";
 @interface CROShoppingCartViewController ()
 
 @end
@@ -16,9 +17,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSMutableArray *dataArray =
+    UINib *cellNib = [UINib nibWithNibName:@"CROShoppingCartTableViewCell" bundle:nil];
+    [self.tableView registerNib:cellNib forCellReuseIdentifier:shoppingCartCell];
+    self.dataArray =
     [[CROShoppingCart shareInstance]getAllGoods];
-    
+    NSLog(@"\r\n dataarray:%@", self.dataArray);
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -36,7 +39,7 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return [self.dataArray count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
