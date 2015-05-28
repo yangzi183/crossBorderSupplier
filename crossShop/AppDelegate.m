@@ -35,7 +35,7 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     NSLog(@"\r\n func:%s", __func__);
     self.window.rootViewController.navigationController.navigationBar.alpha = 0.5f;
-    [[NSNotification ]]
+ //   [[NSNotification ]]
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 }
 
