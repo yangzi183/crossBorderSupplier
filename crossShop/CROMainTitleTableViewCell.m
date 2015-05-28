@@ -17,7 +17,6 @@
     CGFloat width = self.frame.size.width - self.marginLeftScroll.constant - self.marginRightScroll.constant;
     [self.flowTable configFlowTable:width];
     [self initData];
-    NSLog(@"\r\n width:%f", self.frame.size.width);
 }
 
 - (void)initUI {

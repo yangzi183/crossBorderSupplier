@@ -10,4 +10,5 @@
 
 @interface CROShoppingCartTableViewCell : UITableViewCell
 
+
 @end
