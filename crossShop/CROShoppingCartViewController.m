@@ -21,7 +21,13 @@ static NSString *shoppingCartCell = @"shoppingCartCell";
     [self.tableView registerNib:cellNib forCellReuseIdentifier:shoppingCartCell];
     self.dataArray =
     [[CROShoppingCart shareInstance]getAllGoods];
-    NSLog(@"\r\n dataarray:%@", self.dataArray);
+    //NSLog(@"\r\n dataarray:%@", self.dataArray);
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(testChange:) name:@"testnot" object:nil];
+    
+    CGFloat navHeight = self.navigationController.navigationBar.bounds.size.height;
+    NSLog(@"\r\n height:%f", navHeight);
+    //self.tableViewTopMargin.constant = navHeight;
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -29,18 +35,28 @@ static NSString *shoppingCartCell = @"shoppingCartCell";
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+- (void)testChange: (NSNotification *)note {
+    
+    NSLog(@"\r\n note:%@,userinfo:%@", note, [note object]);
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
 - (void)viewDidAppear:(BOOL)animated {
+        /*CGFloat navHeight = self.navigationController.navigationBar.bounds.size.height;
+        NSLog(@"\r\n height:%f", navHeight);*/
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return [self.dataArray count];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 90;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -54,7 +70,7 @@ static NSString *shoppingCartCell = @"shoppingCartCell";
     if (cell == nil) {
         cell = [[CROShoppingCartTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:shoppingCartCell];
     }
-    
+    [cell changeCellMode:false];
     return cell;
 }
 

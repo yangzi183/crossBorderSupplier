@@ -181,6 +181,7 @@
                     <connections>
                         <outlet property="shopBootomView" destination="0t6-hv-PeH" id="SkU-fE-ykt"/>
                         <outlet property="tableView" destination="pNM-bx-B67" id="2pV-84-2xr"/>
+                        <outlet property="tableViewTopMargin" destination="D1Z-Ca-yQQ" id="t22-pz-hf1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Z9-4L-aap" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -10,9 +10,10 @@
 #import "CROShoppingCart.h"
 #import "CROShoppingCartTableViewCell.h"
 
-@interface CROShoppingCartViewController : UIViewController
+@interface CROShoppingCartViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIView *shopBootomView;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *tableViewTopMargin;
 
 @property (strong, nonatomic) NSMutableArray *dataArray;
 @end
