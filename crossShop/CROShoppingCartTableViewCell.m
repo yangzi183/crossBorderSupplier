@@ -52,12 +52,14 @@
         //NSLog(@"\r\n class:%@, strNum:%@", [[dicData objectForKey:@"itemCount"] class], strNum);
         goodCount = [(NSNumber *)[dicData objectForKey:@"itemCount"] integerValue];
         self.realNumLabel.text = strNum;
+        self.editTxt.text = strNum;
     }
     if ([dicData objectForKey:@"itemPrice"]) {
         NSString *strNum = [NSString stringWithFormat:@"%@", [dicData objectForKey:@"itemPrice"]];
-        //NSLog(@"\r\n class:%@", [[dicData objectForKey:@"itemPrice"] class]);
+        //NSLog(@"\r\n class:%@111111111111111111111
         self.priceLabel.text = strNum;
     }
+    [self checkCount];
 }
 
 - (void)changeCellMode: (BOOL)isEdit {
@@ -76,13 +78,33 @@
         self.plusBtn.hidden = YES;
         self.deleteBtn.hidden = YES;
     }
+    self.realNumLabel.text = [NSString stringWithFormat:@"%ld", goodCount];
+}
+
+- (BOOL)checkCount {
+    if (goodCount <= 1) {
+        [self.reduceBtn setImage:[UIImage imageNamed:@"item_reduce_false"] forState:UIControlStateNormal];
+        //self.reduceBtn.enabled = false;
+        return false;
+    } else {
+        [self.reduceBtn setImage:[UIImage imageNamed:@"item_reduce_true"] forState:UIControlStateNormal];
+        //self.reduceBtn.enabled = true;
+        return true;
+    }
 }
 
 - (IBAction)reduceCount:(id)sender {
-    
+    if (goodCount > 1) {
+        goodCount--;
+    }
+    [self checkCount];
+    self.editTxt.text = [NSString stringWithFormat:@"%ld", goodCount];
 }
 
 - (IBAction)plusCount:(id)sender {
+    goodCount++;
+    self.editTxt.text = [NSString stringWithFormat:@"%ld", goodCount];
+    [self.reduceBtn setImage:[UIImage imageNamed:@"item_reduce_true"] forState:UIControlStateNormal];
 }
 
 @end

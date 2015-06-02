@@ -150,12 +150,12 @@ static NSString *shoppingCartCell = @"shoppingCartCell";
     [self.navigationController popViewControllerAnimated:YES];
 }
 - (IBAction)editAct:(id)sender {
-    isEditMode = !isEditMode;
-    [self setCellIntoEditStyle];
     if (isEditMode) {
         self.editBtn.title = @"编辑";
     } else {
         self.editBtn.title = @"完成";
     }
+    isEditMode = !isEditMode;
+    [self setCellIntoEditStyle];
 }
 @end
