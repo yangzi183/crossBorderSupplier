@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SDWebImage/UIImageView+WebCache.h"
+#import "CROCommonAPI.h"
 
 @interface CROShoppingCartTableViewCell : UITableViewCell
 
@@ -20,7 +22,13 @@
 @property (strong, nonatomic) IBOutlet UIButton *plusBtn;
 @property (strong, nonatomic) IBOutlet UITextField *editTxt;
 @property (strong, nonatomic) IBOutlet UIButton *deleteBtn;
+@property (strong, nonatomic) IBOutlet UIImageView *imgSellOut;
 
+@property (strong, nonatomic) IBOutlet UIImageView *imgBack;
 - (void)changeCellMode: (BOOL)isEdit;
+- (IBAction)reduceCount:(id)sender;
+- (IBAction)plusCount:(id)sender;
+
+- (void)configCellByDicData: (NSDictionary *)dicData;
 
 @end

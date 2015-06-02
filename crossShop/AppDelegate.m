@@ -17,6 +17,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    //self.window.rootViewController.navigationController.navigationBar.alpha = 1.0f;
+    self.window.rootViewController.navigationController.navigationBar.backgroundColor = [UIColor blackColor];
     return YES;
 }
 
@@ -31,8 +33,7 @@
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    self.window.rootViewController.navigationController.navigationBar.alpha = 0.5f;
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"testnot" object:@"this is test"];
+    self.window.rootViewController.navigationController.navigationBar.alpha = 1.0f;
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 }
 

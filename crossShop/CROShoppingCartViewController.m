@@ -9,7 +9,9 @@
 #import "CROShoppingCartViewController.h"
 
 static NSString *shoppingCartCell = @"shoppingCartCell";
-@interface CROShoppingCartViewController ()
+@interface CROShoppingCartViewController () {
+    BOOL isEditMode;
+}
 
 @end
 
@@ -19,15 +21,16 @@ static NSString *shoppingCartCell = @"shoppingCartCell";
     [super viewDidLoad];
     UINib *cellNib = [UINib nibWithNibName:@"CROShoppingCartTableViewCell" bundle:nil];
     [self.tableView registerNib:cellNib forCellReuseIdentifier:shoppingCartCell];
-    self.dataArray =
-    [[CROShoppingCart shareInstance]getAllGoods];
-    //NSLog(@"\r\n dataarray:%@", self.dataArray);
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(testChange:) name:@"testnot" object:nil];
+    self.dataArray = [[NSMutableArray alloc] init];
     
-    CGFloat navHeight = self.navigationController.navigationBar.bounds.size.height;
-    NSLog(@"\r\n height:%f", navHeight);
-    //self.tableViewTopMargin.constant = navHeight;
-    self.edgesForExtendedLayout = UIRectEdgeNone;
+    //self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.tableView.backgroundColor = [UIColor whiteColor];
+    
+    self.dataArray = [[CROShoppingCart shareInstance]getAllGoods];
+    //NSLog(@"\r\n dataarray:%@", self.dataArray);
+    [self.tableView reloadData];
+    isEditMode = false;
+    //self.navigationController.navigationBar.backgroundColor = [UIColor whiteColor];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -35,18 +38,13 @@ static NSString *shoppingCartCell = @"shoppingCartCell";
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)testChange: (NSNotification *)note {
-    
-    NSLog(@"\r\n note:%@,userinfo:%@", note, [note object]);
-}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-        /*CGFloat navHeight = self.navigationController.navigationBar.bounds.size.height;
-        NSLog(@"\r\n height:%f", navHeight);*/
+    
 }
 
 #pragma mark - Table view data source
@@ -55,26 +53,55 @@ static NSString *shoppingCartCell = @"shoppingCartCell";
     return [self.dataArray count];
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 90;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSArray *goodsArray = [self.dataArray objectAtIndex:section];
-    return [goodsArray count];
+    NSArray *arrayCount = [[self.dataArray objectAtIndex:section] objectForKey:@"goods"];
+    return [arrayCount count];
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    NSDictionary *secDic = [self.dataArray objectAtIndex:section];
+    return [secDic objectForKey:@"dispatch"];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 85;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 30;
+}
+- (UIView *)tableView:(UITableView *)tableV viewForHeaderInSection:(NSInteger)section {
+    NSString *titleStr = [self tableView:tableV titleForHeaderInSection:section];
+    UILabel *sectionHeader = [[UILabel alloc]initWithFrame:CGRectMake(8, 5, self.tableView.frame.size.width, 20)];
+    sectionHeader.text = titleStr;
+    sectionHeader.backgroundColor = [UIColor clearColor];
+    sectionHeader.font = [UIFont systemFontOfSize:15];
+    sectionHeader.textColor = [CROCommonAPI colorWithHexString:@"#9b9b9b"];
+    UIView *secView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, 29)];
+    secView.backgroundColor = self.tableView.backgroundColor;
+    UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(0, 28, self.tableView.frame.size.width, 0.5)];
+    lineView.backgroundColor = [CROCommonAPI colorWithHexString:@"#d8d8d8"];
+    [secView addSubview:lineView];
+    [secView addSubview:sectionHeader];
+    return secView;
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CROShoppingCartTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:shoppingCartCell forIndexPath:indexPath];
     if (cell == nil) {
         cell = [[CROShoppingCartTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:shoppingCartCell];
     }
-    [cell changeCellMode:false];
+    [cell changeCellMode:isEditMode];
+    NSLog(@"\r\n section:%ld,row:%ld", indexPath.section, indexPath.row);
+    [cell configCellByDicData:[[[self.dataArray objectAtIndex:indexPath.section] objectForKey:@"goods"] objectAtIndex:indexPath.row]];
     return cell;
 }
 
-
+- (void)setCellIntoEditStyle {
+    for (CROShoppingCartTableViewCell *cell in self.tableView.visibleCells) {
+        [cell changeCellMode:isEditMode];
+    }
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -119,4 +146,16 @@ static NSString *shoppingCartCell = @"shoppingCartCell";
 }
 */
 
+- (IBAction)backAct:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+- (IBAction)editAct:(id)sender {
+    isEditMode = !isEditMode;
+    [self setCellIntoEditStyle];
+    if (isEditMode) {
+        self.editBtn.title = @"编辑";
+    } else {
+        self.editBtn.title = @"完成";
+    }
+}
 @end

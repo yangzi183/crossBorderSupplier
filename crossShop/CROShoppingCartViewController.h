@@ -14,6 +14,11 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIView *shopBootomView;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *tableViewTopMargin;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *backBtn;
+- (IBAction)backAct:(id)sender;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *editBtn;
+- (IBAction)editAct:(id)sender;
+
 
 @property (strong, nonatomic) NSMutableArray *dataArray;
 @end

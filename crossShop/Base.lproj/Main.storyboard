@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="uCH-gK-1Me">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
@@ -21,7 +22,7 @@
                         </userGuides>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ybN-Rr-PoX">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="titleCell" rowHeight="425" id="h7O-xL-txC" customClass="CROMainTitleTableViewCell">
@@ -48,28 +49,6 @@
                             <constraint firstItem="ybN-Rr-PoX" firstAttribute="top" secondItem="WFq-Bn-QxT" secondAttribute="top" id="QCL-B4-e9A"/>
                             <constraint firstItem="ybN-Rr-PoX" firstAttribute="leading" secondItem="WFq-Bn-QxT" secondAttribute="leading" id="SXf-9i-ewR"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="ybN-Rr-PoX"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="MNX-QQ-9ks"/>
-                                <exclude reference="NIG-kO-N9H"/>
-                                <exclude reference="QCL-B4-e9A"/>
-                                <exclude reference="SXf-9i-ewR"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular-widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="ybN-Rr-PoX"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="MNX-QQ-9ks"/>
-                                <include reference="NIG-kO-N9H"/>
-                                <include reference="QCL-B4-e9A"/>
-                                <include reference="SXf-9i-ewR"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="sdh-5G-DXN">
                         <barButtonItem key="leftBarButtonItem" image="person_conf_icon" id="ELM-DM-jV8">
@@ -78,7 +57,7 @@
                         <barButtonItem key="rightBarButtonItem" image="shopping_cart_icon" id="ZEi-yc-UKq">
                             <color key="tintColor" red="0.50980392159999999" green="0.83921568629999999" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <segue destination="bXg-bK-NO3" kind="push" id="xqH-wL-eh5"/>
+                                <segue destination="bXg-bK-NO3" kind="show" id="xqH-wL-eh5"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -88,7 +67,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0gq-vN-LRa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1413" y="300.75"/>
+            <point key="canvasLocation" x="-1413" y="300.74999999999994"/>
         </scene>
         <!--Shopping Cart View Controller-->
         <scene sceneID="ArX-Ys-031">
@@ -103,7 +82,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="pNM-bx-B67">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="520"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="shoppingCartCell" id="Czf-kH-pEH" customClass="CROShoppingCartTableViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -119,21 +98,11 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0t6-hv-PeH">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="520" width="600" height="80"/>
                                 <color key="backgroundColor" red="0.54901960780000003" green="0.54901960780000003" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="Nuy-rM-kmI"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="Nuy-rM-kmI"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="Nuy-rM-kmI"/>
-                                    </mask>
-                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -146,39 +115,24 @@
                             <constraint firstAttribute="trailing" secondItem="0t6-hv-PeH" secondAttribute="trailing" id="ec1-7s-niR"/>
                             <constraint firstItem="pNM-bx-B67" firstAttribute="leading" secondItem="apd-sa-gbh" secondAttribute="leading" id="lUn-wU-pG1"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="pNM-bx-B67"/>
-                                <exclude reference="0t6-hv-PeH"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="QHi-r3-lsb"/>
-                                <exclude reference="RLW-7F-ASj"/>
-                                <exclude reference="XLY-fV-9Jn"/>
-                                <exclude reference="ec1-7s-niR"/>
-                                <exclude reference="D1Z-Ca-yQQ"/>
-                                <exclude reference="Z5y-ja-vKi"/>
-                                <exclude reference="lUn-wU-pG1"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular-widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="pNM-bx-B67"/>
-                                <include reference="0t6-hv-PeH"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="QHi-r3-lsb"/>
-                                <include reference="RLW-7F-ASj"/>
-                                <include reference="XLY-fV-9Jn"/>
-                                <include reference="ec1-7s-niR"/>
-                                <include reference="D1Z-Ca-yQQ"/>
-                                <include reference="Z5y-ja-vKi"/>
-                                <include reference="lUn-wU-pG1"/>
-                            </mask>
-                        </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="z60-hq-UaZ"/>
+                    <navigationItem key="navigationItem" id="z60-hq-UaZ">
+                        <barButtonItem key="leftBarButtonItem" image="return_icon" id="Tte-bT-TLf">
+                            <color key="tintColor" red="0.50980392159999999" green="0.83921568629999999" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="backAct:" destination="bXg-bK-NO3" id="gAb-UY-y7L"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="编辑" id="qqE-iP-nr8">
+                            <color key="tintColor" red="0.50980392159999999" green="0.83921568629999999" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="editAct:" destination="bXg-bK-NO3" id="C8S-ev-u2Y"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="backBtn" destination="Tte-bT-TLf" id="kt9-d6-Vd2"/>
+                        <outlet property="editBtn" destination="qqE-iP-nr8" id="xDG-8h-7tb"/>
                         <outlet property="shopBootomView" destination="0t6-hv-PeH" id="SkU-fE-ykt"/>
                         <outlet property="tableView" destination="pNM-bx-B67" id="2pV-84-2xr"/>
                         <outlet property="tableViewTopMargin" destination="D1Z-Ca-yQQ" id="t22-pz-hf1"/>
@@ -186,7 +140,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Z9-4L-aap" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-570" y="-237.75"/>
+            <point key="canvasLocation" x="-570" y="-237.74999999999997"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MdK-Zj-BbH">
@@ -202,11 +156,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mqf-Fs-ejo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2196" y="300.75"/>
+            <point key="canvasLocation" x="-2196" y="300.74999999999994"/>
         </scene>
     </scenes>
     <resources>
         <image name="person_conf_icon" width="22" height="22"/>
+        <image name="return_icon" width="23" height="23"/>
         <image name="shopping_cart_icon" width="36" height="34"/>
     </resources>
 </document>

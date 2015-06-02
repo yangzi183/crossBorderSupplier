@@ -5,15 +5,17 @@
         [
             {
                 "itemID":"301",
-                "itemCount":5
+                "itemCount":5,
+                "itemCover":"http://img4q.duitang.com/uploads/item/201202/12/20120212145057_yKtnj.thumb.700_0.jpg",
+                "itemPrice":134,
+                "itemName":"读者文摘"
             },
             {
                 "itemID":"304",
-                "itemCount":1
-            },
-            {
-                "itemID":"321",
-                "itemCount":3
+                "itemCount":1,
+                "itemCover":"http://img4q.duitang.com/uploads/item/201202/12/20120212145057_yKtnj.thumb.700_0.jpg",
+                "itemPrice":1314,
+                "itemName":"中国青年出版社"
             }
         ]
     },
@@ -23,15 +25,24 @@
         [
             {
                 "itemID":"401",
-                "itemCount":5
+                "itemCount":5,
+                "itemCover":"http://img4q.duitang.com/uploads/item/201202/12/20120212145057_yKtnj.thumb.700_0.jpg",
+                "itemPrice":34,
+                "itemName":"中国新闻出版社"
             },
             {
                 "itemID":"404",
-                "itemCount":1
+                "itemCount":1,
+                "itemCover":"http://img4q.duitang.com/uploads/item/201202/12/20120212145057_yKtnj.thumb.700_0.jpg",
+                "itemPrice":334,
+                "itemName":"成功修养经典"
             },
             {
                 "itemID":"421",
-                "itemCount":3
+                "itemCount":3,
+                "itemCover":"http://img4q.duitang.com/uploads/item/201202/12/20120212145057_yKtnj.thumb.700_0.jpg",
+                "itemPrice":434,
+                "itemName":"社交送礼全攻略"
             }
          ]
     },
@@ -41,15 +52,10 @@
         [
             {
                 "itemID":"501",
-                "itemCount":5
-            },
-            {
-                "itemID":"504",
-                "itemCount":1
-            },
-            {
-                "itemID":"521",
-                "itemCount":3
+                "itemCount":5,
+                "itemCover":"http://img4q.duitang.com/uploads/item/201202/12/20120212145057_yKtnj.thumb.700_0.jpg",
+                "itemPrice":134,
+                "itemName":"人生谋略全书"
             }
         ]
     }

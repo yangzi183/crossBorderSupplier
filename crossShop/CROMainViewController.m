@@ -29,7 +29,10 @@ static NSString *cellTitleName = @"titleCell";
     [self.mainTableView registerNib:cellTitleNib forCellReuseIdentifier:cellTitleName];
     self.mainData = [[NSMutableArray alloc]init];
     self.mainTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    //self.mainTableView.scrollEnabled = NO;
+    
+    //self.navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+    self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.translucent = NO;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
