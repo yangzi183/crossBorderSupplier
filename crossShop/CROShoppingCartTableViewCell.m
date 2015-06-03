@@ -11,6 +11,9 @@
 @implementation CROShoppingCartTableViewCell {
     BOOL isSelected;
     NSInteger goodCount;
+    NSInteger goodPrice;
+    NSInteger goodOriPrice;
+    NSString *goodsID;
 }
 
 - (void)awakeFromNib {
@@ -24,7 +27,10 @@
     isSelected = self.selectBtn.selected;
     [self.selectBtn setImage:[UIImage imageNamed:@"item_select_true"] forState:UIControlStateSelected];
     [self.selectBtn setImage:[UIImage imageNamed:@"item_select_false"] forState:UIControlStateNormal];
-    [self.selectBtn addTarget:self action:@selector(addGoods) forControlEvents:UIControlEventTouchUpInside];
+    //[self.selectBtn addTarget:self action:@selector(addGoods) forControlEvents:UIControlEventTouchUpInside];
+    goodCount = 0;
+    goodPrice = 0;
+    goodOriPrice = 0;
     [self addGoods];
 }
 
@@ -56,10 +62,28 @@
     }
     if ([dicData objectForKey:@"itemPrice"]) {
         NSString *strNum = [NSString stringWithFormat:@"%@", [dicData objectForKey:@"itemPrice"]];
-        //NSLog(@"\r\n class:%@111111111111111111111
         self.priceLabel.text = strNum;
+        goodPrice = [(NSNumber *)[dicData objectForKey:@"itemPrice"] integerValue];
     }
+    if ([dicData objectForKey:@"itemOriPrice"]) {
+        goodOriPrice = [(NSNumber *)[dicData objectForKey:@"itemOriPrice"] integerValue];
+    }
+    goodsID = [dicData objectForKey:@"itemID"];
     [self checkCount];
+}
+
+- (IBAction)selectAct:(id)sender {
+    isSelected = !isSelected;
+    self.selectBtn.selected = isSelected;
+    if (self.delegate && [self.delegate respondsToSelector:@selector(calculatePriceIfSelect:oriPrice:mode:goodId:)]) {
+        NSInteger goodPriceReal = goodPrice * goodCount;
+        NSInteger goodOriPriceReal = goodOriPrice * goodCount;
+        if (isSelected == true) {
+            [self.delegate calculatePriceIfSelect:goodPriceReal oriPrice:goodOriPriceReal mode:true goodId:goodsID];
+        } else {
+            [self.delegate calculatePriceIfSelect:goodPriceReal oriPrice:goodOriPriceReal mode:false goodId:goodsID];
+        }
+    }
 }
 
 - (void)changeCellMode: (BOOL)isEdit {
@@ -78,7 +102,7 @@
         self.plusBtn.hidden = YES;
         self.deleteBtn.hidden = YES;
     }
-    self.realNumLabel.text = [NSString stringWithFormat:@"%ld", goodCount];
+    self.realNumLabel.text = [NSString stringWithFormat:@"%ld", (long)goodCount];
 }
 
 - (BOOL)checkCount {
@@ -96,15 +120,31 @@
 - (IBAction)reduceCount:(id)sender {
     if (goodCount > 1) {
         goodCount--;
+        if (isSelected == true) {
+            [self calculateTotalPrice:false];
+        }
     }
     [self checkCount];
-    self.editTxt.text = [NSString stringWithFormat:@"%ld", goodCount];
+    self.editTxt.text = [NSString stringWithFormat:@"%ld", (long)goodCount];
 }
 
 - (IBAction)plusCount:(id)sender {
     goodCount++;
-    self.editTxt.text = [NSString stringWithFormat:@"%ld", goodCount];
+    self.editTxt.text = [NSString stringWithFormat:@"%ld", (long)goodCount];
     [self.reduceBtn setImage:[UIImage imageNamed:@"item_reduce_true"] forState:UIControlStateNormal];
+    if (isSelected == true) {
+        [self calculateTotalPrice:true];
+    }
+}
+
+- (void)calculateTotalPrice: (BOOL)mode {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(calculatePrice:oriPrice:)]) {
+        if (mode == true) {
+            [self.delegate calculatePrice:goodPrice oriPrice:goodOriPrice];
+        } else {
+            [self.delegate calculatePrice:(-goodPrice) oriPrice:(-goodOriPrice)];
+        }
+    }
 }
 
 @end

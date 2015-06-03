@@ -21,7 +21,7 @@ static CROShoppingCart *CROShoppingCartInstance;
 
 - (NSMutableArray *)getAllGoods {
     self.goodsArray = [[NSMutableArray alloc]init];
-    NSString *jsonPath = [[NSBundle mainBundle]pathForResource:@"test1" ofType:@"js"];
+    NSString *jsonPath = [[NSBundle mainBundle]pathForResource:@"test2" ofType:@"js"];
    // NSString *jsonStr = [NSString stringWithContentsOfFile:jsonPath encoding:NSUTF8StringEncoding error:nil];
     //NSLog(@"\r\n jsonStr:%@", jsonStr);
     SBJson4ValueBlock parserBlock = ^(id item, BOOL *stop) {

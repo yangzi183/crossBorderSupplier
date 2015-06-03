@@ -9,8 +9,11 @@
 #import "CROShoppingCartViewController.h"
 
 static NSString *shoppingCartCell = @"shoppingCartCell";
+static NSInteger totalPriceReal;
+static NSInteger totalOriPriceReal;
 @interface CROShoppingCartViewController () {
     BOOL isEditMode;
+    NSMutableDictionary *dataPriceDic;
 }
 
 @end
@@ -22,7 +25,7 @@ static NSString *shoppingCartCell = @"shoppingCartCell";
     UINib *cellNib = [UINib nibWithNibName:@"CROShoppingCartTableViewCell" bundle:nil];
     [self.tableView registerNib:cellNib forCellReuseIdentifier:shoppingCartCell];
     self.dataArray = [[NSMutableArray alloc] init];
-    
+    dataPriceDic = [[NSMutableDictionary alloc]init];
     //self.edgesForExtendedLayout = UIRectEdgeNone;
     self.tableView.backgroundColor = [UIColor whiteColor];
     
@@ -30,7 +33,9 @@ static NSString *shoppingCartCell = @"shoppingCartCell";
     //NSLog(@"\r\n dataarray:%@", self.dataArray);
     [self.tableView reloadData];
     isEditMode = false;
-    //self.navigationController.navigationBar.backgroundColor = [UIColor whiteColor];
+    [self calculateTotalPriceByDicData];
+    [self setHideTableViewFoot:self.tableView];
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -92,8 +97,9 @@ static NSString *shoppingCartCell = @"shoppingCartCell";
         cell = [[CROShoppingCartTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:shoppingCartCell];
     }
     [cell changeCellMode:isEditMode];
-    NSLog(@"\r\n section:%ld,row:%ld", indexPath.section, indexPath.row);
+    //NSLog(@"\r\n section:%ld,row:%ld", indexPath.section, indexPath.row);
     [cell configCellByDicData:[[[self.dataArray objectAtIndex:indexPath.section] objectForKey:@"goods"] objectAtIndex:indexPath.row]];
+    cell.delegate = self;
     return cell;
 }
 
@@ -102,6 +108,13 @@ static NSString *shoppingCartCell = @"shoppingCartCell";
         [cell changeCellMode:isEditMode];
     }
 }
+
+- (void)setHideTableViewFoot:(UITableView *)tableView {
+    UIView *viewFooter = [[UIView alloc]init];
+    viewFooter.backgroundColor = [UIColor clearColor];
+    tableView.tableFooterView = viewFooter;
+}
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -145,6 +158,57 @@ static NSString *shoppingCartCell = @"shoppingCartCell";
     // Pass the selected object to the new view controller.
 }
 */
+- (void)calculateTotalPriceByDicData {
+    for (int section = 0; section < self.dataArray.count; section ++) {
+        NSDictionary *sectionDic = self.dataArray[section];
+        if ([sectionDic objectForKey:@"goods"]) {
+            NSArray *goodArray = [sectionDic objectForKey:@"goods"];
+            for (int row = 0; row < goodArray.count; row++) {
+                NSDictionary *rowDic = goodArray[row];
+                if ([rowDic objectForKey:@"itemPrice"] && [rowDic objectForKey:@"itemCount"]) {
+                    NSInteger goodPrice = [(NSNumber *)[rowDic objectForKey:@"itemPrice"]integerValue];
+                    NSInteger goodCountReal = [(NSNumber *)[rowDic objectForKey:@"itemCount"]integerValue];
+                    totalPriceReal += (goodPrice * goodCountReal);
+                }
+                if ([rowDic objectForKey:@"itemOriPrice"] && [rowDic objectForKey:@"itemCount"]) {
+                    NSInteger goodPrice = [(NSNumber *)[rowDic objectForKey:@"itemOriPrice"]integerValue];
+                    NSInteger goodCountReal = [(NSNumber *)[rowDic objectForKey:@"itemCount"]integerValue];
+                    totalOriPriceReal += (goodPrice * goodCountReal);
+                }
+                [dataPriceDic setObject:@"true" forKey:[rowDic objectForKey:@"itemID"]];
+            }
+        }
+    }
+    //NSLog(@"\r\n price:%ld,ori:%ld", (long)totalPriceReal, (long)totalOriPriceReal);
+    [self updatePriceLabel];
+}
+
+- (void)calculatePrice: (NSInteger)totalPrice oriPrice:(NSInteger)oriPrice {
+    totalPriceReal += totalPrice;
+    totalOriPriceReal += oriPrice;
+    //NSLog(@"\r\n totalPrice:%ld, oriPrice:%ld,price:%ld,oriprice:%ld", (long)totalPrice, (long)oriPrice, (long)totalPriceReal, (long)totalOriPriceReal);
+    [self updatePriceLabel];
+}
+
+- (void)calculatePriceIfSelect:(NSInteger)totalPrice oriPrice:(NSInteger)oriPrice mode:(BOOL)mode goodId:(NSString *)goodId {
+    //NSLog(@"\r\n mode:%d,goodid:%@", mode, goodId);
+
+    if ([[dataPriceDic objectForKey:goodId] isEqualToString:@"true"] && mode == false) {
+        totalPriceReal -= totalPrice;
+        totalOriPriceReal -= oriPrice;
+        [dataPriceDic setObject:@"false" forKey:goodId];
+    } else if ([[dataPriceDic objectForKey:goodId] isEqualToString:@"false"] && mode == true) {
+        totalPriceReal += totalPrice;
+        totalOriPriceReal += oriPrice;
+        [dataPriceDic setObject:@"true" forKey:goodId];
+    }
+    [self updatePriceLabel];
+}
+
+- (void)updatePriceLabel {
+    self.totalPriceReal.text = [NSString stringWithFormat:@"%ld", (long)totalPriceReal];
+    self.totalDownPrice.text = [NSString stringWithFormat:@"%ld", (long)(totalOriPriceReal - totalPriceReal)];
+}
 
 - (IBAction)backAct:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
@@ -157,5 +221,10 @@ static NSString *shoppingCartCell = @"shoppingCartCell";
     }
     isEditMode = !isEditMode;
     [self setCellIntoEditStyle];
+}
+- (IBAction)selectAllAct:(id)sender {
+    for (CROShoppingCartTableViewCell *cell in self.tableView.visibleCells) {
+        [cell changeCellMode:isEditMode];
+    }
 }
 @end

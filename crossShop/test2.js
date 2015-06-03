@@ -22,36 +22,6 @@
         ]
     },
     {
-        "dispatch":"德国",
-        "goods":
-        [
-            {
-                "itemID":"401",
-                "itemCount":5,
-                "itemCover":"http://img4q.duitang.com/uploads/item/201202/12/20120212145057_yKtnj.thumb.700_0.jpg",
-                "itemPrice":34,
-                "itemName":"中国新闻出版社",
-                "itemOriPrice":54
-            },
-            {
-                "itemID":"404",
-                "itemCount":1,
-                "itemCover":"http://img4q.duitang.com/uploads/item/201202/12/20120212145057_yKtnj.thumb.700_0.jpg",
-                "itemPrice":334,
-                "itemName":"成功修养经典",
-                "itemOriPrice":354
-            },
-            {
-                "itemID":"421",
-                "itemCount":3,
-                "itemCover":"http://img4q.duitang.com/uploads/item/201202/12/20120212145057_yKtnj.thumb.700_0.jpg",
-                "itemPrice":434,
-                "itemName":"社交送礼全攻略",
-                "itemOriPrice":454
-            }
-         ]
-    },
-    {
         "dispatch":"日本",
         "goods":
         [

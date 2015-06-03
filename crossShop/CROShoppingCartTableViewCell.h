@@ -10,6 +10,12 @@
 #import "SDWebImage/UIImageView+WebCache.h"
 #import "CROCommonAPI.h"
 
+@protocol CROShoppingCartTableViewCellDelegate <NSObject>
+
+- (void)calculatePrice: (NSInteger)totalPrice oriPrice:(NSInteger)oriPrice;
+- (void)calculatePriceIfSelect: (NSInteger)totalPrice oriPrice:(NSInteger)oriPrice mode:(BOOL)mode goodId:(NSString *)goodId;
+@end
+
 @interface CROShoppingCartTableViewCell : UITableViewCell
 
 @property (strong, nonatomic) IBOutlet UIButton *selectBtn;
@@ -30,5 +36,7 @@
 - (IBAction)plusCount:(id)sender;
 
 - (void)configCellByDicData: (NSDictionary *)dicData;
+- (IBAction)selectAct:(id)sender;
 
+@property (nonatomic, assign) id<CROShoppingCartTableViewCellDelegate> delegate;
 @end

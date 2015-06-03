@@ -27,6 +27,7 @@
 		046CD9801B10B19D00392F3F /* CROMainDetTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 046CD97E1B10B19D00392F3F /* CROMainDetTableViewCell.m */; };
 		046CD9811B10B19D00392F3F /* CROMainDetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046CD97F1B10B19D00392F3F /* CROMainDetTableViewCell.xib */; };
 		047451EC1B11A089000A57B8 /* testData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 047451EB1B11A089000A57B8 /* testData.plist */; };
+		048ADC371B1EDDF0002641DC /* test2.js in Resources */ = {isa = PBXBuildFile; fileRef = 048ADC361B1EDDF0002641DC /* test2.js */; };
 		04B9F3F11B156AEB0011DBC2 /* test1.js in Resources */ = {isa = PBXBuildFile; fileRef = 04B9F3F01B156AEB0011DBC2 /* test1.js */; };
 		04B9F48F1B159BBC0011DBC2 /* CROShoppingCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B9F48E1B159BBC0011DBC2 /* CROShoppingCartViewController.m */; };
 		04B9F4931B15A1830011DBC2 /* CROShoppingCartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B9F4911B15A1830011DBC2 /* CROShoppingCartTableViewCell.m */; };
@@ -98,6 +99,7 @@
 		046CD97E1B10B19D00392F3F /* CROMainDetTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CROMainDetTableViewCell.m; sourceTree = "<group>"; };
 		046CD97F1B10B19D00392F3F /* CROMainDetTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CROMainDetTableViewCell.xib; sourceTree = "<group>"; };
 		047451EB1B11A089000A57B8 /* testData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = testData.plist; sourceTree = "<group>"; };
+		048ADC361B1EDDF0002641DC /* test2.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = test2.js; sourceTree = "<group>"; };
 		04B9F3F01B156AEB0011DBC2 /* test1.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = test1.js; sourceTree = "<group>"; };
 		04B9F48D1B159BBC0011DBC2 /* CROShoppingCartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CROShoppingCartViewController.h; sourceTree = "<group>"; };
 		04B9F48E1B159BBC0011DBC2 /* CROShoppingCartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CROShoppingCartViewController.m; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 			children = (
 				047451EB1B11A089000A57B8 /* testData.plist */,
 				04B9F3F01B156AEB0011DBC2 /* test1.js */,
+				048ADC361B1EDDF0002641DC /* test2.js */,
 			);
 			name = "used source";
 			sourceTree = "<group>";
@@ -438,6 +441,7 @@
 				047451EC1B11A089000A57B8 /* testData.plist in Resources */,
 				1852EDF01B0B7398002AAD43 /* Images.xcassets in Resources */,
 				04B9F3F11B156AEB0011DBC2 /* test1.js in Resources */,
+				048ADC371B1EDDF0002641DC /* test2.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
