@@ -7,6 +7,7 @@
 //
 
 #import "CROShoppingCartTableViewCell.h"
+#import "CROShoppingAlertView.h"
 
 @implementation CROShoppingCartTableViewCell {
     BOOL isSelected;
@@ -73,7 +74,11 @@
 }
 
 - (IBAction)selectAct:(id)sender {
-    isSelected = !isSelected;
+    [self selectGoodIfSelected:!isSelected];
+}
+
+- (void)selectGoodIfSelected: (BOOL)isSel {
+    isSelected = isSel;
     self.selectBtn.selected = isSelected;
     if (self.delegate && [self.delegate respondsToSelector:@selector(calculatePriceIfSelect:oriPrice:mode:goodId:)]) {
         NSInteger goodPriceReal = goodPrice * goodCount;
@@ -108,11 +113,9 @@
 - (BOOL)checkCount {
     if (goodCount <= 1) {
         [self.reduceBtn setImage:[UIImage imageNamed:@"item_reduce_false"] forState:UIControlStateNormal];
-        //self.reduceBtn.enabled = false;
         return false;
     } else {
         [self.reduceBtn setImage:[UIImage imageNamed:@"item_reduce_true"] forState:UIControlStateNormal];
-        //self.reduceBtn.enabled = true;
         return true;
     }
 }
@@ -135,6 +138,14 @@
     if (isSelected == true) {
         [self calculateTotalPrice:true];
     }
+}
+
+- (IBAction)deleteGoodsAct:(id)sender {
+    CROShoppingAlertView *delView = [[CROShoppingAlertView alloc]initWithFrame:CGRectMake(0, 0, screenWidth, screenHeight)];
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    [window addSubview:delView];
+    //[self addSubview:delView];
+    
 }
 
 - (void)calculateTotalPrice: (BOOL)mode {

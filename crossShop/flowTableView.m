@@ -37,7 +37,7 @@
     scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, srcollWidth, self.frame.size.height)];
     //NSLog(@"\r\n x:%f,width:%f,selfwidth:%f, scroll:%f", self.frame.origin.x, screenWidth, self.bounds.size.width, self.frame.size.width);
     scrollView.delegate = self;
-    scrollView.clipsToBounds = YES;
+    scrollView.clipsToBounds = NO;
     scrollView.showsHorizontalScrollIndicator = NO;
     scrollView.showsVerticalScrollIndicator = NO;
     scrollView.autoresizesSubviews = YES;

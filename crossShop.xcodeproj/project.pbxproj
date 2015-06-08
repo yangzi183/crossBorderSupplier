@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040A3F0C1B25350500166381 /* imgWithTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1852EE0E1B0B7F40002AAD43 /* imgWithTitleView.m */; };
 		046CD9461B10597100392F3F /* CROCommonAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 046CD9451B10597100392F3F /* CROCommonAPI.m */; };
 		046CD96A1B1069A700392F3F /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 046CD94A1B1069A700392F3F /* MKAnnotationView+WebCache.m */; };
 		046CD96B1B1069A700392F3F /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 046CD94C1B1069A700392F3F /* NSData+ImageContentType.m */; };
@@ -28,6 +29,7 @@
 		046CD9811B10B19D00392F3F /* CROMainDetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046CD97F1B10B19D00392F3F /* CROMainDetTableViewCell.xib */; };
 		047451EC1B11A089000A57B8 /* testData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 047451EB1B11A089000A57B8 /* testData.plist */; };
 		048ADC371B1EDDF0002641DC /* test2.js in Resources */ = {isa = PBXBuildFile; fileRef = 048ADC361B1EDDF0002641DC /* test2.js */; };
+		048ADC3D1B219DF4002641DC /* CROShoppingAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 048ADC3C1B219DF4002641DC /* CROShoppingAlertView.m */; };
 		04B9F3F11B156AEB0011DBC2 /* test1.js in Resources */ = {isa = PBXBuildFile; fileRef = 04B9F3F01B156AEB0011DBC2 /* test1.js */; };
 		04B9F48F1B159BBC0011DBC2 /* CROShoppingCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B9F48E1B159BBC0011DBC2 /* CROShoppingCartViewController.m */; };
 		04B9F4931B15A1830011DBC2 /* CROShoppingCartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B9F4911B15A1830011DBC2 /* CROShoppingCartTableViewCell.m */; };
@@ -40,7 +42,6 @@
 		1852EDF31B0B7398002AAD43 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1852EDF11B0B7398002AAD43 /* LaunchScreen.xib */; };
 		1852EDFF1B0B7398002AAD43 /* crossShopTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1852EDFE1B0B7398002AAD43 /* crossShopTests.m */; };
 		1852EE0B1B0B74F6002AAD43 /* CROMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1852EE0A1B0B74F6002AAD43 /* CROMainViewController.m */; };
-		1852EE0F1B0B7F40002AAD43 /* imgWithTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1852EE0E1B0B7F40002AAD43 /* imgWithTitleView.m */; };
 		18639BDF1B14B4E500FA259B /* CROGoodsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 18639BDE1B14B4E500FA259B /* CROGoodsItem.m */; };
 		18639BE21B14B83700FA259B /* CROShoppingCart.m in Sources */ = {isa = PBXBuildFile; fileRef = 18639BE11B14B83700FA259B /* CROShoppingCart.m */; };
 		186822421B0CC0F70024EF19 /* flowTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 186822411B0CC0F70024EF19 /* flowTableView.m */; };
@@ -100,6 +101,8 @@
 		046CD97F1B10B19D00392F3F /* CROMainDetTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CROMainDetTableViewCell.xib; sourceTree = "<group>"; };
 		047451EB1B11A089000A57B8 /* testData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = testData.plist; sourceTree = "<group>"; };
 		048ADC361B1EDDF0002641DC /* test2.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = test2.js; sourceTree = "<group>"; };
+		048ADC3B1B219DF4002641DC /* CROShoppingAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CROShoppingAlertView.h; sourceTree = "<group>"; };
+		048ADC3C1B219DF4002641DC /* CROShoppingAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CROShoppingAlertView.m; sourceTree = "<group>"; };
 		04B9F3F01B156AEB0011DBC2 /* test1.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = test1.js; sourceTree = "<group>"; };
 		04B9F48D1B159BBC0011DBC2 /* CROShoppingCartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CROShoppingCartViewController.h; sourceTree = "<group>"; };
 		04B9F48E1B159BBC0011DBC2 /* CROShoppingCartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CROShoppingCartViewController.m; sourceTree = "<group>"; };
@@ -233,6 +236,8 @@
 				04B9F4901B15A1830011DBC2 /* CROShoppingCartTableViewCell.h */,
 				04B9F4911B15A1830011DBC2 /* CROShoppingCartTableViewCell.m */,
 				04B9F4921B15A1830011DBC2 /* CROShoppingCartTableViewCell.xib */,
+				048ADC3B1B219DF4002641DC /* CROShoppingAlertView.h */,
+				048ADC3C1B219DF4002641DC /* CROShoppingAlertView.m */,
 			);
 			name = "Shopping Cart";
 			sourceTree = "<group>";
@@ -405,6 +410,7 @@
 					};
 					1852EDF71B0B7398002AAD43 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 6UU243CA64;
 						TestTargetID = 1852EDDE1B0B7398002AAD43;
 					};
 				};
@@ -499,11 +505,11 @@
 				046CD9731B1069A700392F3F /* UIButton+WebCache.m in Sources */,
 				046CD9751B1069A700392F3F /* UIImage+MultiFormat.m in Sources */,
 				046CD9721B1069A700392F3F /* SDWebImagePrefetcher.m in Sources */,
-				1852EE0F1B0B7F40002AAD43 /* imgWithTitleView.m in Sources */,
 				046CD9791B1069A700392F3F /* UIView+WebCacheOperation.m in Sources */,
 				046CD96A1B1069A700392F3F /* MKAnnotationView+WebCache.m in Sources */,
 				18C37B5C1B134B2E008CE19C /* CROMainTitleTableViewCell.m in Sources */,
 				046CD9761B1069A700392F3F /* UIImage+WebP.m in Sources */,
+				048ADC3D1B219DF4002641DC /* CROShoppingAlertView.m in Sources */,
 				18639BE21B14B83700FA259B /* CROShoppingCart.m in Sources */,
 				046CD9461B10597100392F3F /* CROCommonAPI.m in Sources */,
 				04B9F4931B15A1830011DBC2 /* CROShoppingCartTableViewCell.m in Sources */,
@@ -517,6 +523,7 @@
 				046CD96F1B1069A700392F3F /* SDWebImageDownloader.m in Sources */,
 				1852EDE81B0B7398002AAD43 /* AppDelegate.m in Sources */,
 				186822421B0CC0F70024EF19 /* flowTableView.m in Sources */,
+				040A3F0C1B25350500166381 /* imgWithTitleView.m in Sources */,
 				1852EE0B1B0B74F6002AAD43 /* CROMainViewController.m in Sources */,
 				046CD9711B1069A700392F3F /* SDWebImageManager.m in Sources */,
 				1852EDE51B0B7398002AAD43 /* main.m in Sources */,
@@ -579,7 +586,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing Long Yuan Innovation Information Technology Co., Ltd.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Beijing Long Yuan Innovation Information Technology Co., Ltd.";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -598,9 +606,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "8be7379e-2e66-4113-a2a1-42046c2a2170";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -622,7 +631,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing Long Yuan Innovation Information Technology Co., Ltd.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Beijing Long Yuan Innovation Information Technology Co., Ltd.";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -635,8 +645,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "8be7379e-2e66-4113-a2a1-42046c2a2170";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -648,10 +659,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing Long Yuan Innovation Information Technology Co., Ltd.";
 				INFOPLIST_FILE = crossShop/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "8be7379e-2e66-4113-a2a1-42046c2a2170";
 			};
 			name = Debug;
 		};
@@ -661,10 +674,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing Long Yuan Innovation Information Technology Co., Ltd.";
 				INFOPLIST_FILE = crossShop/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "8be7379e-2e66-4113-a2a1-42046c2a2170";
 			};
 			name = Release;
 		};
@@ -672,6 +687,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -683,6 +700,7 @@
 				INFOPLIST_FILE = crossShopTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/crossShop.app/crossShop";
 			};
 			name = Debug;
@@ -691,6 +709,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -698,6 +718,7 @@
 				INFOPLIST_FILE = crossShopTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/crossShop.app/crossShop";
 			};
 			name = Release;

@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "CROCommonAPI.h"
 
-#define kIconImgWidth               30
-#define kIconImgHeight              30
+#define kIconImgWidth               40
+#define kIconImgHeight              40
 #define kIconImgMargin              5
 
 @interface imgWithTitleView : UIView

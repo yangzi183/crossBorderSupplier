@@ -17,8 +17,12 @@
                     <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ih-oh-bfS">
                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="14" id="GNZ-6V-o6D"/>
-                            <constraint firstAttribute="height" constant="22" id="I2H-cC-Is4"/>
+                            <constraint firstAttribute="width" constant="14" id="GNZ-6V-o6D">
+                                <variation key="heightClass=regular-widthClass=compact" constant="25"/>
+                            </constraint>
+                            <constraint firstAttribute="height" constant="22" id="I2H-cC-Is4">
+                                <variation key="heightClass=regular-widthClass=compact" constant="25"/>
+                            </constraint>
                         </constraints>
                         <state key="normal" image="item_select_false">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -286,6 +290,9 @@
                                 <include reference="m2w-41-0tm"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <action selector="deleteGoodsAct:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Pjv-vY-nXE"/>
+                        </connections>
                     </button>
                     <imageView hidden="YES" userInteractionEnabled="NO" alpha="0.49999999999999961" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="milk_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Yu6-GS-kjX">
                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -327,7 +334,9 @@
                     <constraint firstItem="Pq0-cv-hxQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="51" id="MTk-Od-c1i"/>
                     <constraint firstItem="pab-tD-m3t" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="53" id="N3C-ZN-Fn7"/>
                     <constraint firstItem="Yu6-GS-kjX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="O2b-1H-23u"/>
-                    <constraint firstItem="1Ih-oh-bfS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="TUz-El-Zti"/>
+                    <constraint firstItem="1Ih-oh-bfS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="TUz-El-Zti">
+                        <variation key="heightClass=regular-widthClass=compact" constant="5"/>
+                    </constraint>
                     <constraint firstItem="gIp-Z3-6vp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="55" id="Tsr-7L-SMy"/>
                     <constraint firstItem="Pq0-cv-hxQ" firstAttribute="leading" secondItem="eue-4Y-aZa" secondAttribute="trailing" constant="-10" id="aCX-NY-fdB"/>
                     <constraint firstItem="eue-4Y-aZa" firstAttribute="leading" secondItem="5Xa-KB-v5Z" secondAttribute="trailing" id="d2S-wT-BgN">

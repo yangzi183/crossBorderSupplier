@@ -14,6 +14,7 @@ static NSInteger totalOriPriceReal;
 @interface CROShoppingCartViewController () {
     BOOL isEditMode;
     NSMutableDictionary *dataPriceDic;
+    BOOL isSelectAll;
 }
 
 @end
@@ -35,7 +36,10 @@ static NSInteger totalOriPriceReal;
     isEditMode = false;
     [self calculateTotalPriceByDicData];
     [self setHideTableViewFoot:self.tableView];
-
+    self.selectAll.selected = YES;
+    isSelectAll = self.selectAll.selected;
+    [self.selectAll setImage:[UIImage imageNamed:@"item_select_true"] forState:UIControlStateSelected];
+    [self.selectAll setImage:[UIImage imageNamed:@"item_select_false"] forState:UIControlStateNormal];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -115,49 +119,6 @@ static NSInteger totalOriPriceReal;
     tableView.tableFooterView = viewFooter;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 - (void)calculateTotalPriceByDicData {
     for (int section = 0; section < self.dataArray.count; section ++) {
         NSDictionary *sectionDic = self.dataArray[section];
@@ -202,6 +163,9 @@ static NSInteger totalOriPriceReal;
         totalOriPriceReal += oriPrice;
         [dataPriceDic setObject:@"true" forKey:goodId];
     }
+    if (mode == false) {
+        [self selectAllBtnIfSelect:false];
+    }
     [self updatePriceLabel];
 }
 
@@ -213,6 +177,7 @@ static NSInteger totalOriPriceReal;
 - (IBAction)backAct:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
 - (IBAction)editAct:(id)sender {
     if (isEditMode) {
         self.editBtn.title = @"编辑";
@@ -222,9 +187,21 @@ static NSInteger totalOriPriceReal;
     isEditMode = !isEditMode;
     [self setCellIntoEditStyle];
 }
+
 - (IBAction)selectAllAct:(id)sender {
+    [self selectAllBtnIfSelect:(!isSelectAll)];
     for (CROShoppingCartTableViewCell *cell in self.tableView.visibleCells) {
-        [cell changeCellMode:isEditMode];
+        if (isSelectAll) {
+            [cell selectGoodIfSelected:true];
+        } else {
+            [cell selectGoodIfSelected:false];
+        }
     }
 }
+
+- (void)selectAllBtnIfSelect: (BOOL)isSel {
+    isSelectAll = isSel;
+    self.selectAll.selected = isSelectAll;
+}
+
 @end

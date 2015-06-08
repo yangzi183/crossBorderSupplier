@@ -76,6 +76,7 @@ static NSString *cellTitleName = @"titleCell";
             cell = [[CROMainTitleTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellTitleName];
         }
         cell.frame = CGRectMake(0, 0, screenWidth, kTitleCellHeight);
+        NSLog(@"\r\n width:%f-%f", cell.diaper.frame.size.width, cell.diaper.frame.size.height);
         return cell;
     } else {
         CROMainDetTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellName];

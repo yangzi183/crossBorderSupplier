@@ -34,9 +34,11 @@
 - (void)changeCellMode: (BOOL)isEdit;
 - (IBAction)reduceCount:(id)sender;
 - (IBAction)plusCount:(id)sender;
+- (IBAction)deleteGoodsAct:(id)sender;
 
 - (void)configCellByDicData: (NSDictionary *)dicData;
 - (IBAction)selectAct:(id)sender;
+- (void)selectGoodIfSelected: (BOOL)isSelectd;
 
 @property (nonatomic, assign) id<CROShoppingCartTableViewCellDelegate> delegate;
 @end
