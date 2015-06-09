@@ -7,6 +7,7 @@
 //
 
 #import "CROMainViewController.h"
+#import "CRODetailGoodsController.h"
 
 static NSString *cellName = @"mainCell";
 static NSString *cellTitleName = @"titleCell";
@@ -99,6 +100,22 @@ static NSString *cellTitleName = @"titleCell";
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row != 0) {
+        NSLog(@"\r\n indexrow:%ld", indexPath.row);
+        [self performSegueWithIdentifier:@"showGoodsDetail" sender:indexPath];
+    }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"showGoodsDetail"]) {
+        NSIndexPath *indexPath = (NSIndexPath *)sender;
+        NSLog(@"\r\n segueindex:%ld", indexPath.row);
+        NSDictionary *dicData = [self.mainData objectAtIndex:(indexPath.row - 1)];
+        [segue.destinationViewController setDicDetailData:dicData];
+    }
 }
 
 /*

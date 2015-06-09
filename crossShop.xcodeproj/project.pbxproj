@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		040A3F0C1B25350500166381 /* imgWithTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1852EE0E1B0B7F40002AAD43 /* imgWithTitleView.m */; };
+		040A3F101B258C9800166381 /* CRODetailGoodsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040A3F0F1B258C9800166381 /* CRODetailGoodsController.m */; };
+		040A3F141B258DD600166381 /* CRODetailGoodsHeadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 040A3F121B258DD600166381 /* CRODetailGoodsHeadCell.m */; };
+		040A3F151B258DD600166381 /* CRODetailGoodsHeadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040A3F131B258DD600166381 /* CRODetailGoodsHeadCell.xib */; };
+		040A3F181B26CC8900166381 /* imgWithIntroView.m in Sources */ = {isa = PBXBuildFile; fileRef = 040A3F171B26CC8900166381 /* imgWithIntroView.m */; };
 		046CD9461B10597100392F3F /* CROCommonAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 046CD9451B10597100392F3F /* CROCommonAPI.m */; };
 		046CD96A1B1069A700392F3F /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 046CD94A1B1069A700392F3F /* MKAnnotationView+WebCache.m */; };
 		046CD96B1B1069A700392F3F /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 046CD94C1B1069A700392F3F /* NSData+ImageContentType.m */; };
@@ -61,6 +65,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		040A3F0E1B258C9800166381 /* CRODetailGoodsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRODetailGoodsController.h; sourceTree = "<group>"; };
+		040A3F0F1B258C9800166381 /* CRODetailGoodsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRODetailGoodsController.m; sourceTree = "<group>"; };
+		040A3F111B258DD600166381 /* CRODetailGoodsHeadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRODetailGoodsHeadCell.h; sourceTree = "<group>"; };
+		040A3F121B258DD600166381 /* CRODetailGoodsHeadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRODetailGoodsHeadCell.m; sourceTree = "<group>"; };
+		040A3F131B258DD600166381 /* CRODetailGoodsHeadCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CRODetailGoodsHeadCell.xib; sourceTree = "<group>"; };
+		040A3F161B26CC8900166381 /* imgWithIntroView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imgWithIntroView.h; sourceTree = "<group>"; };
+		040A3F171B26CC8900166381 /* imgWithIntroView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = imgWithIntroView.m; sourceTree = "<group>"; };
 		046CD9441B10597100392F3F /* CROCommonAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CROCommonAPI.h; sourceTree = "<group>"; };
 		046CD9451B10597100392F3F /* CROCommonAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CROCommonAPI.m; sourceTree = "<group>"; };
 		046CD9491B1069A700392F3F /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
@@ -169,6 +180,18 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		040A3F0D1B2577DA00166381 /* Goods Detail */ = {
+			isa = PBXGroup;
+			children = (
+				040A3F0E1B258C9800166381 /* CRODetailGoodsController.h */,
+				040A3F0F1B258C9800166381 /* CRODetailGoodsController.m */,
+				040A3F111B258DD600166381 /* CRODetailGoodsHeadCell.h */,
+				040A3F121B258DD600166381 /* CRODetailGoodsHeadCell.m */,
+				040A3F131B258DD600166381 /* CRODetailGoodsHeadCell.xib */,
+			);
+			name = "Goods Detail";
+			sourceTree = "<group>";
+		};
 		046CD9431B10594300392F3F /* commonAPI */ = {
 			isa = PBXGroup;
 			children = (
@@ -265,6 +288,7 @@
 		1852EDE11B0B7398002AAD43 /* crossShop */ = {
 			isa = PBXGroup;
 			children = (
+				040A3F0D1B2577DA00166381 /* Goods Detail */,
 				04B9F48C1B159B1A0011DBC2 /* Shopping Cart */,
 				18639BDC1B14B49400FA259B /* model */,
 				047451EA1B11A040000A57B8 /* used source */,
@@ -333,6 +357,8 @@
 				186822401B0CC0F70024EF19 /* flowTableView.h */,
 				186822411B0CC0F70024EF19 /* flowTableView.m */,
 				186822431B0CCCFA0024EF19 /* commonConfig.h */,
+				040A3F161B26CC8900166381 /* imgWithIntroView.h */,
+				040A3F171B26CC8900166381 /* imgWithIntroView.m */,
 			);
 			name = commonUI;
 			sourceTree = "<group>";
@@ -443,6 +469,7 @@
 				046CD9811B10B19D00392F3F /* CROMainDetTableViewCell.xib in Resources */,
 				18C37B5D1B134B2E008CE19C /* CROMainTitleTableViewCell.xib in Resources */,
 				1852EDF31B0B7398002AAD43 /* LaunchScreen.xib in Resources */,
+				040A3F151B258DD600166381 /* CRODetailGoodsHeadCell.xib in Resources */,
 				04B9F4941B15A1830011DBC2 /* CROShoppingCartTableViewCell.xib in Resources */,
 				047451EC1B11A089000A57B8 /* testData.plist in Resources */,
 				1852EDF01B0B7398002AAD43 /* Images.xcassets in Resources */,
@@ -512,15 +539,18 @@
 				048ADC3D1B219DF4002641DC /* CROShoppingAlertView.m in Sources */,
 				18639BE21B14B83700FA259B /* CROShoppingCart.m in Sources */,
 				046CD9461B10597100392F3F /* CROCommonAPI.m in Sources */,
+				040A3F181B26CC8900166381 /* imgWithIntroView.m in Sources */,
 				04B9F4931B15A1830011DBC2 /* CROShoppingCartTableViewCell.m in Sources */,
 				046CD9701B1069A700392F3F /* SDWebImageDownloaderOperation.m in Sources */,
 				046CD96E1B1069A700392F3F /* SDWebImageDecoder.m in Sources */,
 				046CD9801B10B19D00392F3F /* CROMainDetTableViewCell.m in Sources */,
 				1852EDEB1B0B7398002AAD43 /* ViewController.m in Sources */,
 				046CD9771B1069A700392F3F /* UIImageView+HighlightedWebCache.m in Sources */,
+				040A3F101B258C9800166381 /* CRODetailGoodsController.m in Sources */,
 				046CD96B1B1069A700392F3F /* NSData+ImageContentType.m in Sources */,
 				18639BDF1B14B4E500FA259B /* CROGoodsItem.m in Sources */,
 				046CD96F1B1069A700392F3F /* SDWebImageDownloader.m in Sources */,
+				040A3F141B258DD600166381 /* CRODetailGoodsHeadCell.m in Sources */,
 				1852EDE81B0B7398002AAD43 /* AppDelegate.m in Sources */,
 				186822421B0CC0F70024EF19 /* flowTableView.m in Sources */,
 				040A3F0C1B25350500166381 /* imgWithTitleView.m in Sources */,

@@ -31,6 +31,9 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="h7O-xL-txC" id="s8n-j8-awC">
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="I85-50-UzO" kind="show" identifier="showGoodsDetail" id="Ran-RV-lGs"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="mainCell" rowHeight="430" id="iFQ-oi-IrR" customClass="CROMainDetTableViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -67,7 +70,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0gq-vN-LRa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1413" y="300.74999999999994"/>
+            <point key="canvasLocation" x="-1401" y="300"/>
         </scene>
         <!--Shopping Cart View Controller-->
         <scene sceneID="ArX-Ys-031">
@@ -258,6 +261,32 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Z9-4L-aap" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-570" y="-237.74999999999997"/>
+        </scene>
+        <!--Detail Goods Controller-->
+        <scene sceneID="T5e-dB-C2c">
+            <objects>
+                <tableViewController id="I85-50-UzO" customClass="CRODetailGoodsController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="b4n-Md-jIC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailGoodsCell" id="M5d-mk-dYm" customClass="CRODetailGoodsHeadCell">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="M5d-mk-dYm" id="9QH-qU-dko">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="I85-50-UzO" id="adT-hc-4kg"/>
+                            <outlet property="delegate" destination="I85-50-UzO" id="RKD-Bz-Mrb"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f3h-Gx-SaP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-570" y="568"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MdK-Zj-BbH">
