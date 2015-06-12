@@ -9,8 +9,14 @@
 #import "CRODetailGoodsController.h"
 
 static NSString *cellDetailGoodsName = @"detailGoodsCell";
+static NSString *cellDetailGoodsImageName = @"detailGoodsImage";
+static NSString *cellDetailGoodsIntroName = @"detailGoodsIntro";
+static NSString *cellDetailGoodsQuestionName = @"detailGoodsQuestion";
 
-@interface CRODetailGoodsController ()
+@interface CRODetailGoodsController () {
+    NSMutableArray *dataArray;
+    INTROIMAGENAME isSelectMode;
+}
 
 @end
 
@@ -28,13 +34,23 @@ static NSString *cellDetailGoodsName = @"detailGoodsCell";
     self.tableView.dataSource = self;
     UINib *cellNib = [UINib nibWithNibName:@"CRODetailGoodsHeadCell" bundle:nil];
     [self.tableView registerNib:cellNib forCellReuseIdentifier:cellDetailGoodsName];
-    self.dicDetailData = [[NSDictionary alloc]init];
+    UINib *cellImgNib = [UINib nibWithNibName:@"DetailGoodsImageCell" bundle:nil];
+    [self.tableView registerNib:cellImgNib forCellReuseIdentifier:cellDetailGoodsImageName];
+    UINib *cellIntroNib = [UINib nibWithNibName:@"DetailGoodsIntroCell" bundle:nil];
+    [self.tableView registerNib:cellIntroNib forCellReuseIdentifier:cellDetailGoodsIntroName];
+    UINib *cellQuestionNib = [UINib nibWithNibName:@"DetailGoodsQuestionCell" bundle:nil];
+    [self.tableView registerNib:cellQuestionNib forCellReuseIdentifier:cellDetailGoodsQuestionName];
+    //self.dicDetailData = [[NSDictionary alloc]init];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.itemImgArray = [[NSArray alloc]init];
+    //dataArray = [[NSMutableArray alloc]init];
+    NSLog(@"\r\n viewdidload");
 }
 
 - (void)setDicDetailData:(NSDictionary *)dicDetailData {
-    NSLog(@"\r\n dic:%@", dicDetailData);
+    NSLog(@"\r\n setDicDetailData:%@", dicDetailData);
     _dicDetailData = dicDetailData;
-    [self.tableView reloadData];
+    [self changeDetailCellWithTag:ITEMDETAIL];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,29 +65,60 @@ static NSString *cellDetailGoodsName = @"detailGoodsCell";
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 1;
+    NSLog(@"\r\n count:%ld", dataArray.count);
+    return dataArray.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CRODetailGoodsHeadCell *cell = [tableView dequeueReusableCellWithIdentifier:cellDetailGoodsName forIndexPath:indexPath];
-    if (cell == nil) {
-        cell = [[CRODetailGoodsHeadCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellDetailGoodsName];
+    NSLog(@"\r\n indexrow:%ld", indexPath.row);
+    if (indexPath.row == 0) {
+        CRODetailGoodsHeadCell *cell = [tableView dequeueReusableCellWithIdentifier:cellDetailGoodsName forIndexPath:indexPath];
+        if (cell == nil) {
+            cell = [[CRODetailGoodsHeadCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellDetailGoodsName];
+        }
+        cell.itemDetail.delegate = self;
+        cell.buyIntro.delegate = self;
+        cell.moreQuestion.delegate = self;
+        return cell;
+    } else {
+        if (isSelectMode == ITEMDETAIL) {
+            DetailGoodsImageCell *cell = [tableView dequeueReusableCellWithIdentifier:cellDetailGoodsImageName forIndexPath:indexPath];
+            if (cell == nil) {
+                cell = [[DetailGoodsImageCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellDetailGoodsImageName];
+            }
+            return cell;
+        } else if (isSelectMode == BUYINTRO) {
+            DetailGoodsIntroCell *cell = [tableView dequeueReusableCellWithIdentifier:cellDetailGoodsIntroName forIndexPath:indexPath];
+            if (cell == nil) {
+                cell = [[DetailGoodsIntroCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellDetailGoodsIntroName];
+            }
+            return cell;
+        } else {
+            DetailGoodsQuestionCell *cell = [tableView dequeueReusableCellWithIdentifier:cellDetailGoodsQuestionName forIndexPath:indexPath];
+            if (cell == nil) {
+                cell = [[DetailGoodsQuestionCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellDetailGoodsQuestionName];
+            }
+            return cell;
+        }
     }
-    
-    // Configure the cell...
-    
-    return cell;
 }
 
+- (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
+    return false;
+}
+
+- (void)changeDetailCellWithTag:(NSInteger)setTag {
+    NSLog(@"\r\n tag:%ld", (long)setTag);
+    dataArray = [[NSMutableArray alloc]initWithObjects:@"test1", @"test2", @"test3", nil];
+    isSelectMode = (int)setTag;
+    
+    [self.tableView reloadData];
+}
 
 /*
 // Override to support conditional editing of the table view.

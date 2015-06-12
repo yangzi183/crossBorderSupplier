@@ -33,9 +33,9 @@
     [self.iconSeven configImg:sevenImg withTitle:@"7天退货" widthSize:iconSize];
     
     CGSize itemSize = CGSizeMake(66, 70);
-    [self.itemDetail configImg:realImg withTitle:@"商品详情" widthSize:itemSize];
-    [self.buyIntro configImg:realImg withTitle:@"购买须知" widthSize:itemSize];
-    [self.moreQuestion configImg:realImg withTitle:@"常见问题" widthSize:itemSize];
+    [self.itemDetail configImg:realImg withTitle:@"商品详情" widthSize:itemSize withTag:ITEMDETAIL];
+    [self.buyIntro configImg:realImg withTitle:@"购买须知" widthSize:itemSize withTag:BUYINTRO];
+    [self.moreQuestion configImg:realImg withTitle:@"常见问题" widthSize:itemSize withTag:MOREQUESTION];
     
     self.moreView.backgroundColor = [UIColor clearColor];
     self.moreView.layer.borderColor = [CROCommonAPI colorWithHexString:@"#e8e8e8"].CGColor;

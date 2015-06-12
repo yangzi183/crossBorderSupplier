@@ -10,6 +10,12 @@
 #import "imgWithTitleView.h"
 #import "imgWithIntroView.h"
 
+typedef enum {
+    ITEMDETAIL = 10,
+    BUYINTRO,
+    MOREQUESTION
+}INTROIMAGENAME;
+
 @interface CRODetailGoodsHeadCell : UITableViewCell
 
 @property (strong, nonatomic) IBOutlet imgWithTitleView *iconReal;

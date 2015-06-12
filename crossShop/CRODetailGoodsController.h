@@ -8,9 +8,19 @@
 
 #import <UIKit/UIKit.h>
 #import "CRODetailGoodsHeadCell.h"
+#import "DetailGoodsImageCell.h"
+#import "DetailGoodsIntroCell.h"
+#import "DetailGoodsQuestionCell.h"
 
-@interface CRODetailGoodsController : UITableViewController
+typedef enum {
+    SELECT_IMAGE = 0,
+    SELECT_INTRO,
+    SELECT_QUESTION
+}ISSELECTDETAILITEM;
+
+@interface CRODetailGoodsController : UITableViewController <imgWithIntroViewDelegate>
 
 @property (strong, nonatomic) NSDictionary *dicDetailData;
 
+@property (strong, nonatomic) NSArray *itemImgArray;
 @end

@@ -34,6 +34,12 @@
 		047451EC1B11A089000A57B8 /* testData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 047451EB1B11A089000A57B8 /* testData.plist */; };
 		048ADC371B1EDDF0002641DC /* test2.js in Resources */ = {isa = PBXBuildFile; fileRef = 048ADC361B1EDDF0002641DC /* test2.js */; };
 		048ADC3D1B219DF4002641DC /* CROShoppingAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 048ADC3C1B219DF4002641DC /* CROShoppingAlertView.m */; };
+		04A8E5FB1B2A6E6E00A7CF0E /* DetailGoodsImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A8E5F91B2A6E6E00A7CF0E /* DetailGoodsImageCell.m */; };
+		04A8E5FC1B2A6E6E00A7CF0E /* DetailGoodsImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A8E5FA1B2A6E6E00A7CF0E /* DetailGoodsImageCell.xib */; };
+		04A8E6001B2A6F2900A7CF0E /* DetailGoodsIntroCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A8E5FE1B2A6F2900A7CF0E /* DetailGoodsIntroCell.m */; };
+		04A8E6011B2A6F2900A7CF0E /* DetailGoodsIntroCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A8E5FF1B2A6F2900A7CF0E /* DetailGoodsIntroCell.xib */; };
+		04A8E6051B2A706500A7CF0E /* DetailGoodsQuestionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A8E6031B2A706500A7CF0E /* DetailGoodsQuestionCell.m */; };
+		04A8E6061B2A706500A7CF0E /* DetailGoodsQuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A8E6041B2A706500A7CF0E /* DetailGoodsQuestionCell.xib */; };
 		04B9F3F11B156AEB0011DBC2 /* test1.js in Resources */ = {isa = PBXBuildFile; fileRef = 04B9F3F01B156AEB0011DBC2 /* test1.js */; };
 		04B9F48F1B159BBC0011DBC2 /* CROShoppingCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B9F48E1B159BBC0011DBC2 /* CROShoppingCartViewController.m */; };
 		04B9F4931B15A1830011DBC2 /* CROShoppingCartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B9F4911B15A1830011DBC2 /* CROShoppingCartTableViewCell.m */; };
@@ -114,6 +120,15 @@
 		048ADC361B1EDDF0002641DC /* test2.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = test2.js; sourceTree = "<group>"; };
 		048ADC3B1B219DF4002641DC /* CROShoppingAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CROShoppingAlertView.h; sourceTree = "<group>"; };
 		048ADC3C1B219DF4002641DC /* CROShoppingAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CROShoppingAlertView.m; sourceTree = "<group>"; };
+		04A8E5F81B2A6E6E00A7CF0E /* DetailGoodsImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailGoodsImageCell.h; sourceTree = "<group>"; };
+		04A8E5F91B2A6E6E00A7CF0E /* DetailGoodsImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailGoodsImageCell.m; sourceTree = "<group>"; };
+		04A8E5FA1B2A6E6E00A7CF0E /* DetailGoodsImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailGoodsImageCell.xib; sourceTree = "<group>"; };
+		04A8E5FD1B2A6F2900A7CF0E /* DetailGoodsIntroCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailGoodsIntroCell.h; sourceTree = "<group>"; };
+		04A8E5FE1B2A6F2900A7CF0E /* DetailGoodsIntroCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailGoodsIntroCell.m; sourceTree = "<group>"; };
+		04A8E5FF1B2A6F2900A7CF0E /* DetailGoodsIntroCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailGoodsIntroCell.xib; sourceTree = "<group>"; };
+		04A8E6021B2A706500A7CF0E /* DetailGoodsQuestionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailGoodsQuestionCell.h; sourceTree = "<group>"; };
+		04A8E6031B2A706500A7CF0E /* DetailGoodsQuestionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailGoodsQuestionCell.m; sourceTree = "<group>"; };
+		04A8E6041B2A706500A7CF0E /* DetailGoodsQuestionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailGoodsQuestionCell.xib; sourceTree = "<group>"; };
 		04B9F3F01B156AEB0011DBC2 /* test1.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = test1.js; sourceTree = "<group>"; };
 		04B9F48D1B159BBC0011DBC2 /* CROShoppingCartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CROShoppingCartViewController.h; sourceTree = "<group>"; };
 		04B9F48E1B159BBC0011DBC2 /* CROShoppingCartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CROShoppingCartViewController.m; sourceTree = "<group>"; };
@@ -188,6 +203,15 @@
 				040A3F111B258DD600166381 /* CRODetailGoodsHeadCell.h */,
 				040A3F121B258DD600166381 /* CRODetailGoodsHeadCell.m */,
 				040A3F131B258DD600166381 /* CRODetailGoodsHeadCell.xib */,
+				04A8E5F81B2A6E6E00A7CF0E /* DetailGoodsImageCell.h */,
+				04A8E5F91B2A6E6E00A7CF0E /* DetailGoodsImageCell.m */,
+				04A8E5FA1B2A6E6E00A7CF0E /* DetailGoodsImageCell.xib */,
+				04A8E5FD1B2A6F2900A7CF0E /* DetailGoodsIntroCell.h */,
+				04A8E5FE1B2A6F2900A7CF0E /* DetailGoodsIntroCell.m */,
+				04A8E5FF1B2A6F2900A7CF0E /* DetailGoodsIntroCell.xib */,
+				04A8E6021B2A706500A7CF0E /* DetailGoodsQuestionCell.h */,
+				04A8E6031B2A706500A7CF0E /* DetailGoodsQuestionCell.m */,
+				04A8E6041B2A706500A7CF0E /* DetailGoodsQuestionCell.xib */,
 			);
 			name = "Goods Detail";
 			sourceTree = "<group>";
@@ -466,8 +490,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1852EDEE1B0B7398002AAD43 /* Main.storyboard in Resources */,
+				04A8E5FC1B2A6E6E00A7CF0E /* DetailGoodsImageCell.xib in Resources */,
+				04A8E6061B2A706500A7CF0E /* DetailGoodsQuestionCell.xib in Resources */,
 				046CD9811B10B19D00392F3F /* CROMainDetTableViewCell.xib in Resources */,
 				18C37B5D1B134B2E008CE19C /* CROMainTitleTableViewCell.xib in Resources */,
+				04A8E6011B2A6F2900A7CF0E /* DetailGoodsIntroCell.xib in Resources */,
 				1852EDF31B0B7398002AAD43 /* LaunchScreen.xib in Resources */,
 				040A3F151B258DD600166381 /* CRODetailGoodsHeadCell.xib in Resources */,
 				04B9F4941B15A1830011DBC2 /* CROShoppingCartTableViewCell.xib in Resources */,
@@ -530,9 +557,12 @@
 				046CD96D1B1069A700392F3F /* SDWebImageCompat.m in Sources */,
 				04B9F48F1B159BBC0011DBC2 /* CROShoppingCartViewController.m in Sources */,
 				046CD9731B1069A700392F3F /* UIButton+WebCache.m in Sources */,
+				04A8E5FB1B2A6E6E00A7CF0E /* DetailGoodsImageCell.m in Sources */,
 				046CD9751B1069A700392F3F /* UIImage+MultiFormat.m in Sources */,
+				04A8E6051B2A706500A7CF0E /* DetailGoodsQuestionCell.m in Sources */,
 				046CD9721B1069A700392F3F /* SDWebImagePrefetcher.m in Sources */,
 				046CD9791B1069A700392F3F /* UIView+WebCacheOperation.m in Sources */,
+				04A8E6001B2A6F2900A7CF0E /* DetailGoodsIntroCell.m in Sources */,
 				046CD96A1B1069A700392F3F /* MKAnnotationView+WebCache.m in Sources */,
 				18C37B5C1B134B2E008CE19C /* CROMainTitleTableViewCell.m in Sources */,
 				046CD9761B1069A700392F3F /* UIImage+WebP.m in Sources */,

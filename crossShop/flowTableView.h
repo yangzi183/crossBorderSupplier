@@ -15,6 +15,7 @@
 #define kSCROLLVIEWHEIGHT           230
 #define kIMGMARGIN                  5
 #define kSCROLLVIEWWIDTH            scrollView.frame.size.width
+#define kBACKMARGIN                 8
 
 @interface flowTableView : UIView <UIScrollViewDelegate> {
     UIScrollView *scrollView;

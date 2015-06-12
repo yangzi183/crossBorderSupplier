@@ -77,7 +77,7 @@ static NSString *cellTitleName = @"titleCell";
             cell = [[CROMainTitleTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellTitleName];
         }
         cell.frame = CGRectMake(0, 0, screenWidth, kTitleCellHeight);
-        NSLog(@"\r\n width:%f-%f", cell.diaper.frame.size.width, cell.diaper.frame.size.height);
+        //NSLog(@"\r\n width:%f-%f", cell.diaper.frame.size.width, cell.diaper.frame.size.height);
         return cell;
     } else {
         CROMainDetTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellName];
@@ -104,7 +104,7 @@ static NSString *cellTitleName = @"titleCell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row != 0) {
-        NSLog(@"\r\n indexrow:%ld", indexPath.row);
+        NSLog(@"\r\n didSelectRowAtIndexPath:%ld", indexPath.row);
         [self performSegueWithIdentifier:@"showGoodsDetail" sender:indexPath];
     }
 }
@@ -113,6 +113,7 @@ static NSString *cellTitleName = @"titleCell";
     if ([segue.identifier isEqualToString:@"showGoodsDetail"]) {
         NSIndexPath *indexPath = (NSIndexPath *)sender;
         NSLog(@"\r\n segueindex:%ld", indexPath.row);
+        
         NSDictionary *dicData = [self.mainData objectAtIndex:(indexPath.row - 1)];
         [segue.destinationViewController setDicDetailData:dicData];
     }

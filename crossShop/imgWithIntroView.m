@@ -18,7 +18,7 @@
     // Drawing code
 }
 */
-- (void)configImg: (UIImage *)iconImg withTitle:(NSString *)title widthSize:(CGSize)toSize{
+- (void)configImg: (UIImage *)iconImg withTitle:(NSString *)title widthSize:(CGSize)toSize withTag:(NSInteger)setTag{
     
     [self setBackgroundColor:[UIColor clearColor]];
     UIImageView *iconImgView = [[UIImageView alloc]initWithFrame:CGRectMake((toSize.width - kIntroImgWidth) / 2, kIntroImgMargin, kIntroImgWidth, kIntroImgHeight)];
@@ -33,6 +33,17 @@
     titleLabel.font = [UIFont systemFontOfSize:13];
     titleLabel.textColor = [CROCommonAPI colorWithHexString:@"#9B9B9B"];
     [self addSubview:titleLabel];
+    
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(changeDetail)];
+    [self addGestureRecognizer:tapGesture];
+    self.tag = setTag;
+}
+
+- (void)changeDetail {
+    NSLog(@"\r\n changetag:%ld", (long)self.tag);
+    if (self.delegate && [self.delegate respondsToSelector:@selector(changeDetailCellWithTag:)]) {
+        [self.delegate changeDetailCellWithTag:self.tag];
+    }
 }
 
 @end

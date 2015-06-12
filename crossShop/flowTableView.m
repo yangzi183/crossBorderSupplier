@@ -34,7 +34,7 @@
 
 - (void)initSrcollView {
     self.backgroundColor = [UIColor whiteColor];
-    scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, srcollWidth, self.frame.size.height)];
+    scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, srcollWidth, kSCROLLVIEWHEIGHT)];
     //NSLog(@"\r\n x:%f,width:%f,selfwidth:%f, scroll:%f", self.frame.origin.x, screenWidth, self.bounds.size.width, self.frame.size.width);
     scrollView.delegate = self;
     scrollView.clipsToBounds = NO;
@@ -53,20 +53,23 @@
     //NSLog(@"\r\n dataarray:%@", dataArray);
     if (dataArray.count != 0) {
         __block CGFloat x = 0;
+        __block UIImage *imgBack = [UIImage imageNamed:@"topic_back"];
+       // NSLog(@"\r\n back:%f-%f", imgBack.size.width, imgBack.size.height);
         CGFloat imgWidth = (kSCROLLVIEWWIDTH - 2 * kIMGMARGIN) / 2;
         CGRect viewFrame = CGRectMake(kIMGMARGIN, 0, imgWidth, kSCROLLVIEWHEIGHT);
         [dataArray enumerateObjectsUsingBlock:^(NSString *obj, NSUInteger idx, BOOL *stop) {
             //NSLog(@"\r\n obj:%@", obj);
-            UIImageView *imgView = [[UIImageView alloc]initWithFrame:viewFrame];
-            imgView.frame = CGRectOffset(viewFrame, x, 0);
-            /*[imgView sd_setImageWithURL:[NSURL URLWithString:obj] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                ;
-            }];*/
+            
+            UIImageView *backView = [[UIImageView alloc]initWithFrame:viewFrame];
+            backView.frame = CGRectOffset(viewFrame, x, 0);
+            backView.image = imgBack;
+            CGRect imgFrame = CGRectMake(0, 2, backView.frame.size.width - kBACKMARGIN, imgBack.size.height - 3);
+            UIImageView *imgView = [[UIImageView alloc]initWithFrame:imgFrame];
             [imgView sd_setImageWithURL:[NSURL URLWithString:obj] placeholderImage:[UIImage imageNamed:@"tmp.png"]];
-            [scrollView addSubview:imgView];
+            [backView addSubview:imgView];
+            [scrollView addSubview:backView];
             x += (imgWidth + kIMGMARGIN);
         }];
-        
         CGFloat width = (imgWidth + kIMGMARGIN) * dataArray.count;
         width = x;
         //NSLog(@"\r\n width:%f", width);
