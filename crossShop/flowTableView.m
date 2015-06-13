@@ -58,7 +58,7 @@
         CGFloat imgWidth = (kSCROLLVIEWWIDTH - 2 * kIMGMARGIN) / 2;
         CGRect viewFrame = CGRectMake(kIMGMARGIN, 0, imgWidth, kSCROLLVIEWHEIGHT);
         [dataArray enumerateObjectsUsingBlock:^(NSString *obj, NSUInteger idx, BOOL *stop) {
-            //NSLog(@"\r\n obj:%@", obj);
+            //NSLog(@"\r\n index:%u,obj:%@", idx, obj);
             
             UIImageView *backView = [[UIImageView alloc]initWithFrame:viewFrame];
             backView.frame = CGRectOffset(viewFrame, x, 0);
@@ -66,16 +66,31 @@
             CGRect imgFrame = CGRectMake(0, 2, backView.frame.size.width - kBACKMARGIN, imgBack.size.height - 3);
             UIImageView *imgView = [[UIImageView alloc]initWithFrame:imgFrame];
             [imgView sd_setImageWithURL:[NSURL URLWithString:obj] placeholderImage:[UIImage imageNamed:@"tmp.png"]];
+            
+            UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(clickTopicImage:)];
+            backView.userInteractionEnabled = YES;
+            [backView addGestureRecognizer:tapGesture];
+            tapGesture.view.tag = idx;
+            
             [backView addSubview:imgView];
             [scrollView addSubview:backView];
             x += (imgWidth + kIMGMARGIN);
+            
         }];
         CGFloat width = (imgWidth + kIMGMARGIN) * dataArray.count;
         width = x;
         //NSLog(@"\r\n width:%f", width);
+        [scrollView setCanCancelContentTouches:YES];
         scrollView.contentSize = CGSizeMake(width, scrollView.frame.size.height);
     }
     _dataArray = dataArray;
+}
+
+- (void)clickTopicImage: (id)sender {
+    UITapGestureRecognizer *tapView = (UITapGestureRecognizer *)sender;
+    NSInteger tag = tapView.view.tag;
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNOTIFICATION_INTO_TOPIC_VIEW object:[NSNumber numberWithInteger:tag]];
+    //NSLog(@"\r\n you click number %ld iamge", tag);
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scView {

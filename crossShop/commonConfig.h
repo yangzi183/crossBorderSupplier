@@ -13,4 +13,6 @@
 #define screenWidth     [UIScreen mainScreen].bounds.size.width
 #define screenHeight    [UIScreen mainScreen].bounds.size.height
 
+#define kNOTIFICATION_INTO_TOPIC_VIEW           @"intoTopicView"
+
 #endif

@@ -34,6 +34,9 @@ static NSString *cellTitleName = @"titleCell";
     //self.navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
     self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
     self.navigationController.navigationBar.translucent = NO;
+    
+    NSNotificationCenter *notiCenter = [NSNotificationCenter defaultCenter];
+    [notiCenter addObserver:self selector:@selector(showTopicView:) name:kNOTIFICATION_INTO_TOPIC_VIEW object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -109,6 +112,12 @@ static NSString *cellTitleName = @"titleCell";
     }
 }
 
+- (void)showTopicView: (NSNotification *)sender {
+    NSNumber *tagNumber = (NSNumber *)[sender object];
+    [self performSegueWithIdentifier:@"showTopicView" sender:nil];
+    //NSLog(@"\r\n tagnuber:%ld", [tagNumber integerValue]);
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"showGoodsDetail"]) {
         NSIndexPath *indexPath = (NSIndexPath *)sender;
@@ -116,6 +125,8 @@ static NSString *cellTitleName = @"titleCell";
         
         NSDictionary *dicData = [self.mainData objectAtIndex:(indexPath.row - 1)];
         [segue.destinationViewController setDicDetailData:dicData];
+    } else if ([segue.identifier isEqualToString:@"showTopicView"]) {
+        NSLog(@"\r\n topic");
     }
 }
 

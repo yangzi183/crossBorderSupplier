@@ -15,5 +15,6 @@
 @interface CROMainViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *mainTableView;
 @property (strong, nonatomic) NSMutableArray *mainData;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *shoppingCartIcon;
 
 @end

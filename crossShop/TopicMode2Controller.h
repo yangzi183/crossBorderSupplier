@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TopicMode2HeadCell.h"
+#import "TopicMode2ItemCell.h"
 
 @interface TopicMode2Controller : UITableViewController
+- (IBAction)backView:(id)sender;
 
 @end

@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Topic Mode2 Controller-->
         <scene sceneID="zYs-rw-ikG">
             <objects>
-                <tableViewController id="VxQ-rF-VCu" sceneMemberID="viewController">
+                <tableViewController id="VxQ-rF-VCu" customClass="TopicMode2Controller" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="i6Z-4x-0Df">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -26,10 +26,23 @@
                             <outlet property="delegate" destination="VxQ-rF-VCu" id="UoX-uU-UwB"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="nus-HR-Pp9">
+                        <barButtonItem key="leftBarButtonItem" image="return_icon" style="done" id="zFG-Ba-cRu">
+                            <color key="tintColor" red="0.50980392159999999" green="0.83921568629999999" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="backView:" destination="VxQ-rF-VCu" id="dbe-yH-ife"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="bXg-bK-NO3" kind="show" identifier="showShoppingCartView" id="8IM-Zk-gFH"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sFH-ep-8bW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-580" y="-972"/>
+            <point key="canvasLocation" x="-570" y="-952"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="gvJ-l6-0Oe">
@@ -92,7 +105,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mainTableView" destination="ybN-Rr-PoX" id="0fH-rY-60z"/>
-                        <segue destination="VxQ-rF-VCu" kind="show" identifier="showTopicView" id="tI0-rn-8xb"/>
+                        <outlet property="shoppingCartIcon" destination="ZEi-yc-UKq" id="DaY-SI-9iw"/>
+                        <segue destination="VxQ-rF-VCu" kind="show" identifier="showTopicView" id="Ec4-Em-jiz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0gq-vN-LRa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -338,4 +352,7 @@
         <image name="return_icon" width="23" height="23"/>
         <image name="shopping_cart_icon" width="36" height="34"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="8IM-Zk-gFH"/>
+    </inferredMetricsTieBreakers>
 </document>
