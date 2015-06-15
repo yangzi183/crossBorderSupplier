@@ -49,6 +49,15 @@
 		04B9F48F1B159BBC0011DBC2 /* CROShoppingCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B9F48E1B159BBC0011DBC2 /* CROShoppingCartViewController.m */; };
 		04B9F4931B15A1830011DBC2 /* CROShoppingCartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B9F4911B15A1830011DBC2 /* CROShoppingCartTableViewCell.m */; };
 		04B9F4941B15A1830011DBC2 /* CROShoppingCartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04B9F4921B15A1830011DBC2 /* CROShoppingCartTableViewCell.xib */; };
+		04F7BCAC1B2E76D4001F2A79 /* TopicMode3Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F7BCAB1B2E76D4001F2A79 /* TopicMode3Controller.m */; };
+		04F7BCB01B2E7749001F2A79 /* TopicMode3HeadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F7BCAE1B2E7749001F2A79 /* TopicMode3HeadCell.m */; };
+		04F7BCB11B2E7749001F2A79 /* TopicMode3HeadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F7BCAF1B2E7749001F2A79 /* TopicMode3HeadCell.xib */; };
+		04F7BCB51B2E776F001F2A79 /* TopicMode3FirstCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F7BCB31B2E776F001F2A79 /* TopicMode3FirstCell.m */; };
+		04F7BCB61B2E776F001F2A79 /* TopicMode3FirstCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F7BCB41B2E776F001F2A79 /* TopicMode3FirstCell.xib */; };
+		04F7BCB91B2E7786001F2A79 /* TopicMode3SecondCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F7BCB81B2E7786001F2A79 /* TopicMode3SecondCell.m */; };
+		04F7BCBC1B2EB569001F2A79 /* UILabel+textFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F7BCBB1B2EB569001F2A79 /* UILabel+textFrame.m */; };
+		04F7BCC01B2EC64D001F2A79 /* TopicMode3SectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F7BCBE1B2EC64D001F2A79 /* TopicMode3SectionView.m */; };
+		04F7BCC11B2EC64D001F2A79 /* TopicMode3SectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F7BCBF1B2EC64D001F2A79 /* TopicMode3SectionView.xib */; };
 		1852EDE51B0B7398002AAD43 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1852EDE41B0B7398002AAD43 /* main.m */; };
 		1852EDE81B0B7398002AAD43 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1852EDE71B0B7398002AAD43 /* AppDelegate.m */; };
 		1852EDEB1B0B7398002AAD43 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1852EDEA1B0B7398002AAD43 /* ViewController.m */; };
@@ -148,6 +157,21 @@
 		04B9F4901B15A1830011DBC2 /* CROShoppingCartTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CROShoppingCartTableViewCell.h; sourceTree = "<group>"; };
 		04B9F4911B15A1830011DBC2 /* CROShoppingCartTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CROShoppingCartTableViewCell.m; sourceTree = "<group>"; };
 		04B9F4921B15A1830011DBC2 /* CROShoppingCartTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CROShoppingCartTableViewCell.xib; sourceTree = "<group>"; };
+		04F7BCAA1B2E76D4001F2A79 /* TopicMode3Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicMode3Controller.h; sourceTree = "<group>"; };
+		04F7BCAB1B2E76D4001F2A79 /* TopicMode3Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicMode3Controller.m; sourceTree = "<group>"; };
+		04F7BCAD1B2E7749001F2A79 /* TopicMode3HeadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicMode3HeadCell.h; sourceTree = "<group>"; };
+		04F7BCAE1B2E7749001F2A79 /* TopicMode3HeadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicMode3HeadCell.m; sourceTree = "<group>"; };
+		04F7BCAF1B2E7749001F2A79 /* TopicMode3HeadCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopicMode3HeadCell.xib; sourceTree = "<group>"; };
+		04F7BCB21B2E776F001F2A79 /* TopicMode3FirstCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicMode3FirstCell.h; sourceTree = "<group>"; };
+		04F7BCB31B2E776F001F2A79 /* TopicMode3FirstCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicMode3FirstCell.m; sourceTree = "<group>"; };
+		04F7BCB41B2E776F001F2A79 /* TopicMode3FirstCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopicMode3FirstCell.xib; sourceTree = "<group>"; };
+		04F7BCB71B2E7786001F2A79 /* TopicMode3SecondCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicMode3SecondCell.h; sourceTree = "<group>"; };
+		04F7BCB81B2E7786001F2A79 /* TopicMode3SecondCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicMode3SecondCell.m; sourceTree = "<group>"; };
+		04F7BCBA1B2EB569001F2A79 /* UILabel+textFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+textFrame.h"; sourceTree = "<group>"; };
+		04F7BCBB1B2EB569001F2A79 /* UILabel+textFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+textFrame.m"; sourceTree = "<group>"; };
+		04F7BCBD1B2EC64D001F2A79 /* TopicMode3SectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicMode3SectionView.h; sourceTree = "<group>"; };
+		04F7BCBE1B2EC64D001F2A79 /* TopicMode3SectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicMode3SectionView.m; sourceTree = "<group>"; };
+		04F7BCBF1B2EC64D001F2A79 /* TopicMode3SectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopicMode3SectionView.xib; sourceTree = "<group>"; };
 		1852EDDF1B0B7398002AAD43 /* crossShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = crossShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1852EDE31B0B7398002AAD43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1852EDE41B0B7398002AAD43 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -234,6 +258,8 @@
 			children = (
 				046CD9441B10597100392F3F /* CROCommonAPI.h */,
 				046CD9451B10597100392F3F /* CROCommonAPI.m */,
+				04F7BCBA1B2EB569001F2A79 /* UILabel+textFrame.h */,
+				04F7BCBB1B2EB569001F2A79 /* UILabel+textFrame.m */,
 			);
 			name = commonAPI;
 			sourceTree = "<group>";
@@ -291,6 +317,7 @@
 		04A8E60B1B2AD32B00A7CF0E /* Topic View */ = {
 			isa = PBXGroup;
 			children = (
+				04A8E61A1B2C2FD600A7CF0E /* Mode3 */,
 				04A8E6141B2BF43900A7CF0E /* Mode2 */,
 			);
 			name = "Topic View";
@@ -309,6 +336,26 @@
 				04A8E6171B2BFB8F00A7CF0E /* TopicMode2ItemCell.xib */,
 			);
 			name = Mode2;
+			sourceTree = "<group>";
+		};
+		04A8E61A1B2C2FD600A7CF0E /* Mode3 */ = {
+			isa = PBXGroup;
+			children = (
+				04F7BCAA1B2E76D4001F2A79 /* TopicMode3Controller.h */,
+				04F7BCAB1B2E76D4001F2A79 /* TopicMode3Controller.m */,
+				04F7BCAD1B2E7749001F2A79 /* TopicMode3HeadCell.h */,
+				04F7BCAE1B2E7749001F2A79 /* TopicMode3HeadCell.m */,
+				04F7BCAF1B2E7749001F2A79 /* TopicMode3HeadCell.xib */,
+				04F7BCB21B2E776F001F2A79 /* TopicMode3FirstCell.h */,
+				04F7BCB31B2E776F001F2A79 /* TopicMode3FirstCell.m */,
+				04F7BCB41B2E776F001F2A79 /* TopicMode3FirstCell.xib */,
+				04F7BCB71B2E7786001F2A79 /* TopicMode3SecondCell.h */,
+				04F7BCB81B2E7786001F2A79 /* TopicMode3SecondCell.m */,
+				04F7BCBD1B2EC64D001F2A79 /* TopicMode3SectionView.h */,
+				04F7BCBE1B2EC64D001F2A79 /* TopicMode3SectionView.m */,
+				04F7BCBF1B2EC64D001F2A79 /* TopicMode3SectionView.xib */,
+			);
+			name = Mode3;
 			sourceTree = "<group>";
 		};
 		04B9F48C1B159B1A0011DBC2 /* Shopping Cart */ = {
@@ -526,8 +573,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04F7BCB11B2E7749001F2A79 /* TopicMode3HeadCell.xib in Resources */,
 				1852EDEE1B0B7398002AAD43 /* Main.storyboard in Resources */,
 				04A8E6191B2BFB8F00A7CF0E /* TopicMode2ItemCell.xib in Resources */,
+				04F7BCB61B2E776F001F2A79 /* TopicMode3FirstCell.xib in Resources */,
 				04A8E5FC1B2A6E6E00A7CF0E /* DetailGoodsImageCell.xib in Resources */,
 				04A8E6061B2A706500A7CF0E /* DetailGoodsQuestionCell.xib in Resources */,
 				046CD9811B10B19D00392F3F /* CROMainDetTableViewCell.xib in Resources */,
@@ -537,6 +586,7 @@
 				040A3F151B258DD600166381 /* CRODetailGoodsHeadCell.xib in Resources */,
 				04B9F4941B15A1830011DBC2 /* CROShoppingCartTableViewCell.xib in Resources */,
 				047451EC1B11A089000A57B8 /* testData.plist in Resources */,
+				04F7BCC11B2EC64D001F2A79 /* TopicMode3SectionView.xib in Resources */,
 				1852EDF01B0B7398002AAD43 /* Images.xcassets in Resources */,
 				04B9F3F11B156AEB0011DBC2 /* test1.js in Resources */,
 				048ADC371B1EDDF0002641DC /* test2.js in Resources */,
@@ -593,6 +643,7 @@
 			files = (
 				046CD9781B1069A700392F3F /* UIImageView+WebCache.m in Sources */,
 				046CD9741B1069A700392F3F /* UIImage+GIF.m in Sources */,
+				04F7BCC01B2EC64D001F2A79 /* TopicMode3SectionView.m in Sources */,
 				046CD96D1B1069A700392F3F /* SDWebImageCompat.m in Sources */,
 				04B9F48F1B159BBC0011DBC2 /* CROShoppingCartViewController.m in Sources */,
 				046CD9731B1069A700392F3F /* UIButton+WebCache.m in Sources */,
@@ -611,8 +662,11 @@
 				046CD9461B10597100392F3F /* CROCommonAPI.m in Sources */,
 				040A3F181B26CC8900166381 /* imgWithIntroView.m in Sources */,
 				04B9F4931B15A1830011DBC2 /* CROShoppingCartTableViewCell.m in Sources */,
+				04F7BCAC1B2E76D4001F2A79 /* TopicMode3Controller.m in Sources */,
 				046CD9701B1069A700392F3F /* SDWebImageDownloaderOperation.m in Sources */,
+				04F7BCBC1B2EB569001F2A79 /* UILabel+textFrame.m in Sources */,
 				046CD96E1B1069A700392F3F /* SDWebImageDecoder.m in Sources */,
+				04F7BCB51B2E776F001F2A79 /* TopicMode3FirstCell.m in Sources */,
 				046CD9801B10B19D00392F3F /* CROMainDetTableViewCell.m in Sources */,
 				1852EDEB1B0B7398002AAD43 /* ViewController.m in Sources */,
 				046CD9771B1069A700392F3F /* UIImageView+HighlightedWebCache.m in Sources */,
@@ -625,8 +679,10 @@
 				186822421B0CC0F70024EF19 /* flowTableView.m in Sources */,
 				040A3F0C1B25350500166381 /* imgWithTitleView.m in Sources */,
 				04A8E6181B2BFB8F00A7CF0E /* TopicMode2ItemCell.m in Sources */,
+				04F7BCB01B2E7749001F2A79 /* TopicMode3HeadCell.m in Sources */,
 				1852EE0B1B0B74F6002AAD43 /* CROMainViewController.m in Sources */,
 				046CD9711B1069A700392F3F /* SDWebImageManager.m in Sources */,
+				04F7BCB91B2E7786001F2A79 /* TopicMode3SecondCell.m in Sources */,
 				1852EDE51B0B7398002AAD43 /* main.m in Sources */,
 				04A8E60E1B2AD39A00A7CF0E /* TopicMode2Controller.m in Sources */,
 				046CD96C1B1069A700392F3F /* SDImageCache.m in Sources */,

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="topicMode3Section" id="U6b-Vx-4bR" customClass="TopicMode3SectionView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="42"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="about_icon" translatesAutoresizingMaskIntoConstraints="NO" id="ihb-6I-p0T">
+                    <rect key="frame" x="125" y="12" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="20" id="T7l-9f-xsC"/>
+                        <constraint firstAttribute="height" constant="20" id="Tuy-CK-ius"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="关于全民阅读" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MXn-EZ-A0H">
+                    <rect key="frame" x="148" y="12" width="100" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="eR0-f5-4bo"/>
+                        <constraint firstAttribute="width" constant="100" id="tcQ-3e-8qy"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstItem="ihb-6I-p0T" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" constant="12" id="39b-3a-wXZ"/>
+                <constraint firstItem="MXn-EZ-A0H" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" constant="12" id="hv0-UZ-6xp"/>
+                <constraint firstAttribute="centerX" secondItem="ihb-6I-p0T" secondAttribute="trailing" constant="15" id="mIB-Ya-J4D"/>
+                <constraint firstItem="MXn-EZ-A0H" firstAttribute="leading" secondItem="ihb-6I-p0T" secondAttribute="trailing" constant="3" id="vpc-Gd-J5j"/>
+            </constraints>
+            <connections>
+                <outlet property="titleIcon" destination="ihb-6I-p0T" id="KOY-Tu-eYM"/>
+                <outlet property="titleStr" destination="MXn-EZ-A0H" id="GNz-YJ-Tso"/>
+            </connections>
+            <point key="canvasLocation" x="325" y="300.5"/>
+        </collectionReusableView>
+    </objects>
+    <resources>
+        <image name="about_icon" width="13" height="13"/>
+    </resources>
+</document>

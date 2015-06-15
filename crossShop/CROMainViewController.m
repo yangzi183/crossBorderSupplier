@@ -114,7 +114,7 @@ static NSString *cellTitleName = @"titleCell";
 
 - (void)showTopicView: (NSNotification *)sender {
     NSNumber *tagNumber = (NSNumber *)[sender object];
-    [self performSegueWithIdentifier:@"showTopicView" sender:nil];
+    [self performSegueWithIdentifier:@"showTopicView3" sender:nil];
     //NSLog(@"\r\n tagnuber:%ld", [tagNumber integerValue]);
 }
 
@@ -125,7 +125,7 @@ static NSString *cellTitleName = @"titleCell";
         
         NSDictionary *dicData = [self.mainData objectAtIndex:(indexPath.row - 1)];
         [segue.destinationViewController setDicDetailData:dicData];
-    } else if ([segue.identifier isEqualToString:@"showTopicView"]) {
+    } else if ([segue.identifier isEqualToString:@"showTopicView2"]) {
         NSLog(@"\r\n topic");
     }
 }

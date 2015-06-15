@@ -5,6 +5,44 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
+        <!--Topic Mode3 Controller-->
+        <scene sceneID="cNL-dr-WB0">
+            <objects>
+                <collectionViewController id="WDP-vz-Rxm" customClass="TopicMode3Controller" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="kc5-OQ-Tq6">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="e1N-FB-Ach">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="50" height="50"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="4Uj-yA-wwP">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="topicMode3Section" id="u4H-lF-iEu">
+                            <rect key="frame" x="0.0" y="64" width="600" height="50"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </collectionReusableView>
+                        <connections>
+                            <outlet property="dataSource" destination="WDP-vz-Rxm" id="NbM-F1-wjf"/>
+                            <outlet property="delegate" destination="WDP-vz-Rxm" id="fxn-ZK-3IP"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yby-IL-goT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1401" y="-578"/>
+        </scene>
         <!--Topic Mode2 Controller-->
         <scene sceneID="zYs-rw-ikG">
             <objects>
@@ -71,7 +109,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="I85-50-UzO" kind="show" identifier="showGoodsDetail" id="Ran-RV-lGs"/>
+                                            <segue destination="WDP-vz-Rxm" kind="show" identifier="showTopicView3" id="8V2-Bs-HdD"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="mainCell" rowHeight="430" id="iFQ-oi-IrR" customClass="CROMainDetTableViewCell">
@@ -106,7 +144,7 @@
                     <connections>
                         <outlet property="mainTableView" destination="ybN-Rr-PoX" id="0fH-rY-60z"/>
                         <outlet property="shoppingCartIcon" destination="ZEi-yc-UKq" id="DaY-SI-9iw"/>
-                        <segue destination="VxQ-rF-VCu" kind="show" identifier="showTopicView" id="Ec4-Em-jiz"/>
+                        <segue destination="VxQ-rF-VCu" kind="show" identifier="showTopicView2" id="Ec4-Em-jiz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0gq-vN-LRa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -353,6 +391,6 @@
         <image name="shopping_cart_icon" width="36" height="34"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8IM-Zk-gFH"/>
+        <segue reference="xqH-wL-eh5"/>
     </inferredMetricsTieBreakers>
 </document>
