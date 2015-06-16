@@ -57,7 +57,6 @@
 		04F7BCB91B2E7786001F2A79 /* TopicMode3SecondCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F7BCB81B2E7786001F2A79 /* TopicMode3SecondCell.m */; };
 		04F7BCBC1B2EB569001F2A79 /* UILabel+textFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F7BCBB1B2EB569001F2A79 /* UILabel+textFrame.m */; };
 		04F7BCC01B2EC64D001F2A79 /* TopicMode3SectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F7BCBE1B2EC64D001F2A79 /* TopicMode3SectionView.m */; };
-		04F7BCC11B2EC64D001F2A79 /* TopicMode3SectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F7BCBF1B2EC64D001F2A79 /* TopicMode3SectionView.xib */; };
 		1852EDE51B0B7398002AAD43 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1852EDE41B0B7398002AAD43 /* main.m */; };
 		1852EDE81B0B7398002AAD43 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1852EDE71B0B7398002AAD43 /* AppDelegate.m */; };
 		1852EDEB1B0B7398002AAD43 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1852EDEA1B0B7398002AAD43 /* ViewController.m */; };
@@ -171,7 +170,6 @@
 		04F7BCBB1B2EB569001F2A79 /* UILabel+textFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+textFrame.m"; sourceTree = "<group>"; };
 		04F7BCBD1B2EC64D001F2A79 /* TopicMode3SectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicMode3SectionView.h; sourceTree = "<group>"; };
 		04F7BCBE1B2EC64D001F2A79 /* TopicMode3SectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicMode3SectionView.m; sourceTree = "<group>"; };
-		04F7BCBF1B2EC64D001F2A79 /* TopicMode3SectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopicMode3SectionView.xib; sourceTree = "<group>"; };
 		1852EDDF1B0B7398002AAD43 /* crossShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = crossShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1852EDE31B0B7398002AAD43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1852EDE41B0B7398002AAD43 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -353,7 +351,6 @@
 				04F7BCB81B2E7786001F2A79 /* TopicMode3SecondCell.m */,
 				04F7BCBD1B2EC64D001F2A79 /* TopicMode3SectionView.h */,
 				04F7BCBE1B2EC64D001F2A79 /* TopicMode3SectionView.m */,
-				04F7BCBF1B2EC64D001F2A79 /* TopicMode3SectionView.xib */,
 			);
 			name = Mode3;
 			sourceTree = "<group>";
@@ -586,7 +583,6 @@
 				040A3F151B258DD600166381 /* CRODetailGoodsHeadCell.xib in Resources */,
 				04B9F4941B15A1830011DBC2 /* CROShoppingCartTableViewCell.xib in Resources */,
 				047451EC1B11A089000A57B8 /* testData.plist in Resources */,
-				04F7BCC11B2EC64D001F2A79 /* TopicMode3SectionView.xib in Resources */,
 				1852EDF01B0B7398002AAD43 /* Images.xcassets in Resources */,
 				04B9F3F11B156AEB0011DBC2 /* test1.js in Resources */,
 				048ADC371B1EDDF0002641DC /* test2.js in Resources */,

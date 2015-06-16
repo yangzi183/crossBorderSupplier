@@ -13,5 +13,5 @@
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) IBOutlet UILabel *contentLabel;
 
-- (void)setHeadInfoByDic: (NSDictionary *)dicData;
+- (void)setContentString: (NSString *)contentStr;
 @end

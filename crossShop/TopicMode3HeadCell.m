@@ -15,12 +15,8 @@
     // Initialization code
 }
 
-- (void)setHeadInfoByDic: (NSDictionary *)dicData width: (CGFloat)width{
-    NSString *content = [dicData objectForKey:@"content"];
-    CGPoint point = CGPointMake(self.contentLabel.frame.origin.x, self.contentLabel.frame.origin.y);
-    self.contentLabel.text = content;
-    CGSize size = [self.contentLabel boundingRectWithSize:CGSizeMake(width, 0)];
-
+- (void)setContentString: (NSString *)contentStr {
+    self.contentLabel.text = contentStr;
 }
 
 @end

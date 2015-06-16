@@ -11,6 +11,6 @@
 #import "TopicMode3FirstCell.h"
 #import "TopicMode3SecondCell.h"
 
-@interface TopicMode3Controller : UICollectionViewController
+@interface TopicMode3Controller : UICollectionViewController <UICollectionViewDelegateFlowLayout>
 
 @end

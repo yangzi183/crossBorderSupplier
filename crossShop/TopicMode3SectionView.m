@@ -15,7 +15,7 @@
 }
 
 - (void)setSectionHeadInfo: (NSMutableDictionary *)dicData {
-    NSLog(@"\r\n dic:%@", dicData);
+    //NSLog(@"\r\n dic:%@", dicData);
     NSString *imgName = [dicData objectForKey:@"image"];
     NSString *title = [dicData objectForKey:@"title"];
     self.titleIcon.image = [UIImage imageNamed:imgName];
