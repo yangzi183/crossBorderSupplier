@@ -35,13 +35,17 @@ static NSString *topicMode2ItemCell = @"topicMode2Item";
     
     //UIBarButtonItem *btnShare = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(shareAct)];
     //btnShare.image = [UIImage imageNamed:@"shopping_cart_icon"];
+    [self addItemsToBar];
+
+}
+
+- (void)addItemsToBar {
     UIBarButtonItem *btnShare = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"share_icon"] style:UIBarButtonItemStyleBordered target:self action:@selector(shareAct)];
     btnShare.tintColor = [CROCommonAPI colorWithHexString:@"#82D6D6"];
     UIBarButtonItem *btnShoppingCart = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"shopping_cart_icon"] style:UIBarButtonItemStyleBordered target:self action:@selector(shoppingCartAct)];
     btnShoppingCart.tintColor = [CROCommonAPI colorWithHexString:@"#82D6D6"];
     NSArray *btnArrays = [[NSArray alloc] initWithObjects:btnShare, btnShoppingCart, nil];
     [self.navigationItem setRightBarButtonItems:btnArrays];
-    //[self.navigationController.navigationItem setRightBarButtonItems:btnArrays];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -103,50 +107,6 @@ static NSString *topicMode2ItemCell = @"topicMode2Item";
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
 }
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (IBAction)backView:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];

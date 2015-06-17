@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface TopicMode3SecondCell : UICollectionViewCell
-
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *titleLeading;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *trailConstraint;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *leadConstraint;
+- (void)setConstraintByIndex: (NSInteger)row;
 @end

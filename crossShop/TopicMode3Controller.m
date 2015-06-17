@@ -45,23 +45,23 @@ static NSString * const reuseIdentifier = @"Cell";
     
     UILabel *label = [[UILabel alloc]init];
     [label boundingRectWithSize:CGSizeMake(self.collectionView.frame.size.width, 0)];
+    [self addItemsToBar];
     
+}
+
+- (void)addItemsToBar {
+    UIBarButtonItem *btnShare = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"share_icon"] style:UIBarButtonItemStyleBordered target:self action:@selector(shareAct)];
+    btnShare.tintColor = [CROCommonAPI colorWithHexString:@"#82D6D6"];
+    UIBarButtonItem *btnShoppingCart = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"shopping_cart_icon"] style:UIBarButtonItemStyleBordered target:self action:@selector(shoppingCartAct)];
+    btnShoppingCart.tintColor = [CROCommonAPI colorWithHexString:@"#82D6D6"];
+    NSArray *btnArrays = [[NSArray alloc] initWithObjects:btnShare, btnShoppingCart, nil];
+    [self.navigationItem setRightBarButtonItems:btnArrays];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 #pragma mark <UICollectionViewDataSource>
 
@@ -74,10 +74,15 @@ static NSString * const reuseIdentifier = @"Cell";
         [dicData setValue:@"关于全民阅读2" forKey:@"title"];
         [dicData setValue:@"about_icon" forKey:@"image"];
         [headView setSectionHeadInfo:dicData];
-    } else {
+    } else if (indexPath.section == 1){
         NSMutableDictionary *dicData = [[NSMutableDictionary alloc]init];
         [dicData setValue:@"相关专题" forKey:@"title"];
         [dicData setValue:@"album_icon" forKey:@"image"];
+        [headView setSectionHeadInfo:dicData];
+    } else {
+        NSMutableDictionary *dicData = [[NSMutableDictionary alloc]init];
+        [dicData setValue:@"相关商品" forKey:@"title"];
+        [dicData setValue:@"product_icon" forKey:@"image"];
         [headView setSectionHeadInfo:dicData];
         headView.backgroundColor = [CROCommonAPI colorWithHexString:@"e8e8e8"];
     }
@@ -85,12 +90,18 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 2;
+    return 3;
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 2;
+    if (section == 0) {
+        return 1;
+    } else if (section == 1) {
+        return 4;
+    } else {
+        return 4;
+    }
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -102,8 +113,11 @@ static NSString * const reuseIdentifier = @"Cell";
         CGSize size = [strLabel boundingRectWithSize:CGSizeMake(self.collectionView.frame.size.width - 50, 0)];
         CGSize returnSize = CGSizeMake(self.collectionView.frame.size.width, size.height + 12);
         return returnSize;
+    } else if (indexPath.section == 1){
+        CGSize returnSize = CGSizeMake((self.collectionView.frame.size.width - 30) / 2, 230);
+        return returnSize;
     } else {
-        CGSize returnSize = CGSizeMake((self.collectionView.frame.size.width - 30) / 2, 200);
+        CGSize returnSize = CGSizeMake((self.collectionView.frame.size.width) / 2, 230);
         return returnSize;
     }
 }
@@ -112,27 +126,46 @@ static NSString * const reuseIdentifier = @"Cell";
     if (section == 0) {
         UIEdgeInsets edg = UIEdgeInsetsMake(5, 5, 5, 5);
         return edg;
+    } else if (section == 1){
+        UIEdgeInsets edg = UIEdgeInsetsMake(5, 13, 5, 14);
+        return edg;
     } else {
-        UIEdgeInsets edg = UIEdgeInsetsMake(5, 0, 5, 0);
+        UIEdgeInsets edg = UIEdgeInsetsMake(0, 0, 0, 0);
         return edg;
     }
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    //self.collectionView.backgroundColor = [UIColor whiteColor];
     if (indexPath.section == 0) {
         TopicMode3HeadCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:topicMode3HeadCell forIndexPath:indexPath];
         NSString *str = @"日落时分，沏上一杯山茶，听一曲意境空远的《禅》，心神随此天籁，沉溺于玄妙的幻境里。仿佛我就是那穿梭于葳蕤山林中的一只飞鸟，时而盘旋穿梭，时而引吭高歌；仿佛我就是那潺潺流泻于山涧的一汪清泉，涟漪轻盈，浩淼长流；仿佛我就是那竦峙在天地间的一座山峦，伟岸高耸，从容绵延。我不相信佛，只是喜欢玄冥空灵的梵音经贝，与慈悲淡然的佛境禅心，在清欢中，从容幽静，自在安然。一直向往走进青的山，碧的水，体悟山水的绚丽多姿，领略草木的兴衰荣枯，倾听黄天厚土之声，探寻宇宙自然的妙趣。走进了山水，也就走出了喧嚣，给身心以清凉，给精神以沉淀，给灵魂以升华。";
         
         NSLog(@"\r\n frame:%f-%f-%f-%f", cell.frame.origin.x, cell.frame.origin.y, cell.frame.size.width, cell.frame.size.height);
         [cell setContentString:str];
-        
-        //cell.frame = CGRectMake(oriPoint.x, oriPoint.y, self.collectionView.frame.size.width, size.height + 12);
         return cell;
-    } else {
+    } else if (indexPath.section == 1){
         TopicMode3FirstCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:topicMode3FirstCell forIndexPath:indexPath];
         NSLog(@"\r\n frame:%f-%f-%f-%f", cell.frame.origin.x, cell.frame.origin.y, cell.frame.size.width, cell.frame.size.height);
         return cell;
+    } else {
+        TopicMode3SecondCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:topicMode3SecondCell forIndexPath:indexPath];
+        cell.backgroundColor = [CROCommonAPI colorWithHexString:@"e8e8e8"];
+        [cell setConstraintByIndex:indexPath.row];
+        return cell;
     }
+}
+
+- (void)shareAct {
+    
+}
+
+- (void)shoppingCartAct {
+    //[self performSegueWithIdentifier:@"showShoppingCartView" sender:nil];
+    [self performSegueWithIdentifier:@"showShoppingCartView" sender:nil];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
 }
 
@@ -167,4 +200,7 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 */
 
+- (IBAction)backAct:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 @end

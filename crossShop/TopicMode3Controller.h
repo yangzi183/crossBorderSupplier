@@ -12,5 +12,6 @@
 #import "TopicMode3SecondCell.h"
 
 @interface TopicMode3Controller : UICollectionViewController <UICollectionViewDelegateFlowLayout>
+- (IBAction)backAct:(id)sender;
 
 @end
