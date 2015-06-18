@@ -58,6 +58,11 @@
 		04F7BCBC1B2EB569001F2A79 /* UILabel+textFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F7BCBB1B2EB569001F2A79 /* UILabel+textFrame.m */; };
 		04F7BCC01B2EC64D001F2A79 /* TopicMode3SectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F7BCBE1B2EC64D001F2A79 /* TopicMode3SectionView.m */; };
 		04F7BCF51B31426D001F2A79 /* TopicMode3SecondCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F7BCF41B31426D001F2A79 /* TopicMode3SecondCell.xib */; };
+		04F7BCFC1B3258FE001F2A79 /* PersonalCenterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F7BCFB1B3258FE001F2A79 /* PersonalCenterController.m */; };
+		04F7BCFF1B325933001F2A79 /* PersonalCenterHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F7BCFE1B325933001F2A79 /* PersonalCenterHeadView.m */; };
+		04F7BD031B326FA8001F2A79 /* PersonalCenterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F7BD011B326FA8001F2A79 /* PersonalCenterCell.m */; };
+		04F7BD041B326FA8001F2A79 /* PersonalCenterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F7BD021B326FA8001F2A79 /* PersonalCenterCell.xib */; };
+		04F7BD071B32B209001F2A79 /* PersonalCenterFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F7BD061B32B209001F2A79 /* PersonalCenterFootView.m */; };
 		1852EDE51B0B7398002AAD43 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1852EDE41B0B7398002AAD43 /* main.m */; };
 		1852EDE81B0B7398002AAD43 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1852EDE71B0B7398002AAD43 /* AppDelegate.m */; };
 		1852EDEB1B0B7398002AAD43 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1852EDEA1B0B7398002AAD43 /* ViewController.m */; };
@@ -172,6 +177,15 @@
 		04F7BCBD1B2EC64D001F2A79 /* TopicMode3SectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicMode3SectionView.h; sourceTree = "<group>"; };
 		04F7BCBE1B2EC64D001F2A79 /* TopicMode3SectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicMode3SectionView.m; sourceTree = "<group>"; };
 		04F7BCF41B31426D001F2A79 /* TopicMode3SecondCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopicMode3SecondCell.xib; sourceTree = "<group>"; };
+		04F7BCFA1B3258FE001F2A79 /* PersonalCenterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalCenterController.h; sourceTree = "<group>"; };
+		04F7BCFB1B3258FE001F2A79 /* PersonalCenterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalCenterController.m; sourceTree = "<group>"; };
+		04F7BCFD1B325933001F2A79 /* PersonalCenterHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalCenterHeadView.h; sourceTree = "<group>"; };
+		04F7BCFE1B325933001F2A79 /* PersonalCenterHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalCenterHeadView.m; sourceTree = "<group>"; };
+		04F7BD001B326FA8001F2A79 /* PersonalCenterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalCenterCell.h; sourceTree = "<group>"; };
+		04F7BD011B326FA8001F2A79 /* PersonalCenterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalCenterCell.m; sourceTree = "<group>"; };
+		04F7BD021B326FA8001F2A79 /* PersonalCenterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonalCenterCell.xib; sourceTree = "<group>"; };
+		04F7BD051B32B209001F2A79 /* PersonalCenterFootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalCenterFootView.h; sourceTree = "<group>"; };
+		04F7BD061B32B209001F2A79 /* PersonalCenterFootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalCenterFootView.m; sourceTree = "<group>"; };
 		1852EDDF1B0B7398002AAD43 /* crossShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = crossShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1852EDE31B0B7398002AAD43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1852EDE41B0B7398002AAD43 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -372,6 +386,22 @@
 			name = "Shopping Cart";
 			sourceTree = "<group>";
 		};
+		04F7BCF61B32536E001F2A79 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				04F7BCFA1B3258FE001F2A79 /* PersonalCenterController.h */,
+				04F7BCFB1B3258FE001F2A79 /* PersonalCenterController.m */,
+				04F7BCFD1B325933001F2A79 /* PersonalCenterHeadView.h */,
+				04F7BCFE1B325933001F2A79 /* PersonalCenterHeadView.m */,
+				04F7BD001B326FA8001F2A79 /* PersonalCenterCell.h */,
+				04F7BD011B326FA8001F2A79 /* PersonalCenterCell.m */,
+				04F7BD021B326FA8001F2A79 /* PersonalCenterCell.xib */,
+				04F7BD051B32B209001F2A79 /* PersonalCenterFootView.h */,
+				04F7BD061B32B209001F2A79 /* PersonalCenterFootView.m */,
+			);
+			name = Account;
+			sourceTree = "<group>";
+		};
 		1852EDD61B0B7398002AAD43 = {
 			isa = PBXGroup;
 			children = (
@@ -395,6 +425,7 @@
 		1852EDE11B0B7398002AAD43 /* crossShop */ = {
 			isa = PBXGroup;
 			children = (
+				04F7BCF61B32536E001F2A79 /* Account */,
 				04A8E60B1B2AD32B00A7CF0E /* Topic View */,
 				040A3F0D1B2577DA00166381 /* Goods Detail */,
 				04B9F48C1B159B1A0011DBC2 /* Shopping Cart */,
@@ -576,6 +607,7 @@
 				04F7BCB11B2E7749001F2A79 /* TopicMode3HeadCell.xib in Resources */,
 				1852EDEE1B0B7398002AAD43 /* Main.storyboard in Resources */,
 				04A8E6191B2BFB8F00A7CF0E /* TopicMode2ItemCell.xib in Resources */,
+				04F7BD041B326FA8001F2A79 /* PersonalCenterCell.xib in Resources */,
 				04F7BCB61B2E776F001F2A79 /* TopicMode3FirstCell.xib in Resources */,
 				04A8E5FC1B2A6E6E00A7CF0E /* DetailGoodsImageCell.xib in Resources */,
 				04A8E6061B2A706500A7CF0E /* DetailGoodsQuestionCell.xib in Resources */,
@@ -645,8 +677,10 @@
 				046CD9741B1069A700392F3F /* UIImage+GIF.m in Sources */,
 				04F7BCC01B2EC64D001F2A79 /* TopicMode3SectionView.m in Sources */,
 				046CD96D1B1069A700392F3F /* SDWebImageCompat.m in Sources */,
+				04F7BCFC1B3258FE001F2A79 /* PersonalCenterController.m in Sources */,
 				04B9F48F1B159BBC0011DBC2 /* CROShoppingCartViewController.m in Sources */,
 				046CD9731B1069A700392F3F /* UIButton+WebCache.m in Sources */,
+				04F7BCFF1B325933001F2A79 /* PersonalCenterHeadView.m in Sources */,
 				04A8E5FB1B2A6E6E00A7CF0E /* DetailGoodsImageCell.m in Sources */,
 				046CD9751B1069A700392F3F /* UIImage+MultiFormat.m in Sources */,
 				04A8E6051B2A706500A7CF0E /* DetailGoodsQuestionCell.m in Sources */,
@@ -658,6 +692,7 @@
 				04A8E6121B2AD52900A7CF0E /* TopicMode2HeadCell.m in Sources */,
 				046CD9761B1069A700392F3F /* UIImage+WebP.m in Sources */,
 				048ADC3D1B219DF4002641DC /* CROShoppingAlertView.m in Sources */,
+				04F7BD071B32B209001F2A79 /* PersonalCenterFootView.m in Sources */,
 				18639BE21B14B83700FA259B /* CROShoppingCart.m in Sources */,
 				046CD9461B10597100392F3F /* CROCommonAPI.m in Sources */,
 				040A3F181B26CC8900166381 /* imgWithIntroView.m in Sources */,
@@ -675,6 +710,7 @@
 				18639BDF1B14B4E500FA259B /* CROGoodsItem.m in Sources */,
 				046CD96F1B1069A700392F3F /* SDWebImageDownloader.m in Sources */,
 				040A3F141B258DD600166381 /* CRODetailGoodsHeadCell.m in Sources */,
+				04F7BD031B326FA8001F2A79 /* PersonalCenterCell.m in Sources */,
 				1852EDE81B0B7398002AAD43 /* AppDelegate.m in Sources */,
 				186822421B0CC0F70024EF19 /* flowTableView.m in Sources */,
 				040A3F0C1B25350500166381 /* imgWithTitleView.m in Sources */,
