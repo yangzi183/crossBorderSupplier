@@ -9,6 +9,8 @@
 #import "PersonalCenterController.h"
 
 static NSString *personalCell = @"personalCell";
+static NSString *personFootCell = @"personFootCell";
+
 @interface PersonalCenterController () {
     NSMutableArray *dataArray;
 }
@@ -29,15 +31,16 @@ static NSString *personalCell = @"personalCell";
     self.tableView.dataSource = self;
     UINib *nib = [UINib nibWithNibName:@"PersonalCenterCell" bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:personalCell];
+    UINib *footNib = [UINib nibWithNibName:@"PersonCenterFootCell" bundle:nil];
+    [self.tableView registerNib:footNib forCellReuseIdentifier:personFootCell];
     [self setHideTableViewFoot:self.tableView];
     [self initDataArray];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    
 }
 
 - (void)initDataArray {
     dataArray = [[NSMutableArray alloc] init];
-    NSArray *iconArray = [[NSArray alloc] initWithObjects:@"about_icon", @"about_icon", @"about_icon", @"about_icon", @"about_icon", @"about_icon", nil];
+    NSArray *iconArray = [[NSArray alloc] initWithObjects:@"person_my_order", @"person_my_baby", @"person_my_scan", @"person_my_vouchers", @"person_friend", @"person_notification", nil];
     NSArray *titleArray = [[NSArray alloc] initWithObjects:@"我的订单", @"我的宝宝信息", @"我的浏览记录", @"我的代金券", @"邀请好友", @"通知", nil];
     for (NSInteger i = 0 ; i < [iconArray count]; i++) {
         NSMutableDictionary *dicData = [[NSMutableDictionary alloc]init];
@@ -59,11 +62,25 @@ static NSString *personalCell = @"personalCell";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [dataArray count];
+    return [dataArray count] + 1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 45;
+    if (indexPath.row < [dataArray count]) {
+        return 45;
+    } else {
+        CGFloat height = (self.tableView.frame.size.height - 410);
+        CGFloat footHeight = (height > 80) ? height : 80;
+        return footHeight;
+    }
+}
+
+- (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row < [dataArray count]) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 - (void)setHideTableViewFoot:(UITableView *)tableView {
@@ -83,12 +100,21 @@ static NSString *personalCell = @"personalCell";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    PersonalCenterCell *cell = [tableView dequeueReusableCellWithIdentifier:personalCell forIndexPath:indexPath];
-    if (cell == nil) {
-        cell = [[PersonalCenterCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:personalCell];
+    if (indexPath.row < [dataArray count]) {
+        PersonalCenterCell *cell = [tableView dequeueReusableCellWithIdentifier:personalCell forIndexPath:indexPath];
+        if (cell == nil) {
+            cell = [[PersonalCenterCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:personalCell];
+        }
+        [cell setCellInfoByDic:[dataArray objectAtIndex:indexPath.row]];
+        return cell;
+    } else {
+        PersonCenterFootCell *cell = [tableView dequeueReusableCellWithIdentifier:personFootCell forIndexPath:indexPath];
+        if (cell == nil) {
+            cell = [[PersonCenterFootCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:personFootCell];
+        }
+        cell.backgroundColor = [UIColor blueColor];
+        return cell;
     }
-    [cell setCellInfoByDic:[dataArray objectAtIndex:indexPath.row]];
-    return cell;
 }
 
 /*

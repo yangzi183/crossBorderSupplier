@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "PersonalCenterHeadView.h"
 #import "PersonalCenterCell.h"
+#import "PersonCenterFootCell.h"
 
 @interface PersonalCenterController : UITableViewController <PersonalCenterHeadViewDelegate>
 - (IBAction)backAct:(id)sender;

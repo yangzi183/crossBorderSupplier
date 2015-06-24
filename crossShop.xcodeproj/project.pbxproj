@@ -62,7 +62,6 @@
 		04F7BCFF1B325933001F2A79 /* PersonalCenterHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F7BCFE1B325933001F2A79 /* PersonalCenterHeadView.m */; };
 		04F7BD031B326FA8001F2A79 /* PersonalCenterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F7BD011B326FA8001F2A79 /* PersonalCenterCell.m */; };
 		04F7BD041B326FA8001F2A79 /* PersonalCenterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F7BD021B326FA8001F2A79 /* PersonalCenterCell.xib */; };
-		04F7BD071B32B209001F2A79 /* PersonalCenterFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F7BD061B32B209001F2A79 /* PersonalCenterFootView.m */; };
 		1852EDE51B0B7398002AAD43 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1852EDE41B0B7398002AAD43 /* main.m */; };
 		1852EDE81B0B7398002AAD43 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1852EDE71B0B7398002AAD43 /* AppDelegate.m */; };
 		1852EDEB1B0B7398002AAD43 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1852EDEA1B0B7398002AAD43 /* ViewController.m */; };
@@ -71,6 +70,8 @@
 		1852EDF31B0B7398002AAD43 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1852EDF11B0B7398002AAD43 /* LaunchScreen.xib */; };
 		1852EDFF1B0B7398002AAD43 /* crossShopTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1852EDFE1B0B7398002AAD43 /* crossShopTests.m */; };
 		1852EE0B1B0B74F6002AAD43 /* CROMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1852EE0A1B0B74F6002AAD43 /* CROMainViewController.m */; };
+		185CA19E1B3AEB4900ED418A /* PersonCenterFootCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 185CA19C1B3AEB4900ED418A /* PersonCenterFootCell.m */; };
+		185CA19F1B3AEB4900ED418A /* PersonCenterFootCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185CA19D1B3AEB4900ED418A /* PersonCenterFootCell.xib */; };
 		18639BDF1B14B4E500FA259B /* CROGoodsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 18639BDE1B14B4E500FA259B /* CROGoodsItem.m */; };
 		18639BE21B14B83700FA259B /* CROShoppingCart.m in Sources */ = {isa = PBXBuildFile; fileRef = 18639BE11B14B83700FA259B /* CROShoppingCart.m */; };
 		186822421B0CC0F70024EF19 /* flowTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 186822411B0CC0F70024EF19 /* flowTableView.m */; };
@@ -184,8 +185,6 @@
 		04F7BD001B326FA8001F2A79 /* PersonalCenterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalCenterCell.h; sourceTree = "<group>"; };
 		04F7BD011B326FA8001F2A79 /* PersonalCenterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalCenterCell.m; sourceTree = "<group>"; };
 		04F7BD021B326FA8001F2A79 /* PersonalCenterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonalCenterCell.xib; sourceTree = "<group>"; };
-		04F7BD051B32B209001F2A79 /* PersonalCenterFootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalCenterFootView.h; sourceTree = "<group>"; };
-		04F7BD061B32B209001F2A79 /* PersonalCenterFootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalCenterFootView.m; sourceTree = "<group>"; };
 		1852EDDF1B0B7398002AAD43 /* crossShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = crossShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1852EDE31B0B7398002AAD43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1852EDE41B0B7398002AAD43 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -203,6 +202,9 @@
 		1852EE0A1B0B74F6002AAD43 /* CROMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CROMainViewController.m; sourceTree = "<group>"; };
 		1852EE0D1B0B7F40002AAD43 /* imgWithTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imgWithTitleView.h; sourceTree = "<group>"; };
 		1852EE0E1B0B7F40002AAD43 /* imgWithTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = imgWithTitleView.m; sourceTree = "<group>"; };
+		185CA19B1B3AEB4900ED418A /* PersonCenterFootCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonCenterFootCell.h; sourceTree = "<group>"; };
+		185CA19C1B3AEB4900ED418A /* PersonCenterFootCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonCenterFootCell.m; sourceTree = "<group>"; };
+		185CA19D1B3AEB4900ED418A /* PersonCenterFootCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonCenterFootCell.xib; sourceTree = "<group>"; };
 		18639BDD1B14B4E500FA259B /* CROGoodsItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CROGoodsItem.h; sourceTree = "<group>"; };
 		18639BDE1B14B4E500FA259B /* CROGoodsItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CROGoodsItem.m; sourceTree = "<group>"; };
 		18639BE01B14B83700FA259B /* CROShoppingCart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CROShoppingCart.h; sourceTree = "<group>"; };
@@ -396,8 +398,9 @@
 				04F7BD001B326FA8001F2A79 /* PersonalCenterCell.h */,
 				04F7BD011B326FA8001F2A79 /* PersonalCenterCell.m */,
 				04F7BD021B326FA8001F2A79 /* PersonalCenterCell.xib */,
-				04F7BD051B32B209001F2A79 /* PersonalCenterFootView.h */,
-				04F7BD061B32B209001F2A79 /* PersonalCenterFootView.m */,
+				185CA19B1B3AEB4900ED418A /* PersonCenterFootCell.h */,
+				185CA19C1B3AEB4900ED418A /* PersonCenterFootCell.m */,
+				185CA19D1B3AEB4900ED418A /* PersonCenterFootCell.xib */,
 			);
 			name = Account;
 			sourceTree = "<group>";
@@ -621,6 +624,7 @@
 				1852EDF01B0B7398002AAD43 /* Images.xcassets in Resources */,
 				04B9F3F11B156AEB0011DBC2 /* test1.js in Resources */,
 				048ADC371B1EDDF0002641DC /* test2.js in Resources */,
+				185CA19F1B3AEB4900ED418A /* PersonCenterFootCell.xib in Resources */,
 				04F7BCF51B31426D001F2A79 /* TopicMode3SecondCell.xib in Resources */,
 				04A8E6131B2AD52900A7CF0E /* TopicMode2HeadCell.xib in Resources */,
 			);
@@ -678,6 +682,7 @@
 				04F7BCC01B2EC64D001F2A79 /* TopicMode3SectionView.m in Sources */,
 				046CD96D1B1069A700392F3F /* SDWebImageCompat.m in Sources */,
 				04F7BCFC1B3258FE001F2A79 /* PersonalCenterController.m in Sources */,
+				185CA19E1B3AEB4900ED418A /* PersonCenterFootCell.m in Sources */,
 				04B9F48F1B159BBC0011DBC2 /* CROShoppingCartViewController.m in Sources */,
 				046CD9731B1069A700392F3F /* UIButton+WebCache.m in Sources */,
 				04F7BCFF1B325933001F2A79 /* PersonalCenterHeadView.m in Sources */,
@@ -692,7 +697,6 @@
 				04A8E6121B2AD52900A7CF0E /* TopicMode2HeadCell.m in Sources */,
 				046CD9761B1069A700392F3F /* UIImage+WebP.m in Sources */,
 				048ADC3D1B219DF4002641DC /* CROShoppingAlertView.m in Sources */,
-				04F7BD071B32B209001F2A79 /* PersonalCenterFootView.m in Sources */,
 				18639BE21B14B83700FA259B /* CROShoppingCart.m in Sources */,
 				046CD9461B10597100392F3F /* CROCommonAPI.m in Sources */,
 				040A3F181B26CC8900166381 /* imgWithIntroView.m in Sources */,
