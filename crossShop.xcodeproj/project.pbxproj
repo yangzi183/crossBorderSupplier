@@ -34,6 +34,7 @@
 		047451EC1B11A089000A57B8 /* testData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 047451EB1B11A089000A57B8 /* testData.plist */; };
 		048ADC371B1EDDF0002641DC /* test2.js in Resources */ = {isa = PBXBuildFile; fileRef = 048ADC361B1EDDF0002641DC /* test2.js */; };
 		048ADC3D1B219DF4002641DC /* CROShoppingAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 048ADC3C1B219DF4002641DC /* CROShoppingAlertView.m */; };
+		0493EF2A1B3BED0700BCF945 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0493EF291B3BED0700BCF945 /* LoginViewController.m */; };
 		04A8E5FB1B2A6E6E00A7CF0E /* DetailGoodsImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A8E5F91B2A6E6E00A7CF0E /* DetailGoodsImageCell.m */; };
 		04A8E5FC1B2A6E6E00A7CF0E /* DetailGoodsImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A8E5FA1B2A6E6E00A7CF0E /* DetailGoodsImageCell.xib */; };
 		04A8E6001B2A6F2900A7CF0E /* DetailGoodsIntroCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A8E5FE1B2A6F2900A7CF0E /* DetailGoodsIntroCell.m */; };
@@ -140,6 +141,8 @@
 		048ADC361B1EDDF0002641DC /* test2.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = test2.js; sourceTree = "<group>"; };
 		048ADC3B1B219DF4002641DC /* CROShoppingAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CROShoppingAlertView.h; sourceTree = "<group>"; };
 		048ADC3C1B219DF4002641DC /* CROShoppingAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CROShoppingAlertView.m; sourceTree = "<group>"; };
+		0493EF281B3BED0700BCF945 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		0493EF291B3BED0700BCF945 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		04A8E5F81B2A6E6E00A7CF0E /* DetailGoodsImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailGoodsImageCell.h; sourceTree = "<group>"; };
 		04A8E5F91B2A6E6E00A7CF0E /* DetailGoodsImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailGoodsImageCell.m; sourceTree = "<group>"; };
 		04A8E5FA1B2A6E6E00A7CF0E /* DetailGoodsImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailGoodsImageCell.xib; sourceTree = "<group>"; };
@@ -330,6 +333,15 @@
 			name = "used source";
 			sourceTree = "<group>";
 		};
+		0493EF271B3BEAF900BCF945 /* login&register */ = {
+			isa = PBXGroup;
+			children = (
+				0493EF281B3BED0700BCF945 /* LoginViewController.h */,
+				0493EF291B3BED0700BCF945 /* LoginViewController.m */,
+			);
+			name = "login&register";
+			sourceTree = "<group>";
+		};
 		04A8E60B1B2AD32B00A7CF0E /* Topic View */ = {
 			isa = PBXGroup;
 			children = (
@@ -428,6 +440,7 @@
 		1852EDE11B0B7398002AAD43 /* crossShop */ = {
 			isa = PBXGroup;
 			children = (
+				0493EF271B3BEAF900BCF945 /* login&register */,
 				04F7BCF61B32536E001F2A79 /* Account */,
 				04A8E60B1B2AD32B00A7CF0E /* Topic View */,
 				040A3F0D1B2577DA00166381 /* Goods Detail */,
@@ -681,6 +694,7 @@
 				046CD9741B1069A700392F3F /* UIImage+GIF.m in Sources */,
 				04F7BCC01B2EC64D001F2A79 /* TopicMode3SectionView.m in Sources */,
 				046CD96D1B1069A700392F3F /* SDWebImageCompat.m in Sources */,
+				0493EF2A1B3BED0700BCF945 /* LoginViewController.m in Sources */,
 				04F7BCFC1B3258FE001F2A79 /* PersonalCenterController.m in Sources */,
 				185CA19E1B3AEB4900ED418A /* PersonCenterFootCell.m in Sources */,
 				04B9F48F1B159BBC0011DBC2 /* CROShoppingCartViewController.m in Sources */,

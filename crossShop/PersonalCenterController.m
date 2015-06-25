@@ -112,7 +112,6 @@ static NSString *personFootCell = @"personFootCell";
         if (cell == nil) {
             cell = [[PersonCenterFootCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:personFootCell];
         }
-        cell.backgroundColor = [UIColor blueColor];
         return cell;
     }
 }
