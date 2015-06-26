@@ -10,5 +10,9 @@
 
 @interface LoginViewController : UIViewController
 - (IBAction)backAct:(id)sender;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *regBtn;
+@property (strong, nonatomic) IBOutlet UILabel *otherLogin;
+- (IBAction)forgetPwdAct:(id)sender;
+- (IBAction)regAct:(id)sender;
 
 @end
