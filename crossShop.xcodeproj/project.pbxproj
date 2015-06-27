@@ -15,6 +15,10 @@
 		041A1B9F1B3D025300F68189 /* RegisterPhoneController.m in Sources */ = {isa = PBXBuildFile; fileRef = 041A1B9E1B3D025300F68189 /* RegisterPhoneController.m */; };
 		041A1BA21B3D027500F68189 /* RegisterCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 041A1BA11B3D027500F68189 /* RegisterCodeViewController.m */; };
 		041A1BA51B3D028A00F68189 /* RegisterPwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 041A1BA41B3D028A00F68189 /* RegisterPwdViewController.m */; };
+		041A1BA91B3E467C00F68189 /* OrderListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 041A1BA81B3E467C00F68189 /* OrderListController.m */; };
+		041A1BAD1B3E477500F68189 /* OrderListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 041A1BAB1B3E477500F68189 /* OrderListCell.m */; };
+		041A1BAE1B3E477500F68189 /* OrderListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 041A1BAC1B3E477500F68189 /* OrderListCell.xib */; };
+		041A1BB01B3E5CDE00F68189 /* test3.js in Resources */ = {isa = PBXBuildFile; fileRef = 041A1BAF1B3E5CDE00F68189 /* test3.js */; };
 		046CD9461B10597100392F3F /* CROCommonAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 046CD9451B10597100392F3F /* CROCommonAPI.m */; };
 		046CD96A1B1069A700392F3F /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 046CD94A1B1069A700392F3F /* MKAnnotationView+WebCache.m */; };
 		046CD96B1B1069A700392F3F /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 046CD94C1B1069A700392F3F /* NSData+ImageContentType.m */; };
@@ -108,6 +112,12 @@
 		041A1BA11B3D027500F68189 /* RegisterCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterCodeViewController.m; sourceTree = "<group>"; };
 		041A1BA31B3D028A00F68189 /* RegisterPwdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterPwdViewController.h; sourceTree = "<group>"; };
 		041A1BA41B3D028A00F68189 /* RegisterPwdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterPwdViewController.m; sourceTree = "<group>"; };
+		041A1BA71B3E467C00F68189 /* OrderListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderListController.h; sourceTree = "<group>"; };
+		041A1BA81B3E467C00F68189 /* OrderListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderListController.m; sourceTree = "<group>"; };
+		041A1BAA1B3E477500F68189 /* OrderListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderListCell.h; sourceTree = "<group>"; };
+		041A1BAB1B3E477500F68189 /* OrderListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderListCell.m; sourceTree = "<group>"; };
+		041A1BAC1B3E477500F68189 /* OrderListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderListCell.xib; sourceTree = "<group>"; };
+		041A1BAF1B3E5CDE00F68189 /* test3.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = test3.js; sourceTree = "<group>"; };
 		046CD9441B10597100392F3F /* CROCommonAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CROCommonAPI.h; sourceTree = "<group>"; };
 		046CD9451B10597100392F3F /* CROCommonAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CROCommonAPI.m; sourceTree = "<group>"; };
 		046CD9491B1069A700392F3F /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
@@ -281,6 +291,18 @@
 			name = "Goods Detail";
 			sourceTree = "<group>";
 		};
+		041A1BA61B3E464900F68189 /* Order List */ = {
+			isa = PBXGroup;
+			children = (
+				041A1BA71B3E467C00F68189 /* OrderListController.h */,
+				041A1BA81B3E467C00F68189 /* OrderListController.m */,
+				041A1BAA1B3E477500F68189 /* OrderListCell.h */,
+				041A1BAB1B3E477500F68189 /* OrderListCell.m */,
+				041A1BAC1B3E477500F68189 /* OrderListCell.xib */,
+			);
+			name = "Order List";
+			sourceTree = "<group>";
+		};
 		046CD9431B10594300392F3F /* commonAPI */ = {
 			isa = PBXGroup;
 			children = (
@@ -338,6 +360,7 @@
 				047451EB1B11A089000A57B8 /* testData.plist */,
 				04B9F3F01B156AEB0011DBC2 /* test1.js */,
 				048ADC361B1EDDF0002641DC /* test2.js */,
+				041A1BAF1B3E5CDE00F68189 /* test3.js */,
 			);
 			name = "used source";
 			sourceTree = "<group>";
@@ -455,6 +478,7 @@
 		1852EDE11B0B7398002AAD43 /* crossShop */ = {
 			isa = PBXGroup;
 			children = (
+				041A1BA61B3E464900F68189 /* Order List */,
 				0493EF271B3BEAF900BCF945 /* login&register */,
 				04F7BCF61B32536E001F2A79 /* Account */,
 				04A8E60B1B2AD32B00A7CF0E /* Topic View */,
@@ -655,6 +679,8 @@
 				185CA19F1B3AEB4900ED418A /* PersonCenterFootCell.xib in Resources */,
 				04F7BCF51B31426D001F2A79 /* TopicMode3SecondCell.xib in Resources */,
 				04A8E6131B2AD52900A7CF0E /* TopicMode2HeadCell.xib in Resources */,
+				041A1BB01B3E5CDE00F68189 /* test3.js in Resources */,
+				041A1BAE1B3E477500F68189 /* OrderListCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -719,6 +745,8 @@
 				041A1B9F1B3D025300F68189 /* RegisterPhoneController.m in Sources */,
 				046CD9751B1069A700392F3F /* UIImage+MultiFormat.m in Sources */,
 				04A8E6051B2A706500A7CF0E /* DetailGoodsQuestionCell.m in Sources */,
+				041A1BAD1B3E477500F68189 /* OrderListCell.m in Sources */,
+				041A1BA91B3E467C00F68189 /* OrderListController.m in Sources */,
 				046CD9721B1069A700392F3F /* SDWebImagePrefetcher.m in Sources */,
 				046CD9791B1069A700392F3F /* UIView+WebCacheOperation.m in Sources */,
 				04A8E6001B2A6F2900A7CF0E /* DetailGoodsIntroCell.m in Sources */,
