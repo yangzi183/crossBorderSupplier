@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0405F63A1B40EE1B00C527D8 /* CROOrderList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0405F6391B40EE1B00C527D8 /* CROOrderList.m */; };
+		0405F63D1B413D6300C527D8 /* orderFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0405F63C1B413D6300C527D8 /* orderFootView.m */; };
 		040A3F0C1B25350500166381 /* imgWithTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1852EE0E1B0B7F40002AAD43 /* imgWithTitleView.m */; };
 		040A3F101B258C9800166381 /* CRODetailGoodsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040A3F0F1B258C9800166381 /* CRODetailGoodsController.m */; };
 		040A3F141B258DD600166381 /* CRODetailGoodsHeadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 040A3F121B258DD600166381 /* CRODetailGoodsHeadCell.m */; };
@@ -99,6 +101,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0405F6381B40EE1B00C527D8 /* CROOrderList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CROOrderList.h; sourceTree = "<group>"; };
+		0405F6391B40EE1B00C527D8 /* CROOrderList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CROOrderList.m; sourceTree = "<group>"; };
+		0405F63B1B413D6300C527D8 /* orderFootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = orderFootView.h; sourceTree = "<group>"; };
+		0405F63C1B413D6300C527D8 /* orderFootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = orderFootView.m; sourceTree = "<group>"; };
 		040A3F0E1B258C9800166381 /* CRODetailGoodsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRODetailGoodsController.h; sourceTree = "<group>"; };
 		040A3F0F1B258C9800166381 /* CRODetailGoodsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRODetailGoodsController.m; sourceTree = "<group>"; };
 		040A3F111B258DD600166381 /* CRODetailGoodsHeadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRODetailGoodsHeadCell.h; sourceTree = "<group>"; };
@@ -299,6 +305,8 @@
 				041A1BAA1B3E477500F68189 /* OrderListCell.h */,
 				041A1BAB1B3E477500F68189 /* OrderListCell.m */,
 				041A1BAC1B3E477500F68189 /* OrderListCell.xib */,
+				0405F63B1B413D6300C527D8 /* orderFootView.h */,
+				0405F63C1B413D6300C527D8 /* orderFootView.m */,
 			);
 			name = "Order List";
 			sourceTree = "<group>";
@@ -564,6 +572,8 @@
 				18639BDE1B14B4E500FA259B /* CROGoodsItem.m */,
 				18639BE01B14B83700FA259B /* CROShoppingCart.h */,
 				18639BE11B14B83700FA259B /* CROShoppingCart.m */,
+				0405F6381B40EE1B00C527D8 /* CROOrderList.h */,
+				0405F6391B40EE1B00C527D8 /* CROOrderList.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -761,6 +771,7 @@
 				040A3F181B26CC8900166381 /* imgWithIntroView.m in Sources */,
 				04B9F4931B15A1830011DBC2 /* CROShoppingCartTableViewCell.m in Sources */,
 				04F7BCAC1B2E76D4001F2A79 /* TopicMode3Controller.m in Sources */,
+				0405F63D1B413D6300C527D8 /* orderFootView.m in Sources */,
 				046CD9701B1069A700392F3F /* SDWebImageDownloaderOperation.m in Sources */,
 				04F7BCBC1B2EB569001F2A79 /* UILabel+textFrame.m in Sources */,
 				046CD96E1B1069A700392F3F /* SDWebImageDecoder.m in Sources */,
@@ -768,6 +779,7 @@
 				046CD9801B10B19D00392F3F /* CROMainDetTableViewCell.m in Sources */,
 				1852EDEB1B0B7398002AAD43 /* ViewController.m in Sources */,
 				046CD9771B1069A700392F3F /* UIImageView+HighlightedWebCache.m in Sources */,
+				0405F63A1B40EE1B00C527D8 /* CROOrderList.m in Sources */,
 				040A3F101B258C9800166381 /* CRODetailGoodsController.m in Sources */,
 				046CD96B1B1069A700392F3F /* NSData+ImageContentType.m in Sources */,
 				18639BDF1B14B4E500FA259B /* CROGoodsItem.m in Sources */,

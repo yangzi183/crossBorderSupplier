@@ -9,5 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface OrderListCell : UITableViewCell
+@property (strong, nonatomic) IBOutlet UIImageView *itemImg;
+@property (strong, nonatomic) IBOutlet UILabel *itemTitle;
+@property (strong, nonatomic) IBOutlet UILabel *itemPrice;
+@property (strong, nonatomic) IBOutlet UILabel *itemCount;
+@property (strong, nonatomic) IBOutlet UIImageView *borderImg;
+
+- (void)setOrderItemInfoByDic: (NSDictionary *)dicData;
 
 @end

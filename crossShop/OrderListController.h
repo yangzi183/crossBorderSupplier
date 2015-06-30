@@ -10,6 +10,7 @@
 #import "OrderListCell.h"
 
 @interface OrderListController : UITableViewController
+- (IBAction)backAct:(id)sender;
 
 @property (strong, nonatomic) NSMutableArray *dataArray;
 @end

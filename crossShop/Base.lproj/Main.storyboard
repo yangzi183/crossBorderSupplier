@@ -690,10 +690,10 @@
         <scene sceneID="fYs-2R-PlO">
             <objects>
                 <tableViewController id="ITf-Ti-DlF" customClass="OrderListController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="tOn-kx-7vc">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="tOn-kx-7vc">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="orderListCell" id="uuw-s6-Qla" customClass="OrderListCell">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -707,7 +707,14 @@
                             <outlet property="delegate" destination="ITf-Ti-DlF" id="U1M-Vp-iV4"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="KYu-mh-ORO"/>
+                    <navigationItem key="navigationItem" id="KYu-mh-ORO">
+                        <barButtonItem key="leftBarButtonItem" image="return_icon" id="18T-R8-mF0">
+                            <color key="tintColor" red="0.50980392159999999" green="0.83921568629999999" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="backAct:" destination="ITf-Ti-DlF" id="WEx-AK-Lyu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mXm-Hb-g5t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

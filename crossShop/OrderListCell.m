@@ -7,6 +7,8 @@
 //
 
 #import "OrderListCell.h"
+#import "SDWebImage/UIImageView+WebCache.h"
+#import "CROCommonAPI.h"
 
 @implementation OrderListCell
 
@@ -20,4 +22,32 @@
     // Configure the view for the selected state
 }
 
+- (IBAction)payNowAct:(id)sender {
+}
+- (IBAction)cancel:(id)sender {
+}
+
+- (IBAction)deleteOrderAct:(id)sender {
+}
+
+- (IBAction)confirmGoodsAct:(id)sender {
+}
+
+- (void)setOrderItemInfoByDic: (NSDictionary *)dicData {
+    self.borderImg.layer.borderColor = [CROCommonAPI colorWithHexString:@"#E8E8E8"].CGColor;
+    self.borderImg.layer.borderWidth = 0.4;
+    //NSLog(@"\r\n dic:%@", dicData);
+    if ([dicData objectForKey:@"title"]) {
+        self.itemTitle.text = [dicData objectForKey:@"title"];
+    }
+    if ([dicData objectForKey:@"price"]) {
+        self.itemPrice.text = [NSString stringWithFormat:@"%d", [(NSNumber *)[dicData objectForKey:@"price"] integerValue]];
+    }
+    if ([dicData objectForKey:@"count"]) {
+        self.itemCount.text = [NSString stringWithFormat:@"%d", [(NSNumber *)[dicData objectForKey:@"count"] integerValue]];
+    }
+    if ([dicData objectForKey:@"item_image_url"]) {
+        [self.itemImg sd_setImageWithURL:[NSURL URLWithString:[dicData objectForKey:@"item_image_url"]] placeholderImage:[UIImage imageNamed:@"orderItem.png"]];
+    }
+}
 @end
