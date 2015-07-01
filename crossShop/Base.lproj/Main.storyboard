@@ -327,6 +327,33 @@
             </objects>
             <point key="canvasLocation" x="-1252" y="1690"/>
         </scene>
+        <!--Order Detail Controller-->
+        <scene sceneID="AV9-KG-tOJ">
+            <objects>
+                <tableViewController id="Pre-Rt-0L6" customClass="OrderDetailController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Y7B-FK-BB4">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ETS-O2-Snc">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ETS-O2-Snc" id="8Tb-DM-ToM">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Pre-Rt-0L6" id="ylM-Qn-wgc"/>
+                            <outlet property="delegate" destination="Pre-Rt-0L6" id="Gbn-W5-4Wc"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="iLX-ZF-SFY"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iPo-ir-YLX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1268" y="2480"/>
+        </scene>
         <!--验证码-->
         <scene sceneID="a6c-Cm-bXS">
             <objects>
@@ -715,10 +742,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="Pre-Rt-0L6" kind="show" identifier="toOrderDetailView" id="beg-5y-akL"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mXm-Hb-g5t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1983" y="2480"/>
+            <point key="canvasLocation" x="-2006" y="2480"/>
         </scene>
         <!--Shopping Cart View Controller-->
         <scene sceneID="ArX-Ys-031">
