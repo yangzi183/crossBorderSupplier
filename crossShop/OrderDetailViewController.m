@@ -1,35 +1,40 @@
 //
-//  OrderDetailController.m
+//  OrderDetailViewController.m
 //  crossShop
 //
-//  Created by mac on 15/7/1.
+//  Created by mac on 15/7/3.
 //  Copyright (c) 2015年 apple. All rights reserved.
 //
 
-#import "OrderDetailController.h"
+#import "OrderDetailViewController.h"
 #import "OrderDetailCell.h"
 #import "OrderDetailNormalCell.h"
 #import "OrderDetailItemCell.h"
+#import "CROCommonAPI.h"
+#import "OrderDetailLogisticsCell.h"
 
 static NSString *orderDetailCell = @"orderDetailCell";
 static NSString *orderDetailNormalCell = @"orderDetailNormalCell";
 static NSString *orderDetailItemCell = @"orderDetailItemCell";
+static NSString *orderDetailLogisticsCell = @"orderDetailLogisticsCell";
 
-@interface OrderDetailController ()
+@interface OrderDetailViewController ()
 
 @end
 
-@implementation OrderDetailController
+@implementation OrderDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    // Do any additional setup after loading the view.
     UINib *nib = [UINib nibWithNibName:@"OrderDetailCell" bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:orderDetailCell];
     UINib *normalNib = [UINib nibWithNibName:@"OrderDetailNormalCell" bundle:nil];
     [self.tableView registerNib:normalNib forCellReuseIdentifier:orderDetailNormalCell];
     UINib *itemNib = [UINib nibWithNibName:@"OrderDetailItemCell" bundle:nil];
     [self.tableView registerNib:itemNib forCellReuseIdentifier:orderDetailItemCell];
+    UINib *logisticNib = [UINib nibWithNibName:@"OrderDetailLogisticsCell" bundle:nil];
+    [self.tableView registerNib:logisticNib forCellReuseIdentifier:orderDetailLogisticsCell];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -40,10 +45,8 @@ static NSString *orderDetailItemCell = @"orderDetailItemCell";
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 3;
+    return 4;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -57,20 +60,55 @@ static NSString *orderDetailItemCell = @"orderDetailItemCell";
         case 2:
         return 41;
         
+        case 3:
+        return 80;
+        
         default:
         return 41;
     }
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    switch (section) {
+        case 0:
+        return 0;
+        
+        case 1:
+        return 5;
+        
+        case 2:
+        return 5;
+        
+        case 3:
+        return 5;
+        
+        default:
+        return 5;
+    }
+}
 
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    if (section == 0) {
+        return nil;
+    } else if (section == 1) {
+        UIView *footLine = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, 5)];
+        footLine.backgroundColor = [CROCommonAPI colorWithHexString:@"#e8e8e8"];
+        return footLine;
+    } else {
+        UIView *footLine = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, 5)];
+        footLine.backgroundColor = [CROCommonAPI colorWithHexString:@"#e8e8e8"];
+        return footLine;
+    }
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 0) {
         return 1;
     } else if (section == 1) {
         return 2;
-    }
-    else {
+    } else if (section == 2) {
+        return 2;
+    } else {
         return 5;
     }
 }
@@ -92,50 +130,22 @@ static NSString *orderDetailItemCell = @"orderDetailItemCell";
         //cell.backgroundColor = [UIColor redColor];
         return cell;
         
-    } else {
+    } else if (indexPath.section == 2) {
         OrderDetailNormalCell *cell = [tableView dequeueReusableCellWithIdentifier:orderDetailNormalCell forIndexPath:indexPath];
         if (cell == nil) {
             cell = [[OrderDetailNormalCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:orderDetailNormalCell];
         }
         //cell.backgroundColor = [UIColor blueColor];
         return cell;
+    } else {
+        OrderDetailLogisticsCell *cell = [tableView dequeueReusableCellWithIdentifier:orderDetailLogisticsCell forIndexPath:indexPath];
+        if (cell == nil) {
+            cell = [[OrderDetailLogisticsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:orderDetailLogisticsCell];
+        }
+        //cell.backgroundColor = [UIColor blueColor];
+        return cell;
     }
 }
-
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 /*
 #pragma mark - Navigation
@@ -147,4 +157,7 @@ static NSString *orderDetailItemCell = @"orderDetailItemCell";
 }
 */
 
+- (IBAction)backAct:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 @end

@@ -327,33 +327,6 @@
             </objects>
             <point key="canvasLocation" x="-1252" y="1690"/>
         </scene>
-        <!--Order Detail Controller-->
-        <scene sceneID="AV9-KG-tOJ">
-            <objects>
-                <tableViewController id="Pre-Rt-0L6" customClass="OrderDetailController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Y7B-FK-BB4">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ETS-O2-Snc">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ETS-O2-Snc" id="8Tb-DM-ToM">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Pre-Rt-0L6" id="ylM-Qn-wgc"/>
-                            <outlet property="delegate" destination="Pre-Rt-0L6" id="Gbn-W5-4Wc"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="iLX-ZF-SFY"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iPo-ir-YLX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1268" y="2480"/>
-        </scene>
         <!--验证码-->
         <scene sceneID="a6c-Cm-bXS">
             <objects>
@@ -743,12 +716,72 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="Pre-Rt-0L6" kind="show" identifier="toOrderDetailView" id="beg-5y-akL"/>
+                        <segue destination="CI8-fW-7fZ" kind="show" identifier="toOrderDetailView" id="61o-Cu-KEO"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mXm-Hb-g5t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2006" y="2480"/>
+        </scene>
+        <!--Order Detail View Controller-->
+        <scene sceneID="wul-aY-7AH">
+            <objects>
+                <viewController id="CI8-fW-7fZ" customClass="OrderDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VxY-xh-uGZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="O69-YF-OTR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BfI-QH-Vur">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="0tP-hV-a4F">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="548"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="CI8-fW-7fZ" id="9rL-kf-tIW"/>
+                                    <outlet property="delegate" destination="CI8-fW-7fZ" id="P7x-1B-fPF"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uj1-RM-vft">
+                                <rect key="frame" x="258" y="557" width="85" height="35"/>
+                                <color key="backgroundColor" red="0.50980392159999999" green="0.83921568629999999" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="86d-f3-TOk"/>
+                                    <constraint firstAttribute="width" constant="85" id="bdW-Lz-LP5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="确认收货">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="uj1-RM-vft" secondAttribute="centerX" id="1Tb-rP-wmF"/>
+                            <constraint firstAttribute="trailing" secondItem="0tP-hV-a4F" secondAttribute="trailing" id="LXo-UW-5kQ"/>
+                            <constraint firstItem="0tP-hV-a4F" firstAttribute="top" secondItem="BfI-QH-Vur" secondAttribute="top" id="la6-Kk-QCC"/>
+                            <constraint firstItem="0tP-hV-a4F" firstAttribute="leading" secondItem="BfI-QH-Vur" secondAttribute="leading" id="rla-Qw-DQi"/>
+                            <constraint firstAttribute="bottom" secondItem="0tP-hV-a4F" secondAttribute="bottom" constant="52" id="toE-vQ-O1w"/>
+                            <constraint firstAttribute="bottom" secondItem="uj1-RM-vft" secondAttribute="bottom" constant="8" id="udn-1N-MNa"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="dQN-Jl-wve">
+                        <barButtonItem key="leftBarButtonItem" image="return_icon" id="8ku-an-Jxj">
+                            <color key="tintColor" red="0.50980392159999999" green="0.83921568629999999" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="backAct:" destination="CI8-fW-7fZ" id="CXo-wO-k0N"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="0tP-hV-a4F" id="8xw-Vb-enT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YxH-x4-3m8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1278" y="2480"/>
         </scene>
         <!--Shopping Cart View Controller-->
         <scene sceneID="ArX-Ys-031">
