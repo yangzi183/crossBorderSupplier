@@ -23,6 +23,14 @@
 		041A1BAD1B3E477500F68189 /* OrderListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 041A1BAB1B3E477500F68189 /* OrderListCell.m */; };
 		041A1BAE1B3E477500F68189 /* OrderListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 041A1BAC1B3E477500F68189 /* OrderListCell.xib */; };
 		041A1BB01B3E5CDE00F68189 /* test3.js in Resources */ = {isa = PBXBuildFile; fileRef = 041A1BAF1B3E5CDE00F68189 /* test3.js */; };
+		0460DB3B1B4A144C00220D4E /* OrderConfirmHeadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0460DB391B4A144C00220D4E /* OrderConfirmHeadCell.m */; };
+		0460DB3C1B4A144C00220D4E /* OrderConfirmHeadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0460DB3A1B4A144C00220D4E /* OrderConfirmHeadCell.xib */; };
+		0460DB401B4A1C3700220D4E /* OrderConfirmMoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0460DB3E1B4A1C3700220D4E /* OrderConfirmMoreCell.m */; };
+		0460DB411B4A1C3700220D4E /* OrderConfirmMoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0460DB3F1B4A1C3700220D4E /* OrderConfirmMoreCell.xib */; };
+		0460DB441B4A337600220D4E /* CROReceipt.m in Sources */ = {isa = PBXBuildFile; fileRef = 0460DB431B4A337600220D4E /* CROReceipt.m */; };
+		0460DB461B4A527400220D4E /* test4.js in Resources */ = {isa = PBXBuildFile; fileRef = 0460DB451B4A527400220D4E /* test4.js */; };
+		0460DB4E1B4A780F00220D4E /* ReceiptController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0460DB4D1B4A780F00220D4E /* ReceiptController.m */; };
+		0460DB511B4A782700220D4E /* ReceiptAreaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0460DB501B4A782700220D4E /* ReceiptAreaView.m */; };
 		046CD9461B10597100392F3F /* CROCommonAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 046CD9451B10597100392F3F /* CROCommonAPI.m */; };
 		046CD96A1B1069A700392F3F /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 046CD94A1B1069A700392F3F /* MKAnnotationView+WebCache.m */; };
 		046CD96B1B1069A700392F3F /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 046CD94C1B1069A700392F3F /* NSData+ImageContentType.m */; };
@@ -53,6 +61,7 @@
 		049625BE1B462C55005D3A24 /* OrderDetailLogisticsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 049625BC1B462C55005D3A24 /* OrderDetailLogisticsCell.m */; };
 		049625BF1B462C55005D3A24 /* OrderDetailLogisticsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049625BD1B462C55005D3A24 /* OrderDetailLogisticsCell.xib */; };
 		049625C21B4660EA005D3A24 /* OrderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 049625C11B4660EA005D3A24 /* OrderDetailViewController.m */; };
+		049625C61B4682D5005D3A24 /* OrderConfirmController.m in Sources */ = {isa = PBXBuildFile; fileRef = 049625C51B4682D5005D3A24 /* OrderConfirmController.m */; };
 		04A8E5FB1B2A6E6E00A7CF0E /* DetailGoodsImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A8E5F91B2A6E6E00A7CF0E /* DetailGoodsImageCell.m */; };
 		04A8E5FC1B2A6E6E00A7CF0E /* DetailGoodsImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A8E5FA1B2A6E6E00A7CF0E /* DetailGoodsImageCell.xib */; };
 		04A8E6001B2A6F2900A7CF0E /* DetailGoodsIntroCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A8E5FE1B2A6F2900A7CF0E /* DetailGoodsIntroCell.m */; };
@@ -136,6 +145,19 @@
 		041A1BAB1B3E477500F68189 /* OrderListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderListCell.m; sourceTree = "<group>"; };
 		041A1BAC1B3E477500F68189 /* OrderListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderListCell.xib; sourceTree = "<group>"; };
 		041A1BAF1B3E5CDE00F68189 /* test3.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = test3.js; sourceTree = "<group>"; };
+		0460DB381B4A144C00220D4E /* OrderConfirmHeadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderConfirmHeadCell.h; sourceTree = "<group>"; };
+		0460DB391B4A144C00220D4E /* OrderConfirmHeadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderConfirmHeadCell.m; sourceTree = "<group>"; };
+		0460DB3A1B4A144C00220D4E /* OrderConfirmHeadCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderConfirmHeadCell.xib; sourceTree = "<group>"; };
+		0460DB3D1B4A1C3700220D4E /* OrderConfirmMoreCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderConfirmMoreCell.h; sourceTree = "<group>"; };
+		0460DB3E1B4A1C3700220D4E /* OrderConfirmMoreCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderConfirmMoreCell.m; sourceTree = "<group>"; };
+		0460DB3F1B4A1C3700220D4E /* OrderConfirmMoreCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderConfirmMoreCell.xib; sourceTree = "<group>"; };
+		0460DB421B4A337600220D4E /* CROReceipt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CROReceipt.h; sourceTree = "<group>"; };
+		0460DB431B4A337600220D4E /* CROReceipt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CROReceipt.m; sourceTree = "<group>"; };
+		0460DB451B4A527400220D4E /* test4.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = test4.js; sourceTree = "<group>"; };
+		0460DB4C1B4A780F00220D4E /* ReceiptController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceiptController.h; sourceTree = "<group>"; };
+		0460DB4D1B4A780F00220D4E /* ReceiptController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceiptController.m; sourceTree = "<group>"; };
+		0460DB4F1B4A782700220D4E /* ReceiptAreaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceiptAreaView.h; sourceTree = "<group>"; };
+		0460DB501B4A782700220D4E /* ReceiptAreaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceiptAreaView.m; sourceTree = "<group>"; };
 		046CD9441B10597100392F3F /* CROCommonAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CROCommonAPI.h; sourceTree = "<group>"; };
 		046CD9451B10597100392F3F /* CROCommonAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CROCommonAPI.m; sourceTree = "<group>"; };
 		046CD9491B1069A700392F3F /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
@@ -191,6 +213,8 @@
 		049625BD1B462C55005D3A24 /* OrderDetailLogisticsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderDetailLogisticsCell.xib; sourceTree = "<group>"; };
 		049625C01B4660EA005D3A24 /* OrderDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderDetailViewController.h; sourceTree = "<group>"; };
 		049625C11B4660EA005D3A24 /* OrderDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderDetailViewController.m; sourceTree = "<group>"; };
+		049625C41B4682D5005D3A24 /* OrderConfirmController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderConfirmController.h; sourceTree = "<group>"; };
+		049625C51B4682D5005D3A24 /* OrderConfirmController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderConfirmController.m; sourceTree = "<group>"; };
 		04A8E5F81B2A6E6E00A7CF0E /* DetailGoodsImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailGoodsImageCell.h; sourceTree = "<group>"; };
 		04A8E5F91B2A6E6E00A7CF0E /* DetailGoodsImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailGoodsImageCell.m; sourceTree = "<group>"; };
 		04A8E5FA1B2A6E6E00A7CF0E /* DetailGoodsImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailGoodsImageCell.xib; sourceTree = "<group>"; };
@@ -344,6 +368,8 @@
 		041A1BA61B3E464900F68189 /* Order List */ = {
 			isa = PBXGroup;
 			children = (
+				0460DB4B1B4A778500220D4E /* Receipt */,
+				049625C31B4682BC005D3A24 /* Order Confirm */,
 				0405F6411B4384AF00C527D8 /* Order Detail */,
 				041A1BA71B3E467C00F68189 /* OrderListController.h */,
 				041A1BA81B3E467C00F68189 /* OrderListController.m */,
@@ -354,6 +380,17 @@
 				0405F63C1B413D6300C527D8 /* orderFootView.m */,
 			);
 			name = "Order List";
+			sourceTree = "<group>";
+		};
+		0460DB4B1B4A778500220D4E /* Receipt */ = {
+			isa = PBXGroup;
+			children = (
+				0460DB4C1B4A780F00220D4E /* ReceiptController.h */,
+				0460DB4D1B4A780F00220D4E /* ReceiptController.m */,
+				0460DB4F1B4A782700220D4E /* ReceiptAreaView.h */,
+				0460DB501B4A782700220D4E /* ReceiptAreaView.m */,
+			);
+			name = Receipt;
 			sourceTree = "<group>";
 		};
 		046CD9431B10594300392F3F /* commonAPI */ = {
@@ -414,6 +451,7 @@
 				04B9F3F01B156AEB0011DBC2 /* test1.js */,
 				048ADC361B1EDDF0002641DC /* test2.js */,
 				041A1BAF1B3E5CDE00F68189 /* test3.js */,
+				0460DB451B4A527400220D4E /* test4.js */,
 			);
 			name = "used source";
 			sourceTree = "<group>";
@@ -431,6 +469,21 @@
 				041A1BA41B3D028A00F68189 /* RegisterPwdViewController.m */,
 			);
 			name = "login&register";
+			sourceTree = "<group>";
+		};
+		049625C31B4682BC005D3A24 /* Order Confirm */ = {
+			isa = PBXGroup;
+			children = (
+				049625C41B4682D5005D3A24 /* OrderConfirmController.h */,
+				049625C51B4682D5005D3A24 /* OrderConfirmController.m */,
+				0460DB381B4A144C00220D4E /* OrderConfirmHeadCell.h */,
+				0460DB391B4A144C00220D4E /* OrderConfirmHeadCell.m */,
+				0460DB3A1B4A144C00220D4E /* OrderConfirmHeadCell.xib */,
+				0460DB3D1B4A1C3700220D4E /* OrderConfirmMoreCell.h */,
+				0460DB3E1B4A1C3700220D4E /* OrderConfirmMoreCell.m */,
+				0460DB3F1B4A1C3700220D4E /* OrderConfirmMoreCell.xib */,
+			);
+			name = "Order Confirm";
 			sourceTree = "<group>";
 		};
 		04A8E60B1B2AD32B00A7CF0E /* Topic View */ = {
@@ -619,6 +672,8 @@
 				18639BE11B14B83700FA259B /* CROShoppingCart.m */,
 				0405F6381B40EE1B00C527D8 /* CROOrderList.h */,
 				0405F6391B40EE1B00C527D8 /* CROOrderList.m */,
+				0460DB421B4A337600220D4E /* CROReceipt.h */,
+				0460DB431B4A337600220D4E /* CROReceipt.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -716,11 +771,13 @@
 			files = (
 				04F7BCB11B2E7749001F2A79 /* TopicMode3HeadCell.xib in Resources */,
 				049625B51B43DAB3005D3A24 /* OrderDetailItemCell.xib in Resources */,
+				0460DB411B4A1C3700220D4E /* OrderConfirmMoreCell.xib in Resources */,
 				1852EDEE1B0B7398002AAD43 /* Main.storyboard in Resources */,
 				04A8E6191B2BFB8F00A7CF0E /* TopicMode2ItemCell.xib in Resources */,
 				04F7BD041B326FA8001F2A79 /* PersonalCenterCell.xib in Resources */,
 				04F7BCB61B2E776F001F2A79 /* TopicMode3FirstCell.xib in Resources */,
 				04A8E5FC1B2A6E6E00A7CF0E /* DetailGoodsImageCell.xib in Resources */,
+				0460DB461B4A527400220D4E /* test4.js in Resources */,
 				04A8E6061B2A706500A7CF0E /* DetailGoodsQuestionCell.xib in Resources */,
 				046CD9811B10B19D00392F3F /* CROMainDetTableViewCell.xib in Resources */,
 				18C37B5D1B134B2E008CE19C /* CROMainTitleTableViewCell.xib in Resources */,
@@ -740,6 +797,7 @@
 				04A8E6131B2AD52900A7CF0E /* TopicMode2HeadCell.xib in Resources */,
 				041A1BB01B3E5CDE00F68189 /* test3.js in Resources */,
 				041A1BAE1B3E477500F68189 /* OrderListCell.xib in Resources */,
+				0460DB3C1B4A144C00220D4E /* OrderConfirmHeadCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -805,6 +863,7 @@
 				046CD9751B1069A700392F3F /* UIImage+MultiFormat.m in Sources */,
 				04A8E6051B2A706500A7CF0E /* DetailGoodsQuestionCell.m in Sources */,
 				041A1BAD1B3E477500F68189 /* OrderListCell.m in Sources */,
+				0460DB441B4A337600220D4E /* CROReceipt.m in Sources */,
 				041A1BA91B3E467C00F68189 /* OrderListController.m in Sources */,
 				046CD9721B1069A700392F3F /* SDWebImagePrefetcher.m in Sources */,
 				046CD9791B1069A700392F3F /* UIView+WebCacheOperation.m in Sources */,
@@ -820,6 +879,7 @@
 				046CD9461B10597100392F3F /* CROCommonAPI.m in Sources */,
 				040A3F181B26CC8900166381 /* imgWithIntroView.m in Sources */,
 				049625C21B4660EA005D3A24 /* OrderDetailViewController.m in Sources */,
+				049625C61B4682D5005D3A24 /* OrderConfirmController.m in Sources */,
 				04B9F4931B15A1830011DBC2 /* CROShoppingCartTableViewCell.m in Sources */,
 				049625AF1B43C53D005D3A24 /* OrderDetailNormalCell.m in Sources */,
 				04F7BCAC1B2E76D4001F2A79 /* TopicMode3Controller.m in Sources */,
@@ -830,14 +890,17 @@
 				04F7BCB51B2E776F001F2A79 /* TopicMode3FirstCell.m in Sources */,
 				046CD9801B10B19D00392F3F /* CROMainDetTableViewCell.m in Sources */,
 				1852EDEB1B0B7398002AAD43 /* ViewController.m in Sources */,
+				0460DB4E1B4A780F00220D4E /* ReceiptController.m in Sources */,
 				046CD9771B1069A700392F3F /* UIImageView+HighlightedWebCache.m in Sources */,
 				0405F63A1B40EE1B00C527D8 /* CROOrderList.m in Sources */,
 				040A3F101B258C9800166381 /* CRODetailGoodsController.m in Sources */,
 				046CD96B1B1069A700392F3F /* NSData+ImageContentType.m in Sources */,
+				0460DB3B1B4A144C00220D4E /* OrderConfirmHeadCell.m in Sources */,
 				18639BDF1B14B4E500FA259B /* CROGoodsItem.m in Sources */,
 				046CD96F1B1069A700392F3F /* SDWebImageDownloader.m in Sources */,
 				040A3F141B258DD600166381 /* CRODetailGoodsHeadCell.m in Sources */,
 				04F7BD031B326FA8001F2A79 /* PersonalCenterCell.m in Sources */,
+				0460DB511B4A782700220D4E /* ReceiptAreaView.m in Sources */,
 				1852EDE81B0B7398002AAD43 /* AppDelegate.m in Sources */,
 				186822421B0CC0F70024EF19 /* flowTableView.m in Sources */,
 				040A3F0C1B25350500166381 /* imgWithTitleView.m in Sources */,
@@ -845,6 +908,7 @@
 				04F7BCB01B2E7749001F2A79 /* TopicMode3HeadCell.m in Sources */,
 				1852EE0B1B0B74F6002AAD43 /* CROMainViewController.m in Sources */,
 				049625B41B43DAB3005D3A24 /* OrderDetailItemCell.m in Sources */,
+				0460DB401B4A1C3700220D4E /* OrderConfirmMoreCell.m in Sources */,
 				046CD9711B1069A700392F3F /* SDWebImageManager.m in Sources */,
 				04F7BCB91B2E7786001F2A79 /* TopicMode3SecondCell.m in Sources */,
 				1852EDE51B0B7398002AAD43 /* main.m in Sources */,

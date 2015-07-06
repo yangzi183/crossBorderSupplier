@@ -204,4 +204,7 @@ static NSInteger totalOriPriceReal;
     self.selectAll.selected = isSelectAll;
 }
 
+- (IBAction)confirmOrderAct:(id)sender {
+    [self performSegueWithIdentifier:@"toOrderConfirmView" sender:nil];
+}
 @end

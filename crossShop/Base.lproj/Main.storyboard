@@ -78,6 +78,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="bXg-bK-NO3" kind="show" identifier="showShoppingCartView" id="Uti-h7-uFm"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yby-IL-goT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -783,7 +786,133 @@
             </objects>
             <point key="canvasLocation" x="-1278" y="2480"/>
         </scene>
-        <!--Shopping Cart View Controller-->
+        <!--确认订单-->
+        <scene sceneID="6M6-II-Fjy">
+            <objects>
+                <viewController id="cfq-Nk-kOy" customClass="OrderConfirmController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qlC-Dj-jSw"/>
+                        <viewControllerLayoutGuide type="bottom" id="arq-t9-duX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FBQ-rl-nfY">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="CHn-7l-fwz">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="548"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="cfq-Nk-kOy" id="8FO-Cr-ISz"/>
+                                    <outlet property="delegate" destination="cfq-Nk-kOy" id="mum-dm-wy8"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZ1-4S-Ijr">
+                                <rect key="frame" x="500" y="557" width="85" height="35"/>
+                                <color key="backgroundColor" red="0.50980392159999999" green="0.83921568629999999" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="85" id="jzz-cn-k8T"/>
+                                    <constraint firstAttribute="height" constant="35" id="sJv-6G-xRW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="提交订单">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="共计￥" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wEL-rK-xvf">
+                                <rect key="frame" x="15" y="564" width="46" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="9Ox-xu-Jf5"/>
+                                    <constraint firstAttribute="height" constant="20" id="9aV-W7-1u0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="textColor" red="0.90588235289999997" green="0.35294117650000001" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2333" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FU6-h8-E7h">
+                                <rect key="frame" x="60" y="563" width="60" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="BNN-8P-OhJ"/>
+                                    <constraint firstAttribute="height" constant="20" id="Wt6-pS-XsU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.90588235289999997" green="0.35294117650000001" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CHn-7l-fwz" firstAttribute="leading" secondItem="FBQ-rl-nfY" secondAttribute="leading" id="2Bf-uE-1Gg"/>
+                            <constraint firstItem="CHn-7l-fwz" firstAttribute="top" secondItem="FBQ-rl-nfY" secondAttribute="top" id="74y-ff-zeS"/>
+                            <constraint firstItem="FU6-h8-E7h" firstAttribute="leading" secondItem="wEL-rK-xvf" secondAttribute="trailing" constant="-1" id="8kA-3y-v7m"/>
+                            <constraint firstItem="wEL-rK-xvf" firstAttribute="leading" secondItem="FBQ-rl-nfY" secondAttribute="leading" constant="15" id="Ep8-dl-K9S"/>
+                            <constraint firstAttribute="bottom" secondItem="wEL-rK-xvf" secondAttribute="bottom" constant="16" id="HXM-1E-Njz"/>
+                            <constraint firstAttribute="trailing" secondItem="UZ1-4S-Ijr" secondAttribute="trailing" constant="15" id="QNc-Ay-GXl"/>
+                            <constraint firstAttribute="bottom" secondItem="CHn-7l-fwz" secondAttribute="bottom" constant="52" id="Xyc-6f-Vst"/>
+                            <constraint firstAttribute="trailing" secondItem="CHn-7l-fwz" secondAttribute="trailing" id="ebw-oq-xqZ"/>
+                            <constraint firstAttribute="bottom" secondItem="UZ1-4S-Ijr" secondAttribute="bottom" constant="8" id="jRX-xo-Br0"/>
+                            <constraint firstAttribute="bottom" secondItem="FU6-h8-E7h" secondAttribute="bottom" constant="17" id="wBf-dS-3Sg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="确认订单" id="GQW-Ny-on9">
+                        <barButtonItem key="leftBarButtonItem" image="return_icon" id="wVB-OU-NG2">
+                            <color key="tintColor" red="0.50980392159999999" green="0.83921568629999999" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="backAct:" destination="cfq-Nk-kOy" id="asd-W1-4Pw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="CHn-7l-fwz" id="Cbx-Kd-OEr"/>
+                        <segue destination="fFk-7d-OI2" kind="show" identifier="toNewReceiptView" id="9cI-br-wqz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PcV-e1-ecW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="220" y="-248"/>
+        </scene>
+        <!--Receipt Controller-->
+        <scene sceneID="hB7-91-YMd">
+            <objects>
+                <viewController id="fFk-7d-OI2" customClass="ReceiptController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Dsn-Eu-93Z"/>
+                        <viewControllerLayoutGuide type="bottom" id="rzw-aC-srw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tBB-Mc-AQ9">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="55" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Ty2-ph-Omr">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="q1Z-HU-Ecs">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="q1Z-HU-Ecs" id="Wwu-S9-MUE">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="收货人姓名" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ftl-4r-k4g">
+                                                    <rect key="frame" x="15" y="13" width="570" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="biw-Ss-zn4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s1i-7X-lzh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="887" y="-248"/>
+        </scene>
+        <!--购物车-->
         <scene sceneID="ArX-Ys-031">
             <objects>
                 <viewController id="bXg-bK-NO3" customClass="CROShoppingCartViewController" sceneMemberID="viewController">
@@ -849,6 +978,9 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="confirmOrderAct:" destination="bXg-bK-NO3" eventType="touchUpInside" id="k9V-Yd-5gb"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="为您节省" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BkF-ZC-DHD">
                                         <rect key="frame" x="370" y="35" width="60" height="18"/>
@@ -944,7 +1076,7 @@
                             <constraint firstItem="pNM-bx-B67" firstAttribute="leading" secondItem="apd-sa-gbh" secondAttribute="leading" id="lUn-wU-pG1"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="z60-hq-UaZ">
+                    <navigationItem key="navigationItem" title="购物车" id="z60-hq-UaZ">
                         <barButtonItem key="leftBarButtonItem" image="return_icon" id="Tte-bT-TLf">
                             <color key="tintColor" red="0.50980392159999999" green="0.83921568629999999" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
@@ -967,11 +1099,12 @@
                         <outlet property="tableViewTopMargin" destination="D1Z-Ca-yQQ" id="t22-pz-hf1"/>
                         <outlet property="totalDownPrice" destination="2zj-e3-4kE" id="AUA-Jf-qFz"/>
                         <outlet property="totalPriceReal" destination="MwK-M3-dDZ" id="nMV-D4-vm9"/>
+                        <segue destination="cfq-Nk-kOy" kind="show" identifier="toOrderConfirmView" id="rdW-qk-Me2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Z9-4L-aap" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-570" y="-237.74999999999997"/>
+            <point key="canvasLocation" x="-538" y="-248"/>
         </scene>
         <!--Detail Goods Controller-->
         <scene sceneID="T5e-dB-C2c">
@@ -1025,7 +1158,7 @@
         <image name="shopping_cart_icon" width="36" height="34"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Uti-h7-uFm"/>
         <segue reference="N5K-vg-A2i"/>
-        <segue reference="8IM-Zk-gFH"/>
     </inferredMetricsTieBreakers>
 </document>

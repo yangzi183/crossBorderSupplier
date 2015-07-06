@@ -25,4 +25,5 @@
 @property (strong, nonatomic) IBOutlet UILabel *totalDownPrice;
 
 @property (strong, nonatomic) NSMutableArray *dataArray;
+- (IBAction)confirmOrderAct:(id)sender;
 @end
