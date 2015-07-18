@@ -10,6 +10,8 @@
 #import "imgWithTitleView.h"
 #import "imgWithIntroView.h"
 
+#define DETAIL_CELL_MODE_HEIGHT     170
+
 typedef enum {
     ITEMDETAIL = 10,
     BUYINTRO,

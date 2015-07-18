@@ -77,22 +77,107 @@ static NSString *detailGoodsBrandCell = @"detailGoodsBrandCell";
 #pragma mark - Table view data source
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 800;
+    switch (indexPath.section) {
+        case 0:
+            return DETAIL_CELL_HEAD_HEIGHT;
+        case 1:
+            return DETAIL_CELL_RECOMMEND_HEIGHT;
+        case 2:
+            return DETAIL_CELL_BRAND_HEIGHT;
+        case 3:
+            return DETAIL_CELL_INTRO_HEIGHT;
+        case 4:
+            return DETAIL_CELL_MODE_HEIGHT;
+        case 5:
+            return 800;
+            
+        default:
+            return DETAIL_CELL_HEAD_HEIGHT;
+    }
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return 6;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     NSLog(@"\r\n count:%ld", dataArray.count);
-    return dataArray.count;
+    if (section == 5) {
+        return dataArray.count;
+    } else {
+        return 1;
+    }
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"\r\n indexrow:%ld", indexPath.row);
-    if (indexPath.row == 0) {
+    switch (indexPath.section) {
+        case 0: {
+            CRODetailGoodsHeadCell *cell = [tableView dequeueReusableCellWithIdentifier:cellDetailGoodsName forIndexPath:indexPath];
+            if (cell == nil) {
+                cell = [[CRODetailGoodsHeadCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellDetailGoodsName];
+            };
+            
+            return cell;
+        }
+        case 1: {
+            DetailGoodsRecommendCell *cell = [tableView dequeueReusableCellWithIdentifier:detailGoodsRecommendCell forIndexPath:indexPath];
+            if (cell == nil) {
+                cell = [[DetailGoodsRecommendCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:detailGoodsRecommendCell];
+            }
+            return cell;
+        }
+        case 2: {
+            DetailGoodsBrandCell *cell = [tableView dequeueReusableCellWithIdentifier:detailGoodsBrandCell forIndexPath:indexPath];
+            if (cell == nil) {
+                cell = [[DetailGoodsBrandCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:detailGoodsBrandCell];
+            }
+            return cell;
+        }
+        case 3: {
+            DetailGoodsIntroDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:detailGoodsIntroDetailCell forIndexPath:indexPath];
+            if (cell == nil) {
+                cell = [[DetailGoodsIntroDetailCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:detailGoodsIntroDetailCell];
+            }
+            return cell;
+        }
+        case 4: {
+            DetailGoodsModeCell *cell = [tableView dequeueReusableCellWithIdentifier:detailGoodsModeCell forIndexPath:indexPath];
+            if (cell == nil) {
+                cell = [[DetailGoodsModeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:detailGoodsModeCell];
+            }
+            return cell;
+        }
+        case 5: {
+            if (isSelectMode == ITEMDETAIL) {
+                DetailGoodsImageCell *cell = [tableView dequeueReusableCellWithIdentifier:cellDetailGoodsImageName forIndexPath:indexPath];
+                if (cell == nil) {
+                    cell = [[DetailGoodsImageCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellDetailGoodsImageName];
+                }
+                return cell;
+            } else if (isSelectMode == BUYINTRO) {
+                DetailGoodsIntroCell *cell = [tableView dequeueReusableCellWithIdentifier:cellDetailGoodsIntroName forIndexPath:indexPath];
+                if (cell == nil) {
+                    cell = [[DetailGoodsIntroCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellDetailGoodsIntroName];
+                }
+                return cell;
+            } else {
+                DetailGoodsQuestionCell *cell = [tableView dequeueReusableCellWithIdentifier:cellDetailGoodsQuestionName forIndexPath:indexPath];
+                if (cell == nil) {
+                    cell = [[DetailGoodsQuestionCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellDetailGoodsQuestionName];
+                }
+                return cell;
+            }
+        }
+            
+        default:
+            return nil;
+    }
+    
+    
+    
+    /*if (indexPath.row == 0) {
         CRODetailGoodsHeadCell *cell = [tableView dequeueReusableCellWithIdentifier:cellDetailGoodsName forIndexPath:indexPath];
         if (cell == nil) {
             cell = [[CRODetailGoodsHeadCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellDetailGoodsName];
@@ -121,7 +206,7 @@ static NSString *detailGoodsBrandCell = @"detailGoodsBrandCell";
             }
             return cell;
         }
-    }
+    }*/
 }
 
 - (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {

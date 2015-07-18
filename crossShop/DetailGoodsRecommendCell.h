@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#define DETAIL_CELL_RECOMMEND_HEIGHT     150
+
 @interface DetailGoodsRecommendCell : UITableViewCell
 
 @end

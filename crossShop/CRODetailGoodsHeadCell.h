@@ -10,22 +10,8 @@
 #import "imgWithTitleView.h"
 #import "imgWithIntroView.h"
 
-typedef enum {
-    ITEMDETAIL = 10,
-    BUYINTRO,
-    MOREQUESTION
-}INTROIMAGENAME;
+#define DETAIL_CELL_HEAD_HEIGHT     450
 
 @interface CRODetailGoodsHeadCell : UITableViewCell
-
-@property (strong, nonatomic) IBOutlet imgWithTitleView *iconReal;
-@property (strong, nonatomic) IBOutlet imgWithTitleView *iconPlane;
-@property (strong, nonatomic) IBOutlet imgWithTitleView *iconExpress;
-@property (strong, nonatomic) IBOutlet imgWithTitleView *iconSeven;
-
-@property (strong, nonatomic) IBOutlet imgWithIntroView *itemDetail;
-@property (strong, nonatomic) IBOutlet imgWithIntroView *buyIntro;
-@property (strong, nonatomic) IBOutlet imgWithIntroView *moreQuestion;
-@property (strong, nonatomic) IBOutlet UIView *moreView;
 
 @end
