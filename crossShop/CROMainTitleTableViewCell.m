@@ -24,8 +24,8 @@
     UIImage *milkImg = [UIImage imageNamed:@"milk_icon"];
     UIImage *foodImg = [UIImage imageNamed:@"food_icon"];
   //  [self.diaper configImg:diaperImg withTitle:@"纸尿裤"];
-    [self.diaper configImg:diaperImg withTitle:@"纸尿裤" widthSize:CGSizeMake(44, 60)];
     [self.milkPower configImg:milkImg withTitle:@"奶粉" widthSize:CGSizeMake(44, 60)];
+    [self.diaper configImg:diaperImg withTitle:@"纸尿裤" widthSize:CGSizeMake(44, 60)];
     [self.food configImg:foodImg withTitle:@"辅食" widthSize:CGSizeMake(44, 60)];
     
     UIImage *realImg = [UIImage imageNamed:@"real_icon"];

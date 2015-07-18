@@ -13,6 +13,7 @@ static NSString *cellName = @"mainCell";
 static NSString *cellTitleName = @"titleCell";
 @interface CROMainViewController () {
     NSMutableArray *flowTableData;
+    UIImageView *barLineView;
 }
 
 @end
@@ -37,11 +38,19 @@ static NSString *cellTitleName = @"titleCell";
     
     NSNotificationCenter *notiCenter = [NSNotificationCenter defaultCenter];
     [notiCenter addObserver:self selector:@selector(showTopicView:) name:kNOTIFICATION_INTO_TOPIC_VIEW object:nil];
+    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, 1)];
+    lineView.backgroundColor = [CROCommonAPI colorWithHexString:@"#82d6d6"];
+    [self.mainTableView addSubview:lineView];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    //self.contentSizeWidth.constant = screenWidth;
-    
+    barLineView = [CROCommonAPI findHairlineImageViewUnder:self.navigationController.navigationBar];
+    barLineView.hidden = YES;
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    barLineView = [CROCommonAPI findHairlineImageViewUnder:self.navigationController.navigationBar];
+    barLineView.hidden = NO;
 }
 
 - (void)viewDidAppear:(BOOL)animated {

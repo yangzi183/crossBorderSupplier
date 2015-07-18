@@ -7,6 +7,7 @@
 //
 
 #import "CROMainDetTableViewCell.h"
+#import "CROCommonAPI.h"
 
 @implementation CROMainDetTableViewCell
 
@@ -22,6 +23,9 @@
 }
 
 - (void)setDicData:(NSDictionary *)dicData {
+    self.tormorowLabel.layer.cornerRadius = 10;
+    self.tormorowLabel.layer.borderColor = [CROCommonAPI colorWithHexString:@"#82D6D6"].CGColor;
+    self.tormorowLabel.layer.borderWidth = 1.0f;
     if (dicData) {
         _dicData = dicData;
         self.disLabel.text = [dicData objectForKey:kDiscount];
@@ -29,6 +33,7 @@
         self.title.text = [dicData objectForKey:kTitle];
         self.curPrice.text = [dicData objectForKey:kCurPrice];
         self.oriPrice.text = [dicData objectForKey:kOriPrice];
+        self.oriPrice.lineBreakMode = NSLineBreakByTruncatingTail;
         self.detail.text = [dicData objectForKey:kDetail];
         [self.coverImg sd_setImageWithURL:[NSURL URLWithString:[dicData objectForKey:kCoverImg]] placeholderImage:[UIImage imageNamed:@"coverImg.png"]];
     }

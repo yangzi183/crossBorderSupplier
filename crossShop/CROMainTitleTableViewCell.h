@@ -10,7 +10,7 @@
 #import "imgWithTitleView.h"
 #import "flowTableView.h"
 
-#define kTitleCellHeight        455
+#define kTitleCellHeight        535
 @interface CROMainTitleTableViewCell : UITableViewCell {
     NSMutableArray *flowTableData;
 }

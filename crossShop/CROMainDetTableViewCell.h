@@ -10,7 +10,7 @@
 #import "commonConfig.h"
 #import "SDWebImage/UIImageView+WebCache.h"
 
-#define KCELLWIDTH          430
+#define KCELLWIDTH          445
 
 #define kDiscount       @"discount"
 #define kDisDate        @"disDate"
@@ -33,5 +33,7 @@
 - (IBAction)advanceAct:(id)sender;
 @property (strong, nonatomic) IBOutlet UILabel *disDateLabel
 ;
+@property (strong, nonatomic) IBOutlet UILabel *updateLabel;
+@property (strong, nonatomic) IBOutlet UIButton *tormorowLabel;
 @property (strong, nonatomic) NSDictionary *dicData;
 @end

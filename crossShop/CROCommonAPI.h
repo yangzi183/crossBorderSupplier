@@ -12,5 +12,6 @@
 @interface CROCommonAPI : NSObject
 
 + (UIColor *) colorWithHexString: (NSString *) hexString;
++ (UIImageView *)findHairlineImageViewUnder:(UIView *)view;
 
 @end

@@ -63,10 +63,11 @@
             UIImageView *backView = [[UIImageView alloc]initWithFrame:viewFrame];
             backView.frame = CGRectOffset(viewFrame, x, 0);
             backView.image = imgBack;
-            CGRect imgFrame = CGRectMake(0, 2, backView.frame.size.width - kBACKMARGIN, imgBack.size.height - 3);
+            CGRect imgFrame = CGRectMake(0, 2, backView.frame.size.width - kBACKMARGIN, backView.frame.size.height - 3);
             UIImageView *imgView = [[UIImageView alloc]initWithFrame:imgFrame];
             [imgView sd_setImageWithURL:[NSURL URLWithString:obj] placeholderImage:[UIImage imageNamed:@"tmp.png"]];
-            
+            imgView.layer.cornerRadius = 6;
+            imgView.layer.masksToBounds = YES;
             UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(clickTopicImage:)];
             backView.userInteractionEnabled = YES;
             [backView addGestureRecognizer:tapGesture];
