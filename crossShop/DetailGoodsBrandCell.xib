@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="HCh-9t-XFJ" customClass="DetailGoodsBrandCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="165"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HCh-9t-XFJ" id="M3r-vM-UeM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oMU-Uc-w5d">
+                        <rect key="frame" x="0.0" y="1" width="320" height="1"/>
+                        <color key="backgroundColor" red="0.96078431369999995" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="3Gg-62-HbA"/>
+                        </constraints>
+                    </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="red_icon" translatesAutoresizingMaskIntoConstraints="NO" id="020-Cb-ONI">
+                        <rect key="frame" x="15" y="10" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="1bm-At-NZF"/>
+                            <constraint firstAttribute="width" constant="40" id="T1S-VF-pp4"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aptamil" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Th-Qe-HaP">
+                        <rect key="frame" x="65" y="15" width="80" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="NWU-Ot-vL6"/>
+                            <constraint firstAttribute="height" constant="20" id="WMI-Pu-hhx"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QoG-Wc-FMQ">
+                        <rect key="frame" x="65" y="40" width="240" height="110"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="110" id="6XU-p1-dYU"/>
+                        </constraints>
+                        <string key="text">德国领先的高端奶粉品牌，是德国市场份额第一的奶粉，也是欧洲销量最好的奶粉之一。
+爱他美奶粉产自德国，是德国美乐宝（Milupa）集团旗下品牌，后美乐宝被达能集团收购。2007年，达能再收购Royal Numico（纽迪希亚持有人），将旗下的婴幼儿营养及医学营养进行了内部合并。爱他美与诺优能、可瑞康三个奶粉品牌均属于纽迪希亚旗下。</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rza-Ya-31m">
+                        <rect key="frame" x="0.0" y="160" width="320" height="5"/>
+                        <color key="backgroundColor" red="0.96078431369999995" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="5" id="gIu-hh-i7g"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="QoG-Wc-FMQ" firstAttribute="leading" secondItem="020-Cb-ONI" secondAttribute="trailing" constant="10" id="1PV-L9-vx1"/>
+                    <constraint firstAttribute="trailing" secondItem="QoG-Wc-FMQ" secondAttribute="trailing" constant="15" id="BLA-uO-2Ph"/>
+                    <constraint firstAttribute="trailing" secondItem="oMU-Uc-w5d" secondAttribute="trailing" id="Cpv-Rp-l1i"/>
+                    <constraint firstItem="1Th-Qe-HaP" firstAttribute="top" secondItem="M3r-vM-UeM" secondAttribute="top" constant="15" id="EQ6-sa-m2a"/>
+                    <constraint firstItem="QoG-Wc-FMQ" firstAttribute="top" secondItem="1Th-Qe-HaP" secondAttribute="bottom" constant="5" id="GbO-Cn-OgH"/>
+                    <constraint firstItem="Rza-Ya-31m" firstAttribute="leading" secondItem="M3r-vM-UeM" secondAttribute="leading" id="TQ7-Qm-atf"/>
+                    <constraint firstItem="oMU-Uc-w5d" firstAttribute="leading" secondItem="M3r-vM-UeM" secondAttribute="leading" id="c81-sl-ine"/>
+                    <constraint firstItem="1Th-Qe-HaP" firstAttribute="leading" secondItem="020-Cb-ONI" secondAttribute="trailing" constant="10" id="czp-Yt-HOi"/>
+                    <constraint firstAttribute="trailing" secondItem="Rza-Ya-31m" secondAttribute="trailing" id="lEY-5R-Bzk"/>
+                    <constraint firstItem="Rza-Ya-31m" firstAttribute="top" secondItem="QoG-Wc-FMQ" secondAttribute="bottom" constant="10" id="njL-U3-RGH"/>
+                    <constraint firstItem="020-Cb-ONI" firstAttribute="top" secondItem="M3r-vM-UeM" secondAttribute="top" constant="10" id="nsW-KG-M4h"/>
+                    <constraint firstItem="oMU-Uc-w5d" firstAttribute="top" secondItem="M3r-vM-UeM" secondAttribute="top" constant="1" id="rlU-I0-BZi"/>
+                    <constraint firstItem="020-Cb-ONI" firstAttribute="leading" secondItem="M3r-vM-UeM" secondAttribute="leading" constant="15" id="uu8-dW-KCW"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="313" y="139"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="red_icon" width="17" height="17"/>
+    </resources>
+</document>

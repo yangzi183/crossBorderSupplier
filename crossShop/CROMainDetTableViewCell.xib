@@ -243,10 +243,12 @@
                             <action selector="advanceAct:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="iWU-Qb-bUj"/>
                         </connections>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6.5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ETd-dU-Md8">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ETd-dU-Md8">
                         <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="29" id="7aG-ms-tqP"/>
+                            <constraint firstAttribute="width" constant="29" id="7aG-ms-tqP">
+                                <variation key="heightClass=regular-widthClass=compact" constant="26"/>
+                            </constraint>
                             <constraint firstAttribute="height" constant="21" id="ggK-eU-YLd"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
@@ -385,7 +387,9 @@
                         <variation key="heightClass=regular-widthClass=compact" constant="10"/>
                     </constraint>
                     <constraint firstItem="ldb-bV-qFT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="Zss-Bi-uj4"/>
-                    <constraint firstItem="ETd-dU-Md8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="aDn-RV-Idv"/>
+                    <constraint firstItem="ETd-dU-Md8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="aDn-RV-Idv">
+                        <variation key="heightClass=regular-widthClass=compact" constant="13"/>
+                    </constraint>
                     <constraint firstAttribute="trailing" secondItem="k20-X0-Zd5" secondAttribute="trailing" constant="10" id="bW5-yL-OWE"/>
                     <constraint firstItem="I7F-Vz-azO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="cKg-1a-wro">
                         <variation key="heightClass=regular-widthClass=compact" constant="25"/>

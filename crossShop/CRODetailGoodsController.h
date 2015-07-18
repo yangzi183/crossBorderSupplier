@@ -11,6 +11,11 @@
 #import "DetailGoodsImageCell.h"
 #import "DetailGoodsIntroCell.h"
 #import "DetailGoodsQuestionCell.h"
+#import "DetailGoodsBrandCell.h"
+#import "DetailGoodsIntroDetailCell.h"
+#import "DetailGoodsModeCell.h"
+#import "DetailGoodsRecommendCell.h"
+
 
 typedef enum {
     SELECT_IMAGE = 0,

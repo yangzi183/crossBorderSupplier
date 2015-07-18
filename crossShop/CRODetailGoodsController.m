@@ -12,6 +12,11 @@ static NSString *cellDetailGoodsName = @"detailGoodsCell";
 static NSString *cellDetailGoodsImageName = @"detailGoodsImage";
 static NSString *cellDetailGoodsIntroName = @"detailGoodsIntro";
 static NSString *cellDetailGoodsQuestionName = @"detailGoodsQuestion";
+static NSString *detailGoodsRecommendCell = @"detailGoodsRecommendCell";
+static NSString *detailGoodsModeCell = @"detailGoodsModeCell";
+static NSString *detailGoodsIntroDetailCell = @"detailGoodsIntroDetailCell";
+static NSString *detailGoodsBrandCell = @"detailGoodsBrandCell";
+
 
 @interface CRODetailGoodsController () {
     NSMutableArray *dataArray;
@@ -40,6 +45,17 @@ static NSString *cellDetailGoodsQuestionName = @"detailGoodsQuestion";
     [self.tableView registerNib:cellIntroNib forCellReuseIdentifier:cellDetailGoodsIntroName];
     UINib *cellQuestionNib = [UINib nibWithNibName:@"DetailGoodsQuestionCell" bundle:nil];
     [self.tableView registerNib:cellQuestionNib forCellReuseIdentifier:cellDetailGoodsQuestionName];
+    
+    
+    UINib *detailGoodsRecommendCellNib = [UINib nibWithNibName:@"DetailGoodsRecommendCell" bundle:nil];
+    [self.tableView registerNib:detailGoodsRecommendCellNib forCellReuseIdentifier:detailGoodsRecommendCell];
+    UINib *detailGoodsModeCellNib = [UINib nibWithNibName:@"DetailGoodsModeCell" bundle:nil];
+    [self.tableView registerNib:detailGoodsModeCellNib forCellReuseIdentifier:detailGoodsModeCell];
+    UINib *detailGoodsIntroDetailCellNib = [UINib nibWithNibName:@"DetailGoodsIntroDetailCell" bundle:nil];
+    [self.tableView registerNib:detailGoodsIntroDetailCellNib forCellReuseIdentifier:detailGoodsIntroDetailCell];
+    UINib *detailGoodsBrandCellNib = [UINib nibWithNibName:@"DetailGoodsBrandCell" bundle:nil];
+    [self.tableView registerNib:detailGoodsBrandCellNib forCellReuseIdentifier:detailGoodsBrandCell];
+    
     //self.dicDetailData = [[NSDictionary alloc]init];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.itemImgArray = [[NSArray alloc]init];
@@ -114,7 +130,7 @@ static NSString *cellDetailGoodsQuestionName = @"detailGoodsQuestion";
 
 - (void)changeDetailCellWithTag:(NSInteger)setTag {
     NSLog(@"\r\n tag:%ld", (long)setTag);
-    dataArray = [[NSMutableArray alloc]initWithObjects:@"test1", @"test2", @"test3", nil];
+    dataArray = [[NSMutableArray alloc]initWithObjects:@"test1", @"test2", @"test3", @"test4", @"test5", @"test6", nil];
     isSelectMode = (int)setTag;
     
     [self.tableView reloadData];
