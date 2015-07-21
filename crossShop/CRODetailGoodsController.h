@@ -15,8 +15,10 @@
 #import "DetailGoodsIntroDetailCell.h"
 #import "DetailGoodsModeCell.h"
 #import "DetailGoodsRecommendCell.h"
+#import "commonConfig.h"
+#import "DetailGoodsSectionHeadCell.h"
 
-
+#define kDetailSectionHeaderHeight          40
 typedef enum {
     SELECT_IMAGE = 0,
     SELECT_INTRO,

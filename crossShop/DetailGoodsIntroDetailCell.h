@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#define DETAIL_CELL_INTRO_HEIGHT     496
+#define DETAIL_CELL_INTRO_HEIGHT     480
 
 @interface DetailGoodsIntroDetailCell : UITableViewCell
 

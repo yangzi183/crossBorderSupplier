@@ -10,7 +10,7 @@
 #import "imgWithTitleView.h"
 #import "imgWithIntroView.h"
 
-#define DETAIL_CELL_HEAD_HEIGHT     450
+#define DETAIL_CELL_HEAD_HEIGHT     430
 
 @interface CRODetailGoodsHeadCell : UITableViewCell
 

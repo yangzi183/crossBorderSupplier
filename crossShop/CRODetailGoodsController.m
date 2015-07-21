@@ -16,11 +16,13 @@ static NSString *detailGoodsRecommendCell = @"detailGoodsRecommendCell";
 static NSString *detailGoodsModeCell = @"detailGoodsModeCell";
 static NSString *detailGoodsIntroDetailCell = @"detailGoodsIntroDetailCell";
 static NSString *detailGoodsBrandCell = @"detailGoodsBrandCell";
+static NSString *detailGoodsSectionHeadCell = @"detailGoodsSectionHeadCell";
 
 
 @interface CRODetailGoodsController () {
     NSMutableArray *dataArray;
     INTROIMAGENAME isSelectMode;
+    NSArray *sectionHeadArray;
 }
 
 @end
@@ -56,10 +58,15 @@ static NSString *detailGoodsBrandCell = @"detailGoodsBrandCell";
     UINib *detailGoodsBrandCellNib = [UINib nibWithNibName:@"DetailGoodsBrandCell" bundle:nil];
     [self.tableView registerNib:detailGoodsBrandCellNib forCellReuseIdentifier:detailGoodsBrandCell];
     
+    UINib *detailGoodsSectionHeadCellNib = [UINib nibWithNibName:@"DetailGoodsSectionHeadCell" bundle:nil];
+    [self.tableView registerNib:detailGoodsSectionHeadCellNib forCellReuseIdentifier:detailGoodsSectionHeadCell];
+
     //self.dicDetailData = [[NSDictionary alloc]init];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.itemImgArray = [[NSArray alloc]init];
     //dataArray = [[NSMutableArray alloc]init];
+    sectionHeadArray = [[NSArray alloc] initWithObjects:@"会买妈妈育儿师推荐", @"品牌介绍", @"产品说明", nil];
+    
     NSLog(@"\r\n viewdidload");
 }
 
@@ -81,10 +88,19 @@ static NSString *detailGoodsBrandCell = @"detailGoodsBrandCell";
         case 0:
             return DETAIL_CELL_HEAD_HEIGHT;
         case 1:
+            if (indexPath.row == 0) {
+                return kDetailGoodsSectionHeadHeight;
+            }
             return DETAIL_CELL_RECOMMEND_HEIGHT;
         case 2:
+            if (indexPath.row == 0) {
+                return kDetailGoodsSectionHeadHeight;
+            }
             return DETAIL_CELL_BRAND_HEIGHT;
         case 3:
+            if (indexPath.row == 0) {
+                return kDetailGoodsSectionHeadHeight;
+            }
             return DETAIL_CELL_INTRO_HEIGHT;
         case 4:
             return DETAIL_CELL_MODE_HEIGHT;
@@ -96,13 +112,53 @@ static NSString *detailGoodsBrandCell = @"detailGoodsBrandCell";
     }
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    if (section == 5 || section == 4) {
+        return 0;
+    } else {
+        return kThickLineHeight;
+    }
+}
+
+/*
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    if (section == 1 || section == 2 || section == 3) {
+        return kDetailSectionHeaderHeight;
+    } else {
+        return 0;
+    }
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    if (section == 1 || section == 2 || section == 3) {
+        UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, kDetailSectionHeaderHeight)];
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 150, 20)];
+        label.font = [UIFont systemFontOfSize:15];
+        label.text = @"会买妈妈育儿师推荐";
+        [headView addSubview:label];
+        headView.backgroundColor = [UIColor clearColor];
+        label.backgroundColor = [UIColor clearColor];
+        return headView;
+    } else {
+        return nil;
+    }
+}
+*/
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, kThickLineHeight)];
+    lineView.backgroundColor = [CROCommonAPI colorWithHexString:@"#F5F6F6"];
+    return lineView;
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 6;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     NSLog(@"\r\n count:%ld", dataArray.count);
-    if (section == 5) {
+    if (section == 1 || section == 2 || section == 3) {
+        return 2;
+    } else if (section == 5){
         return dataArray.count;
     } else {
         return 1;
@@ -111,7 +167,7 @@ static NSString *detailGoodsBrandCell = @"detailGoodsBrandCell";
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"\r\n indexrow:%ld", indexPath.row);
+    NSLog(@"\r\n section:%ld, indexrow:%ld", indexPath.section, indexPath.row);
     switch (indexPath.section) {
         case 0: {
             CRODetailGoodsHeadCell *cell = [tableView dequeueReusableCellWithIdentifier:cellDetailGoodsName forIndexPath:indexPath];
@@ -122,25 +178,52 @@ static NSString *detailGoodsBrandCell = @"detailGoodsBrandCell";
             return cell;
         }
         case 1: {
-            DetailGoodsRecommendCell *cell = [tableView dequeueReusableCellWithIdentifier:detailGoodsRecommendCell forIndexPath:indexPath];
-            if (cell == nil) {
-                cell = [[DetailGoodsRecommendCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:detailGoodsRecommendCell];
+            if (indexPath.row == 0) {
+                DetailGoodsSectionHeadCell *cell = [tableView dequeueReusableCellWithIdentifier:detailGoodsSectionHeadCell forIndexPath:indexPath];
+                if (cell == nil) {
+                    cell = [[DetailGoodsSectionHeadCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:detailGoodsSectionHeadCell];
+                }
+                cell.titleLabel.text = [sectionHeadArray objectAtIndex:indexPath.section - 1];
+                return cell;
+            } else {
+                DetailGoodsRecommendCell *cell = [tableView dequeueReusableCellWithIdentifier:detailGoodsRecommendCell forIndexPath:indexPath];
+                if (cell == nil) {
+                    cell = [[DetailGoodsRecommendCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:detailGoodsRecommendCell];
+                }
+                return cell;
             }
-            return cell;
         }
         case 2: {
-            DetailGoodsBrandCell *cell = [tableView dequeueReusableCellWithIdentifier:detailGoodsBrandCell forIndexPath:indexPath];
-            if (cell == nil) {
-                cell = [[DetailGoodsBrandCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:detailGoodsBrandCell];
+            if (indexPath.row == 0) {
+                DetailGoodsSectionHeadCell *cell = [tableView dequeueReusableCellWithIdentifier:detailGoodsSectionHeadCell forIndexPath:indexPath];
+                if (cell == nil) {
+                    cell = [[DetailGoodsSectionHeadCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:detailGoodsSectionHeadCell];
+                }
+                cell.titleLabel.text = [sectionHeadArray objectAtIndex:indexPath.section - 1];
+                return cell;
+            } else {
+                DetailGoodsBrandCell *cell = [tableView dequeueReusableCellWithIdentifier:detailGoodsBrandCell forIndexPath:indexPath];
+                if (cell == nil) {
+                    cell = [[DetailGoodsBrandCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:detailGoodsBrandCell];
+                }
+                return cell;
             }
-            return cell;
         }
         case 3: {
-            DetailGoodsIntroDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:detailGoodsIntroDetailCell forIndexPath:indexPath];
-            if (cell == nil) {
-                cell = [[DetailGoodsIntroDetailCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:detailGoodsIntroDetailCell];
+            if (indexPath.row == 0) {
+                DetailGoodsSectionHeadCell *cell = [tableView dequeueReusableCellWithIdentifier:detailGoodsSectionHeadCell forIndexPath:indexPath];
+                if (cell == nil) {
+                    cell = [[DetailGoodsSectionHeadCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:detailGoodsSectionHeadCell];
+                }
+                cell.titleLabel.text = [sectionHeadArray objectAtIndex:indexPath.section - 1];
+                return cell;
+            } else {
+                DetailGoodsIntroDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:detailGoodsIntroDetailCell forIndexPath:indexPath];
+                if (cell == nil) {
+                    cell = [[DetailGoodsIntroDetailCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:detailGoodsIntroDetailCell];
+                }
+                return cell;
             }
-            return cell;
         }
         case 4: {
             DetailGoodsModeCell *cell = [tableView dequeueReusableCellWithIdentifier:detailGoodsModeCell forIndexPath:indexPath];
@@ -150,6 +233,7 @@ static NSString *detailGoodsBrandCell = @"detailGoodsBrandCell";
             return cell;
         }
         case 5: {
+            NSLog(@"\r\n mode:%d", isSelectMode);
             if (isSelectMode == ITEMDETAIL) {
                 DetailGoodsImageCell *cell = [tableView dequeueReusableCellWithIdentifier:cellDetailGoodsImageName forIndexPath:indexPath];
                 if (cell == nil) {
@@ -174,39 +258,6 @@ static NSString *detailGoodsBrandCell = @"detailGoodsBrandCell";
         default:
             return nil;
     }
-    
-    
-    
-    /*if (indexPath.row == 0) {
-        CRODetailGoodsHeadCell *cell = [tableView dequeueReusableCellWithIdentifier:cellDetailGoodsName forIndexPath:indexPath];
-        if (cell == nil) {
-            cell = [[CRODetailGoodsHeadCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellDetailGoodsName];
-        }
-        cell.itemDetail.delegate = self;
-        cell.buyIntro.delegate = self;
-        cell.moreQuestion.delegate = self;
-        return cell;
-    } else {
-        if (isSelectMode == ITEMDETAIL) {
-            DetailGoodsImageCell *cell = [tableView dequeueReusableCellWithIdentifier:cellDetailGoodsImageName forIndexPath:indexPath];
-            if (cell == nil) {
-                cell = [[DetailGoodsImageCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellDetailGoodsImageName];
-            }
-            return cell;
-        } else if (isSelectMode == BUYINTRO) {
-            DetailGoodsIntroCell *cell = [tableView dequeueReusableCellWithIdentifier:cellDetailGoodsIntroName forIndexPath:indexPath];
-            if (cell == nil) {
-                cell = [[DetailGoodsIntroCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellDetailGoodsIntroName];
-            }
-            return cell;
-        } else {
-            DetailGoodsQuestionCell *cell = [tableView dequeueReusableCellWithIdentifier:cellDetailGoodsQuestionName forIndexPath:indexPath];
-            if (cell == nil) {
-                cell = [[DetailGoodsQuestionCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellDetailGoodsQuestionName];
-            }
-            return cell;
-        }
-    }*/
 }
 
 - (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -218,6 +269,7 @@ static NSString *detailGoodsBrandCell = @"detailGoodsBrandCell";
     dataArray = [[NSMutableArray alloc]initWithObjects:@"test1", @"test2", @"test3", @"test4", @"test5", @"test6", nil];
     isSelectMode = (int)setTag;
     
+    //[self.tableView cellForRowAtIndexPath:<#(NSIndexPath *)#>]
     [self.tableView reloadData];
 }
 

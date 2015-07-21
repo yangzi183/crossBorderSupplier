@@ -16,6 +16,8 @@
 		040A3F141B258DD600166381 /* CRODetailGoodsHeadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 040A3F121B258DD600166381 /* CRODetailGoodsHeadCell.m */; };
 		040A3F151B258DD600166381 /* CRODetailGoodsHeadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040A3F131B258DD600166381 /* CRODetailGoodsHeadCell.xib */; };
 		040A3F181B26CC8900166381 /* imgWithIntroView.m in Sources */ = {isa = PBXBuildFile; fileRef = 040A3F171B26CC8900166381 /* imgWithIntroView.m */; };
+		04196F121B5E501D001685C7 /* DetailGoodsSectionHeadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04196F101B5E501D001685C7 /* DetailGoodsSectionHeadCell.m */; };
+		04196F131B5E501D001685C7 /* DetailGoodsSectionHeadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04196F111B5E501D001685C7 /* DetailGoodsSectionHeadCell.xib */; };
 		041A1B9F1B3D025300F68189 /* RegisterPhoneController.m in Sources */ = {isa = PBXBuildFile; fileRef = 041A1B9E1B3D025300F68189 /* RegisterPhoneController.m */; };
 		041A1BA21B3D027500F68189 /* RegisterCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 041A1BA11B3D027500F68189 /* RegisterCodeViewController.m */; };
 		041A1BA51B3D028A00F68189 /* RegisterPwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 041A1BA41B3D028A00F68189 /* RegisterPwdViewController.m */; };
@@ -141,6 +143,9 @@
 		040A3F131B258DD600166381 /* CRODetailGoodsHeadCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CRODetailGoodsHeadCell.xib; sourceTree = "<group>"; };
 		040A3F161B26CC8900166381 /* imgWithIntroView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imgWithIntroView.h; sourceTree = "<group>"; };
 		040A3F171B26CC8900166381 /* imgWithIntroView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = imgWithIntroView.m; sourceTree = "<group>"; };
+		04196F0F1B5E501D001685C7 /* DetailGoodsSectionHeadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailGoodsSectionHeadCell.h; sourceTree = "<group>"; };
+		04196F101B5E501D001685C7 /* DetailGoodsSectionHeadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailGoodsSectionHeadCell.m; sourceTree = "<group>"; };
+		04196F111B5E501D001685C7 /* DetailGoodsSectionHeadCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailGoodsSectionHeadCell.xib; sourceTree = "<group>"; };
 		041A1B9D1B3D025300F68189 /* RegisterPhoneController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterPhoneController.h; sourceTree = "<group>"; };
 		041A1B9E1B3D025300F68189 /* RegisterPhoneController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterPhoneController.m; sourceTree = "<group>"; };
 		041A1BA01B3D027500F68189 /* RegisterCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterCodeViewController.h; sourceTree = "<group>"; };
@@ -393,6 +398,9 @@
 				04FE91521B5A544C004A74D6 /* DetailGoodsModeCell.h */,
 				04FE91531B5A544C004A74D6 /* DetailGoodsModeCell.m */,
 				04FE91541B5A544C004A74D6 /* DetailGoodsModeCell.xib */,
+				04196F0F1B5E501D001685C7 /* DetailGoodsSectionHeadCell.h */,
+				04196F101B5E501D001685C7 /* DetailGoodsSectionHeadCell.m */,
+				04196F111B5E501D001685C7 /* DetailGoodsSectionHeadCell.xib */,
 			);
 			name = "Goods Detail";
 			sourceTree = "<group>";
@@ -824,6 +832,7 @@
 				04B9F4941B15A1830011DBC2 /* CROShoppingCartTableViewCell.xib in Resources */,
 				047451EC1B11A089000A57B8 /* testData.plist in Resources */,
 				1852EDF01B0B7398002AAD43 /* Images.xcassets in Resources */,
+				04196F131B5E501D001685C7 /* DetailGoodsSectionHeadCell.xib in Resources */,
 				04B9F3F11B156AEB0011DBC2 /* test1.js in Resources */,
 				048ADC371B1EDDF0002641DC /* test2.js in Resources */,
 				049625B01B43C53D005D3A24 /* OrderDetailNormalCell.xib in Resources */,
@@ -933,6 +942,7 @@
 				040A3F101B258C9800166381 /* CRODetailGoodsController.m in Sources */,
 				046CD96B1B1069A700392F3F /* NSData+ImageContentType.m in Sources */,
 				0460DB3B1B4A144C00220D4E /* OrderConfirmHeadCell.m in Sources */,
+				04196F121B5E501D001685C7 /* DetailGoodsSectionHeadCell.m in Sources */,
 				18639BDF1B14B4E500FA259B /* CROGoodsItem.m in Sources */,
 				046CD96F1B1069A700392F3F /* SDWebImageDownloader.m in Sources */,
 				040A3F141B258DD600166381 /* CRODetailGoodsHeadCell.m in Sources */,

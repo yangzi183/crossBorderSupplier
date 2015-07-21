@@ -32,7 +32,7 @@
     [self.iconExpress configImg:expressImg withTitle:@"保税区直邮" widthSize:iconSize];
     [self.iconSeven configImg:sevenImg withTitle:@"7天退货" widthSize:iconSize];
     
-    CGSize itemSize = CGSizeMake(66, 70);
+    CGSize itemSize = CGSizeMake(66, 30);
     [self.itemDetail configImg:realImg withTitle:@"商品详情" widthSize:itemSize withTag:ITEMDETAIL];
     [self.buyIntro configImg:realImg withTitle:@"购买须知" widthSize:itemSize withTag:BUYINTRO];
     [self.moreQuestion configImg:realImg withTitle:@"常见问题" widthSize:itemSize withTag:MOREQUESTION];

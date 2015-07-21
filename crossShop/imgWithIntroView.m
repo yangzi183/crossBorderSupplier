@@ -9,7 +9,7 @@
 #import "imgWithIntroView.h"
 #import "CROCommonAPI.h"
 
-@implementation imgWithIntroView
+@implementation imgWithIntroView 
 
 /*
 // Only override drawRect: if you perform custom drawing.
@@ -23,17 +23,21 @@
     [self setBackgroundColor:[UIColor clearColor]];
     UIImageView *iconImgView = [[UIImageView alloc]initWithFrame:CGRectMake((toSize.width - kIntroImgWidth) / 2, kIntroImgMargin, kIntroImgWidth, kIntroImgHeight)];
     iconImgView.image = iconImg;
-    [self addSubview:iconImgView];
+    //[self addSubview:iconImgView];
     
-    UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, iconImgView.frame.size.height + kIntroImgMargin * 2, toSize.width, 20)];
+    UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, toSize.width, 20)];
     //NSLog(@"\r\n title:%@, sizewidth:%f", title, self.frame.size.width);
     titleLabel.backgroundColor = [UIColor clearColor];
     titleLabel.text = title;
     titleLabel.textAlignment = NSTextAlignmentCenter;
-    titleLabel.font = [UIFont systemFontOfSize:13];
-    titleLabel.textColor = [CROCommonAPI colorWithHexString:@"#9B9B9B"];
+    titleLabel.font = [UIFont boldSystemFontOfSize:13];;
+    
+    //titleLabel.textColor = [CROCommonAPI colorWithHexString:@"#9B9B9B"];
     [self addSubview:titleLabel];
     
+    self.lineView = [[UIView alloc] initWithFrame:CGRectMake(0, toSize.height - 2, toSize.width, 2)];
+    self.lineView.backgroundColor = [CROCommonAPI colorWithHexString:@"#82D6D6"];
+    [self addSubview:self.lineView];
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(changeDetail)];
     [self addGestureRecognizer:tapGesture];
     self.tag = setTag;

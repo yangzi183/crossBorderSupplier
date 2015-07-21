@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#define DETAIL_CELL_BRAND_HEIGHT     160
+#define DETAIL_CELL_BRAND_HEIGHT     150
 
 @interface DetailGoodsBrandCell : UITableViewCell
 

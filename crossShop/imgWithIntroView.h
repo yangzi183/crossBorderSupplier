@@ -23,5 +23,6 @@
 - (void)configImg: (UIImage *)iconImg withTitle:(NSString *)title widthSize:(CGSize)toSize withTag:(NSInteger)setTag;
 
 @property (strong,nonatomic) id<imgWithIntroViewDelegate> delegate;
+@property (strong, nonatomic) UIView *lineView;
 
 @end

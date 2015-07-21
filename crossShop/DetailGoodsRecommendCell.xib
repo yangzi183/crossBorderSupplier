@@ -38,21 +38,21 @@
                         <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RNp-ak-cwz">
-                        <rect key="frame" x="65" y="40" width="240" height="100"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RNp-ak-cwz">
+                        <rect key="frame" x="65" y="38" width="240" height="90"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="100" id="h9A-CA-8OP"/>
+                            <constraint firstAttribute="height" constant="90" id="h9A-CA-8OP"/>
                         </constraints>
-                        <mutableString key="text">近日，美国纽约长岛一餐厅惊现百岁大龙虾，这只大虾已达95岁高龄，体重约有12公斤。因为从没见过这么大的龙虾，该餐厅并没有将它做成美食，而是供人们欣赏。
+                        <string key="text">近日，美国纽约长岛一餐厅惊现百岁大龙虾，这只大虾已达95岁高龄，体重约有12公斤。因为从没见过这么大的龙虾，该餐厅并没有将它做成美食，而是供人们欣赏。
 　　从媒体报道中的图片可以看到，这只罕见的大龙虾体型庞大，两只钳子则如大砍刀。这只长寿大龙虾使得这家餐厅成了一个旅游景点，也让它避免成为盘中餐，不少人赶到该餐厅，只为一睹这只年近百岁大龙虾的风采。
 　　因体重达25磅(约12公斤)，餐厅服务员表示，必须用上全身的力气才能拿起这只龙虾。
-　　看到如此大的龙虾，不少中国网友纷纷惊叹：“这得够多少人吃啊”、“难道这货成精了”。</mutableString>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+　　看到如此大的龙虾，不少中国网友纷纷惊叹：“这得够多少人吃啊”、“难道这货成精了”。</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="icS-x8-jsu">
-                        <rect key="frame" x="0.0" y="150" width="320" height="5"/>
+                        <rect key="frame" x="0.0" y="138" width="320" height="5"/>
                         <color key="backgroundColor" red="0.96078431369999995" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="5" id="J3k-lq-7eU"/>
@@ -72,7 +72,7 @@
                     <constraint firstItem="icS-x8-jsu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="oI3-21-99g"/>
                     <constraint firstItem="xUD-zM-N9o" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="1" id="qK4-ut-A2e"/>
                     <constraint firstItem="icS-x8-jsu" firstAttribute="top" secondItem="RNp-ak-cwz" secondAttribute="bottom" constant="10" id="ryZ-7Z-zqe"/>
-                    <constraint firstItem="RNp-ak-cwz" firstAttribute="top" secondItem="aRa-KA-8ZS" secondAttribute="bottom" constant="5" id="t4N-um-Ch3"/>
+                    <constraint firstItem="RNp-ak-cwz" firstAttribute="top" secondItem="aRa-KA-8ZS" secondAttribute="bottom" constant="3" id="t4N-um-Ch3"/>
                 </constraints>
             </tableViewCellContentView>
             <point key="canvasLocation" x="313" y="139"/>
