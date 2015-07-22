@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "dottedLineBorderView.h"
+#import "LBorderView.h"
 
+#define kDetailGoodsIntroCellHeight         360
 @interface DetailGoodsIntroCell : UITableViewCell
+@property (strong, nonatomic) IBOutlet dottedLineBorderView *dottedLineView;
+
+@property (strong, nonatomic) IBOutlet dottedLineBorderView *dottedLineView2;
+@property (strong, nonatomic) IBOutlet dottedLineBorderView *dottedLineView3;
+@property (strong, nonatomic) IBOutlet dottedLineBorderView *dottedLineView4;
+- (void)updateViewToConstraint;
 
 @end

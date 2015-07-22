@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+#define kDetailGoodsCellImageHeight         160
 @interface DetailGoodsImageCell : UITableViewCell
 
 @end

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+#define kDetailGoodsQuestionCellHeight          200
 @interface DetailGoodsQuestionCell : UITableViewCell
 
 @end

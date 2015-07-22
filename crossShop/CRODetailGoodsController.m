@@ -18,11 +18,11 @@ static NSString *detailGoodsIntroDetailCell = @"detailGoodsIntroDetailCell";
 static NSString *detailGoodsBrandCell = @"detailGoodsBrandCell";
 static NSString *detailGoodsSectionHeadCell = @"detailGoodsSectionHeadCell";
 
-
 @interface CRODetailGoodsController () {
     NSMutableArray *dataArray;
     INTROIMAGENAME isSelectMode;
     NSArray *sectionHeadArray;
+    NSIndexPath *detailIndexPath;
 }
 
 @end
@@ -60,14 +60,12 @@ static NSString *detailGoodsSectionHeadCell = @"detailGoodsSectionHeadCell";
     
     UINib *detailGoodsSectionHeadCellNib = [UINib nibWithNibName:@"DetailGoodsSectionHeadCell" bundle:nil];
     [self.tableView registerNib:detailGoodsSectionHeadCellNib forCellReuseIdentifier:detailGoodsSectionHeadCell];
-
+    
     //self.dicDetailData = [[NSDictionary alloc]init];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.itemImgArray = [[NSArray alloc]init];
     //dataArray = [[NSMutableArray alloc]init];
     sectionHeadArray = [[NSArray alloc] initWithObjects:@"会买妈妈育儿师推荐", @"品牌介绍", @"产品说明", nil];
-    
-    NSLog(@"\r\n viewdidload");
 }
 
 - (void)setDicDetailData:(NSDictionary *)dicDetailData {
@@ -105,7 +103,13 @@ static NSString *detailGoodsSectionHeadCell = @"detailGoodsSectionHeadCell";
         case 4:
             return DETAIL_CELL_MODE_HEIGHT;
         case 5:
-            return 800;
+            if (isSelectMode == ITEMDETAIL) {
+                return kDetailGoodsCellImageHeight;
+            } else if (isSelectMode == BUYINTRO) {
+                return kDetailGoodsIntroCellHeight;
+            } else {
+                return kDetailGoodsQuestionCellHeight;
+            }
             
         default:
             return DETAIL_CELL_HEAD_HEIGHT;
@@ -155,11 +159,15 @@ static NSString *detailGoodsSectionHeadCell = @"detailGoodsSectionHeadCell";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSLog(@"\r\n count:%ld", dataArray.count);
+    //NSLog(@"\r\n count:%ld", dataArray.count);
     if (section == 1 || section == 2 || section == 3) {
         return 2;
     } else if (section == 5){
-        return dataArray.count;
+        if (isSelectMode == ITEMDETAIL) {
+            return dataArray.count;
+        } else {
+            return 1;
+        }
     } else {
         return 1;
     }
@@ -167,7 +175,7 @@ static NSString *detailGoodsSectionHeadCell = @"detailGoodsSectionHeadCell";
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"\r\n section:%ld, indexrow:%ld", indexPath.section, indexPath.row);
+    //NSLog(@"\r\n section:%ld, indexrow:%ld", indexPath.section, indexPath.row);
     switch (indexPath.section) {
         case 0: {
             CRODetailGoodsHeadCell *cell = [tableView dequeueReusableCellWithIdentifier:cellDetailGoodsName forIndexPath:indexPath];
@@ -230,10 +238,13 @@ static NSString *detailGoodsSectionHeadCell = @"detailGoodsSectionHeadCell";
             if (cell == nil) {
                 cell = [[DetailGoodsModeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:detailGoodsModeCell];
             }
+            cell.itemDetail.delegate = self;
+            cell.buyIntro.delegate = self;
+            cell.moreQuestion.delegate = self;
+
             return cell;
         }
         case 5: {
-            NSLog(@"\r\n mode:%d", isSelectMode);
             if (isSelectMode == ITEMDETAIL) {
                 DetailGoodsImageCell *cell = [tableView dequeueReusableCellWithIdentifier:cellDetailGoodsImageName forIndexPath:indexPath];
                 if (cell == nil) {
@@ -245,6 +256,7 @@ static NSString *detailGoodsSectionHeadCell = @"detailGoodsSectionHeadCell";
                 if (cell == nil) {
                     cell = [[DetailGoodsIntroCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellDetailGoodsIntroName];
                 }
+                [cell updateViewToConstraint];
                 return cell;
             } else {
                 DetailGoodsQuestionCell *cell = [tableView dequeueReusableCellWithIdentifier:cellDetailGoodsQuestionName forIndexPath:indexPath];
@@ -265,11 +277,8 @@ static NSString *detailGoodsSectionHeadCell = @"detailGoodsSectionHeadCell";
 }
 
 - (void)changeDetailCellWithTag:(NSInteger)setTag {
-    NSLog(@"\r\n tag:%ld", (long)setTag);
     dataArray = [[NSMutableArray alloc]initWithObjects:@"test1", @"test2", @"test3", @"test4", @"test5", @"test6", nil];
     isSelectMode = (int)setTag;
-    
-    //[self.tableView cellForRowAtIndexPath:<#(NSIndexPath *)#>]
     [self.tableView reloadData];
 }
 
