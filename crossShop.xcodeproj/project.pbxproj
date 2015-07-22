@@ -112,6 +112,7 @@
 		1852EE0B1B0B74F6002AAD43 /* CROMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1852EE0A1B0B74F6002AAD43 /* CROMainViewController.m */; };
 		185CA19E1B3AEB4900ED418A /* PersonCenterFootCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 185CA19C1B3AEB4900ED418A /* PersonCenterFootCell.m */; };
 		185CA19F1B3AEB4900ED418A /* PersonCenterFootCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185CA19D1B3AEB4900ED418A /* PersonCenterFootCell.xib */; };
+		185D80361B603F7B0046B775 /* labelWithImgView.m in Sources */ = {isa = PBXBuildFile; fileRef = 185D80351B603F7B0046B775 /* labelWithImgView.m */; };
 		18639BDF1B14B4E500FA259B /* CROGoodsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 18639BDE1B14B4E500FA259B /* CROGoodsItem.m */; };
 		18639BE21B14B83700FA259B /* CROShoppingCart.m in Sources */ = {isa = PBXBuildFile; fileRef = 18639BE11B14B83700FA259B /* CROShoppingCart.m */; };
 		186822421B0CC0F70024EF19 /* flowTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 186822411B0CC0F70024EF19 /* flowTableView.m */; };
@@ -311,6 +312,8 @@
 		185CA19B1B3AEB4900ED418A /* PersonCenterFootCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonCenterFootCell.h; sourceTree = "<group>"; };
 		185CA19C1B3AEB4900ED418A /* PersonCenterFootCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonCenterFootCell.m; sourceTree = "<group>"; };
 		185CA19D1B3AEB4900ED418A /* PersonCenterFootCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonCenterFootCell.xib; sourceTree = "<group>"; };
+		185D80341B603F7B0046B775 /* labelWithImgView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = labelWithImgView.h; sourceTree = "<group>"; };
+		185D80351B603F7B0046B775 /* labelWithImgView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = labelWithImgView.m; sourceTree = "<group>"; };
 		18639BDD1B14B4E500FA259B /* CROGoodsItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CROGoodsItem.h; sourceTree = "<group>"; };
 		18639BDE1B14B4E500FA259B /* CROGoodsItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CROGoodsItem.m; sourceTree = "<group>"; };
 		18639BE01B14B83700FA259B /* CROShoppingCart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CROShoppingCart.h; sourceTree = "<group>"; };
@@ -709,6 +712,8 @@
 				04196F271B5F486D001685C7 /* dottedLineBorderView.m */,
 				040E77D71B5F75A600AFB0B6 /* LBorderView.h */,
 				040E77D81B5F75A600AFB0B6 /* LBorderView.m */,
+				185D80341B603F7B0046B775 /* labelWithImgView.h */,
+				185D80351B603F7B0046B775 /* labelWithImgView.m */,
 			);
 			name = commonUI;
 			sourceTree = "<group>";
@@ -920,6 +925,7 @@
 				041A1BAD1B3E477500F68189 /* OrderListCell.m in Sources */,
 				0460DB441B4A337600220D4E /* CROReceipt.m in Sources */,
 				041A1BA91B3E467C00F68189 /* OrderListController.m in Sources */,
+				185D80361B603F7B0046B775 /* labelWithImgView.m in Sources */,
 				046CD9721B1069A700392F3F /* SDWebImagePrefetcher.m in Sources */,
 				046CD9791B1069A700392F3F /* UIView+WebCacheOperation.m in Sources */,
 				04A8E6001B2A6F2900A7CF0E /* DetailGoodsIntroCell.m in Sources */,

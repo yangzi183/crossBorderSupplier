@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "labelWithImgView.h"
 
 #define kDetailGoodsQuestionCellHeight          200
 @interface DetailGoodsQuestionCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet labelWithImgView *labelImg1;
 
 @end
