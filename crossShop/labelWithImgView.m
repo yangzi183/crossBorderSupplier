@@ -19,9 +19,9 @@
 */
 
 - (void)setContent: (NSString *)content number: (NSInteger)number {
-    self.backgroundColor = [UIColor clearColor];
+    self.backgroundColor = [UIColor redColor];
     if (number == 0) {
-        UILabel *icon = [[UILabel alloc] initWithFrame:CGRectMake(2, 2, 4, 4)];
+        UILabel *icon = [[UILabel alloc] initWithFrame:CGRectMake(4, 3, 6, 6)];
         icon.text = @"•";
         [self addSubview:icon];
     } else {
@@ -31,6 +31,7 @@
         [self addSubview:numBtn];
         
     }
+    NSLog(@"\r\n width:%f", self.frame.size.width);
     CGFloat labelWidth = self.frame.size.width - 10;
     UILabel *contenLabel = [UILabel new];
     
@@ -39,7 +40,8 @@
     contenLabel.font = [UIFont systemFontOfSize:13];
     CGSize size = [contenLabel boundingRectWithSize:CGSizeMake(labelWidth, 0)];
     NSLog(@"\r\n height:%f-%f", size.width, size.height);
-    contenLabel.frame = CGRectMake(15, 0, labelWidth, size.height);
+    contenLabel.frame = CGRectMake(15, 0, size.width, size.height);
+    contenLabel.backgroundColor = [UIColor blueColor];
     [self addSubview:contenLabel];
     
 }

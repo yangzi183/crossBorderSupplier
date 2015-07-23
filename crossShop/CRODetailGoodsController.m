@@ -263,6 +263,8 @@ static NSString *detailGoodsSectionHeadCell = @"detailGoodsSectionHeadCell";
                 if (cell == nil) {
                     cell = [[DetailGoodsQuestionCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellDetailGoodsQuestionName];
                 }
+                NSLog(@"\r\n width:%f", cell.frame.size.width);
+                [cell configView];
                 return cell;
             }
         }
