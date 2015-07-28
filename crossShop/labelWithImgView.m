@@ -8,7 +8,11 @@
 
 #import "labelWithImgView.h"
 
-@implementation labelWithImgView
+@implementation labelWithImgView {
+    UILabel *icon;
+    UIButton *numBtn;
+    UILabel *contenLabel;
+}
 
 /*
 // Only override drawRect: if you perform custom drawing.
@@ -18,32 +22,39 @@
 }
 */
 
-- (void)setContent: (NSString *)content number: (NSInteger)number {
-    self.backgroundColor = [UIColor redColor];
+- (void)setContent: (NSString *)content number: (NSInteger)number size:(CGSize)toSize{
+    self.backgroundColor = [UIColor clearColor];
     if (number == 0) {
-        UILabel *icon = [[UILabel alloc] initWithFrame:CGRectMake(4, 3, 6, 6)];
-        icon.text = @"•";
-        [self addSubview:icon];
+        if (!icon) {
+            icon = [[UILabel alloc] initWithFrame:CGRectMake(4, 3, 6, 6)];
+            icon.text = @"•";
+            [self addSubview:icon];
+        }
     } else {
-        UIButton *numBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, self.frame.size.height / 2, 7, 7)];
-        [numBtn setTitle:[NSString stringWithFormat:@"%d", (int)number] forState:UIControlStateNormal];
-        [numBtn setBackgroundImage:[UIImage imageNamed:@"123"] forState:UIControlStateNormal];
-        [self addSubview:numBtn];
-        
+        if (!numBtn) {
+            numBtn = [[UIButton alloc] initWithFrame:CGRectMake(2, 3, 10, 10)];
+            [numBtn setTitle:[NSString stringWithFormat:@"%d", (int)number] forState:UIControlStateNormal];
+            //[numBtn setBackgroundImage:[UIImage imageNamed:@"123"] forState:UIControlStateNormal];
+            numBtn.backgroundColor = [UIColor redColor];
+            numBtn.titleLabel.font = [UIFont systemFontOfSize:10];
+            [self addSubview:numBtn];
+            //NSLog(@"\r\n number:%d", (int)number);
+        }
     }
-    NSLog(@"\r\n width:%f", self.frame.size.width);
-    CGFloat labelWidth = self.frame.size.width - 10;
-    UILabel *contenLabel = [UILabel new];
-    
-    contenLabel.text = content;
-    contenLabel.numberOfLines = 0;
-    contenLabel.font = [UIFont systemFontOfSize:13];
-    CGSize size = [contenLabel boundingRectWithSize:CGSizeMake(labelWidth, 0)];
-    NSLog(@"\r\n height:%f-%f", size.width, size.height);
-    contenLabel.frame = CGRectMake(15, 0, size.width, size.height);
-    contenLabel.backgroundColor = [UIColor blueColor];
-    [self addSubview:contenLabel];
-    
+    //NSLog(@"\r\n width:%f", toSize.width);
+    CGFloat labelWidth = toSize.width - 40;
+    NSLog(@"\r\n labelwidth:%f", labelWidth);
+    if (!contenLabel) {
+        contenLabel = [UILabel new];
+        
+        contenLabel.text = content;
+        contenLabel.numberOfLines = 0;
+        contenLabel.font = [UIFont systemFontOfSize:13];
+        CGSize size = [contenLabel boundingRectWithSize:CGSizeMake(labelWidth, 0)];
+        contenLabel.frame = CGRectMake(15, 0, labelWidth, size.height);
+        contenLabel.backgroundColor = [UIColor clearColor];
+        [self addSubview:contenLabel];
+    }
 }
 
 @end

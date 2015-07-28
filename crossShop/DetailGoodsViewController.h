@@ -1,8 +1,8 @@
 //
-//  CRODetailGoodsController.h
+//  DetailGoodsViewController.h
 //  crossShop
 //
-//  Created by mac on 15/6/8.
+//  Created by mac on 15/7/28.
 //  Copyright (c) 2015年 apple. All rights reserved.
 //
 
@@ -25,9 +25,10 @@ typedef enum {
     SELECT_QUESTION
 }ISSELECTDETAILITEM;
 
-@interface CRODetailGoodsController : UITableViewController <imgWithIntroViewDelegate>
-
+@interface DetailGoodsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, imgWithIntroViewDelegate>
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSDictionary *dicDetailData;
 
 @property (strong, nonatomic) NSArray *itemImgArray;
+
 @end

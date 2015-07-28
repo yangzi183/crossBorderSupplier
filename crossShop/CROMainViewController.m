@@ -7,7 +7,7 @@
 //
 
 #import "CROMainViewController.h"
-#import "CRODetailGoodsController.h"
+#import "DetailGoodsViewController.h"
 
 static NSString *cellName = @"mainCell";
 static NSString *cellTitleName = @"titleCell";

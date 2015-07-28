@@ -1,12 +1,12 @@
 //
-//  CRODetailGoodsController.m
+//  DetailGoodsViewController.m
 //  crossShop
 //
-//  Created by mac on 15/6/8.
+//  Created by mac on 15/7/28.
 //  Copyright (c) 2015年 apple. All rights reserved.
 //
 
-#import "CRODetailGoodsController.h"
+#import "DetailGoodsViewController.h"
 
 static NSString *cellDetailGoodsName = @"detailGoodsCell";
 static NSString *cellDetailGoodsImageName = @"detailGoodsImage";
@@ -18,7 +18,7 @@ static NSString *detailGoodsIntroDetailCell = @"detailGoodsIntroDetailCell";
 static NSString *detailGoodsBrandCell = @"detailGoodsBrandCell";
 static NSString *detailGoodsSectionHeadCell = @"detailGoodsSectionHeadCell";
 
-@interface CRODetailGoodsController () {
+@interface DetailGoodsViewController () {
     NSMutableArray *dataArray;
     INTROIMAGENAME isSelectMode;
     NSArray *sectionHeadArray;
@@ -27,7 +27,13 @@ static NSString *detailGoodsSectionHeadCell = @"detailGoodsSectionHeadCell";
 
 @end
 
-@implementation CRODetailGoodsController
+@implementation DetailGoodsViewController
+
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -72,11 +78,6 @@ static NSString *detailGoodsSectionHeadCell = @"detailGoodsSectionHeadCell";
     NSLog(@"\r\n setDicDetailData:%@", dicDetailData);
     _dicDetailData = dicDetailData;
     [self changeDetailCellWithTag:ITEMDETAIL];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
@@ -125,29 +126,29 @@ static NSString *detailGoodsSectionHeadCell = @"detailGoodsSectionHeadCell";
 }
 
 /*
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    if (section == 1 || section == 2 || section == 3) {
-        return kDetailSectionHeaderHeight;
-    } else {
-        return 0;
-    }
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    if (section == 1 || section == 2 || section == 3) {
-        UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, kDetailSectionHeaderHeight)];
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 150, 20)];
-        label.font = [UIFont systemFontOfSize:15];
-        label.text = @"会买妈妈育儿师推荐";
-        [headView addSubview:label];
-        headView.backgroundColor = [UIColor clearColor];
-        label.backgroundColor = [UIColor clearColor];
-        return headView;
-    } else {
-        return nil;
-    }
-}
-*/
+ - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+ if (section == 1 || section == 2 || section == 3) {
+ return kDetailSectionHeaderHeight;
+ } else {
+ return 0;
+ }
+ }
+ 
+ - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+ if (section == 1 || section == 2 || section == 3) {
+ UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, kDetailSectionHeaderHeight)];
+ UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 150, 20)];
+ label.font = [UIFont systemFontOfSize:15];
+ label.text = @"会买妈妈育儿师推荐";
+ [headView addSubview:label];
+ headView.backgroundColor = [UIColor clearColor];
+ label.backgroundColor = [UIColor clearColor];
+ return headView;
+ } else {
+ return nil;
+ }
+ }
+ */
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
     UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, kThickLineHeight)];
     lineView.backgroundColor = [CROCommonAPI colorWithHexString:@"#F5F6F6"];
@@ -241,7 +242,7 @@ static NSString *detailGoodsSectionHeadCell = @"detailGoodsSectionHeadCell";
             cell.itemDetail.delegate = self;
             cell.buyIntro.delegate = self;
             cell.moreQuestion.delegate = self;
-
+            
             return cell;
         }
         case 5: {
@@ -283,40 +284,6 @@ static NSString *detailGoodsSectionHeadCell = @"detailGoodsSectionHeadCell";
     isSelectMode = (int)setTag;
     [self.tableView reloadData];
 }
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 /*
 #pragma mark - Navigation

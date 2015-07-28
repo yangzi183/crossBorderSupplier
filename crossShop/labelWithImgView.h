@@ -11,6 +11,6 @@
 
 @interface labelWithImgView : UIView
 
-- (void)setContent: (NSString *)content number: (NSInteger)number;
+- (void)setContent: (NSString *)content number: (NSInteger)number size:(CGSize)toSize;
 
 @end

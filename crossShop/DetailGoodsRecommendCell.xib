@@ -16,7 +16,7 @@
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xUD-zM-N9o">
                         <rect key="frame" x="0.0" y="1" width="320" height="1"/>
-                        <color key="backgroundColor" red="0.96078431369999995" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="sig-kT-mpt"/>
                         </constraints>
@@ -48,7 +48,7 @@
 　　因体重达25磅(约12公斤)，餐厅服务员表示，必须用上全身的力气才能拿起这只龙虾。
 　　看到如此大的龙虾，不少中国网友纷纷惊叹：“这得够多少人吃啊”、“难道这货成精了”。</string>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="icS-x8-jsu">
