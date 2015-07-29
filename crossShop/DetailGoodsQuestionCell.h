@@ -10,6 +10,14 @@
 #import "labelWithImgView.h"
 
 #define kDetailGoodsQuestionCellHeight          1000
+
+@protocol DetailGoodsQuestionCellDelegate <NSObject>
+
+- (void)toReturnGoodsView;
+- (void)toBuyProcessView;
+
+@end
+
 @interface DetailGoodsQuestionCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet labelWithImgView *labelImg1;
 @property (strong, nonatomic) IBOutlet labelWithImgView *labelImg2;
@@ -32,6 +40,7 @@
 @property (strong, nonatomic) IBOutlet labelWithImgView *labelImgNot5;
 @property (strong, nonatomic) IBOutlet labelWithImgView *labelImgNot6;
 
+@property (assign, nonatomic) id <DetailGoodsQuestionCellDelegate> delegate;
 - (void)configView;
 
 - (IBAction)buyAct:(id)sender;

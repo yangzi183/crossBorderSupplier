@@ -8,6 +8,7 @@
 
 #import "DetailGoodsQuestionCell.h"
 #import "CROCommonAPI.h"
+#import "ReturnGoodsViewController.h"
 
 @implementation DetailGoodsQuestionCell
 
@@ -56,8 +57,14 @@
 }
 
 - (IBAction)buyAct:(id)sender {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(toBuyProcessView)]) {
+        [self.delegate toBuyProcessView];
+    }
 }
 
 - (IBAction)revokeAct:(id)sender {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(toReturnGoodsView)]) {
+        [self.delegate toReturnGoodsView];
+    }
 }
 @end

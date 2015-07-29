@@ -25,10 +25,31 @@ typedef enum {
     SELECT_QUESTION
 }ISSELECTDETAILITEM;
 
-@interface DetailGoodsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, imgWithIntroViewDelegate>
+@interface DetailGoodsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, imgWithIntroViewDelegate, DetailGoodsQuestionCellDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSDictionary *dicDetailData;
 
 @property (strong, nonatomic) NSArray *itemImgArray;
 
+@property (strong, nonatomic) IBOutlet UIButton *buyBtn;
+
+@property (strong, nonatomic) IBOutlet UIImageView *imgIcon;
+@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
+@property (strong, nonatomic) IBOutlet UILabel *priceLabel;
+@property (strong, nonatomic) IBOutlet UIButton *reduceBtn;
+@property (strong, nonatomic) IBOutlet UIButton *plusBtn;
+@property (strong, nonatomic) IBOutlet UITextField *editTxt;
+@property (strong, nonatomic) IBOutlet UIImageView *imgBack;
+@property (strong, nonatomic) IBOutlet UILabel *realNumLabel;
+@property (strong, nonatomic) IBOutlet UIView *clearBackView;
+@property (strong, nonatomic) IBOutlet UIView *buyView;
+
+- (IBAction)reduceCount:(id)sender;
+- (IBAction)plusCount:(id)sender;
+- (IBAction)buyAct:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *addShoppingCartBtn;
+@property (strong, nonatomic) IBOutlet UIButton *paymentBtn;
+- (IBAction)addShoppingCartAct:(id)sender;
+- (IBAction)paymentAct:(id)sender;
+- (IBAction)backAct:(id)sender;
 @end

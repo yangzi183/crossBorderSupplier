@@ -7,6 +7,7 @@
 //
 
 #import "DetailGoodsViewController.h"
+#import "ReturnGoodsViewController.h"
 
 static NSString *cellDetailGoodsName = @"detailGoodsCell";
 static NSString *cellDetailGoodsImageName = @"detailGoodsImage";
@@ -23,6 +24,7 @@ static NSString *detailGoodsSectionHeadCell = @"detailGoodsSectionHeadCell";
     INTROIMAGENAME isSelectMode;
     NSArray *sectionHeadArray;
     NSIndexPath *detailIndexPath;
+    NSInteger goodCount;
 }
 
 @end
@@ -72,6 +74,34 @@ static NSString *detailGoodsSectionHeadCell = @"detailGoodsSectionHeadCell";
     self.itemImgArray = [[NSArray alloc]init];
     //dataArray = [[NSMutableArray alloc]init];
     sectionHeadArray = [[NSArray alloc] initWithObjects:@"会买妈妈育儿师推荐", @"品牌介绍", @"产品说明", nil];
+    [self initBuyView];
+}
+
+- (void)initBuyView {
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapClearView)];
+    [self.clearBackView addGestureRecognizer:tap];
+    //[self.clearBackView removeFromSuperview];
+    self.clearBackView.hidden = YES;
+    self.buyView.hidden = YES;
+    self.realNumLabel.text = [NSString stringWithFormat:@"1"];
+    self.editTxt.text = [NSString stringWithFormat:@"1"];
+    self.paymentBtn.layer.borderColor = [CROCommonAPI colorWithHexString:@"#82D6D6"].CGColor;
+    self.paymentBtn.layer.borderWidth = 1.0f;
+    self.paymentBtn.layer.cornerRadius = 2;
+    self.addShoppingCartBtn.layer.cornerRadius = 2;
+    self.imgBack.layer.borderColor = [CROCommonAPI colorWithHexString:@"#f7f7f7"].CGColor;
+    self.imgBack.layer.borderWidth = 0.5f;
+    self.imgBack.layer.cornerRadius = 2;
+    
+}
+- (void)viewWillAppear:(BOOL)animated {
+    self.buyView.hidden = YES;
+}
+
+- (void)tapClearView {
+    //[self.clearBackView removeFromSuperview];
+    self.clearBackView.hidden = YES;
+    [self.buyView setHidden:YES];
 }
 
 - (void)setDicDetailData:(NSDictionary *)dicDetailData {
@@ -266,6 +296,7 @@ static NSString *detailGoodsSectionHeadCell = @"detailGoodsSectionHeadCell";
                 }
                 NSLog(@"\r\n width:%f", cell.frame.size.width);
                 [cell configView];
+                cell.delegate = self;
                 return cell;
             }
         }
@@ -285,14 +316,62 @@ static NSString *detailGoodsSectionHeadCell = @"detailGoodsSectionHeadCell";
     [self.tableView reloadData];
 }
 
-/*
+- (IBAction)reduceCount:(id)sender {
+    if (goodCount > 1) {
+        goodCount--;
+    }
+    [self checkCount];
+    self.editTxt.text = [NSString stringWithFormat:@"%ld", (long)goodCount];
+}
+
+- (IBAction)plusCount:(id)sender {
+    goodCount++;
+    self.editTxt.text = [NSString stringWithFormat:@"%ld", (long)goodCount];
+    [self.reduceBtn setImage:[UIImage imageNamed:@"item_reduce_true"] forState:UIControlStateNormal];
+}
+
+- (BOOL)checkCount {
+    if (goodCount <= 1) {
+        [self.reduceBtn setImage:[UIImage imageNamed:@"item_reduce_false"] forState:UIControlStateNormal];
+        return false;
+    } else {
+        [self.reduceBtn setImage:[UIImage imageNamed:@"item_reduce_true"] forState:UIControlStateNormal];
+        return true;
+    }
+}
+
+
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"showReturnGoodsView"]) {
+        //[segue.destinationViewController setDottedView];
+    }
 }
-*/
 
+
+- (IBAction)buyAct:(id)sender {
+    [self.buyView setHidden:NO];
+    self.clearBackView.hidden = NO;
+    //[self.view addSubview:self.clearBackView];
+}
+- (IBAction)addShoppingCartAct:(id)sender {
+}
+
+- (IBAction)paymentAct:(id)sender {
+}
+
+- (IBAction)backAct:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)toBuyProcessView {
+    [self performSegueWithIdentifier:@"showBuyProcessView" sender:nil];    
+}
+
+- (void)toReturnGoodsView {
+    [self performSegueWithIdentifier:@"showReturnGoodsView" sender:nil];
+}
 @end

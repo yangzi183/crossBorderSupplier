@@ -10,5 +10,5 @@
 
 @interface dottedLineBorderView : UIView
 
-- (void)setTitle:(NSString *)title content:(NSString *)content imgTitle:(NSString *)imgTitle;
+- (void)setTitle:(NSString *)title content:(NSString *)content imgTitle:(NSString *)imgTitle toSize:(CGSize)size;
 @end

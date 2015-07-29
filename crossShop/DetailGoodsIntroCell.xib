@@ -39,10 +39,10 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p7Q-od-xny" customClass="dottedLineBorderView">
-                        <rect key="frame" x="10" y="280" width="300" height="60"/>
+                        <rect key="frame" x="10" y="280" width="300" height="75"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="60" id="0gH-iC-DHI"/>
+                            <constraint firstAttribute="height" constant="75" id="0gH-iC-DHI"/>
                             <constraint firstAttribute="width" constant="300" id="ZJe-Z0-0VN"/>
                         </constraints>
                     </view>
