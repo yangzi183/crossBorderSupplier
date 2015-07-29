@@ -94,11 +94,11 @@ static NSString *orderDetailItemCell = @"orderDetailItemCell";
         return nil;
     } else if (section == 1) {
         UIView *footLine = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, 5)];
-        footLine.backgroundColor = [CROCommonAPI colorWithHexString:@"#e8e8e8"];
+        footLine.backgroundColor = [CROCommonAPI colorWithHexString:@"#F5F6F6"];
         return footLine;
     } else {
         UIView *footLine = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, 5)];
-        footLine.backgroundColor = [CROCommonAPI colorWithHexString:@"#e8e8e8"];
+        footLine.backgroundColor = [CROCommonAPI colorWithHexString:@"#F5F6F6"];
         return footLine;
     }
 }
