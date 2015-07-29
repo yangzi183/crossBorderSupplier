@@ -41,6 +41,11 @@ static NSString *cellTitleName = @"titleCell";
     UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, 1)];
     lineView.backgroundColor = [CROCommonAPI colorWithHexString:@"#82d6d6"];
     [self.mainTableView addSubview:lineView];
+    ShoppingCartItem *shopItem = [[ShoppingCartItem alloc] initWithFrame:CGRectMake(0, 0, kSHOPPING_CART_ITEM_WIDTH, kSHOPPING_CART_ITEM_HEIGHT)];
+    shopItem.delegate = self;
+    shopItem.backgroundColor = [UIColor clearColor];
+    UIBarButtonItem *shopRightItem = [[UIBarButtonItem alloc] initWithCustomView:shopItem];
+    self.navigationItem.rightBarButtonItem = shopRightItem;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -139,6 +144,9 @@ static NSString *cellTitleName = @"titleCell";
     }
 }
 
+- (void)tapShoppingCartView {
+    [self performSegueWithIdentifier:@"showShoppingCartView" sender:nil];
+}
 /*
 #pragma mark - Navigation
 

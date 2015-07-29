@@ -52,7 +52,9 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void)addItemsToBar {
     UIBarButtonItem *btnShare = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"share_icon"] style:UIBarButtonItemStyleBordered target:self action:@selector(shareAct)];
     btnShare.tintColor = [CROCommonAPI colorWithHexString:@"#82D6D6"];
-    UIBarButtonItem *btnShoppingCart = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"shopping_cart_icon"] style:UIBarButtonItemStyleBordered target:self action:@selector(shoppingCartAct)];
+    ShoppingCartItem *shopIem = [[ShoppingCartItem alloc] initWithFrame:CGRectMake(0, 0, kSHOPPING_CART_ITEM_WIDTH, kSHOPPING_CART_ITEM_HEIGHT)];
+    shopIem.delegate = self;
+    UIBarButtonItem *btnShoppingCart = [[UIBarButtonItem alloc] initWithCustomView:shopIem];
     btnShoppingCart.tintColor = [CROCommonAPI colorWithHexString:@"#82D6D6"];
     NSArray *btnArrays = [[NSArray alloc] initWithObjects:btnShare, btnShoppingCart, nil];
     [self.navigationItem setRightBarButtonItems:btnArrays];
@@ -61,6 +63,10 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)tapShoppingCartView {
+    [self performSegueWithIdentifier:@"showShoppingCartView" sender:nil];
 }
 
 #pragma mark <UICollectionViewDataSource>
@@ -158,11 +164,6 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)shareAct {
     
-}
-
-- (void)shoppingCartAct {
-    //[self performSegueWithIdentifier:@"showShoppingCartView" sender:nil];
-    [self performSegueWithIdentifier:@"showShoppingCartView" sender:nil];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

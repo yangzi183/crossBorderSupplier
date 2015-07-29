@@ -11,8 +11,9 @@
 #import "flowTableView.h"
 #import "CROMainDetTableViewCell.h"
 #import "CROMainTitleTableViewCell.h"
+#import "ShoppingCartItem.h"
 
-@interface CROMainViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface CROMainViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, ShoppingCartItemDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *mainTableView;
 @property (strong, nonatomic) NSMutableArray *mainData;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *shoppingCartIcon;

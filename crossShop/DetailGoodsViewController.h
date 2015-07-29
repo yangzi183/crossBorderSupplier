@@ -17,6 +17,7 @@
 #import "DetailGoodsRecommendCell.h"
 #import "commonConfig.h"
 #import "DetailGoodsSectionHeadCell.h"
+#import "ShoppingCartItem.h"
 
 #define kDetailSectionHeaderHeight          40
 typedef enum {
@@ -25,7 +26,7 @@ typedef enum {
     SELECT_QUESTION
 }ISSELECTDETAILITEM;
 
-@interface DetailGoodsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, imgWithIntroViewDelegate, DetailGoodsQuestionCellDelegate>
+@interface DetailGoodsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, imgWithIntroViewDelegate, DetailGoodsQuestionCellDelegate, ShoppingCartItemDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSDictionary *dicDetailData;
 

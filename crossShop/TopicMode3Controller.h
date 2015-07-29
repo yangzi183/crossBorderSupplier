@@ -10,8 +10,9 @@
 #import "TopicMode3HeadCell.h"
 #import "TopicMode3FirstCell.h"
 #import "TopicMode3SecondCell.h"
+#import "ShoppingCartItem.h"
 
-@interface TopicMode3Controller : UICollectionViewController <UICollectionViewDelegateFlowLayout>
+@interface TopicMode3Controller : UICollectionViewController <UICollectionViewDelegateFlowLayout, ShoppingCartItemDelegate>
 - (IBAction)backAct:(id)sender;
 
 @end

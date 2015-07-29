@@ -92,6 +92,8 @@ static NSString *detailGoodsSectionHeadCell = @"detailGoodsSectionHeadCell";
     self.imgBack.layer.borderColor = [CROCommonAPI colorWithHexString:@"#f7f7f7"].CGColor;
     self.imgBack.layer.borderWidth = 0.5f;
     self.imgBack.layer.cornerRadius = 2;
+    self.buyBtn.layer.cornerRadius = 2;
+    [self addItemsToBar];
     
 }
 - (void)viewWillAppear:(BOOL)animated {
@@ -340,7 +342,24 @@ static NSString *detailGoodsSectionHeadCell = @"detailGoodsSectionHeadCell";
     }
 }
 
+- (void)addItemsToBar {
+    UIBarButtonItem *btnShare = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"share_icon"] style:UIBarButtonItemStyleBordered target:self action:@selector(shareAct)];
+    btnShare.tintColor = [CROCommonAPI colorWithHexString:@"#82D6D6"];
+    ShoppingCartItem *shopIem = [[ShoppingCartItem alloc] initWithFrame:CGRectMake(0, 0, kSHOPPING_CART_ITEM_WIDTH, kSHOPPING_CART_ITEM_HEIGHT)];
+    shopIem.delegate = self;
+    UIBarButtonItem *btnShoppingCart = [[UIBarButtonItem alloc] initWithCustomView:shopIem];
+    btnShoppingCart.tintColor = [CROCommonAPI colorWithHexString:@"#82D6D6"];
+    NSArray *btnArrays = [[NSArray alloc] initWithObjects:btnShare, btnShoppingCart, nil];
+    [self.navigationItem setRightBarButtonItems:btnArrays];
+}
 
+- (void)tapShoppingCartView {
+    [self performSegueWithIdentifier:@"toShoppingCartView" sender:nil];
+}
+
+- (void)shareAct {
+    
+}
 
 #pragma mark - Navigation
 

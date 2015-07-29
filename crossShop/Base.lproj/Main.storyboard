@@ -180,18 +180,12 @@
                                 <segue destination="OSV-3H-9xW" kind="show" id="B4R-sf-gp5"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="shopping_cart_icon" id="ZEi-yc-UKq">
-                            <color key="tintColor" red="0.50980392159999999" green="0.83921568629999999" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <segue destination="bXg-bK-NO3" kind="show" id="xqH-wL-eh5"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="mainTableView" destination="ybN-Rr-PoX" id="0fH-rY-60z"/>
-                        <outlet property="shoppingCartIcon" destination="ZEi-yc-UKq" id="DaY-SI-9iw"/>
                         <segue destination="VxQ-rF-VCu" kind="show" identifier="showTopicView2" id="Ec4-Em-jiz"/>
                         <segue destination="fDP-o4-M4J" kind="show" identifier="showGoodsDetail" id="Rip-Z0-gQA"/>
+                        <segue destination="bXg-bK-NO3" kind="show" identifier="showShoppingCartView" id="ggi-Db-iXt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0gq-vN-LRa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1196,7 +1190,7 @@
             </objects>
             <point key="canvasLocation" x="-538" y="-248"/>
         </scene>
-        <!--Detail Goods View Controller-->
+        <!--单品详情-->
         <scene sceneID="atT-5m-xnF">
             <objects>
                 <viewController id="fDP-o4-M4J" customClass="DetailGoodsViewController" sceneMemberID="viewController">
@@ -1477,7 +1471,7 @@
                             <constraint firstItem="lVx-xR-Chf" firstAttribute="leading" secondItem="YHZ-ec-hIH" secondAttribute="leading" id="hdW-mE-cDh"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="DQo-ro-p7s">
+                    <navigationItem key="navigationItem" title="单品详情" id="DQo-ro-p7s">
                         <barButtonItem key="leftBarButtonItem" image="return_icon" id="bnO-vi-Hyi">
                             <color key="tintColor" red="0.50980392159999999" green="0.83921568629999999" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
@@ -1502,6 +1496,7 @@
                         <outlet property="titleLabel" destination="pVr-WD-4f2" id="baH-6I-zeB"/>
                         <segue destination="Xfu-6r-GlG" kind="show" identifier="showReturnGoodsView" id="mis-OD-pUO"/>
                         <segue destination="yM9-08-fbk" kind="show" identifier="showBuyProcessView" id="vN4-VB-IUB"/>
+                        <segue destination="bXg-bK-NO3" kind="show" identifier="toShoppingCartView" id="BHL-mA-gs2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vSj-DH-GXe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1621,11 +1616,10 @@
         <image name="person_conf_icon" width="22" height="22"/>
         <image name="plane_icon" width="29" height="29"/>
         <image name="return_icon" width="23" height="23"/>
-        <image name="shopping_cart_icon" width="36" height="34"/>
         <image name="test_img" width="1080" height="1920"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xqH-wL-eh5"/>
+        <segue reference="ggi-Db-iXt"/>
         <segue reference="N5K-vg-A2i"/>
     </inferredMetricsTieBreakers>
 </document>
