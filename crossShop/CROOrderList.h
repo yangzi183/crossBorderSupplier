@@ -10,8 +10,10 @@
 
 @interface CROOrderList : NSObject
 @property (strong, nonatomic) NSMutableArray *orderListArray;
+@property (strong, nonatomic) NSMutableArray *normalList;
 
 + (CROOrderList *) shareInstance;
 - (NSMutableArray *)getAllOrderList;
+- (NSMutableArray *)getNormalList;
 
 @end

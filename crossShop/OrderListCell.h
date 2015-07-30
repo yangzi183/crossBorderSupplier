@@ -7,13 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "itemIconWithBackImg.h"
 
+#define kOrderListCellHeight            81
 @interface OrderListCell : UITableViewCell
-@property (strong, nonatomic) IBOutlet UIImageView *itemImg;
+
 @property (strong, nonatomic) IBOutlet UILabel *itemTitle;
 @property (strong, nonatomic) IBOutlet UILabel *itemPrice;
 @property (strong, nonatomic) IBOutlet UILabel *itemCount;
-@property (strong, nonatomic) IBOutlet UIImageView *borderImg;
+
+@property (strong, nonatomic) IBOutlet itemIconWithBackImg *itemImg;
 
 - (void)setOrderItemInfoByDic: (NSDictionary *)dicData;
 

@@ -183,7 +183,7 @@ static NSString *detailGoodsSectionHeadCell = @"detailGoodsSectionHeadCell";
  */
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
     UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, kThickLineHeight)];
-    lineView.backgroundColor = [CROCommonAPI colorWithHexString:@"#F5F6F6"];
+    lineView.backgroundColor = [CROCommonAPI colorWithHexString:kThickLineColor];
     return lineView;
 }
 

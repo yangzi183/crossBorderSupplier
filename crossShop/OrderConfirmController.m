@@ -15,6 +15,7 @@
 #import "CROCommonAPI.h"
 #import "OrderDetailLogisticsCell.h"
 #import "OrderConfirmMoreCell.h"
+#import "commonConfig.h"
 
 static NSString *orderConfirmHeadCell = @"orderConfirmHeadCell";
 static NSString *orderConfirmMoreCell = @"orderConfirmMoreCell";
@@ -92,13 +93,9 @@ static NSString *orderDetailItemCell = @"orderDetailItemCell";
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
     if (section == 4) {
         return nil;
-    } else if (section == 1) {
-        UIView *footLine = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, 5)];
-        footLine.backgroundColor = [CROCommonAPI colorWithHexString:@"#F5F6F6"];
-        return footLine;
     } else {
-        UIView *footLine = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, 5)];
-        footLine.backgroundColor = [CROCommonAPI colorWithHexString:@"#F5F6F6"];
+        UIView *footLine = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, kThickLineHeight)];
+        footLine.backgroundColor = [CROCommonAPI colorWithHexString:kThickLineColor];
         return footLine;
     }
 }

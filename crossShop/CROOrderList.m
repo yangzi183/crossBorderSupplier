@@ -40,4 +40,10 @@ static CROOrderList *CROOrderListInstance;
     return self.orderListArray;
 }
 
+- (NSMutableArray *)getNormalList {
+    self.normalList = [[NSMutableArray alloc] initWithObjects:@"下单时间", @"商品总价", @"物流费用", @"关税", @"使用代金券", @"活动优惠", @"应付总额", @"支付方式", nil];
+    return self.normalList;
+}
+
+
 @end

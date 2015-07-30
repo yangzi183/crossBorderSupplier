@@ -12,13 +12,21 @@
 #import "OrderDetailItemCell.h"
 #import "CROCommonAPI.h"
 #import "OrderDetailLogisticsCell.h"
+#import "commonConfig.h"
+#import "OrderListCell.h"
+#import "CROOrderList.h"
 
 static NSString *orderDetailCell = @"orderDetailCell";
 static NSString *orderDetailNormalCell = @"orderDetailNormalCell";
 static NSString *orderDetailItemCell = @"orderDetailItemCell";
 static NSString *orderDetailLogisticsCell = @"orderDetailLogisticsCell";
+static NSString *orderCell = @"orderListCell";
 
-@interface OrderDetailViewController ()
+@interface OrderDetailViewController () {
+    UIImageView *barLineView;
+    UIView *lineView;
+    UIImageView *lineImgView;
+}
 
 @end
 
@@ -35,9 +43,30 @@ static NSString *orderDetailLogisticsCell = @"orderDetailLogisticsCell";
     [self.tableView registerNib:itemNib forCellReuseIdentifier:orderDetailItemCell];
     UINib *logisticNib = [UINib nibWithNibName:@"OrderDetailLogisticsCell" bundle:nil];
     [self.tableView registerNib:logisticNib forCellReuseIdentifier:orderDetailLogisticsCell];
+    UINib *listNib = [UINib nibWithNibName:@"OrderListCell" bundle:nil];
+    [self.tableView registerNib:listNib forCellReuseIdentifier:orderCell];
+    
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+    self.dataArray = [[NSMutableArray alloc] init];
+    self.dataArray = [[CROOrderList shareInstance] getAllOrderList];
+    self.normalListArray = [[NSMutableArray alloc] init];
+    self.normalListArray = [[CROOrderList shareInstance] getNormalList];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    willLoadToRemoveLine
+    //willLoadToSetThickGrayLine
+    lineImgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, self.navigationController.navigationBar.frame.size.height, screenWidth, 2)];
+    lineImgView.image = [UIImage imageNamed:@"order_title_line"];
+    [self.navigationController.navigationBar addSubview:lineImgView];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    willDisappearToAddLine
+    [lineImgView removeFromSuperview];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -52,10 +81,10 @@ static NSString *orderDetailLogisticsCell = @"orderDetailLogisticsCell";
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     switch (indexPath.section) {
         case 0:
-        return 106;
+        return 113;
         
         case 1:
-        return 89;
+        return kOrderListCellHeight;
         
         case 2:
         return 41;
@@ -90,13 +119,9 @@ static NSString *orderDetailLogisticsCell = @"orderDetailLogisticsCell";
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
     if (section == 0) {
         return nil;
-    } else if (section == 1) {
-        UIView *footLine = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, 5)];
-        footLine.backgroundColor = [CROCommonAPI colorWithHexString:@"#e8e8e8"];
-        return footLine;
     } else {
-        UIView *footLine = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, 5)];
-        footLine.backgroundColor = [CROCommonAPI colorWithHexString:@"#e8e8e8"];
+        UIView *footLine = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, kThickLineHeight)];
+        footLine.backgroundColor = [CROCommonAPI colorWithHexString:kThickLineColor];
         return footLine;
     }
 }
@@ -107,7 +132,7 @@ static NSString *orderDetailLogisticsCell = @"orderDetailLogisticsCell";
     } else if (section == 1) {
         return 2;
     } else if (section == 2) {
-        return 2;
+        return self.normalListArray.count;
     } else {
         return 5;
     }
@@ -123,11 +148,18 @@ static NSString *orderDetailLogisticsCell = @"orderDetailLogisticsCell";
         return cell;
         
     } else if (indexPath.section == 1) {
-        OrderDetailItemCell *cell = [tableView dequeueReusableCellWithIdentifier:orderDetailItemCell forIndexPath:indexPath];
+        /*OrderDetailItemCell *cell = [tableView dequeueReusableCellWithIdentifier:orderDetailItemCell forIndexPath:indexPath];
         if (cell == nil) {
             cell = [[OrderDetailItemCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:orderDetailItemCell];
+        }*/
+        OrderListCell *cell = [tableView dequeueReusableCellWithIdentifier:orderCell forIndexPath:indexPath];
+        if (cell == nil) {
+            cell = [[OrderListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:orderCell];
         }
-        //cell.backgroundColor = [UIColor redColor];
+        NSDictionary *itemDic = [self.dataArray objectAtIndex:indexPath.section];
+        NSArray *items = [itemDic objectForKey:@"list"];
+        NSDictionary *itemData = [items objectAtIndex:indexPath.row];
+        [cell setOrderItemInfoByDic:itemData];
         return cell;
         
     } else if (indexPath.section == 2) {
@@ -135,7 +167,7 @@ static NSString *orderDetailLogisticsCell = @"orderDetailLogisticsCell";
         if (cell == nil) {
             cell = [[OrderDetailNormalCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:orderDetailNormalCell];
         }
-        //cell.backgroundColor = [UIColor blueColor];
+        // = [UIColor blueColor];
         return cell;
     } else {
         OrderDetailLogisticsCell *cell = [tableView dequeueReusableCellWithIdentifier:orderDetailLogisticsCell forIndexPath:indexPath];

@@ -34,8 +34,8 @@
 }
 
 - (void)setOrderItemInfoByDic: (NSDictionary *)dicData {
-    self.borderImg.layer.borderColor = [CROCommonAPI colorWithHexString:@"#E8E8E8"].CGColor;
-    self.borderImg.layer.borderWidth = 0.4;
+    //self.borderImg.layer.borderColor = [CROCommonAPI colorWithHexString:@"#E8E8E8"].CGColor;
+    //self.borderImg.layer.borderWidth = 0.4;
     //NSLog(@"\r\n dic:%@", dicData);
     if ([dicData objectForKey:@"title"]) {
         self.itemTitle.text = [dicData objectForKey:@"title"];
@@ -47,7 +47,7 @@
         self.itemCount.text = [NSString stringWithFormat:@"%d", [(NSNumber *)[dicData objectForKey:@"count"] integerValue]];
     }
     if ([dicData objectForKey:@"item_image_url"]) {
-        [self.itemImg sd_setImageWithURL:[NSURL URLWithString:[dicData objectForKey:@"item_image_url"]] placeholderImage:[UIImage imageNamed:@"orderItem.png"]];
+        [self.itemImg setItemImgWithUrl:[dicData objectForKey:@"item_image_url"]];
     }
 }
 @end

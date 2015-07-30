@@ -8,6 +8,7 @@
 
 #import "orderFootView.h"
 #import "CROCommonAPI.h"
+#import "commonConfig.h"
 
 @implementation orderFootView {
     UILabel *countPrice;
@@ -45,35 +46,35 @@
         [self addSubview:symbol];
         [self addSubview:priceTitle];
         lineView = [[UIView alloc] initWithFrame:CGRectMake(0, countPrice.frame.origin.y + 27, self.frame.size.width, 1)];
-        lineView.backgroundColor = [CROCommonAPI colorWithHexString:@"#e8e8e8"];
+        lineView.backgroundColor = [CROCommonAPI colorWithHexString:kThinLineColor];
         [self addSubview:lineView];
         
-        payNowBtn = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width - 102, lineView.frame.origin.y + 9, 85, 35)];
+        payNowBtn = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width - 102, lineView.frame.origin.y + 11, 85, 35)];
         payNowBtn.titleLabel.font = [UIFont boldSystemFontOfSize:15];
         [payNowBtn setTitle:@"立即付款" forState:UIControlStateNormal];
         [payNowBtn setTitleColor:[CROCommonAPI colorWithHexString:@"ffffff"] forState:UIControlStateNormal];
         payNowBtn.layer.backgroundColor = [CROCommonAPI colorWithHexString:@"82D6D6"].CGColor;
         [payNowBtn addTarget:self action:@selector(payNowAct) forControlEvents:UIControlEventTouchUpInside];
         
-        receiptBtn = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width - 102, lineView.frame.origin.y + 9, 85, 35)];
+        receiptBtn = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width - 102, lineView.frame.origin.y + 11, 85, 35)];
         receiptBtn.titleLabel.font = [UIFont boldSystemFontOfSize:15];
         [receiptBtn setTitle:@"确认收货" forState:UIControlStateNormal];
         [receiptBtn setTitleColor:[CROCommonAPI colorWithHexString:@"ffffff"] forState:UIControlStateNormal];
         receiptBtn.layer.backgroundColor = [CROCommonAPI colorWithHexString:@"82D6D6"].CGColor;
         [receiptBtn addTarget:self action:@selector(receiptAct) forControlEvents:UIControlEventTouchUpInside];
 
-        delOrderBtn = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width - 102, lineView.frame.origin.y + 9, 85, 35)];
+        delOrderBtn = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width - 102, lineView.frame.origin.y + 11, 85, 35)];
         delOrderBtn.titleLabel.font = [UIFont boldSystemFontOfSize:15];
         [delOrderBtn setTitle:@"删除订单" forState:UIControlStateNormal];
         [delOrderBtn setTitleColor:[CROCommonAPI colorWithHexString:@"ffffff"] forState:UIControlStateNormal];
         delOrderBtn.layer.backgroundColor = [CROCommonAPI colorWithHexString:@"D3D3D3"].CGColor;
         [delOrderBtn addTarget:self action:@selector(delOrderAct) forControlEvents:UIControlEventTouchUpInside];
 
-        cancelBtn = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width - 102 - 95, lineView.frame.origin.y + 9, 85, 35)];
+        cancelBtn = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width - 102 - 95, lineView.frame.origin.y + 11, 85, 35)];
         cancelBtn.titleLabel.font = [UIFont boldSystemFontOfSize:15];
         [cancelBtn setTitle:@"取消订单" forState:UIControlStateNormal];
         [cancelBtn setTitleColor:[CROCommonAPI colorWithHexString:@"ffffff"] forState:UIControlStateNormal];
-        cancelBtn.layer.backgroundColor = [CROCommonAPI colorWithHexString:@"82D6D6"].CGColor;
+        cancelBtn.layer.backgroundColor = [CROCommonAPI colorWithHexString:@"D3D3D3"].CGColor;
         [cancelBtn addTarget:self action:@selector(cancelAct) forControlEvents:UIControlEventTouchUpInside];
 
         [self addSubview:payNowBtn];
@@ -81,8 +82,9 @@
         [self addSubview:delOrderBtn];
         [self addSubview:cancelBtn];
         
-        footLine = [[UIView alloc] initWithFrame:CGRectMake(0, cancelBtn.frame.origin.y + 42, self.frame.size.width, 5)];
-        footLine.backgroundColor = [CROCommonAPI colorWithHexString:@"#f5f5f5"];
+        footLine = [[UIView alloc] initWithFrame:CGRectMake(0, cancelBtn.frame.origin.y + 45, self.frame.size.width, kThickLineHeight)];
+        footLine.backgroundColor = [CROCommonAPI colorWithHexString:kThickLineColor];
+        //NSLog(@"\r\n footy:%f", footLine.frame.origin.y);
         [self addSubview:footLine];
     }
     return self;

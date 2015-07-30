@@ -10,10 +10,14 @@
 #import "CROOrderList.h"
 #import "orderFootView.h"
 #import "CROCommonAPI.h"
+#import "commonConfig.h"
 
 static NSString *orderCell = @"orderListCell";
 
-@interface OrderListController ()
+@interface OrderListController () {
+    UIImageView *barLineView;
+    UIView *lineView;
+}
 
 @end
 
@@ -28,11 +32,21 @@ static NSString *orderCell = @"orderListCell";
     self.dataArray = [[NSMutableArray alloc] init];
     self.dataArray = [[CROOrderList shareInstance] getAllOrderList];
     self.tableView.backgroundColor = [UIColor whiteColor];
-    NSLog(@"\r\n dataarray:%@", self.dataArray);
+    //NSLog(@"\r\n dataarray:%@", self.dataArray);
 }
 
 - (void)reloadData {
     
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    willLoadToRemoveLine
+    willLoadToSetThickGrayLine
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    willDisappearToAddLine
+    willDisappearToRemoveThickGrayLine
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,7 +57,7 @@ static NSString *orderCell = @"orderListCell";
 #pragma mark - Table view data source
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 91;
+    return kOrderListCellHeight;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -51,21 +65,31 @@ static NSString *orderCell = @"orderListCell";
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 30;
+    if (section == 0) {
+        return 35;
+    } else {
+        return 30;
+    }
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    UIView *head = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, 30)];
-    UILabel *titleView = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, 60, 20)];
-    titleView.font = [UIFont boldSystemFontOfSize:14];
+    CGFloat height;
+    if (section == 0) {
+        height = 35;
+    } else {
+        height = 30;
+    }
+    UIView *head = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, height)];
+    UILabel *titleView = [[UILabel alloc] initWithFrame:CGRectMake(15, height - 25, 60, 20)];
+    titleView.font = [UIFont boldSystemFontOfSize:13];
     titleView.textColor = [CROCommonAPI colorWithHexString:@"#E75A5C"];
     NSDictionary *itemDic = [self.dataArray objectAtIndex:section];
     NSString *modeStr = [itemDic objectForKey:@"type"];
     titleView.text = modeStr;
     [head addSubview:titleView];
-    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, 29, self.tableView.frame.size.width, 1)];
-    lineView.backgroundColor = [CROCommonAPI colorWithHexString:@"#E8E8E8"];
-    [head addSubview:lineView];
+    UIView *headLineView = [[UIView alloc] initWithFrame:CGRectMake(0, height - 1, self.tableView.frame.size.width, 1)];
+    headLineView.backgroundColor = [CROCommonAPI colorWithHexString:kThinLineColor];
+    [head addSubview:headLineView];
     head.backgroundColor = [UIColor whiteColor];
     return head;
 }
@@ -77,7 +101,7 @@ static NSString *orderCell = @"orderListCell";
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-    orderFootView *foot = [[orderFootView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, 91)];
+    orderFootView *foot = [[orderFootView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, 96)];
     NSDictionary *itemDic = [self.dataArray objectAtIndex:section];
     NSNumber *price = [itemDic objectForKey:@"total_price"];
     NSString *modeStr = [itemDic objectForKey:@"type"];
@@ -103,7 +127,7 @@ static NSString *orderCell = @"orderListCell";
     if ([modeStr isEqualToString:@"待发货"]) {
         return 40;
     } else {
-        return 91;
+        return 96;
     }
 }
 
@@ -116,12 +140,16 @@ static NSString *orderCell = @"orderListCell";
     NSArray *items = [itemDic objectForKey:@"list"];
     NSDictionary *itemData = [items objectAtIndex:indexPath.row];
     [cell setOrderItemInfoByDic:itemData];
-
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self performSegueWithIdentifier:@"toOrderDetailView" sender:nil];
+}
+
+- (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
+    return true;
 }
 
 /*

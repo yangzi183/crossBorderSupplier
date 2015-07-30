@@ -80,6 +80,7 @@
 		04A8E6131B2AD52900A7CF0E /* TopicMode2HeadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A8E6111B2AD52900A7CF0E /* TopicMode2HeadCell.xib */; };
 		04A8E6181B2BFB8F00A7CF0E /* TopicMode2ItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A8E6161B2BFB8F00A7CF0E /* TopicMode2ItemCell.m */; };
 		04A8E6191B2BFB8F00A7CF0E /* TopicMode2ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A8E6171B2BFB8F00A7CF0E /* TopicMode2ItemCell.xib */; };
+		04B5D27A1B69CA690051390C /* itemIconWithBackImg.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5D2791B69CA690051390C /* itemIconWithBackImg.m */; };
 		04B9F3F11B156AEB0011DBC2 /* test1.js in Resources */ = {isa = PBXBuildFile; fileRef = 04B9F3F01B156AEB0011DBC2 /* test1.js */; };
 		04B9F48F1B159BBC0011DBC2 /* CROShoppingCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B9F48E1B159BBC0011DBC2 /* CROShoppingCartViewController.m */; };
 		04B9F4931B15A1830011DBC2 /* CROShoppingCartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B9F4911B15A1830011DBC2 /* CROShoppingCartTableViewCell.m */; };
@@ -261,6 +262,8 @@
 		04A8E6151B2BFB8F00A7CF0E /* TopicMode2ItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicMode2ItemCell.h; sourceTree = "<group>"; };
 		04A8E6161B2BFB8F00A7CF0E /* TopicMode2ItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicMode2ItemCell.m; sourceTree = "<group>"; };
 		04A8E6171B2BFB8F00A7CF0E /* TopicMode2ItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopicMode2ItemCell.xib; sourceTree = "<group>"; };
+		04B5D2781B69CA690051390C /* itemIconWithBackImg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = itemIconWithBackImg.h; sourceTree = "<group>"; };
+		04B5D2791B69CA690051390C /* itemIconWithBackImg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = itemIconWithBackImg.m; sourceTree = "<group>"; };
 		04B9F3F01B156AEB0011DBC2 /* test1.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = test1.js; sourceTree = "<group>"; };
 		04B9F48D1B159BBC0011DBC2 /* CROShoppingCartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CROShoppingCartViewController.h; sourceTree = "<group>"; };
 		04B9F48E1B159BBC0011DBC2 /* CROShoppingCartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CROShoppingCartViewController.m; sourceTree = "<group>"; };
@@ -729,6 +732,8 @@
 				040E77D81B5F75A600AFB0B6 /* LBorderView.m */,
 				185D80341B603F7B0046B775 /* labelWithImgView.h */,
 				185D80351B603F7B0046B775 /* labelWithImgView.m */,
+				04B5D2781B69CA690051390C /* itemIconWithBackImg.h */,
+				04B5D2791B69CA690051390C /* itemIconWithBackImg.m */,
 			);
 			name = commonUI;
 			sourceTree = "<group>";
@@ -925,6 +930,7 @@
 			files = (
 				046CD9781B1069A700392F3F /* UIImageView+WebCache.m in Sources */,
 				046CD9741B1069A700392F3F /* UIImage+GIF.m in Sources */,
+				04B5D27A1B69CA690051390C /* itemIconWithBackImg.m in Sources */,
 				04F7BCC01B2EC64D001F2A79 /* TopicMode3SectionView.m in Sources */,
 				046CD96D1B1069A700392F3F /* SDWebImageCompat.m in Sources */,
 				0493EF2A1B3BED0700BCF945 /* LoginViewController.m in Sources */,

@@ -12,5 +12,7 @@
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 - (IBAction)backAct:(id)sender;
+@property (strong, nonatomic) NSMutableArray *dataArray;
 
+@property (strong, nonatomic) NSMutableArray *normalListArray;
 @end

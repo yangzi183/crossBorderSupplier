@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#define kOrderDetailNormalCellHeight        40
+
 @interface OrderDetailNormalCell : UITableViewCell
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) IBOutlet UILabel *contentLabel;

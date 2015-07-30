@@ -16,7 +16,7 @@
                 "item_image_url":"http://img4q.duitang.com/uploads/item/201202/12/20120212145057_yKtnj.thumb.700_0.jpg"
             },
             {
-                "title":"德国爱他美奶粉800g",
+                "title":"德国爱他美爱他美爱他美爱他美爱他美爱他美爱他美爱他美爱他美奶粉800g",
                 "price":133,
                 "count":1,
                 "item_image_url":"http://img4q.duitang.com/uploads/item/201202/12/20120212145057_yKtnj.thumb.700_0.jpg"
