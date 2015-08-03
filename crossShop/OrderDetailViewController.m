@@ -75,7 +75,7 @@ static NSString *orderCell = @"orderListCell";
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 4;
+    return 5;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -87,10 +87,13 @@ static NSString *orderCell = @"orderListCell";
         return kOrderListCellHeight;
         
         case 2:
-        return 41;
+        return kOrderDetailNormalCellHeight;
         
         case 3:
-        return 80;
+        return kOrderDetailNormalCellHeight;
+            
+        case 4:
+        return kOrderDetailLogisticsCellHeight;
         
         default:
         return 41;
@@ -103,16 +106,19 @@ static NSString *orderCell = @"orderListCell";
         return 0;
         
         case 1:
-        return 5;
+        return kThickLineHeight;
         
         case 2:
-        return 5;
+        return kThickLineHeight;
         
         case 3:
-        return 5;
+        return 0;
+            
+        case 4:
+        return kThickLineHeight;
         
         default:
-        return 5;
+        return kThickLineHeight;
     }
 }
 
@@ -127,7 +133,7 @@ static NSString *orderCell = @"orderListCell";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (section == 0) {
+    if (section == 0 || section == 3) {
         return 1;
     } else if (section == 1) {
         return 2;
@@ -168,6 +174,15 @@ static NSString *orderCell = @"orderListCell";
             cell = [[OrderDetailNormalCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:orderDetailNormalCell];
         }
         // = [UIColor blueColor];
+        [cell setContentInfoByIndex:indexPath.row toMode:ORDER_MODE_DETAIL];
+        return cell;
+    } else if (indexPath.section == 3) {
+        OrderDetailNormalCell *cell = [tableView dequeueReusableCellWithIdentifier:orderDetailNormalCell forIndexPath:indexPath];
+        if (cell == nil) {
+            cell = [[OrderDetailNormalCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:orderDetailNormalCell];
+        }
+        // = [UIColor blueColor];
+        [cell setContentInfoByIndex:indexPath.row toMode:ORDER_MODE_LOGISTICS];
         return cell;
     } else {
         OrderDetailLogisticsCell *cell = [tableView dequeueReusableCellWithIdentifier:orderDetailLogisticsCell forIndexPath:indexPath];

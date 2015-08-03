@@ -11,7 +11,7 @@
 #import "CROCommonAPI.h"
 
 #define kWhiteBackWidth         260
-#define kWhiteBackHeight        140
+#define kWhiteBackHeight        120
 #define kLabelHeight            20
 #define kMargin                 15
 #define kMarginBtn              8

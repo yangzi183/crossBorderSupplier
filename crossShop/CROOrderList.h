@@ -15,5 +15,6 @@
 + (CROOrderList *) shareInstance;
 - (NSMutableArray *)getAllOrderList;
 - (NSMutableArray *)getNormalList;
+- (NSMutableArray *)getContentList;
 
 @end

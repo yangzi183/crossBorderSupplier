@@ -21,8 +21,6 @@
     // Initialization code
     
     [self changeCellMode:false];
-    self.imgBack.layer.borderColor = [CROCommonAPI colorWithHexString:@"#f7f7f7"].CGColor;
-    self.imgBack.layer.borderWidth = 0.5f;
     self.imgSellOut.hidden = YES;
     self.selectBtn.selected = NO;
     isSelected = self.selectBtn.selected;
@@ -49,7 +47,7 @@
 
 - (void)configCellByDicData: (NSDictionary *)dicData {
     if ([dicData objectForKey:@"itemCover"]) {
-        [self.imgIcon sd_setImageWithURL:[NSURL URLWithString:[dicData objectForKey:@"itemCover"]] placeholderImage:[UIImage imageNamed:@"shoppingCart.png"]];
+        [self.itemImg setItemImgWithUrl:[dicData objectForKey:@"itemCover"]];
     }
     if ([dicData objectForKey:@"itemName"]) {
         self.titleLabel.text = [dicData objectForKey:@"itemName"];

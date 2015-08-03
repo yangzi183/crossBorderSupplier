@@ -12,5 +12,5 @@
 @interface OrderConfirmController : UIViewController <UITableViewDelegate, UITableViewDataSource, OrderConfirmHeadCellDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 - (IBAction)backAct:(id)sender;
-
+@property (strong, nonatomic) NSMutableArray *dataArray;
 @end

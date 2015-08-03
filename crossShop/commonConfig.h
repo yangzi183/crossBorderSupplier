@@ -31,4 +31,10 @@ barLineView.hidden = NO;
 
 #define willDisappearToRemoveThickGrayLine   [lineView removeFromSuperview];
 
+#define willLoadAddOrderLine    lineImgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, self.navigationController.navigationBar.frame.size.height, screenWidth, 2)];  \
+lineImgView.image = [UIImage imageNamed:@"order_title_line"]; \
+[self.navigationController.navigationBar addSubview:lineImgView]; 
+
+#define willDisappearRemoveOrderLine        [lineImgView removeFromSuperview];
+
 #endif

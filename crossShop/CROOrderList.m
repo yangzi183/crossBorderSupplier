@@ -45,5 +45,16 @@ static CROOrderList *CROOrderListInstance;
     return self.normalList;
 }
 
+- (NSMutableArray *)getContentList {
+    NSString *orderTime = [self getOrderDate];
+    NSMutableArray *contentArray = [[NSMutableArray alloc] initWithObjects:orderTime, @"￥445", @"￥19", @"￥33", @"-￥15", @"-￥10", @"￥466", nil];
+    return contentArray;
+}
+
+- (NSString *)getOrderDate {
+    return @"2015/1/15 23:22";
+}
+
+
 
 @end

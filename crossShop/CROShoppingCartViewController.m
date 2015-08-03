@@ -7,6 +7,7 @@
 //
 
 #import "CROShoppingCartViewController.h"
+#import "commonConfig.h"
 
 static NSString *shoppingCartCell = @"shoppingCartCell";
 static NSInteger totalPriceReal;
@@ -29,7 +30,7 @@ static NSInteger totalOriPriceReal;
     dataPriceDic = [[NSMutableDictionary alloc]init];
     //self.edgesForExtendedLayout = UIRectEdgeNone;
     self.tableView.backgroundColor = [UIColor whiteColor];
-    
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.dataArray = [[CROShoppingCart shareInstance]getAllGoods];
     //NSLog(@"\r\n dataarray:%@", self.dataArray);
     [self.tableView reloadData];
@@ -52,10 +53,6 @@ static NSInteger totalOriPriceReal;
     // Dispose of any resources that can be recreated.
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    
-}
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -67,19 +64,20 @@ static NSInteger totalOriPriceReal;
     return [arrayCount count];
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+/*- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     NSDictionary *secDic = [self.dataArray objectAtIndex:section];
     return [secDic objectForKey:@"dispatch"];
-}
+}*/
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 85;
+    return kCROShoppingCartTableViewCellHeight;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 30;
+    return 0;
 }
-- (UIView *)tableView:(UITableView *)tableV viewForHeaderInSection:(NSInteger)section {
+
+/*- (UIView *)tableView:(UITableView *)tableV viewForHeaderInSection:(NSInteger)section {
     NSString *titleStr = [self tableView:tableV titleForHeaderInSection:section];
     UILabel *sectionHeader = [[UILabel alloc]initWithFrame:CGRectMake(8, 5, self.tableView.frame.size.width, 20)];
     sectionHeader.text = titleStr;
@@ -92,8 +90,9 @@ static NSInteger totalOriPriceReal;
     lineView.backgroundColor = [CROCommonAPI colorWithHexString:@"#d8d8d8"];
     [secView addSubview:lineView];
     [secView addSubview:sectionHeader];
-    return secView;
-}
+    //return secView;
+    return nil;
+}*/
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CROShoppingCartTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:shoppingCartCell forIndexPath:indexPath];

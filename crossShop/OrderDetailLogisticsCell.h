@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+#define kOrderDetailLogisticsCellHeight              66
 @interface OrderDetailLogisticsCell : UITableViewCell
 
 @end

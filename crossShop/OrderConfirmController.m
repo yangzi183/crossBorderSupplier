@@ -16,13 +16,20 @@
 #import "OrderDetailLogisticsCell.h"
 #import "OrderConfirmMoreCell.h"
 #import "commonConfig.h"
+#import "OrderListCell.h"
+#import "CROOrderList.h"
 
 static NSString *orderConfirmHeadCell = @"orderConfirmHeadCell";
 static NSString *orderConfirmMoreCell = @"orderConfirmMoreCell";
 static NSString *orderDetailNormalCell = @"orderDetailNormalCell";
 static NSString *orderDetailItemCell = @"orderDetailItemCell";
+static NSString *orderCell = @"orderListCell";
 
-@interface OrderConfirmController ()
+@interface OrderConfirmController () {
+    UIImageView *barLineView;
+    UIView *lineView;
+    UIImageView *lineImgView;
+}
 
 @end
 
@@ -38,9 +45,26 @@ static NSString *orderDetailItemCell = @"orderDetailItemCell";
     [self.tableView registerNib:itemNib forCellReuseIdentifier:orderDetailItemCell];
     UINib *moreNib = [UINib nibWithNibName:@"OrderConfirmMoreCell" bundle:nil];
     [self.tableView registerNib:moreNib forCellReuseIdentifier:orderConfirmMoreCell];
+    UINib *listNib = [UINib nibWithNibName:@"OrderListCell" bundle:nil];
+    [self.tableView registerNib:listNib forCellReuseIdentifier:orderCell];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.dataArray = [[NSMutableArray alloc] init];
+    self.dataArray = [[CROOrderList shareInstance] getAllOrderList];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    willLoadToRemoveLine
+    /*barLineView = [CROCommonAPI findHairlineImageViewUnder:self.navigationController.navigationBar];
+     
+     barLineView.hidden = YES;*/
+    willLoadAddOrderLine
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    willDisappearToAddLine
+    willDisappearRemoveOrderLine
 }
 
 - (void)didReceiveMemoryWarning {
@@ -58,7 +82,7 @@ static NSString *orderDetailItemCell = @"orderDetailItemCell";
         return 73;
         
         case 1:
-        return 89;
+        return kOrderListCellHeight;
         
         case 2:
         return 50;
@@ -72,6 +96,7 @@ static NSString *orderDetailItemCell = @"orderDetailItemCell";
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return kThickLineHeight;
     switch (section) {
         case 0:
         return 5;
@@ -124,10 +149,19 @@ static NSString *orderDetailItemCell = @"orderDetailItemCell";
         return cell;
         
     } else if (indexPath.section == 1) {
-        OrderDetailItemCell *cell = [tableView dequeueReusableCellWithIdentifier:orderDetailItemCell forIndexPath:indexPath];
+        /*OrderDetailItemCell *cell = [tableView dequeueReusableCellWithIdentifier:orderDetailItemCell forIndexPath:indexPath];
         if (cell == nil) {
             cell = [[OrderDetailItemCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:orderDetailItemCell];
+        }*/
+        OrderListCell *cell = [tableView dequeueReusableCellWithIdentifier:orderCell forIndexPath:indexPath];
+        if (cell == nil) {
+            cell = [[OrderListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:orderCell];
         }
+        NSDictionary *itemDic = [self.dataArray objectAtIndex:indexPath.section];
+        NSArray *items = [itemDic objectForKey:@"list"];
+        NSDictionary *itemData = [items objectAtIndex:indexPath.row];
+        [cell setOrderItemInfoByDic:itemData];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         //cell.backgroundColor = [UIColor redColor];
         return cell;
         

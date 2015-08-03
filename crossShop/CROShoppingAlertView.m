@@ -29,7 +29,7 @@
         whiteBack.backgroundColor = [UIColor whiteColor];
         UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 15, kWhiteBackWidth, kLabelHeight)];
         titleLabel.text = @"是否将商品移除购物车?";
-        titleLabel.font = [UIFont systemFontOfSize:16];
+        titleLabel.font = [UIFont systemFontOfSize:14];
         titleLabel.textColor = [CROCommonAPI colorWithHexString:@"9b9b9b"];
         titleLabel.textAlignment = NSTextAlignmentCenter;
         [whiteBack addSubview:titleLabel];
@@ -37,16 +37,19 @@
         CGFloat btnWidth = (whiteBack.frame.size.width - kMargin * 2 - kMarginBtn) / 2;
         UIButton *cancelBtn = [[UIButton alloc] initWithFrame:CGRectMake(kMargin, kBtnY, btnWidth, kBtnHeight)];
         [cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
+        cancelBtn.layer.cornerRadius = 0;
         [cancelBtn addTarget:self action:@selector(cancelDel) forControlEvents:UIControlEventTouchUpInside];
         [cancelBtn setTitleColor:[CROCommonAPI colorWithHexString:@"9b9b9b"] forState:UIControlStateNormal];
         cancelBtn.layer.borderColor = [CROCommonAPI colorWithHexString:@"9b9b9b"].CGColor;
         cancelBtn.layer.borderWidth = 0.8f;
-        
+        cancelBtn.titleLabel.font = [UIFont systemFontOfSize:14];
         UIButton *confirmBtn = [[UIButton alloc]initWithFrame:CGRectMake(kMargin + cancelBtn.frame.size.width + kMarginBtn, kBtnY, btnWidth, kBtnHeight)];
         [confirmBtn setTitle:@"确定" forState:UIControlStateNormal];
         [confirmBtn setTitleColor:[CROCommonAPI colorWithHexString:@"ffffff"] forState:UIControlStateNormal];
         confirmBtn.layer.backgroundColor = [CROCommonAPI colorWithHexString:@"82d6d6"].CGColor;
         [confirmBtn addTarget:self action:@selector(confirmDel) forControlEvents:UIControlEventTouchUpInside];
+        confirmBtn.layer.cornerRadius = 0;
+        confirmBtn.titleLabel.font = [UIFont systemFontOfSize:14];
         
         [whiteBack addSubview:cancelBtn];
         [whiteBack addSubview:confirmBtn];
