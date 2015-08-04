@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#define kOrderConfirmMoreCellHeight            40
+
 @interface OrderConfirmMoreCell : UITableViewCell
 
 @end

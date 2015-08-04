@@ -49,7 +49,7 @@
                         </constraints>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="order_duty_tip" translatesAutoresizingMaskIntoConstraints="NO" id="z9x-6A-fvj">
-                        <rect key="frame" x="88" y="8" width="145" height="14.5"/>
+                        <rect key="frame" x="120" y="8" width="145" height="14.5"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="14.5" id="07I-ex-h1X"/>
                             <constraint firstAttribute="width" constant="145" id="128-lV-lC7"/>
@@ -65,7 +65,7 @@
                     <constraint firstItem="wvs-jW-N0y" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="Sts-fg-4Ea"/>
                     <constraint firstItem="Qf3-h7-xhH" firstAttribute="top" secondItem="wvs-jW-N0y" secondAttribute="bottom" constant="5" id="YHA-Fb-lLm"/>
                     <constraint firstItem="z9x-6A-fvj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Zh4-sF-3wm"/>
-                    <constraint firstAttribute="trailing" secondItem="z9x-6A-fvj" secondAttribute="trailing" constant="87" id="aWh-0U-B2Y"/>
+                    <constraint firstAttribute="trailing" secondItem="z9x-6A-fvj" secondAttribute="trailing" constant="55" id="aWh-0U-B2Y"/>
                     <constraint firstItem="wvs-jW-N0y" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="jD7-rP-qrR"/>
                     <constraint firstAttribute="trailing" secondItem="gSG-7a-saM" secondAttribute="trailing" constant="10" id="tBz-h3-t1n"/>
                 </constraints>

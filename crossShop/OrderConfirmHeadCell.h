@@ -8,9 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+#define kOrderConfirmHeadCellHeight         75
+
+typedef enum {
+    RECEIPT_VIEW_NEW,
+    RECEIPT_VIEW_LIST
+}RECEIPT_VIEW;
+
 @protocol OrderConfirmHeadCellDelegate <NSObject>
 
-- (void)intoCreateNewReceipt;
+- (void)intoCreateNewReceiptToMode: (RECEIPT_VIEW)mode;
 
 @end
 
@@ -22,6 +29,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *goodsReceiptNew;
 @property (nonatomic) id<OrderConfirmHeadCellDelegate> delegate;
 
+@property (strong, nonatomic) IBOutlet UIView *clearView;
 - (void)configCellInfo;
 
 @end

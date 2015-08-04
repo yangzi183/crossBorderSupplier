@@ -8,7 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="orderConfirmHeadCell" id="rFt-0w-p7e" customClass="OrderConfirmHeadCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="81"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rFt-0w-p7e" id="mTK-GS-EOb">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -49,7 +49,7 @@
                             <constraint firstAttribute="height" constant="2" id="dSR-Y1-yZJ"/>
                         </constraints>
                     </imageView>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FOE-oz-Css">
+                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FOE-oz-Css">
                         <rect key="frame" x="0.0" y="76" width="320" height="5"/>
                         <color key="backgroundColor" red="0.96078431369999995" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -72,6 +72,10 @@
                             <action selector="newReceiptAct:" destination="rFt-0w-p7e" eventType="touchUpInside" id="tYO-vg-t1V"/>
                         </connections>
                     </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4WV-o8-5vK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="74.5"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="FOE-oz-Css" secondAttribute="trailing" id="2aJ-lo-S2i"/>
@@ -81,11 +85,15 @@
                     <constraint firstItem="IrA-po-lrm" firstAttribute="top" secondItem="mTK-GS-EOb" secondAttribute="top" constant="9" id="DoI-pO-EtV"/>
                     <constraint firstItem="6db-xP-xRV" firstAttribute="leading" secondItem="mTK-GS-EOb" secondAttribute="leading" constant="10" id="Gw9-eW-UrC"/>
                     <constraint firstItem="FOE-oz-Css" firstAttribute="top" secondItem="yEO-AM-j6w" secondAttribute="bottom" constant="1" id="H1m-by-Mtq"/>
+                    <constraint firstAttribute="trailing" secondItem="4WV-o8-5vK" secondAttribute="trailing" id="IW3-RZ-mM3"/>
                     <constraint firstItem="6db-xP-xRV" firstAttribute="top" secondItem="15o-bs-8se" secondAttribute="bottom" constant="5" id="Nqe-vq-4Hx"/>
                     <constraint firstItem="yEO-AM-j6w" firstAttribute="top" secondItem="6db-xP-xRV" secondAttribute="bottom" constant="6" id="Obl-tM-Zjc"/>
                     <constraint firstItem="yEO-AM-j6w" firstAttribute="leading" secondItem="mTK-GS-EOb" secondAttribute="leading" id="PGP-rv-AnC"/>
                     <constraint firstItem="LXd-Hv-Dpe" firstAttribute="top" secondItem="mTK-GS-EOb" secondAttribute="top" constant="26" id="PjC-I3-CqW"/>
+                    <constraint firstItem="4WV-o8-5vK" firstAttribute="leading" secondItem="mTK-GS-EOb" secondAttribute="leading" id="S8Y-V7-AbO"/>
+                    <constraint firstItem="4WV-o8-5vK" firstAttribute="top" secondItem="mTK-GS-EOb" secondAttribute="top" id="SrP-Mi-3SE"/>
                     <constraint firstItem="15o-bs-8se" firstAttribute="leading" secondItem="mTK-GS-EOb" secondAttribute="leading" constant="10" id="Zo2-7B-hxY"/>
+                    <constraint firstAttribute="bottom" secondItem="4WV-o8-5vK" secondAttribute="bottom" id="Ztg-ey-pG6"/>
                     <constraint firstItem="FOE-oz-Css" firstAttribute="leading" secondItem="mTK-GS-EOb" secondAttribute="leading" id="pMF-bb-qX8"/>
                     <constraint firstAttribute="trailing" secondItem="yEO-AM-j6w" secondAttribute="trailing" id="qNb-c4-hUr"/>
                     <constraint firstAttribute="centerX" secondItem="LXd-Hv-Dpe" secondAttribute="centerX" id="w5n-S9-pxz"/>
@@ -93,6 +101,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="address" destination="6db-xP-xRV" id="2Wn-9T-jZm"/>
+                <outlet property="clearView" destination="4WV-o8-5vK" id="eCU-bA-R01"/>
                 <outlet property="goodsReceiptNew" destination="LXd-Hv-Dpe" id="eHk-aG-nCs"/>
                 <outlet property="telephone" destination="IrA-po-lrm" id="WOL-Z9-oKg"/>
                 <outlet property="username" destination="15o-bs-8se" id="e27-0o-84N"/>

@@ -9,5 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface ReceiptController : UIViewController
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UITextField *normalName;
+@property (strong, nonatomic) IBOutlet UITextView *normalAddr;
+@property (strong, nonatomic) IBOutlet UILabel *normalPlacehold;
+
+- (IBAction)backAct:(id)sender;
 
 @end

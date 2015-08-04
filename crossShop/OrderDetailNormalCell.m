@@ -52,6 +52,17 @@
         self.titleLabel.hidden = NO;
         self.bottomLineView.hidden = NO;
         self.dutyImg.hidden = YES;
+    } else {
+        NSMutableArray *titleArray = [orderInstance getConfirmOrderList];
+        NSMutableArray *contentArray = [orderInstance getConfirmContentList];
+        self.titleLabel.text = [titleArray objectAtIndex:index];
+        self.contentLabel.text = [contentArray objectAtIndex:index];
+        self.contentImg.hidden = YES;
+        if (index == 2) {
+            self.dutyImg.hidden = NO;
+        } else {
+            self.dutyImg.hidden = YES;
+        }
     }
     
 }

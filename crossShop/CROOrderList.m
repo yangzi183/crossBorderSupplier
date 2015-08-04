@@ -45,9 +45,19 @@ static CROOrderList *CROOrderListInstance;
     return self.normalList;
 }
 
+- (NSMutableArray *)getConfirmOrderList {
+    NSMutableArray *orderList = [[NSMutableArray alloc] initWithObjects:@"商品总价", @"物流费用", @"关税", @"使用代金券", @"活动优惠", @"应付总额", nil];
+    return orderList;
+}
+
 - (NSMutableArray *)getContentList {
     NSString *orderTime = [self getOrderDate];
     NSMutableArray *contentArray = [[NSMutableArray alloc] initWithObjects:orderTime, @"￥445", @"￥19", @"￥33", @"-￥15", @"-￥10", @"￥466", nil];
+    return contentArray;
+}
+
+- (NSMutableArray *)getConfirmContentList {
+    NSMutableArray *contentArray = [[NSMutableArray alloc] initWithObjects:@"￥445", @"￥19", @"￥33", @"-￥15", @"-￥10", @"￥466", nil];
     return contentArray;
 }
 

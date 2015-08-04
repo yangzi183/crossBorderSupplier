@@ -8,6 +8,7 @@
 
 #import "CROShoppingCartViewController.h"
 #import "commonConfig.h"
+#import "CROCommonAPI.h"
 
 static NSString *shoppingCartCell = @"shoppingCartCell";
 static NSInteger totalPriceReal;
@@ -41,6 +42,8 @@ static NSInteger totalOriPriceReal;
     isSelectAll = self.selectAll.selected;
     [self.selectAll setImage:[UIImage imageNamed:@"item_select_true"] forState:UIControlStateSelected];
     [self.selectAll setImage:[UIImage imageNamed:@"item_select_false"] forState:UIControlStateNormal];
+    //self.view.backgroundColor = [CROCommonAPI colorWithHexString:@"#f5f6f6"];
+    self.tableView.backgroundColor = [CROCommonAPI colorWithHexString:@"#f5f6f6"];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     

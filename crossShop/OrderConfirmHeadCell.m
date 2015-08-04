@@ -12,11 +12,13 @@
 @implementation OrderConfirmHeadCell {
     UITapGestureRecognizer *tap;
     NSMutableArray *receipts;
+    RECEIPT_VIEW mode;
 }
 
 - (void)awakeFromNib {
     // Initialization code
     tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(intoReceiptsView)];
+    [self.clearView addGestureRecognizer:tap];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -30,8 +32,8 @@
 
 - (void)intoReceiptsView {
     NSLog(@"\r\n intoReceiptsView:%@", receipts);
-    if (self.delegate && [self.delegate respondsToSelector:@selector(intoCreateNewReceipt)]) {
-        [self.delegate intoCreateNewReceipt];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(intoCreateNewReceiptToMode:)]) {
+        [self.delegate intoCreateNewReceiptToMode:mode];
     }
 }
 
@@ -47,13 +49,13 @@
         self.username.hidden = YES;
         self.telephone.hidden = YES;
         self.address.hidden = YES;
-        [self removeGestureRecognizer:tap];
+        mode = RECEIPT_VIEW_NEW;
     } else {
         self.goodsReceiptNew.hidden = YES;
         self.username.hidden = NO;
         self.telephone.hidden = NO;
         self.address.hidden = NO;
-        [self addGestureRecognizer:tap];
+        mode = RECEIPT_VIEW_LIST;
     }
 }
 

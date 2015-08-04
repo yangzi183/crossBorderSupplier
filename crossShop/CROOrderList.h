@@ -16,5 +16,7 @@
 - (NSMutableArray *)getAllOrderList;
 - (NSMutableArray *)getNormalList;
 - (NSMutableArray *)getContentList;
+- (NSMutableArray *)getConfirmOrderList;
+- (NSMutableArray *)getConfirmContentList;
 
 @end

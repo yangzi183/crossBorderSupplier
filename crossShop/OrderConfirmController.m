@@ -79,40 +79,27 @@ static NSString *orderCell = @"orderListCell";
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     switch (indexPath.section) {
         case 0:
-        return 73;
+        return kOrderConfirmHeadCellHeight;
         
         case 1:
         return kOrderListCellHeight;
         
         case 2:
-        return 50;
+        return kOrderConfirmMoreCellHeight;
         
         case 3:
-        return 41;
+        return kOrderDetailNormalCellHeight;
         
         default:
-        return 41;
+        return kOrderDetailNormalCellHeight;
     }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return kThickLineHeight;
-    switch (section) {
-        case 0:
-        return 5;
-        
-        case 1:
-        return 5;
-        
-        case 2:
-        return 5;
-        
-        case 3:
-        return 5;
-        
-        default:
-        return 5;
+    if (section == 3) {
+        return 0;
     }
+    return kThickLineHeight;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
@@ -177,12 +164,13 @@ static NSString *orderCell = @"orderListCell";
         if (cell == nil) {
             cell = [[OrderDetailNormalCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:orderDetailNormalCell];
         }
-        //cell.backgroundColor = [UIColor blueColor];
+        [cell setContentInfoByIndex:indexPath.row toMode:ORDER_MODE_CONFIRM];
         return cell;
     }
 }
 
-- (void)intoCreateNewReceipt {
+- (void)intoCreateNewReceiptToMode: (RECEIPT_VIEW)mode {
+    NSLog(@"\r\n toNewReceiptView mode:%d", mode);
     [self performSegueWithIdentifier:@"toNewReceiptView" sender:nil];
 }
 /*
