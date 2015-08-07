@@ -1,0 +1,69 @@
+
+{
+    "title_image":"test.png",
+    "title_str":"夏季宝宝最爱洗护用品top10",
+    "describe":"夏天来了夏天来了夏天来了夏天来了夏天来了夏天来了",
+    "author_icon":"test1.png",
+    "list":
+    [
+        {
+            "item_image":"test1-1.png",
+            "item_title":"该品牌在日本非常出名，家家户户必备产品",
+            "item_type":
+            [
+                {
+                    "type_name":"女款"
+                    "type_list":
+                    [
+                        {
+                            "goods_image":"goods1.png",
+                            "goods_title":"德国爱他美奶粉800g",
+                            "goods_price_cur":"200",
+                            "goods_price_ori":"344"
+                        },
+                        {
+                            "goods_image":"goods2.png",
+                            "goods_title":"德国爱他美奶粉800g",
+                            "goods_price_cur":"111",
+                            "goods_price_ori":"222"
+                        },
+                    ]
+                },
+                {
+                    "type_name":"男款"
+                    "type_list":
+                    [
+                        {
+                            "goods_image":"goods1.png",
+                            "goods_title":"德国爱他美奶粉800g",
+                            "goods_price_cur":"200",
+                            "goods_price_ori":"344"
+                        },
+                        {
+                            "goods_image":"goods2.png",
+                            "goods_title":"德国爱他美奶粉800g",
+                            "goods_price_cur":"111",
+                            "goods_price_ori":"222"
+                        },
+                    ]
+                }
+             
+            ],
+            "mother_comment":
+            [
+                {
+                    "mother_name":"王雪梅",
+                    "mother_content":"这是一个好产品，夏天来了，适合使用"
+                },
+                {
+                    "mother_name":"李雪静",
+                    "mother_content":"这是一个好产品，夏天来了，适合使用"
+                }
+            ]
+     
+        },
+        ........
+     
+    ]
+    
+}

@@ -8,12 +8,25 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ReceiptController : UIViewController
-@property (strong, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) IBOutlet UITextField *normalName;
-@property (strong, nonatomic) IBOutlet UITextView *normalAddr;
-@property (strong, nonatomic) IBOutlet UILabel *normalPlacehold;
+#define PROVINCE_COMPONENT  0
+#define CITY_COMPONENT      1
+#define DISTRICT_COMPONENT  2
 
+@interface ReceiptController : UIViewController <UITextViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
+//@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UITextView *address;
+@property (strong, nonatomic) IBOutlet UILabel *addrLabel;
+@property (strong, nonatomic) IBOutlet UITextField *userName;
+@property (strong, nonatomic) IBOutlet UITextField *identityCard;
+@property (strong, nonatomic) IBOutlet UITextField *telephone;
+@property (strong, nonatomic) IBOutlet UITextField *postcode;
+@property (strong, nonatomic) IBOutlet UITextField *localArea;
+@property (strong, nonatomic) IBOutlet UIView *areaView;
+@property (strong, nonatomic) IBOutlet UIPickerView *pickView;
+@property (strong, nonatomic) IBOutlet UIView *localAreaBack;
+@property (strong, nonatomic) IBOutlet UIView *pickBackView;
 - (IBAction)backAct:(id)sender;
+- (IBAction)pickCancelAct:(id)sender;
+- (IBAction)pickDoneAct:(id)sender;
 
 @end

@@ -30,6 +30,8 @@
 		041A1BAD1B3E477500F68189 /* OrderListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 041A1BAB1B3E477500F68189 /* OrderListCell.m */; };
 		041A1BAE1B3E477500F68189 /* OrderListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 041A1BAC1B3E477500F68189 /* OrderListCell.xib */; };
 		041A1BB01B3E5CDE00F68189 /* test3.js in Resources */ = {isa = PBXBuildFile; fileRef = 041A1BAF1B3E5CDE00F68189 /* test3.js */; };
+		0434A24E1B71A9BB00125FC1 /* test5.js in Resources */ = {isa = PBXBuildFile; fileRef = 0434A24D1B71A9BB00125FC1 /* test5.js */; };
+		0434A2501B74A0CE00125FC1 /* area.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0434A24F1B74A0CE00125FC1 /* area.plist */; };
 		0460DB3B1B4A144C00220D4E /* OrderConfirmHeadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0460DB391B4A144C00220D4E /* OrderConfirmHeadCell.m */; };
 		0460DB3C1B4A144C00220D4E /* OrderConfirmHeadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0460DB3A1B4A144C00220D4E /* OrderConfirmHeadCell.xib */; };
 		0460DB401B4A1C3700220D4E /* OrderConfirmMoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0460DB3E1B4A1C3700220D4E /* OrderConfirmMoreCell.m */; };
@@ -175,6 +177,8 @@
 		041A1BAB1B3E477500F68189 /* OrderListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderListCell.m; sourceTree = "<group>"; };
 		041A1BAC1B3E477500F68189 /* OrderListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderListCell.xib; sourceTree = "<group>"; };
 		041A1BAF1B3E5CDE00F68189 /* test3.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = test3.js; sourceTree = "<group>"; };
+		0434A24D1B71A9BB00125FC1 /* test5.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = test5.js; sourceTree = "<group>"; };
+		0434A24F1B74A0CE00125FC1 /* area.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = area.plist; sourceTree = "<group>"; };
 		0460DB381B4A144C00220D4E /* OrderConfirmHeadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderConfirmHeadCell.h; sourceTree = "<group>"; };
 		0460DB391B4A144C00220D4E /* OrderConfirmHeadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderConfirmHeadCell.m; sourceTree = "<group>"; };
 		0460DB3A1B4A144C00220D4E /* OrderConfirmHeadCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderConfirmHeadCell.xib; sourceTree = "<group>"; };
@@ -512,11 +516,13 @@
 		047451EA1B11A040000A57B8 /* used source */ = {
 			isa = PBXGroup;
 			children = (
+				0434A24F1B74A0CE00125FC1 /* area.plist */,
 				047451EB1B11A089000A57B8 /* testData.plist */,
 				04B9F3F01B156AEB0011DBC2 /* test1.js */,
 				048ADC361B1EDDF0002641DC /* test2.js */,
 				041A1BAF1B3E5CDE00F68189 /* test3.js */,
 				0460DB451B4A527400220D4E /* test4.js */,
+				0434A24D1B71A9BB00125FC1 /* test5.js */,
 			);
 			name = "used source";
 			sourceTree = "<group>";
@@ -861,6 +867,7 @@
 				049625BF1B462C55005D3A24 /* OrderDetailLogisticsCell.xib in Resources */,
 				04FE91471B5A30EF004A74D6 /* DetailGoodsRecommendCell.xib in Resources */,
 				04FE91561B5A544C004A74D6 /* DetailGoodsModeCell.xib in Resources */,
+				0434A2501B74A0CE00125FC1 /* area.plist in Resources */,
 				1852EDF31B0B7398002AAD43 /* LaunchScreen.xib in Resources */,
 				0405F6491B43855A00C527D8 /* OrderDetailCell.xib in Resources */,
 				040A3F151B258DD600166381 /* CRODetailGoodsHeadCell.xib in Resources */,
@@ -876,6 +883,7 @@
 				04A8E6131B2AD52900A7CF0E /* TopicMode2HeadCell.xib in Resources */,
 				041A1BB01B3E5CDE00F68189 /* test3.js in Resources */,
 				04FE91511B5A386C004A74D6 /* DetailGoodsIntroDetailCell.xib in Resources */,
+				0434A24E1B71A9BB00125FC1 /* test5.js in Resources */,
 				041A1BAE1B3E477500F68189 /* OrderListCell.xib in Resources */,
 				0460DB3C1B4A144C00220D4E /* OrderConfirmHeadCell.xib in Resources */,
 			);
