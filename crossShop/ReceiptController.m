@@ -8,16 +8,19 @@
 
 #import "ReceiptController.h"
 #import "CROCommonAPI.h"
+#import "commonConfig.h"
 
 @interface ReceiptController () {
     NSMutableArray *cellArray;
-    
+    UIImageView *barLineView;
+    UIView *lineView;
     NSDictionary *areaDic;
     NSArray *province;
     NSArray *city;
     NSArray *district;
-    
     NSString *selectedProvince;
+    CGPoint oriPoint;
+    CGPoint curPoint;
 }
 
 @end
@@ -29,12 +32,17 @@
     
     self.address.delegate = self;
     [self.userName setValue:[CROCommonAPI colorWithHexString:@"#B8B8B8"] forKeyPath:@"_placeholderLabel.textColor"];
+    self.userName.delegate = self;
+    
     [self.identityCard setValue:[CROCommonAPI colorWithHexString:@"#B8B8B8"] forKeyPath:@"_placeholderLabel.textColor"];
-
+    self.identityCard.delegate = self;
+    
     [self.telephone setValue:[CROCommonAPI colorWithHexString:@"#B8B8B8"] forKeyPath:@"_placeholderLabel.textColor"];
-
+    self.telephone.delegate = self;
+    
     [self.postcode setValue:[CROCommonAPI colorWithHexString:@"#B8B8B8"] forKeyPath:@"_placeholderLabel.textColor"];
-
+    self.postcode.delegate = self;
+    
     [self.localArea setValue:[CROCommonAPI colorWithHexString:@"#B8B8B8"] forKeyPath:@"_placeholderLabel.textColor"];
     UITapGestureRecognizer *tapArea = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showAreaView)];
     [self.localAreaBack addGestureRecognizer:tapArea];
@@ -44,17 +52,30 @@
     UITapGestureRecognizer *tapPickRemove = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removePickView)];
     [self.areaView addGestureRecognizer:tapPickRemove];
     
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyboardWillAppear:) name:UIKeyboardWillShowNotification object:nil];
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyboardWillDisappear:) name:UIKeyboardWillHideNotification object:nil];
+    /*[[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyboardWillAppear:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyboardWillDisappear:) name:UIKeyboardWillHideNotification object:nil];*/
     
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    oriPoint = self.view.center;
+    curPoint = oriPoint;
+    willLoadToRemoveLine
+    willLoadToSetThickGrayLine
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    willDisappearToAddLine
+    willDisappearToRemoveThickGrayLine
+}
+
+/*
 -(void)keyboardWillAppear:(NSNotification *)notification
 {
     CGRect currentFrame = self.view.frame;
     CGFloat change = [self keyboardEndingFrameHeight:[notification userInfo]];
     currentFrame.origin.y = currentFrame.origin.y - change ;
-    self.view.frame = currentFrame;
+    //self.view.frame = currentFrame;
 }
 
 -(void)keyboardWillDisappear:(NSNotification *)notification
@@ -62,16 +83,49 @@
     CGRect currentFrame = self.view.frame;
     CGFloat change = [self keyboardEndingFrameHeight:[notification userInfo]];
     currentFrame.origin.y = currentFrame.origin.y + change ;
-    self.view.frame = currentFrame;
+    //self.view.frame = currentFrame;
+}*/
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    if ([self.userName isFirstResponder]) {
+        curPoint = oriPoint;
+    } else if ([self.identityCard isFirstResponder]) {
+        curPoint = oriPoint;
+    } else if ([self.telephone isFirstResponder]) {
+        curPoint.y = oriPoint.y - kTextFieldHeight;
+    } else if ([self.postcode isFirstResponder]) {
+        curPoint.y = oriPoint.y - 2 * kTextFieldHeight;
+    }
+    self.view.center = curPoint;
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [self resignKeyboard];
+    return YES;
+}
+
+- (void)textViewDidBeginEditing:(UITextView *)textView {
+    curPoint.y = oriPoint.y - 4 * kTextFieldHeight;
+    [UIView animateWithDuration:0.2 animations:^{
+        self.view.center = curPoint;
+    }];
+}
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    if ([text isEqualToString:@"\n"]) {
+        [self resignKeyboard];
+        return NO;
+    }
+    return YES;
+}
+/*
 - (CGFloat)keyboardEndingFrameHeight:(NSDictionary *)userInfo//计算键盘的高度
 {
     CGRect keyboardEndingUncorrectedFrame = [[userInfo objectForKey:UIKeyboardFrameEndUserInfoKey]CGRectValue];
     CGRect keyboardEndingFrame = [self.view convertRect:keyboardEndingUncorrectedFrame fromView:nil];
     return keyboardEndingFrame.size.height;
 }
-
+*/
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -83,6 +137,15 @@
 
 - (IBAction)pickCancelAct:(id)sender {
     [self removePickView];
+}
+
+- (void)resignKeyboard {
+    [self.userName resignFirstResponder];
+    [self.identityCard resignFirstResponder];
+    [self.telephone resignFirstResponder];
+    [self.postcode resignFirstResponder];
+    [self.address resignFirstResponder];
+    self.view.center = oriPoint;
 }
 
 - (IBAction)pickDoneAct:(id)sender {
@@ -107,11 +170,6 @@
     [self removePickView];
 }
 
-- (void)removePickView {
-    self.areaView.hidden = YES;
-    self.pickBackView.hidden = YES;
-}
-
 - (void)textViewDidChange:(UITextView *)textView {
     if (![self.address.text isEqualToString:@""]) {
         self.addrLabel.hidden = YES;
@@ -120,9 +178,15 @@
     }
 }
 
+- (void)removePickView {
+    self.areaView.hidden = YES;
+    self.pickBackView.hidden = YES;
+}
+
 - (void)showAreaView {
     self.areaView.hidden = NO;
     self.pickBackView.hidden = NO;
+    [self resignKeyboard];
 }
 
 - (void)configPickView {

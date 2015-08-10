@@ -171,7 +171,11 @@ static NSString *orderCell = @"orderListCell";
 
 - (void)intoCreateNewReceiptToMode: (RECEIPT_VIEW)mode {
     NSLog(@"\r\n toNewReceiptView mode:%d", mode);
-    [self performSegueWithIdentifier:@"toNewReceiptView" sender:nil];
+    if (mode == RECEIPT_VIEW_NEW) {
+        [self performSegueWithIdentifier:@"toNewReceiptView" sender:nil];
+    } else {
+        [self performSegueWithIdentifier:@"toReceiptListView" sender:nil];
+    }
 }
 /*
 #pragma mark - Navigation

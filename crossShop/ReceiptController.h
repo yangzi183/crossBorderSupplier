@@ -11,8 +11,9 @@
 #define PROVINCE_COMPONENT  0
 #define CITY_COMPONENT      1
 #define DISTRICT_COMPONENT  2
+#define kTextFieldHeight    45
 
-@interface ReceiptController : UIViewController <UITextViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
+@interface ReceiptController : UIViewController <UITextViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate>
 //@property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet UITextView *address;
 @property (strong, nonatomic) IBOutlet UILabel *addrLabel;

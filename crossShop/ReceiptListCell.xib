@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="receiptListCell" id="goL-ZD-rMu" customClass="ReceiptListCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="82"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="goL-ZD-rMu" id="raj-lh-rge">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="order_title_line" translatesAutoresizingMaskIntoConstraints="NO" id="v1a-Gj-fe5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="2"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="2" id="b8G-2F-zKy"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="龙源" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1un-3T-8Lr">
+                        <rect key="frame" x="10" y="11" width="60" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="QC2-vH-yYS"/>
+                            <constraint firstAttribute="width" constant="60" id="WwR-e4-m9N"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="134399228978" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xN2-lH-f0R">
+                        <rect key="frame" x="190" y="11" width="100" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="Tnl-jm-TbG"/>
+                            <constraint firstAttribute="height" constant="18" id="sDB-0a-Pen"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="北京 北京 西城区 德外大街 德胜国际中心B座11层 龙源传媒有限公司" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="veW-wg-yU8">
+                        <rect key="frame" x="10" y="34" width="280" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" id="HpF-FX-JTZ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="order_title_line" translatesAutoresizingMaskIntoConstraints="NO" id="0dB-GX-Nyb">
+                        <rect key="frame" x="0.0" y="75" width="320" height="2"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="2" id="boX-2Q-jBZ"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ofv-v5-Own">
+                        <rect key="frame" x="0.0" y="78" width="320" height="5"/>
+                        <color key="backgroundColor" red="0.96078431369999995" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="5" id="xb6-zj-jRF"/>
+                        </constraints>
+                    </view>
+                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oe8-6O-5CQ">
+                        <rect key="frame" x="290" y="25" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="25" id="5al-D4-mvn"/>
+                            <constraint firstAttribute="height" constant="25" id="FkW-LO-oJi"/>
+                        </constraints>
+                        <state key="normal" image="item_select_false">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="veW-wg-yU8" firstAttribute="top" secondItem="1un-3T-8Lr" secondAttribute="bottom" constant="5" id="4iC-pO-Qj3"/>
+                    <constraint firstItem="v1a-Gj-fe5" firstAttribute="top" secondItem="raj-lh-rge" secondAttribute="top" id="76E-uI-JwQ"/>
+                    <constraint firstAttribute="trailing" secondItem="0dB-GX-Nyb" secondAttribute="trailing" id="BFu-ec-7Tc"/>
+                    <constraint firstAttribute="trailing" secondItem="v1a-Gj-fe5" secondAttribute="trailing" id="CSJ-Io-GN4"/>
+                    <constraint firstItem="1un-3T-8Lr" firstAttribute="leading" secondItem="raj-lh-rge" secondAttribute="leading" constant="10" id="CVz-gd-TdG"/>
+                    <constraint firstItem="oe8-6O-5CQ" firstAttribute="leading" secondItem="xN2-lH-f0R" secondAttribute="trailing" id="ClZ-RV-LQs"/>
+                    <constraint firstItem="veW-wg-yU8" firstAttribute="leading" secondItem="raj-lh-rge" secondAttribute="leading" constant="10" id="Lmf-0O-U5e"/>
+                    <constraint firstItem="oe8-6O-5CQ" firstAttribute="top" secondItem="raj-lh-rge" secondAttribute="top" constant="25" id="fCO-Ny-uBP"/>
+                    <constraint firstItem="xN2-lH-f0R" firstAttribute="top" secondItem="v1a-Gj-fe5" secondAttribute="bottom" constant="9" id="gPf-c2-Vuu"/>
+                    <constraint firstItem="Ofv-v5-Own" firstAttribute="top" secondItem="0dB-GX-Nyb" secondAttribute="bottom" constant="1" id="hSp-yv-1Wc"/>
+                    <constraint firstItem="1un-3T-8Lr" firstAttribute="top" secondItem="v1a-Gj-fe5" secondAttribute="bottom" constant="9" id="pc5-Ze-B99"/>
+                    <constraint firstItem="0dB-GX-Nyb" firstAttribute="leading" secondItem="raj-lh-rge" secondAttribute="leading" id="rbs-Xg-HWm"/>
+                    <constraint firstItem="v1a-Gj-fe5" firstAttribute="leading" secondItem="raj-lh-rge" secondAttribute="leading" id="rvW-r2-mnW"/>
+                    <constraint firstItem="0dB-GX-Nyb" firstAttribute="top" secondItem="veW-wg-yU8" secondAttribute="bottom" constant="6" id="smp-Al-tji"/>
+                    <constraint firstItem="Ofv-v5-Own" firstAttribute="leading" secondItem="raj-lh-rge" secondAttribute="leading" id="uFC-da-ogS"/>
+                    <constraint firstItem="oe8-6O-5CQ" firstAttribute="leading" secondItem="veW-wg-yU8" secondAttribute="trailing" id="yAg-p7-rr0"/>
+                    <constraint firstAttribute="trailing" secondItem="oe8-6O-5CQ" secondAttribute="trailing" constant="5" id="ybu-57-Pdv"/>
+                    <constraint firstAttribute="trailing" secondItem="Ofv-v5-Own" secondAttribute="trailing" id="zVa-gL-2RH"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="address" destination="veW-wg-yU8" id="jzx-R6-uXJ"/>
+                <outlet property="selectBtn" destination="oe8-6O-5CQ" id="6I3-GP-X3k"/>
+                <outlet property="telephone" destination="xN2-lH-f0R" id="F4k-2Z-vU3"/>
+                <outlet property="username" destination="1un-3T-8Lr" id="cWw-by-qtK"/>
+            </connections>
+            <point key="canvasLocation" x="310" y="404.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="item_select_false" width="14" height="14"/>
+        <image name="order_title_line" width="600" height="4"/>
+    </resources>
+</document>

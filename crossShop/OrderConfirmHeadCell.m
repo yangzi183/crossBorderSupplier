@@ -44,7 +44,7 @@
     CROReceipt *receiptInstance = [CROReceipt shareInstance];
     receipts = [receiptInstance getAllReceipts];
     NSLog(@"\r\n receipts:%@", receipts);
-    if (receipts.count < 1) {
+    if (receipts.count > 1) {
         self.goodsReceiptNew.hidden = NO;
         self.username.hidden = YES;
         self.telephone.hidden = YES;

@@ -54,7 +54,7 @@
                             <constraint firstAttribute="width" constant="60" id="73e-UA-fR5"/>
                         </constraints>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mmr-4z-jcs">
+                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mmr-4z-jcs">
                         <rect key="frame" x="0.0" y="79" width="400" height="1"/>
                         <color key="backgroundColor" red="0.96078431369999995" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>

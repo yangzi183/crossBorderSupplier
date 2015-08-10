@@ -32,6 +32,9 @@
 		041A1BB01B3E5CDE00F68189 /* test3.js in Resources */ = {isa = PBXBuildFile; fileRef = 041A1BAF1B3E5CDE00F68189 /* test3.js */; };
 		0434A24E1B71A9BB00125FC1 /* test5.js in Resources */ = {isa = PBXBuildFile; fileRef = 0434A24D1B71A9BB00125FC1 /* test5.js */; };
 		0434A2501B74A0CE00125FC1 /* area.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0434A24F1B74A0CE00125FC1 /* area.plist */; };
+		044345261B787F9800ED1515 /* ReceiptListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044345251B787F9800ED1515 /* ReceiptListController.m */; };
+		0443452A1B787FB100ED1515 /* ReceiptListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 044345281B787FB100ED1515 /* ReceiptListCell.m */; };
+		0443452B1B787FB100ED1515 /* ReceiptListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044345291B787FB100ED1515 /* ReceiptListCell.xib */; };
 		0460DB3B1B4A144C00220D4E /* OrderConfirmHeadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0460DB391B4A144C00220D4E /* OrderConfirmHeadCell.m */; };
 		0460DB3C1B4A144C00220D4E /* OrderConfirmHeadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0460DB3A1B4A144C00220D4E /* OrderConfirmHeadCell.xib */; };
 		0460DB401B4A1C3700220D4E /* OrderConfirmMoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0460DB3E1B4A1C3700220D4E /* OrderConfirmMoreCell.m */; };
@@ -39,7 +42,6 @@
 		0460DB441B4A337600220D4E /* CROReceipt.m in Sources */ = {isa = PBXBuildFile; fileRef = 0460DB431B4A337600220D4E /* CROReceipt.m */; };
 		0460DB461B4A527400220D4E /* test4.js in Resources */ = {isa = PBXBuildFile; fileRef = 0460DB451B4A527400220D4E /* test4.js */; };
 		0460DB4E1B4A780F00220D4E /* ReceiptController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0460DB4D1B4A780F00220D4E /* ReceiptController.m */; };
-		0460DB511B4A782700220D4E /* ReceiptAreaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0460DB501B4A782700220D4E /* ReceiptAreaView.m */; };
 		046CD9461B10597100392F3F /* CROCommonAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 046CD9451B10597100392F3F /* CROCommonAPI.m */; };
 		046CD96A1B1069A700392F3F /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 046CD94A1B1069A700392F3F /* MKAnnotationView+WebCache.m */; };
 		046CD96B1B1069A700392F3F /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 046CD94C1B1069A700392F3F /* NSData+ImageContentType.m */; };
@@ -179,6 +181,11 @@
 		041A1BAF1B3E5CDE00F68189 /* test3.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = test3.js; sourceTree = "<group>"; };
 		0434A24D1B71A9BB00125FC1 /* test5.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = test5.js; sourceTree = "<group>"; };
 		0434A24F1B74A0CE00125FC1 /* area.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = area.plist; sourceTree = "<group>"; };
+		044345241B787F9800ED1515 /* ReceiptListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceiptListController.h; sourceTree = "<group>"; };
+		044345251B787F9800ED1515 /* ReceiptListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceiptListController.m; sourceTree = "<group>"; };
+		044345271B787FB100ED1515 /* ReceiptListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceiptListCell.h; sourceTree = "<group>"; };
+		044345281B787FB100ED1515 /* ReceiptListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceiptListCell.m; sourceTree = "<group>"; };
+		044345291B787FB100ED1515 /* ReceiptListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReceiptListCell.xib; sourceTree = "<group>"; };
 		0460DB381B4A144C00220D4E /* OrderConfirmHeadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderConfirmHeadCell.h; sourceTree = "<group>"; };
 		0460DB391B4A144C00220D4E /* OrderConfirmHeadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderConfirmHeadCell.m; sourceTree = "<group>"; };
 		0460DB3A1B4A144C00220D4E /* OrderConfirmHeadCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderConfirmHeadCell.xib; sourceTree = "<group>"; };
@@ -190,8 +197,6 @@
 		0460DB451B4A527400220D4E /* test4.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = test4.js; sourceTree = "<group>"; };
 		0460DB4C1B4A780F00220D4E /* ReceiptController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceiptController.h; sourceTree = "<group>"; };
 		0460DB4D1B4A780F00220D4E /* ReceiptController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceiptController.m; sourceTree = "<group>"; };
-		0460DB4F1B4A782700220D4E /* ReceiptAreaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceiptAreaView.h; sourceTree = "<group>"; };
-		0460DB501B4A782700220D4E /* ReceiptAreaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceiptAreaView.m; sourceTree = "<group>"; };
 		046CD9441B10597100392F3F /* CROCommonAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CROCommonAPI.h; sourceTree = "<group>"; };
 		046CD9451B10597100392F3F /* CROCommonAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CROCommonAPI.m; sourceTree = "<group>"; };
 		046CD9491B1069A700392F3F /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
@@ -456,8 +461,11 @@
 			children = (
 				0460DB4C1B4A780F00220D4E /* ReceiptController.h */,
 				0460DB4D1B4A780F00220D4E /* ReceiptController.m */,
-				0460DB4F1B4A782700220D4E /* ReceiptAreaView.h */,
-				0460DB501B4A782700220D4E /* ReceiptAreaView.m */,
+				044345241B787F9800ED1515 /* ReceiptListController.h */,
+				044345251B787F9800ED1515 /* ReceiptListController.m */,
+				044345271B787FB100ED1515 /* ReceiptListCell.h */,
+				044345281B787FB100ED1515 /* ReceiptListCell.m */,
+				044345291B787FB100ED1515 /* ReceiptListCell.xib */,
 			);
 			name = Receipt;
 			sourceTree = "<group>";
@@ -861,6 +869,7 @@
 				04A8E5FC1B2A6E6E00A7CF0E /* DetailGoodsImageCell.xib in Resources */,
 				0460DB461B4A527400220D4E /* test4.js in Resources */,
 				04A8E6061B2A706500A7CF0E /* DetailGoodsQuestionCell.xib in Resources */,
+				0443452B1B787FB100ED1515 /* ReceiptListCell.xib in Resources */,
 				046CD9811B10B19D00392F3F /* CROMainDetTableViewCell.xib in Resources */,
 				18C37B5D1B134B2E008CE19C /* CROMainTitleTableViewCell.xib in Resources */,
 				04A8E6011B2A6F2900A7CF0E /* DetailGoodsIntroCell.xib in Resources */,
@@ -953,6 +962,7 @@
 				04A8E6051B2A706500A7CF0E /* DetailGoodsQuestionCell.m in Sources */,
 				041A1BAD1B3E477500F68189 /* OrderListCell.m in Sources */,
 				0460DB441B4A337600220D4E /* CROReceipt.m in Sources */,
+				0443452A1B787FB100ED1515 /* ReceiptListCell.m in Sources */,
 				041A1BA91B3E467C00F68189 /* OrderListController.m in Sources */,
 				185D80361B603F7B0046B775 /* labelWithImgView.m in Sources */,
 				046CD9721B1069A700392F3F /* SDWebImagePrefetcher.m in Sources */,
@@ -995,7 +1005,6 @@
 				046CD96F1B1069A700392F3F /* SDWebImageDownloader.m in Sources */,
 				040A3F141B258DD600166381 /* CRODetailGoodsHeadCell.m in Sources */,
 				04F7BD031B326FA8001F2A79 /* PersonalCenterCell.m in Sources */,
-				0460DB511B4A782700220D4E /* ReceiptAreaView.m in Sources */,
 				04FE91501B5A386C004A74D6 /* DetailGoodsIntroDetailCell.m in Sources */,
 				1852EDE81B0B7398002AAD43 /* AppDelegate.m in Sources */,
 				186822421B0CC0F70024EF19 /* flowTableView.m in Sources */,
@@ -1015,6 +1024,7 @@
 				04A8E60E1B2AD39A00A7CF0E /* TopicMode2Controller.m in Sources */,
 				0405F6481B43855A00C527D8 /* OrderDetailCell.m in Sources */,
 				041A1BA21B3D027500F68189 /* RegisterCodeViewController.m in Sources */,
+				044345261B787F9800ED1515 /* ReceiptListController.m in Sources */,
 				046CD96C1B1069A700392F3F /* SDImageCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
