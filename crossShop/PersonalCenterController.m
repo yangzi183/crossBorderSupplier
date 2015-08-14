@@ -7,12 +7,16 @@
 //
 
 #import "PersonalCenterController.h"
+#import "CROCommonAPI.h"
+#import "commonConfig.h"
 
 static NSString *personalCell = @"personalCell";
 static NSString *personFootCell = @"personFootCell";
 
 @interface PersonalCenterController () {
     NSMutableArray *dataArray;
+    UIImageView *barLineView;
+    UIView *lineView;
 }
 
 @end
@@ -50,6 +54,15 @@ static NSString *personFootCell = @"personFootCell";
     }
     
 }
+
+- (void)viewWillAppear:(BOOL)animated {
+    willLoadToRemoveLine
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    willDisappearToAddLine
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

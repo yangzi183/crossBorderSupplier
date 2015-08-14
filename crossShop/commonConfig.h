@@ -37,4 +37,12 @@ lineImgView.image = [UIImage imageNamed:@"order_title_line"]; \
 
 #define willDisappearRemoveOrderLine        [lineImgView removeFromSuperview];
 
+#define kWhiteBackWidth         260
+#define kWhiteBackHeight        120
+#define kLabelHeight            20
+#define kMargin                 15
+#define kMarginBtn              8
+#define kBtnHeight              30
+#define kBtnY                   60
+
 #endif

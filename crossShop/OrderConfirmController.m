@@ -190,4 +190,8 @@ static NSString *orderCell = @"orderListCell";
 - (IBAction)backAct:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+- (IBAction)submitOrderAct:(id)sender {
+    [self performSegueWithIdentifier:@"orderSubmitView" sender:nil];
+}
 @end

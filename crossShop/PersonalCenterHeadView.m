@@ -24,10 +24,11 @@
     if (self) {
         self.backgroundColor = [CROCommonAPI colorWithHexString:@"#F5F5F5"];
         iconPerson = [[UIImageView alloc]initWithFrame:CGRectMake((frame.size.width - kIconPersonWidth) / 2, 10, kIconPersonWidth, kIconPersonHeight)];
-        iconPerson.image = [UIImage imageNamed:@"red_icon"];
-        UIButton *lgBtn = [[UIButton alloc]initWithFrame:CGRectMake((frame.size.width - kPersonLoginBtnWidth) / 2, kIconPersonHeight + 20, kPersonLoginBtnWidth, kPersonLoginBtnHeight)];
+        iconPerson.image = [UIImage imageNamed:@"person_icon"];
+        UIButton *lgBtn = [[UIButton alloc]initWithFrame:CGRectMake((frame.size.width - kPersonLoginBtnWidth) / 2, kIconPersonHeight + 30, kPersonLoginBtnWidth, kPersonLoginBtnHeight)];
         lgBtn.layer.borderColor = [UIColor grayColor].CGColor;
         lgBtn.layer.borderWidth = 0.5f;
+        lgBtn.layer.cornerRadius = 5;
         [lgBtn setTitle:@"请登录" forState:UIControlStateNormal];
         [lgBtn setTitleColor:[CROCommonAPI colorWithHexString:@"#939393"] forState:UIControlStateNormal];
         lgBtn.titleLabel.font = [UIFont systemFontOfSize:14];

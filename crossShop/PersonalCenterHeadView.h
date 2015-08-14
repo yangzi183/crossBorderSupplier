@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "CROCommonAPI.h"
 
-#define kIconPersonWidth                70
-#define kIconPersonHeight               80
+#define kIconPersonWidth                60
+#define kIconPersonHeight               60
 #define kPersonLoginBtnWidth            80
 #define kPersonLoginBtnHeight           22
 

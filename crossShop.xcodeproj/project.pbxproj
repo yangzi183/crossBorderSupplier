@@ -35,6 +35,9 @@
 		044345261B787F9800ED1515 /* ReceiptListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044345251B787F9800ED1515 /* ReceiptListController.m */; };
 		0443452A1B787FB100ED1515 /* ReceiptListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 044345281B787FB100ED1515 /* ReceiptListCell.m */; };
 		0443452B1B787FB100ED1515 /* ReceiptListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044345291B787FB100ED1515 /* ReceiptListCell.xib */; };
+		0443452E1B79A19300ED1515 /* OrderConfirmPayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0443452D1B79A19300ED1515 /* OrderConfirmPayController.m */; };
+		044345321B79D4D600ED1515 /* OrderPayMethodCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 044345301B79D4D600ED1515 /* OrderPayMethodCell.m */; };
+		044345331B79D4D600ED1515 /* OrderPayMethodCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044345311B79D4D600ED1515 /* OrderPayMethodCell.xib */; };
 		0460DB3B1B4A144C00220D4E /* OrderConfirmHeadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0460DB391B4A144C00220D4E /* OrderConfirmHeadCell.m */; };
 		0460DB3C1B4A144C00220D4E /* OrderConfirmHeadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0460DB3A1B4A144C00220D4E /* OrderConfirmHeadCell.xib */; };
 		0460DB401B4A1C3700220D4E /* OrderConfirmMoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0460DB3E1B4A1C3700220D4E /* OrderConfirmMoreCell.m */; };
@@ -186,6 +189,11 @@
 		044345271B787FB100ED1515 /* ReceiptListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceiptListCell.h; sourceTree = "<group>"; };
 		044345281B787FB100ED1515 /* ReceiptListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceiptListCell.m; sourceTree = "<group>"; };
 		044345291B787FB100ED1515 /* ReceiptListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReceiptListCell.xib; sourceTree = "<group>"; };
+		0443452C1B79A19300ED1515 /* OrderConfirmPayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderConfirmPayController.h; sourceTree = "<group>"; };
+		0443452D1B79A19300ED1515 /* OrderConfirmPayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderConfirmPayController.m; sourceTree = "<group>"; };
+		0443452F1B79D4D600ED1515 /* OrderPayMethodCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderPayMethodCell.h; sourceTree = "<group>"; };
+		044345301B79D4D600ED1515 /* OrderPayMethodCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderPayMethodCell.m; sourceTree = "<group>"; };
+		044345311B79D4D600ED1515 /* OrderPayMethodCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderPayMethodCell.xib; sourceTree = "<group>"; };
 		0460DB381B4A144C00220D4E /* OrderConfirmHeadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderConfirmHeadCell.h; sourceTree = "<group>"; };
 		0460DB391B4A144C00220D4E /* OrderConfirmHeadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderConfirmHeadCell.m; sourceTree = "<group>"; };
 		0460DB3A1B4A144C00220D4E /* OrderConfirmHeadCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderConfirmHeadCell.xib; sourceTree = "<group>"; };
@@ -561,6 +569,11 @@
 				0460DB3D1B4A1C3700220D4E /* OrderConfirmMoreCell.h */,
 				0460DB3E1B4A1C3700220D4E /* OrderConfirmMoreCell.m */,
 				0460DB3F1B4A1C3700220D4E /* OrderConfirmMoreCell.xib */,
+				0443452C1B79A19300ED1515 /* OrderConfirmPayController.h */,
+				0443452D1B79A19300ED1515 /* OrderConfirmPayController.m */,
+				0443452F1B79D4D600ED1515 /* OrderPayMethodCell.h */,
+				044345301B79D4D600ED1515 /* OrderPayMethodCell.m */,
+				044345311B79D4D600ED1515 /* OrderPayMethodCell.xib */,
 			);
 			name = "Order Confirm";
 			sourceTree = "<group>";
@@ -864,6 +877,7 @@
 				04FE914C1B5A3421004A74D6 /* DetailGoodsBrandCell.xib in Resources */,
 				1852EDEE1B0B7398002AAD43 /* Main.storyboard in Resources */,
 				04A8E6191B2BFB8F00A7CF0E /* TopicMode2ItemCell.xib in Resources */,
+				044345331B79D4D600ED1515 /* OrderPayMethodCell.xib in Resources */,
 				04F7BD041B326FA8001F2A79 /* PersonalCenterCell.xib in Resources */,
 				04F7BCB61B2E776F001F2A79 /* TopicMode3FirstCell.xib in Resources */,
 				04A8E5FC1B2A6E6E00A7CF0E /* DetailGoodsImageCell.xib in Resources */,
@@ -945,6 +959,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				044345321B79D4D600ED1515 /* OrderPayMethodCell.m in Sources */,
 				046CD9781B1069A700392F3F /* UIImageView+WebCache.m in Sources */,
 				046CD9741B1069A700392F3F /* UIImage+GIF.m in Sources */,
 				04B5D27A1B69CA690051390C /* itemIconWithBackImg.m in Sources */,
@@ -1017,6 +1032,7 @@
 				049625B41B43DAB3005D3A24 /* OrderDetailItemCell.m in Sources */,
 				0460DB401B4A1C3700220D4E /* OrderConfirmMoreCell.m in Sources */,
 				046CD9711B1069A700392F3F /* SDWebImageManager.m in Sources */,
+				0443452E1B79A19300ED1515 /* OrderConfirmPayController.m in Sources */,
 				040E77EA1B68DA0900AFB0B6 /* ShoppingCartItem.m in Sources */,
 				04FE914B1B5A3421004A74D6 /* DetailGoodsBrandCell.m in Sources */,
 				04F7BCB91B2E7786001F2A79 /* TopicMode3SecondCell.m in Sources */,

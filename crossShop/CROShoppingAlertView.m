@@ -44,7 +44,7 @@
         cancelBtn.layer.borderWidth = 0.8f;
         cancelBtn.titleLabel.font = [UIFont systemFontOfSize:14];
         UIButton *confirmBtn = [[UIButton alloc]initWithFrame:CGRectMake(kMargin + cancelBtn.frame.size.width + kMarginBtn, kBtnY, btnWidth, kBtnHeight)];
-        [confirmBtn setTitle:@"确定" forState:UIControlStateNormal];
+        [confirmBtn setTitle:@"确认" forState:UIControlStateNormal];
         [confirmBtn setTitleColor:[CROCommonAPI colorWithHexString:@"ffffff"] forState:UIControlStateNormal];
         confirmBtn.layer.backgroundColor = [CROCommonAPI colorWithHexString:@"82d6d6"].CGColor;
         [confirmBtn addTarget:self action:@selector(confirmDel) forControlEvents:UIControlEventTouchUpInside];

@@ -29,8 +29,8 @@ static NSString *receiptListCell = @"receiptListCell";
     UINib *nib = [UINib nibWithNibName:@"ReceiptListCell" bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:receiptListCell];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.view.backgroundColor = [CROCommonAPI colorWithHexString:@"#f5f6f6"];
-    self.tableView.backgroundColor = [UIColor clearColor];
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.tableView.backgroundColor = [CROCommonAPI colorWithHexString:@"#f5f6f6"];
 }
 
 - (void)didReceiveMemoryWarning {
