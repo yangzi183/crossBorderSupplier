@@ -11,6 +11,13 @@
 #import "flowTableView.h"
 
 #define kTitleCellHeight        535
+
+typedef enum {
+    CATEGORY_MILK,
+    CATEGORY_DIAPER,
+    CATEGORY_FOOD
+}CATEGORY_TYPE;
+
 @interface CROMainTitleTableViewCell : UITableViewCell {
     NSMutableArray *flowTableData;
 }

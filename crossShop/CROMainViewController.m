@@ -8,12 +8,14 @@
 
 #import "CROMainViewController.h"
 #import "DetailGoodsViewController.h"
+#import "CategoryViewController.h"
 
 static NSString *cellName = @"mainCell";
 static NSString *cellTitleName = @"titleCell";
 @interface CROMainViewController () {
     NSMutableArray *flowTableData;
     UIImageView *barLineView;
+    CATEGORY_TYPE categoryType;
 }
 
 @end
@@ -40,7 +42,7 @@ static NSString *cellTitleName = @"titleCell";
     [notiCenter addObserver:self selector:@selector(showTopicView:) name:kNOTIFICATION_INTO_TOPIC_VIEW object:nil];
     UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, 1)];
     lineView.backgroundColor = [CROCommonAPI colorWithHexString:@"#82d6d6"];
-    [self.mainTableView addSubview:lineView];
+    [self.view addSubview:lineView];
     ShoppingCartItem *shopItem = [[ShoppingCartItem alloc] initWithFrame:CGRectMake(0, 0, kSHOPPING_CART_ITEM_WIDTH, kSHOPPING_CART_ITEM_HEIGHT)];
     shopItem.delegate = self;
     shopItem.backgroundColor = [UIColor clearColor];
@@ -94,6 +96,12 @@ static NSString *cellTitleName = @"titleCell";
             cell = [[CROMainTitleTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellTitleName];
         }
         cell.frame = CGRectMake(0, 0, screenWidth, kTitleCellHeight);
+        UITapGestureRecognizer *milkTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(milkTapAct)];
+        UITapGestureRecognizer *diaperTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(diaperTapAct)];
+        UITapGestureRecognizer *foodTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(foodTapAct)];
+        [cell.milkPower addGestureRecognizer:milkTap];
+        [cell.diaper addGestureRecognizer:diaperTap];
+        [cell.food addGestureRecognizer:foodTap];
         //NSLog(@"\r\n width:%f-%f", cell.diaper.frame.size.width, cell.diaper.frame.size.height);
         return cell;
     } else {
@@ -141,12 +149,30 @@ static NSString *cellTitleName = @"titleCell";
         [segue.destinationViewController setDicDetailData:dicData];
     } else if ([segue.identifier isEqualToString:@"showTopicView2"]) {
         NSLog(@"\r\n topic");
+    } else if ([segue.identifier isEqualToString:@"showCategoryView"]) {
+        [segue.destinationViewController setCategoryViewType:categoryType];
     }
 }
 
 - (void)tapShoppingCartView {
     [self performSegueWithIdentifier:@"showShoppingCartView" sender:nil];
 }
+
+- (void)milkTapAct {
+    categoryType = CATEGORY_MILK;
+    [self performSegueWithIdentifier:@"showCategoryView" sender:nil];
+}
+
+- (void)diaperTapAct {
+    categoryType = CATEGORY_DIAPER;
+    [self performSegueWithIdentifier:@"showCategoryView" sender:nil];
+}
+
+- (void)foodTapAct {
+    categoryType = CATEGORY_FOOD;
+    [self performSegueWithIdentifier:@"showCategoryView" sender:nil];
+}
+
 /*
 #pragma mark - Navigation
 

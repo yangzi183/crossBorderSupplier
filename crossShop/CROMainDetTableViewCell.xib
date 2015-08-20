@@ -568,6 +568,6 @@
         <image name="pre_quotation" width="7" height="8"/>
         <image name="sell_date_icon" width="54" height="31"/>
         <image name="suf_quotation" width="7" height="8"/>
-        <image name="test_img" width="1080" height="1920"/>
+        <image name="test_img" width="390" height="398"/>
     </resources>
 </document>

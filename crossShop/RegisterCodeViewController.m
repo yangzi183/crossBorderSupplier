@@ -24,6 +24,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(sendAgain)];
+    self.nextBtn.layer.cornerRadius = 2;
 }
 
 - (void)setTime {

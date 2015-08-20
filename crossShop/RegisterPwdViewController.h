@@ -11,5 +11,6 @@
 @interface RegisterPwdViewController : UIViewController
 - (IBAction)finishAct:(id)sender;
 - (IBAction)backAct:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *finishBtn;
 
 @end

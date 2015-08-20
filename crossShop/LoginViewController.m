@@ -19,8 +19,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.otherLogin.layer.borderWidth = 0.5f;
-    self.otherLogin.layer.borderColor = [CROCommonAPI colorWithHexString:@"#bdbdbd"].CGColor;
+    self.otherLogin.layer.borderColor = [CROCommonAPI colorWithHexString:@"#f5f6f6"].CGColor;
     self.otherLogin.layer.cornerRadius = 15;
+    self.loginBtn.layer.cornerRadius = 2;
 }
 
 - (void)didReceiveMemoryWarning {

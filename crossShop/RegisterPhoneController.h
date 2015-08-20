@@ -13,5 +13,6 @@
 - (IBAction)backAct:(id)sender;
 
 @property (strong, nonatomic) NSString *titleStr;
+@property (strong, nonatomic) IBOutlet UIButton *nextBtn;
 
 @end

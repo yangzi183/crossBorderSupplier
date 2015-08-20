@@ -21,4 +21,17 @@
         self.titleLeading.constant = 11;
     }
 }
+
+- (void)setConstraintCategoryByIndex: (NSInteger)row {
+    if (row % 2 == 0) {
+        self.trailConstraint.constant = 1;
+        self.leadConstraint.constant = 6;
+        self.titleLeading.constant = 15;
+    } else {
+        self.trailConstraint.constant = 6;
+        self.leadConstraint.constant = 1;
+        self.titleLeading.constant = 11;
+    }
+}
+
 @end

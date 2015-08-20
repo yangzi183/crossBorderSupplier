@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.nextBtn.layer.cornerRadius = 2;
 }
 
 - (void)didReceiveMemoryWarning {

@@ -14,5 +14,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *otherLogin;
 - (IBAction)forgetPwdAct:(id)sender;
 - (IBAction)regAct:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *loginBtn;
 
 @end

@@ -92,6 +92,9 @@
 		04B9F48F1B159BBC0011DBC2 /* CROShoppingCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B9F48E1B159BBC0011DBC2 /* CROShoppingCartViewController.m */; };
 		04B9F4931B15A1830011DBC2 /* CROShoppingCartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B9F4911B15A1830011DBC2 /* CROShoppingCartTableViewCell.m */; };
 		04B9F4941B15A1830011DBC2 /* CROShoppingCartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04B9F4921B15A1830011DBC2 /* CROShoppingCartTableViewCell.xib */; };
+		04E1B2321B84694C00572C65 /* categoryFlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E1B2311B84694C00572C65 /* categoryFlowView.m */; };
+		04E1B2361B84809300572C65 /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E1B2351B84809300572C65 /* CategoryViewController.m */; };
+		04E1B2391B857D5000572C65 /* CategoryGoods.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E1B2381B857D5000572C65 /* CategoryGoods.m */; };
 		04F7BCAC1B2E76D4001F2A79 /* TopicMode3Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F7BCAB1B2E76D4001F2A79 /* TopicMode3Controller.m */; };
 		04F7BCB01B2E7749001F2A79 /* TopicMode3HeadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F7BCAE1B2E7749001F2A79 /* TopicMode3HeadCell.m */; };
 		04F7BCB11B2E7749001F2A79 /* TopicMode3HeadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F7BCAF1B2E7749001F2A79 /* TopicMode3HeadCell.xib */; };
@@ -287,6 +290,12 @@
 		04B9F4901B15A1830011DBC2 /* CROShoppingCartTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CROShoppingCartTableViewCell.h; sourceTree = "<group>"; };
 		04B9F4911B15A1830011DBC2 /* CROShoppingCartTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CROShoppingCartTableViewCell.m; sourceTree = "<group>"; };
 		04B9F4921B15A1830011DBC2 /* CROShoppingCartTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CROShoppingCartTableViewCell.xib; sourceTree = "<group>"; };
+		04E1B2301B84694C00572C65 /* categoryFlowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = categoryFlowView.h; sourceTree = "<group>"; };
+		04E1B2311B84694C00572C65 /* categoryFlowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = categoryFlowView.m; sourceTree = "<group>"; };
+		04E1B2341B84809300572C65 /* CategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryViewController.h; sourceTree = "<group>"; };
+		04E1B2351B84809300572C65 /* CategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryViewController.m; sourceTree = "<group>"; };
+		04E1B2371B857D5000572C65 /* CategoryGoods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryGoods.h; sourceTree = "<group>"; };
+		04E1B2381B857D5000572C65 /* CategoryGoods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryGoods.m; sourceTree = "<group>"; };
 		04F7BCAA1B2E76D4001F2A79 /* TopicMode3Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicMode3Controller.h; sourceTree = "<group>"; };
 		04F7BCAB1B2E76D4001F2A79 /* TopicMode3Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicMode3Controller.m; sourceTree = "<group>"; };
 		04F7BCAD1B2E7749001F2A79 /* TopicMode3HeadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicMode3HeadCell.h; sourceTree = "<group>"; };
@@ -638,6 +647,15 @@
 			name = "Shopping Cart";
 			sourceTree = "<group>";
 		};
+		04E1B2331B84805700572C65 /* Category  */ = {
+			isa = PBXGroup;
+			children = (
+				04E1B2341B84809300572C65 /* CategoryViewController.h */,
+				04E1B2351B84809300572C65 /* CategoryViewController.m */,
+			);
+			name = "Category ";
+			sourceTree = "<group>";
+		};
 		04F7BCF61B32536E001F2A79 /* Account */ = {
 			isa = PBXGroup;
 			children = (
@@ -678,6 +696,7 @@
 		1852EDE11B0B7398002AAD43 /* crossShop */ = {
 			isa = PBXGroup;
 			children = (
+				04E1B2331B84805700572C65 /* Category  */,
 				041A1BA61B3E464900F68189 /* Order List */,
 				0493EF271B3BEAF900BCF945 /* login&register */,
 				04F7BCF61B32536E001F2A79 /* Account */,
@@ -761,6 +780,8 @@
 				185D80351B603F7B0046B775 /* labelWithImgView.m */,
 				04B5D2781B69CA690051390C /* itemIconWithBackImg.h */,
 				04B5D2791B69CA690051390C /* itemIconWithBackImg.m */,
+				04E1B2301B84694C00572C65 /* categoryFlowView.h */,
+				04E1B2311B84694C00572C65 /* categoryFlowView.m */,
 			);
 			name = commonUI;
 			sourceTree = "<group>";
@@ -776,6 +797,8 @@
 				0405F6391B40EE1B00C527D8 /* CROOrderList.m */,
 				0460DB421B4A337600220D4E /* CROReceipt.h */,
 				0460DB431B4A337600220D4E /* CROReceipt.m */,
+				04E1B2371B857D5000572C65 /* CategoryGoods.h */,
+				04E1B2381B857D5000572C65 /* CategoryGoods.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -985,6 +1008,7 @@
 				04A8E6001B2A6F2900A7CF0E /* DetailGoodsIntroCell.m in Sources */,
 				046CD96A1B1069A700392F3F /* MKAnnotationView+WebCache.m in Sources */,
 				18C37B5C1B134B2E008CE19C /* CROMainTitleTableViewCell.m in Sources */,
+				04E1B2361B84809300572C65 /* CategoryViewController.m in Sources */,
 				04A8E6121B2AD52900A7CF0E /* TopicMode2HeadCell.m in Sources */,
 				041A1BA51B3D028A00F68189 /* RegisterPwdViewController.m in Sources */,
 				046CD9761B1069A700392F3F /* UIImage+WebP.m in Sources */,
@@ -1001,6 +1025,7 @@
 				0405F63D1B413D6300C527D8 /* orderFootView.m in Sources */,
 				046CD9701B1069A700392F3F /* SDWebImageDownloaderOperation.m in Sources */,
 				04F7BCBC1B2EB569001F2A79 /* UILabel+textFrame.m in Sources */,
+				04E1B2321B84694C00572C65 /* categoryFlowView.m in Sources */,
 				046CD96E1B1069A700392F3F /* SDWebImageDecoder.m in Sources */,
 				04F7BCB51B2E776F001F2A79 /* TopicMode3FirstCell.m in Sources */,
 				046CD9801B10B19D00392F3F /* CROMainDetTableViewCell.m in Sources */,
@@ -1017,6 +1042,7 @@
 				040E77E31B68AD6D00AFB0B6 /* ReturnGoodsViewController.m in Sources */,
 				04196F121B5E501D001685C7 /* DetailGoodsSectionHeadCell.m in Sources */,
 				18639BDF1B14B4E500FA259B /* CROGoodsItem.m in Sources */,
+				04E1B2391B857D5000572C65 /* CategoryGoods.m in Sources */,
 				046CD96F1B1069A700392F3F /* SDWebImageDownloader.m in Sources */,
 				040A3F141B258DD600166381 /* CRODetailGoodsHeadCell.m in Sources */,
 				04F7BD031B326FA8001F2A79 /* PersonalCenterCell.m in Sources */,

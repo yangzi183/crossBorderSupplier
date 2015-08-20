@@ -12,5 +12,6 @@
 - (IBAction)nextAct:(id)sender;
 - (IBAction)backAct:(id)sender;
 @property (strong, nonatomic) IBOutlet UILabel *timeMachine;
+@property (strong, nonatomic) IBOutlet UIButton *nextBtn;
 
 @end

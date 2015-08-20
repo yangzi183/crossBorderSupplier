@@ -17,6 +17,7 @@ static NSInteger totalOriPriceReal;
     BOOL isEditMode;
     NSMutableDictionary *dataPriceDic;
     BOOL isSelectAll;
+    UIImageView *barLineView;
 }
 
 @end
@@ -43,7 +44,8 @@ static NSInteger totalOriPriceReal;
     [self.selectAll setImage:[UIImage imageNamed:@"item_select_true"] forState:UIControlStateSelected];
     [self.selectAll setImage:[UIImage imageNamed:@"item_select_false"] forState:UIControlStateNormal];
     //self.view.backgroundColor = [CROCommonAPI colorWithHexString:@"#f5f6f6"];
-    self.tableView.backgroundColor = [CROCommonAPI colorWithHexString:@"#f5f6f6"];
+    self.tableView.backgroundColor = [UIColor clearColor];
+    self.view.backgroundColor = [CROCommonAPI colorWithHexString:kThickLineColor];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -54,6 +56,14 @@ static NSInteger totalOriPriceReal;
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    willLoadToRemoveLine
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    willDisappearToAddLine
 }
 
 #pragma mark - Table view data source
@@ -109,6 +119,15 @@ static NSInteger totalOriPriceReal;
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:@"showGoodsDetail" sender:nil];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"showGoodsDetail"]) {
+        ;
+    }
+}
 - (void)setCellIntoEditStyle {
     for (CROShoppingCartTableViewCell *cell in self.tableView.visibleCells) {
         [cell changeCellMode:isEditMode];
