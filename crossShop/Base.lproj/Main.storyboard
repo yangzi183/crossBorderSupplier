@@ -225,6 +225,7 @@
                     <connections>
                         <segue destination="CXx-3J-Hj1" kind="show" identifier="showLoginView" id="dAT-Vl-ZkJ"/>
                         <segue destination="ITf-Ti-DlF" kind="show" identifier="toOrderListView" id="LLM-Hd-Eiy"/>
+                        <segue destination="T6B-DZ-kjf" kind="show" identifier="showBrowseView" id="2V5-3J-4OU"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uRD-dE-71O" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -594,6 +595,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UxC-Tc-SlI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="240" y="1851"/>
+        </scene>
+        <!--我的浏览记录-->
+        <scene sceneID="3k3-l3-Z7Q">
+            <objects>
+                <viewController id="T6B-DZ-kjf" customClass="BrowseRecordController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="btr-a9-pNd"/>
+                        <viewControllerLayoutGuide type="bottom" id="Lj8-0p-oQN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rgL-DC-zrX">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="aOp-ZH-NS0">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aOp-ZH-NS0" firstAttribute="leading" secondItem="rgL-DC-zrX" secondAttribute="leading" id="9PM-Ey-Dpk"/>
+                            <constraint firstAttribute="trailing" secondItem="aOp-ZH-NS0" secondAttribute="trailing" id="Eiw-e6-Uzx"/>
+                            <constraint firstItem="aOp-ZH-NS0" firstAttribute="top" secondItem="rgL-DC-zrX" secondAttribute="top" id="iOv-O8-w17"/>
+                            <constraint firstAttribute="bottom" secondItem="aOp-ZH-NS0" secondAttribute="bottom" id="ocE-bc-FtW"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="我的浏览记录" id="Apd-37-Qfr">
+                        <barButtonItem key="leftBarButtonItem" image="return_icon" id="JBf-kH-tnr">
+                            <color key="tintColor" red="0.50980392159999999" green="0.83921568629999999" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="backAct:" destination="T6B-DZ-kjf" id="t5T-zQ-tLS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="aOp-ZH-NS0" id="DOp-h6-wZG"/>
+                        <segue destination="fDP-o4-M4J" kind="show" identifier="showGoodsDetail" id="cuF-hp-JOk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5K4-hR-iBb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2648" y="1454"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="Ljy-9j-yZf">
@@ -1034,6 +1077,7 @@
                         <segue destination="fFk-7d-OI2" kind="show" identifier="toNewReceiptView" id="9cI-br-wqz"/>
                         <segue destination="0aj-lV-pTd" kind="show" identifier="toReceiptListView" id="Gmc-BR-bia"/>
                         <segue destination="wNn-N2-kCb" kind="show" identifier="orderSubmitView" id="vFs-ah-HgJ"/>
+                        <segue destination="fDP-o4-M4J" kind="show" identifier="showGoodsDetail" id="6DW-NS-uIh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PcV-e1-ecW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2189,8 +2233,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="UVo-Ce-b75"/>
-        <segue reference="x58-SI-igB"/>
         <segue reference="9cI-br-wqz"/>
+        <segue reference="6DW-NS-uIh"/>
         <segue reference="N5K-vg-A2i"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -45,6 +45,8 @@ typedef enum {
 @property (strong, nonatomic) IBOutlet UIView *clearBackView;
 @property (strong, nonatomic) IBOutlet UIView *buyView;
 
+@property (strong, nonatomic) NSString *itemId;
+
 - (IBAction)reduceCount:(id)sender;
 - (IBAction)plusCount:(id)sender;
 - (IBAction)buyAct:(id)sender;

@@ -44,8 +44,8 @@ static NSString *personFootCell = @"personFootCell";
 
 - (void)initDataArray {
     dataArray = [[NSMutableArray alloc] init];
-    NSArray *iconArray = [[NSArray alloc] initWithObjects:@"person_my_order", @"person_my_baby", @"person_my_scan", @"person_my_vouchers", @"person_friend", @"person_notification", nil];
-    NSArray *titleArray = [[NSArray alloc] initWithObjects:@"我的订单", @"我的宝宝信息", @"我的浏览记录", @"我的代金券", @"邀请好友", @"通知", nil];
+    NSArray *iconArray = [[NSArray alloc] initWithObjects:@"person_my_order", @"person_my_scan", @"person_my_vouchers", @"person_friend", nil];
+    NSArray *titleArray = [[NSArray alloc] initWithObjects:@"我的订单", @"我的浏览记录", @"我的代金券", @"邀请好友", nil];
     for (NSInteger i = 0 ; i < [iconArray count]; i++) {
         NSMutableDictionary *dicData = [[NSMutableDictionary alloc]init];
         [dicData setObject:[iconArray objectAtIndex:i] forKey:kPersonalIconCell];
@@ -82,7 +82,7 @@ static NSString *personFootCell = @"personFootCell";
     if (indexPath.row < [dataArray count]) {
         return 45;
     } else {
-        CGFloat height = (self.tableView.frame.size.height - 410);
+        CGFloat height = (self.tableView.frame.size.height - 320);
         CGFloat footHeight = (height > 80) ? height : 80;
         return footHeight;
     }
@@ -132,6 +132,8 @@ static NSString *personFootCell = @"personFootCell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
         [self performSegueWithIdentifier:@"toOrderListView" sender:nil];
+    } else if (indexPath.row == 1) {
+        [self performSegueWithIdentifier:@"showBrowseView" sender:nil];
     }
 }
 

@@ -29,6 +29,7 @@ static NSString *orderCell = @"orderListCell";
     UIImageView *barLineView;
     UIView *lineView;
     UIImageView *lineImgView;
+    NSString *itemId;
 }
 
 @end
@@ -169,6 +170,21 @@ static NSString *orderCell = @"orderListCell";
     }
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 1) {
+        NSDictionary *itemDic = [self.dataArray objectAtIndex:indexPath.section];
+        NSArray *items = [itemDic objectForKey:@"list"];
+        NSDictionary *itemData = [items objectAtIndex:indexPath.row];
+        itemId = [itemData objectForKey:@"id"];
+        [self performSegueWithIdentifier:@"showGoodsDetail" sender:nil];
+    }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"showGoodsDetail"]) {
+        [segue.destinationViewController setItemId:itemId];
+    }
+}
 - (void)intoCreateNewReceiptToMode: (RECEIPT_VIEW)mode {
     NSLog(@"\r\n toNewReceiptView mode:%d", mode);
     if (mode == RECEIPT_VIEW_NEW) {

@@ -15,6 +15,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *itemTitle;
 @property (strong, nonatomic) IBOutlet UILabel *itemPrice;
 @property (strong, nonatomic) IBOutlet UILabel *itemCount;
+@property (strong, nonatomic) IBOutlet UILabel *itemX;
+@property (strong, nonatomic) NSString *itemId;
 
 @property (strong, nonatomic) IBOutlet itemIconWithBackImg *itemImg;
 

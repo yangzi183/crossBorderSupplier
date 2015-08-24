@@ -116,6 +116,7 @@ static NSInteger totalOriPriceReal;
     //NSLog(@"\r\n section:%ld,row:%ld", indexPath.section, indexPath.row);
     [cell configCellByDicData:[[[self.dataArray objectAtIndex:indexPath.section] objectForKey:@"goods"] objectAtIndex:indexPath.row]];
     cell.delegate = self;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 

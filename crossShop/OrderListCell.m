@@ -18,8 +18,10 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
     // Configure the view for the selected state
+    if (selected == true) {
+        NSLog(@"\r\n select item id:%@", self.itemId);
+    }
 }
 
 - (IBAction)payNowAct:(id)sender {
@@ -37,14 +39,18 @@
     //self.borderImg.layer.borderColor = [CROCommonAPI colorWithHexString:@"#E8E8E8"].CGColor;
     //self.borderImg.layer.borderWidth = 0.4;
     //NSLog(@"\r\n dic:%@", dicData);
+    if ([dicData objectForKey:@"id"]) {
+        self.itemId = [dicData objectForKey:@"id"];
+    }
+    
     if ([dicData objectForKey:@"title"]) {
         self.itemTitle.text = [dicData objectForKey:@"title"];
     }
     if ([dicData objectForKey:@"price"]) {
-        self.itemPrice.text = [NSString stringWithFormat:@"%d", [(NSNumber *)[dicData objectForKey:@"price"] integerValue]];
+        self.itemPrice.text = [NSString stringWithFormat:@"%ld", (long)[(NSNumber *)[dicData objectForKey:@"price"] integerValue]];
     }
     if ([dicData objectForKey:@"count"]) {
-        self.itemCount.text = [NSString stringWithFormat:@"%d", [(NSNumber *)[dicData objectForKey:@"count"] integerValue]];
+        self.itemCount.text = [NSString stringWithFormat:@"%ld", (long)[(NSNumber *)[dicData objectForKey:@"count"] integerValue]];
     }
     if ([dicData objectForKey:@"item_image_url"]) {
         [self.itemImg setItemImgWithUrl:[dicData objectForKey:@"item_image_url"]];

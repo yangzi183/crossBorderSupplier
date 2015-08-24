@@ -4,18 +4,21 @@
     "list":
         [
             {
+                "id":"id1-1",
                 "title":"德国爱他美奶粉800g",
                 "price":133,
                 "count":1,
                 "item_image_url":"http://img4q.duitang.com/uploads/item/201202/12/20120212145057_yKtnj.thumb.700_0.jpg"
             },
             {
+                "id":"id1-2",
                 "title":"贝因美奶粉800g",
                 "price":233,
                 "count":2,
                 "item_image_url":"http://img4q.duitang.com/uploads/item/201202/12/20120212145057_yKtnj.thumb.700_0.jpg"
             },
             {
+                "id":"id1-3",
                 "title":"德国爱他美爱他美爱他美爱他美爱他美爱他美爱他美爱他美爱他美奶粉800g",
                 "price":133,
                 "count":1,
@@ -29,12 +32,14 @@
     "list":
         [
             {
+                "id":"id2-1",
                 "title":"德国爱他美奶粉800g",
                 "price":133,
                 "count":1,
                 "item_image_url":"http://img4q.duitang.com/uploads/item/201202/12/20120212145057_yKtnj.thumb.700_0.jpg"
             },
             {
+                "id":"id2-2",
                 "title":"贝因美奶粉800g",
                 "price":233,
                 "count":2,
@@ -48,12 +53,14 @@
     "list":
         [
             {
+                "id":"id3-1",
                 "title":"德国爱他美奶粉800g",
                 "price":133,
                 "count":1,
                 "item_image_url":"http://img4q.duitang.com/uploads/item/201202/12/20120212145057_yKtnj.thumb.700_0.jpg"
             },
             {
+                "id":"id3-2",
                 "title":"贝因美奶粉800g",
                 "price":233,
                 "count":2,
@@ -67,18 +74,21 @@
     "list":
         [
             {
+                "id":"id4-1",
                 "title":"德国爱他美奶粉800g",
                 "price":133,
                 "count":1,
                 "item_image_url":"http://img4q.duitang.com/uploads/item/201202/12/20120212145057_yKtnj.thumb.700_0.jpg"
             },
             {
+                "id":"id4-2",
                 "title":"贝因美奶粉800g",
                 "price":233,
                 "count":2,
                 "item_image_url":"http://img4q.duitang.com/uploads/item/201202/12/20120212145057_yKtnj.thumb.700_0.jpg"
             },
             {
+                "id":"id4-3",
                 "title":"德国爱他美奶粉800g",
                 "price":133,
                 "count":1,
@@ -92,12 +102,14 @@
     "list":
         [
             {
+                "id":"id4-1",
                 "title":"德国爱他美奶粉800g",
                 "price":133,
                 "count":1,
                 "item_image_url":"http://img4q.duitang.com/uploads/item/201202/12/20120212145057_yKtnj.thumb.700_0.jpg"
             },
             {
+                "id":"id4-2",
                 "title":"贝因美奶粉800g",
                 "price":233,
                 "count":2,

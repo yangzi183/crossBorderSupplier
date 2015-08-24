@@ -75,6 +75,7 @@ static NSString *detailGoodsSectionHeadCell = @"detailGoodsSectionHeadCell";
     //dataArray = [[NSMutableArray alloc]init];
     sectionHeadArray = [[NSArray alloc] initWithObjects:@"会买妈妈育儿师推荐", @"品牌介绍", @"产品说明", nil];
     [self initBuyView];
+    NSLog(@"\r\n goods detail id:%@", self.itemId);
 }
 
 - (void)initBuyView {

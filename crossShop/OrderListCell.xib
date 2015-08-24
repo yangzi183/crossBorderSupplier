@@ -99,6 +99,7 @@
                 <outlet property="itemImg" destination="dHo-gf-hnG" id="nd8-E7-bBU"/>
                 <outlet property="itemPrice" destination="tfc-5o-jp3" id="Uz3-86-qgs"/>
                 <outlet property="itemTitle" destination="vBq-R1-iI4" id="gg6-79-zP4"/>
+                <outlet property="itemX" destination="Fod-Ey-g6U" id="A20-Dz-4Ip"/>
             </connections>
             <point key="canvasLocation" x="196" y="264.5"/>
         </tableViewCell>
