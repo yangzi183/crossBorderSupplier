@@ -11,6 +11,8 @@
 #import "CategoryViewController.h"
 #import "TopicMode2Controller.h"
 #import "TopicMode3Controller.h"
+#import "MJRefresh.h"
+#import "ModelData.h"
 
 static NSString *cellName = @"mainCell";
 static NSString *cellTitleName = @"titleCell";
@@ -53,6 +55,13 @@ static NSString *cellTitleName = @"titleCell";
     self.navigationItem.rightBarButtonItem = shopRightItem;
 }
 
+- (void)setupRefresh {
+    [self.mainTableView addFooterWithTarget:self action:@selector(footerRereshing)];
+    self.mainTableView.footerPullToRefreshText = @"上拉可以加载更多商品";
+    self.mainTableView.footerReleaseToRefreshText = @"松开马上加载更多商品";
+    self.mainTableView.footerRefreshingText = @"商品正在努力加载中，请稍后...";
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     barLineView = [CROCommonAPI findHairlineImageViewUnder:self.navigationController.navigationBar];
     barLineView.hidden = YES;
@@ -69,12 +78,16 @@ static NSString *cellTitleName = @"titleCell";
 }
 
 - (void)reloadTableData {
+    HTTPRequestArray completeBlock = ^(NSMutableArray *array) {
+        NSLog(@"\r\n all goods array:%@", array);
+        self.mainData = array;
+    };
+    [ModelData getAllGoodsWithBlock:completeBlock page:1];
+    
     NSString *path = [[NSBundle mainBundle]pathForResource:@"testData" ofType:@"plist"];
     NSMutableArray *mutableArr = [NSMutableArray arrayWithContentsOfFile:path];
    
     self.mainData = [NSMutableArray arrayWithArray:mutableArr];
-    //self.mainScroll.contentSize = CGSizeMake(screenWidth, (440 + self.mainData.count * KCELLWIDTH));
-    //NSLog(@"\r\n arr:%@, dataarray:%@", mutableArr, self.mainData);
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -128,6 +141,24 @@ static NSString *cellTitleName = @"titleCell";
         return YES;
     }
 }
+
+- (void)footerRereshing
+{
+    // 1.添加假数据
+    /*for (int i = 0; i<5; i++) {
+        [self.fakeData addObject:MJRandomData];
+    }
+    */
+    // 2.2秒后刷新表格UI
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        // 刷新表格
+        [self.mainTableView reloadData];
+        
+        // (最好在刷新表格后调用)调用endRefreshing可以结束刷新状态
+        [self.mainTableView footerEndRefreshing];
+    });
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

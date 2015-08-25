@@ -12,5 +12,5 @@
 @interface ModelData : NSObject
 
 + (void)getModelInfoByBlock:(HTTPRequestArray)complete;
-
++ (void)getAllGoodsWithBlock:(HTTPRequestArray)complete page:(NSInteger)page;
 @end

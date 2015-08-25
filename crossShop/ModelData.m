@@ -27,8 +27,27 @@
         complete(responseObj);
         //arrayData = [NSMutableArray arrayWithArray:responseObj];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"\r\n get model error:%@", error);
+        NSLog(@"\r\n get getModelInfoByBlock error:%@", error);
     }];
 }
+
++ (void)getAllGoodsWithBlock:(HTTPRequestArray)complete page:(NSInteger)page{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    NSDictionary *parameter = @{@"action": @"get_goods_info",
+                                @"auth": @"ios",
+                                @"verify": @"787aa0142464da1473b86c72064647a5",
+                                @"page":[NSNumber numberWithInteger:page],
+                                @"perpage":@"20"};
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/json", @"text/plain", @"text/html", nil];
+    
+    [manager POST:NET_ALL_GOODS_GET parameters:parameter success:^(AFHTTPRequestOperation *operation, id responseObj) {
+        NSLog(@"\r\n responsejson:%@", responseObj);
+        complete(responseObj);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"\r\n get getAllGoodsWithBlock error:%@", error);
+    }];
+}
+
 
 @end
