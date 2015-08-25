@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
@@ -16,7 +16,7 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="topic_back" translatesAutoresizingMaskIntoConstraints="NO" id="9va-vE-vcB">
                         <rect key="frame" x="8" y="8" width="238" height="357"/>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test_img" translatesAutoresizingMaskIntoConstraints="NO" id="XZB-3D-8h4">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test_img_model3" translatesAutoresizingMaskIntoConstraints="NO" id="XZB-3D-8h4">
                         <rect key="frame" x="10" y="10" width="229" height="352"/>
                     </imageView>
                 </subviews>
@@ -37,7 +37,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="test_img" width="1080" height="1920"/>
+        <image name="test_img_model3" width="280" height="442"/>
         <image name="topic_back" width="147" height="228"/>
     </resources>
 </document>

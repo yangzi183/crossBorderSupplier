@@ -7,9 +7,10 @@
 //
 
 #import "flowTableView.h"
-
+#import "networkAPI.h"
 @implementation flowTableView {
     CGFloat srcollWidth;
+    CGFloat img_height;
 }
 
 /*
@@ -22,6 +23,11 @@
 - (void)configFlowTable: (CGFloat)withWidth{
     srcollWidth = withWidth;
     [self initSrcollView];
+    if (withWidth >= 360) {
+        img_height = 260;
+    } else {
+        img_height = kSCROLLVIEWHEIGHT;
+    }
 }
 
 - (id)init {
@@ -34,7 +40,7 @@
 
 - (void)initSrcollView {
     self.backgroundColor = [UIColor whiteColor];
-    scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, srcollWidth, kSCROLLVIEWHEIGHT)];
+    scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, srcollWidth, img_height)];
     //NSLog(@"\r\n x:%f,width:%f,selfwidth:%f, scroll:%f", self.frame.origin.x, screenWidth, self.bounds.size.width, self.frame.size.width);
     scrollView.delegate = self;
     scrollView.clipsToBounds = NO;
@@ -56,10 +62,11 @@
         __block UIImage *imgBack = [UIImage imageNamed:@"topic_back"];
        // NSLog(@"\r\n back:%f-%f", imgBack.size.width, imgBack.size.height);
         CGFloat imgWidth = (kSCROLLVIEWWIDTH - 2 * kIMGMARGIN) / 2;
-        CGRect viewFrame = CGRectMake(kIMGMARGIN, 0, imgWidth, kSCROLLVIEWHEIGHT);
-        [dataArray enumerateObjectsUsingBlock:^(NSString *obj, NSUInteger idx, BOOL *stop) {
+        NSLog(@"\r\n width:%f,kSCROLLVIEWWIDTH:%f", imgWidth, kSCROLLVIEWWIDTH);
+        CGRect viewFrame = CGRectMake(kIMGMARGIN, 0, imgWidth, img_height);
+        [dataArray enumerateObjectsUsingBlock:^(NSDictionary *dic, NSUInteger idx, BOOL *stop) {
             //NSLog(@"\r\n index:%u,obj:%@", idx, obj);
-            
+            NSString *obj = [NSString stringWithFormat:@"%@%@", NET_DOMAIN, [dic objectForKey:@"model_img"]];
             UIImageView *backView = [[UIImageView alloc]initWithFrame:viewFrame];
             backView.frame = CGRectOffset(viewFrame, x, 0);
             backView.image = imgBack;
@@ -91,7 +98,11 @@
     UITapGestureRecognizer *tapView = (UITapGestureRecognizer *)sender;
     NSInteger tag = tapView.view.tag;
     [[NSNotificationCenter defaultCenter] postNotificationName:kNOTIFICATION_INTO_TOPIC_VIEW object:[NSNumber numberWithInteger:tag]];
-    //NSLog(@"\r\n you click number %ld iamge", tag);
+    NSLog(@"\r\n you click number %ld iamge", tag);
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    NSLog(@"\r\n begin");
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scView {

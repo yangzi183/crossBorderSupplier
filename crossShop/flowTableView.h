@@ -12,7 +12,7 @@
 
 #define kSCROLLVIEWMARGINLEFT       10
 #define kSCROLLVIEWMARGINTOP        5
-#define kSCROLLVIEWHEIGHT           260
+#define kSCROLLVIEWHEIGHT           230
 #define kIMGMARGIN                  5
 #define kSCROLLVIEWWIDTH            scrollView.frame.size.width
 #define kBACKMARGIN                 8

@@ -152,7 +152,7 @@ static NSString * const reuseIdentifier = @"Cell";
         return cell;
     } else if (indexPath.section == 1){
         TopicMode3FirstCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:topicMode3FirstCell forIndexPath:indexPath];
-        NSLog(@"\r\n frame:%f-%f-%f-%f", cell.frame.origin.x, cell.frame.origin.y, cell.frame.size.width, cell.frame.size.height);
+        //NSLog(@"\r\n frame:%f-%f-%f-%f", cell.frame.origin.x, cell.frame.origin.y, cell.frame.size.width, cell.frame.size.height);
         return cell;
     } else {
         TopicMode3SecondCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:topicMode3SecondCell forIndexPath:indexPath];

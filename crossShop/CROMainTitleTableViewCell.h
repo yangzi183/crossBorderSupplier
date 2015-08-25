@@ -10,7 +10,7 @@
 #import "imgWithTitleView.h"
 #import "flowTableView.h"
 
-#define kTitleCellHeight        535
+#define kTitleCellHeight        501
 
 typedef enum {
     CATEGORY_MILK,
@@ -32,5 +32,6 @@ typedef enum {
 @property (strong, nonatomic) IBOutlet imgWithTitleView *iconSeven;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *marginLeftScroll;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *marginRightScroll;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *flowHeight;
 
 @end

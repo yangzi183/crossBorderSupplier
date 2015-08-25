@@ -7,7 +7,7 @@
 //
 
 #import "CROMainTitleTableViewCell.h"
-
+#import "ModelData.h"
 @implementation CROMainTitleTableViewCell
 
 - (void)awakeFromNib {
@@ -15,6 +15,13 @@
     self.frame = CGRectMake(0, 0, screenWidth, kTitleCellHeight);
     [self initUI];
     CGFloat width = self.frame.size.width - self.marginLeftScroll.constant - self.marginRightScroll.constant;
+    NSLog(@"\r\n awakeFromNibwidth:%f", width);
+    if (width >= 360) {
+        self.flowHeight.constant = 260;
+        /*[self setNeedsUpdateConstraints];
+        [self needsUpdateConstraints];
+        [self setNeedsDisplay];*/
+    }
     [self.flowTable configFlowTable:width];
     [self initData];
 }
@@ -41,7 +48,11 @@
 - (void)initData {
     flowTableData = [[NSMutableArray alloc]init];
     flowTableData = [NSMutableArray arrayWithObjects:@"http://img4q.duitang.com/uploads/item/201202/12/20120212145057_yKtnj.thumb.700_0.jpg", @"http://img5q.duitang.com/uploads/item/201202/12/20120212145048_cjYNR.thumb.700_0.jpg", @"http://img5q.duitang.com/uploads/item/201202/21/20120221173426_NeyNL.thumb.700_0.jpg", @"http://img4q.duitang.com/uploads/item/201203/11/20120311211442_d4mJt.jpeg", @"http://img5q.duitang.com/uploads/item/201202/21/20120221173426_NeyNL.thumb.700_0.jpg", @"http://img4q.duitang.com/uploads/item/201203/11/20120311211442_d4mJt.jpeg", @"http://img5q.duitang.com/uploads/item/201202/21/20120221173426_NeyNL.thumb.700_0.jpg", @"http://img4q.duitang.com/uploads/item/201203/11/20120311211442_d4mJt.jpeg", @"http://img5q.duitang.com/uploads/item/201202/21/20120221173426_NeyNL.thumb.700_0.jpg", @"http://img4q.duitang.com/uploads/item/201203/11/20120311211442_d4mJt.jpeg", @"http://img5q.duitang.com/uploads/item/201202/21/20120221173426_NeyNL.thumb.700_0.jpg", @"http://img4q.duitang.com/uploads/item/201203/11/20120311211442_d4mJt.jpeg", nil];
-    [self.flowTable setDataArray:flowTableData];
+    HTTPRequestArray completeBlock = ^(NSMutableArray *array) {
+        //NSLog(@"\r\n array:%@", array);
+        [self.flowTable setDataArray:array];
+    };
+    [ModelData getModelInfoByBlock:completeBlock];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
