@@ -9,6 +9,8 @@
 #import "CROMainViewController.h"
 #import "DetailGoodsViewController.h"
 #import "CategoryViewController.h"
+#import "TopicMode2Controller.h"
+#import "TopicMode3Controller.h"
 
 static NSString *cellName = @"mainCell";
 static NSString *cellTitleName = @"titleCell";
@@ -16,6 +18,7 @@ static NSString *cellTitleName = @"titleCell";
     NSMutableArray *flowTableData;
     UIImageView *barLineView;
     CATEGORY_TYPE categoryType;
+    NSString *modelID;
 }
 
 @end
@@ -39,7 +42,7 @@ static NSString *cellTitleName = @"titleCell";
     self.navigationController.navigationBar.translucent = NO;
     
     NSNotificationCenter *notiCenter = [NSNotificationCenter defaultCenter];
-    [notiCenter addObserver:self selector:@selector(showTopicView:) name:kNOTIFICATION_INTO_TOPIC_VIEW object:nil];
+    [notiCenter addObserver:self selector:@selector(showTopicView:) name:kNOTIFICATION_SHOW_TOPIC_VIEW object:nil];
     UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, 1)];
     lineView.backgroundColor = [CROCommonAPI colorWithHexString:@"#82d6d6"];
     [self.view addSubview:lineView];
@@ -83,6 +86,9 @@ static NSString *cellTitleName = @"titleCell";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
+        if (self.view.frame.size.width > 320) {
+            return 535;
+        }
         return kTitleCellHeight;
     } else {
         return KCELLWIDTH;
@@ -135,8 +141,18 @@ static NSString *cellTitleName = @"titleCell";
 }
 
 - (void)showTopicView: (NSNotification *)sender {
-    NSNumber *tagNumber = (NSNumber *)[sender object];
-    [self performSegueWithIdentifier:@"showTopicView3" sender:nil];
+    NSDictionary *dicData = (NSDictionary *)[sender object];
+    NSNumber *model_type = [dicData objectForKey:@"model_type"];
+    modelID = [dicData objectForKey:@"model_id"];
+    NSInteger type = [model_type integerValue];
+    
+    if (type == 1) {
+        NSLog(@"\r\n into type 1");
+    } else if (type == 2) {
+        [self performSegueWithIdentifier:@"showTopicView2" sender:nil];
+    } else if (type == 3) {
+        [self performSegueWithIdentifier:@"showTopicView3" sender:nil];
+    }
     //NSLog(@"\r\n tagnuber:%ld", [tagNumber integerValue]);
 }
 
@@ -148,9 +164,11 @@ static NSString *cellTitleName = @"titleCell";
         NSDictionary *dicData = [self.mainData objectAtIndex:(indexPath.row - 1)];
         [segue.destinationViewController setDicDetailData:dicData];
     } else if ([segue.identifier isEqualToString:@"showTopicView2"]) {
-        NSLog(@"\r\n topic");
+        [segue.destinationViewController setModel_id:modelID];
     } else if ([segue.identifier isEqualToString:@"showCategoryView"]) {
         [segue.destinationViewController setCategoryViewType:categoryType];
+    } else if ([segue.identifier isEqualToString:@"showTopicView3"]) {
+        [segue.destinationViewController setModel_id:modelID];
     }
 }
 

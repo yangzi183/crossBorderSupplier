@@ -12,5 +12,6 @@
 
 @interface TopicMode2Controller : UITableViewController
 - (IBAction)backView:(id)sender;
+@property (strong, nonatomic) NSString *model_id;
 
 @end

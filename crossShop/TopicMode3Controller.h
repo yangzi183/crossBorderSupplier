@@ -15,4 +15,5 @@
 @interface TopicMode3Controller : UICollectionViewController <UICollectionViewDelegateFlowLayout, ShoppingCartItemDelegate>
 - (IBAction)backAct:(id)sender;
 
+@property (strong, nonatomic) NSString *model_id;
 @end

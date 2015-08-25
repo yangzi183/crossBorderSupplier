@@ -14,6 +14,7 @@
 #define screenHeight    [UIScreen mainScreen].bounds.size.height
 
 #define kNOTIFICATION_INTO_TOPIC_VIEW           @"intoTopicView"
+#define kNOTIFICATION_SHOW_TOPIC_VIEW           @"showTopicView"
 #define kThickLineHeight                        6
 
 #define kThickLineColor                         @"F5F6F6"

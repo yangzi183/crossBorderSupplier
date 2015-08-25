@@ -19,7 +19,7 @@ typedef enum {
 }CATEGORY_TYPE;
 
 @interface CROMainTitleTableViewCell : UITableViewCell {
-    NSMutableArray *flowTableData;
+    __block NSMutableArray *flowTableData;
 }
 
 @property (weak, nonatomic) IBOutlet imgWithTitleView *diaper;

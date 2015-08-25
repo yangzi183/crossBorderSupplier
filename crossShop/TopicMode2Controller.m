@@ -20,7 +20,7 @@ static NSString *topicMode2ItemCell = @"topicMode2Item";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    NSLog(@"\r\n mode2 id:%@", self.model_id);
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     

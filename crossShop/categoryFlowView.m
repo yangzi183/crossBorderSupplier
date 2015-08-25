@@ -52,6 +52,12 @@
     scrollView.backgroundColor = [UIColor clearColor];
     [self addSubview:scrollView];
     self.backgroundColor = [UIColor clearColor];
+    UITapGestureRecognizer *test1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(testtap)];
+    [self addGestureRecognizer:test1];
+}
+
+- (void)testtap {
+    NSLog(@"\r\n tset1");
 }
 
 - (void)setDataArray:(NSArray *)dataArray {

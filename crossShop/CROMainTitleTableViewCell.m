@@ -16,14 +16,13 @@
     [self initUI];
     CGFloat width = self.frame.size.width - self.marginLeftScroll.constant - self.marginRightScroll.constant;
     NSLog(@"\r\n awakeFromNibwidth:%f", width);
-    if (width >= 360) {
+    if (self.frame.size.width > 320) {
         self.flowHeight.constant = 260;
-        /*[self setNeedsUpdateConstraints];
-        [self needsUpdateConstraints];
-        [self setNeedsDisplay];*/
     }
     [self.flowTable configFlowTable:width];
     [self initData];
+    NSNotificationCenter *notiCenter = [NSNotificationCenter defaultCenter];
+    [notiCenter addObserver:self selector:@selector(getTopicViewData:) name:kNOTIFICATION_INTO_TOPIC_VIEW object:nil];
 }
 
 - (void)initUI {
@@ -47,12 +46,21 @@
 
 - (void)initData {
     flowTableData = [[NSMutableArray alloc]init];
-    flowTableData = [NSMutableArray arrayWithObjects:@"http://img4q.duitang.com/uploads/item/201202/12/20120212145057_yKtnj.thumb.700_0.jpg", @"http://img5q.duitang.com/uploads/item/201202/12/20120212145048_cjYNR.thumb.700_0.jpg", @"http://img5q.duitang.com/uploads/item/201202/21/20120221173426_NeyNL.thumb.700_0.jpg", @"http://img4q.duitang.com/uploads/item/201203/11/20120311211442_d4mJt.jpeg", @"http://img5q.duitang.com/uploads/item/201202/21/20120221173426_NeyNL.thumb.700_0.jpg", @"http://img4q.duitang.com/uploads/item/201203/11/20120311211442_d4mJt.jpeg", @"http://img5q.duitang.com/uploads/item/201202/21/20120221173426_NeyNL.thumb.700_0.jpg", @"http://img4q.duitang.com/uploads/item/201203/11/20120311211442_d4mJt.jpeg", @"http://img5q.duitang.com/uploads/item/201202/21/20120221173426_NeyNL.thumb.700_0.jpg", @"http://img4q.duitang.com/uploads/item/201203/11/20120311211442_d4mJt.jpeg", @"http://img5q.duitang.com/uploads/item/201202/21/20120221173426_NeyNL.thumb.700_0.jpg", @"http://img4q.duitang.com/uploads/item/201203/11/20120311211442_d4mJt.jpeg", nil];
+    
     HTTPRequestArray completeBlock = ^(NSMutableArray *array) {
         //NSLog(@"\r\n array:%@", array);
         [self.flowTable setDataArray:array];
+        flowTableData = array;
     };
     [ModelData getModelInfoByBlock:completeBlock];
+}
+
+- (void)getTopicViewData: (NSNotification *)sender {
+    NSNumber *tagNumber = (NSNumber *)[sender object];
+    NSDictionary *dicData = [flowTableData objectAtIndex:[tagNumber integerValue]];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNOTIFICATION_SHOW_TOPIC_VIEW object:dicData];
+    NSLog(@"\r\n tagnuber:%ld", [tagNumber integerValue]);
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

@@ -21,13 +21,14 @@
 }
 */
 - (void)configFlowTable: (CGFloat)withWidth{
-    srcollWidth = withWidth;
-    [self initSrcollView];
-    if (withWidth >= 360) {
+    if (withWidth > 305) {
         img_height = 260;
     } else {
         img_height = kSCROLLVIEWHEIGHT;
     }
+    srcollWidth = withWidth;
+    [self initSrcollView];
+    
 }
 
 - (id)init {
@@ -62,7 +63,7 @@
         __block UIImage *imgBack = [UIImage imageNamed:@"topic_back"];
        // NSLog(@"\r\n back:%f-%f", imgBack.size.width, imgBack.size.height);
         CGFloat imgWidth = (kSCROLLVIEWWIDTH - 2 * kIMGMARGIN) / 2;
-        NSLog(@"\r\n width:%f,kSCROLLVIEWWIDTH:%f", imgWidth, kSCROLLVIEWWIDTH);
+        //NSLog(@"\r\n width:%f,kSCROLLVIEWWIDTH:%f", imgWidth, kSCROLLVIEWWIDTH);
         CGRect viewFrame = CGRectMake(kIMGMARGIN, 0, imgWidth, img_height);
         [dataArray enumerateObjectsUsingBlock:^(NSDictionary *dic, NSUInteger idx, BOOL *stop) {
             //NSLog(@"\r\n index:%u,obj:%@", idx, obj);
@@ -87,8 +88,8 @@
         }];
         CGFloat width = (imgWidth + kIMGMARGIN) * dataArray.count;
         width = x;
-        //NSLog(@"\r\n width:%f", width);
         [scrollView setCanCancelContentTouches:YES];
+        //NSLog(@"\r\n width:%f,height:%f,realwidth:%f", width, scrollView.frame.size.height, scrollView.frame.size.width);
         scrollView.contentSize = CGSizeMake(width, scrollView.frame.size.height);
     }
     _dataArray = dataArray;
@@ -99,10 +100,6 @@
     NSInteger tag = tapView.view.tag;
     [[NSNotificationCenter defaultCenter] postNotificationName:kNOTIFICATION_INTO_TOPIC_VIEW object:[NSNumber numberWithInteger:tag]];
     NSLog(@"\r\n you click number %ld iamge", tag);
-}
-
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
-    NSLog(@"\r\n begin");
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scView {
