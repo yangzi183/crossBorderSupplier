@@ -13,4 +13,5 @@
 
 + (void)getModelInfoByBlock:(HTTPRequestArray)complete;
 + (void)getAllGoodsWithBlock:(HTTPRequestArray)complete page:(NSInteger)page;
++ (void)getGoodsDetailInfoWithBlock: (HTTPRequestDic)complete goodId:(NSString *)goodsId;
 @end

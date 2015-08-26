@@ -16,11 +16,14 @@
 
 static NSString *cellName = @"mainCell";
 static NSString *cellTitleName = @"titleCell";
+NSInteger g_iPage = 1;
 @interface CROMainViewController () {
     NSMutableArray *flowTableData;
     UIImageView *barLineView;
     CATEGORY_TYPE categoryType;
     NSString *modelID;
+    NSDictionary *tomorrowDic;
+    NSMutableArray *itemsArray;
 }
 
 @end
@@ -36,10 +39,8 @@ static NSString *cellTitleName = @"titleCell";
     [self.mainTableView registerNib:cellNib forCellReuseIdentifier:cellName];
     UINib *cellTitleNib = [UINib nibWithNibName:@"CROMainTitleTableViewCell" bundle:nil];
     [self.mainTableView registerNib:cellTitleNib forCellReuseIdentifier:cellTitleName];
-    self.mainData = [[NSMutableArray alloc]init];
     self.mainTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    
-    //self.navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+    itemsArray = [[NSMutableArray alloc] init];
     self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
     self.navigationController.navigationBar.translucent = NO;
     
@@ -53,10 +54,17 @@ static NSString *cellTitleName = @"titleCell";
     shopItem.backgroundColor = [UIColor clearColor];
     UIBarButtonItem *shopRightItem = [[UIBarButtonItem alloc] initWithCustomView:shopItem];
     self.navigationItem.rightBarButtonItem = shopRightItem;
+    [self setupRefresh];
+    [self reloadTableData];
 }
 
 - (void)setupRefresh {
-    [self.mainTableView addFooterWithTarget:self action:@selector(footerRereshing)];
+    __unsafe_unretained CROMainViewController *mainCtrl = self;
+    [self.mainTableView addFooterWithCallback:^{
+        NSLog(@"\r\n footcallback");
+        [mainCtrl footerRereshing];
+    }];
+    //[self.mainTableView addFooterWithTarget:self action:@selector(footerRereshing)];
     self.mainTableView.footerPullToRefreshText = @"上拉可以加载更多商品";
     self.mainTableView.footerReleaseToRefreshText = @"松开马上加载更多商品";
     self.mainTableView.footerRefreshingText = @"商品正在努力加载中，请稍后...";
@@ -72,29 +80,31 @@ static NSString *cellTitleName = @"titleCell";
     barLineView.hidden = NO;
 }
 
-- (void)viewDidAppear:(BOOL)animated {
+/*- (void)viewDidAppear:(BOOL)animated {
     [self reloadTableData];
-    [self.mainTableView reloadData];
-}
+}*/
 
 - (void)reloadTableData {
-    HTTPRequestArray completeBlock = ^(NSMutableArray *array) {
-        NSLog(@"\r\n all goods array:%@", array);
-        self.mainData = array;
+    HTTPRequestDic completeBlock = ^(NSDictionary *dic) {
+        //NSLog(@"\r\n all goods dic:%@", dic);
+        tomorrowDic = [dic objectForKey:@"tomorrow"];
+        itemsArray = [NSMutableArray arrayWithArray:[dic objectForKey:@"items"]];
+        //NSLog(@"\r\n itemsarraycount:%ld", itemsArray.count);
+        [self.mainTableView reloadData];
     };
-    [ModelData getAllGoodsWithBlock:completeBlock page:1];
+    [ModelData getAllGoodsWithBlock:completeBlock page:g_iPage];
     
-    NSString *path = [[NSBundle mainBundle]pathForResource:@"testData" ofType:@"plist"];
-    NSMutableArray *mutableArr = [NSMutableArray arrayWithContentsOfFile:path];
+    /*NSString *path = [[NSBundle mainBundle]pathForResource:@"testData" ofType:@"plist"];
+    NSMutableArray *mutableArr = [NSMutableArray arrayWithContentsOfFile:path];*/
    
-    self.mainData = [NSMutableArray arrayWithArray:mutableArr];
+    //self.mainData = [NSMutableArray arrayWithArray:mutableArr];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return (self.mainData.count + 1);
+    return (itemsArray.count + 2);
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -128,8 +138,12 @@ static NSString *cellTitleName = @"titleCell";
         if (cell == nil) {
             cell = [[CROMainDetTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellName];
         }
-        NSDictionary *dicData = [self.mainData objectAtIndex:(indexPath.row - 1)];
-        [cell setDicData:dicData];
+        if (indexPath.row == 1) {
+            [cell setDicData:tomorrowDic tomorow:YES];
+        } else {
+            NSDictionary *itemData = [itemsArray objectAtIndex:indexPath.row - 2];
+            [cell setDicData:itemData tomorow:false];
+        }
         return cell;
     }
 }
@@ -145,18 +159,26 @@ static NSString *cellTitleName = @"titleCell";
 - (void)footerRereshing
 {
     // 1.添加假数据
-    /*for (int i = 0; i<5; i++) {
-        [self.fakeData addObject:MJRandomData];
-    }
-    */
-    // 2.2秒后刷新表格UI
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        // 刷新表格
-        [self.mainTableView reloadData];
-        
-        // (最好在刷新表格后调用)调用endRefreshing可以结束刷新状态
-        [self.mainTableView footerEndRefreshing];
-    });
+    g_iPage++;
+    HTTPRequestDic completeBlock = ^(NSDictionary *dic) {
+        //NSLog(@"\r\n all goods dic:%@", dic);
+        NSArray *getArray = [dic objectForKey:@"items"];
+        //NSLog(@"\r\n arraycount:%ld", getArray.count);
+        for (int i = 0; i < getArray.count; i++) {
+            [itemsArray addObject:[getArray objectAtIndex:i]];
+        }
+        if ([[dic objectForKey:@"items"] count] == 0) {
+            g_iPage--;
+        }
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            // 刷新表格
+            [self.mainTableView reloadData];
+            
+            // (最好在刷新表格后调用)调用endRefreshing可以结束刷新状态
+            [self.mainTableView footerEndRefreshing];
+        });
+    };
+    [ModelData getAllGoodsWithBlock:completeBlock page:g_iPage];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -166,7 +188,7 @@ static NSString *cellTitleName = @"titleCell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row != 0) {
-        NSLog(@"\r\n didSelectRowAtIndexPath:%ld", indexPath.row);
+        //NSLog(@"\r\n didSelectRowAtIndexPath:%ld", indexPath.row);
         [self performSegueWithIdentifier:@"showGoodsDetail" sender:indexPath];
     }
 }
@@ -191,9 +213,12 @@ static NSString *cellTitleName = @"titleCell";
     if ([segue.identifier isEqualToString:@"showGoodsDetail"]) {
         NSIndexPath *indexPath = (NSIndexPath *)sender;
         NSLog(@"\r\n segueindex:%ld", indexPath.row);
-        
-        NSDictionary *dicData = [self.mainData objectAtIndex:(indexPath.row - 1)];
-        [segue.destinationViewController setDicDetailData:dicData];
+        if (indexPath.row == 1) {
+            [segue.destinationViewController setItemId:[tomorrowDic objectForKey:@"id"]];
+        } else if (indexPath.row > 1) {
+            NSDictionary *nowDic = [itemsArray objectAtIndex:(indexPath.row - 2)];
+            [segue.destinationViewController setItemId:[nowDic objectForKey:@"id"]];
+        }
     } else if ([segue.identifier isEqualToString:@"showTopicView2"]) {
         [segue.destinationViewController setModel_id:modelID];
     } else if ([segue.identifier isEqualToString:@"showCategoryView"]) {

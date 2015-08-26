@@ -8,6 +8,8 @@
 
 #import "DetailGoodsViewController.h"
 #import "ReturnGoodsViewController.h"
+#import "ModelData.h"
+#import "SDWebImage/UIImageView+WebCache.h"
 
 static NSString *cellDetailGoodsName = @"detailGoodsCell";
 static NSString *cellDetailGoodsImageName = @"detailGoodsImage";
@@ -69,13 +71,21 @@ static NSString *detailGoodsSectionHeadCell = @"detailGoodsSectionHeadCell";
     UINib *detailGoodsSectionHeadCellNib = [UINib nibWithNibName:@"DetailGoodsSectionHeadCell" bundle:nil];
     [self.tableView registerNib:detailGoodsSectionHeadCellNib forCellReuseIdentifier:detailGoodsSectionHeadCell];
     
-    //self.dicDetailData = [[NSDictionary alloc]init];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.itemImgArray = [[NSArray alloc]init];
     //dataArray = [[NSMutableArray alloc]init];
     sectionHeadArray = [[NSArray alloc] initWithObjects:@"会买妈妈育儿师推荐", @"品牌介绍", @"产品说明", nil];
     [self initBuyView];
     NSLog(@"\r\n goods detail id:%@", self.itemId);
+    [self reloadInfo];
+}
+
+- (void)reloadInfo {
+    HTTPRequestDic complete = ^(NSDictionary *dic) {
+        self.dicDetailData = dic;
+        [self.tableView reloadData];
+    };
+    [ModelData getGoodsDetailInfoWithBlock:complete goodId:self.itemId];
 }
 
 - (void)initBuyView {
@@ -108,9 +118,9 @@ static NSString *detailGoodsSectionHeadCell = @"detailGoodsSectionHeadCell";
 }
 
 - (void)setDicDetailData:(NSDictionary *)dicDetailData {
-    NSLog(@"\r\n setDicDetailData:%@", dicDetailData);
+    
     _dicDetailData = dicDetailData;
-    [self changeDetailCellWithTag:ITEMDETAIL];
+    //[self changeDetailCellWithTag:ITEMDETAIL];
 }
 
 #pragma mark - Table view data source
@@ -216,7 +226,23 @@ static NSString *detailGoodsSectionHeadCell = @"detailGoodsSectionHeadCell";
             if (cell == nil) {
                 cell = [[CRODetailGoodsHeadCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellDetailGoodsName];
             };
+            cell.discount.text = [NSString stringWithFormat:@"%@折", [self.dicDetailData objectForKey:@"discount"]];
+            cell.titleLabel.text = [self.dicDetailData objectForKey:@"title"];
+            cell.curPriceLabel.text = [NSString stringWithFormat:@"￥%@", [self.dicDetailData objectForKey:@"price_cur"]];
+            cell.oriPriceLabel.text = [NSString stringWithFormat:@"￥%@ ", [self.dicDetailData objectForKey:@"price_ori"]];
             
+            NSString *string = cell.oriPriceLabel.text;
+            NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:string];
+            [attrString addAttribute:NSStrikethroughColorAttributeName value:[UIColor grayColor] range:NSMakeRange(0, string.length)];
+            [attrString addAttribute:NSStrikethroughStyleAttributeName value:@(NSUnderlinePatternSolid | NSUnderlineStyleSingle) range:NSMakeRange(0, string.length)];
+            //[attrString addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:18] range:NSMakeRange(0, string.length)];
+            cell.oriPriceLabel.attributedText = attrString;
+            
+            cell.labelLabel.text = [self.dicDetailData objectForKey:@"label"];
+            cell.dispatchLabel.text = [self.dicDetailData objectForKey:@"dispatch"];
+            cell.freightLabel.text = [NSString stringWithFormat:@"物流费用 : %@元", [self.dicDetailData objectForKey:@"freight"]];
+            cell.taxLabel.text = [NSString stringWithFormat:@"该商品使用税率为%@，若订单总税额<=50元则免征关税", [self.dicDetailData objectForKey:@"tax"]];
+            [cell.coverImg sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", NET_DOMAIN, [self.dicDetailData objectForKey:@"cover_img"]]]];
             return cell;
         }
         case 1: {
@@ -232,6 +258,8 @@ static NSString *detailGoodsSectionHeadCell = @"detailGoodsSectionHeadCell";
                 if (cell == nil) {
                     cell = [[DetailGoodsRecommendCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:detailGoodsRecommendCell];
                 }
+                cell.title.text = [self.dicDetailData objectForKey:@"recommend_name"];
+                cell.content.text = [self.dicDetailData objectForKey:@"recommend_content"];
                 return cell;
             }
         }
@@ -248,6 +276,8 @@ static NSString *detailGoodsSectionHeadCell = @"detailGoodsSectionHeadCell";
                 if (cell == nil) {
                     cell = [[DetailGoodsBrandCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:detailGoodsBrandCell];
                 }
+                cell.title.text = [self.dicDetailData objectForKey:@"brand_name"];
+                cell.content.text = [self.dicDetailData objectForKey:@"brand_introduce"];
                 return cell;
             }
         }
@@ -264,6 +294,13 @@ static NSString *detailGoodsSectionHeadCell = @"detailGoodsSectionHeadCell";
                 if (cell == nil) {
                     cell = [[DetailGoodsIntroDetailCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:detailGoodsIntroDetailCell];
                 }
+                cell.intro_anaphylactic.text = [self.dicDetailData objectForKey:@"intro_anaphylactic"];
+                cell.intro_pro_place.text = [self.dicDetailData objectForKey:@"intro_pro_place"];
+                cell.intro_spec.text = [self.dicDetailData objectForKey:@"intro_spec"];
+                cell.intro_age.text = [self.dicDetailData objectForKey:@"intro_age"];
+                cell.intro_stroe.text = [self.dicDetailData objectForKey:@"intro_stroe"];
+                cell.intro_date.text = [self.dicDetailData objectForKey:@"intro_date"];
+                cell.intro_guide.text = [self.dicDetailData objectForKey:@"intro_guide"];
                 return cell;
             }
         }
@@ -297,7 +334,7 @@ static NSString *detailGoodsSectionHeadCell = @"detailGoodsSectionHeadCell";
                 if (cell == nil) {
                     cell = [[DetailGoodsQuestionCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellDetailGoodsQuestionName];
                 }
-                NSLog(@"\r\n width:%f", cell.frame.size.width);
+                //NSLog(@"\r\n width:%f", cell.frame.size.width);
                 [cell configView];
                 cell.delegate = self;
                 return cell;

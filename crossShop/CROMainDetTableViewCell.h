@@ -13,13 +13,13 @@
 #define KCELLWIDTH          445
 
 #define kDiscount       @"discount"
-#define kDisDate        @"disDate"
-#define kCoverImg       @"coverImg"
+#define kDisDate        @"date"
+#define kCoverImg       @"cover_img"
 #define kTitle          @"title"
-#define kCurPrice       @"curPrice"
-#define kOriPrice       @"oriPrice"
+#define kCurPrice       @"price_cur"
+#define kOriPrice       @"price_ori"
 #define kDetail         @"detail"
-
+#define kItemID         @"id"
 
 @interface CROMainDetTableViewCell : UITableViewCell
 @property (strong, nonatomic) IBOutlet UIImageView *discount;
@@ -36,4 +36,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *updateLabel;
 @property (strong, nonatomic) IBOutlet UIButton *tormorowLabel;
 @property (strong, nonatomic) NSDictionary *dicData;
+@property (strong, nonatomic) NSString *itemID;
+- (void)setDicData:(NSDictionary *)dicData tomorow:(BOOL)tomorow;
 @end

@@ -12,4 +12,7 @@
 
 @interface DetailGoodsRecommendCell : UITableViewCell
 
+@property (strong, nonatomic) IBOutlet UILabel *title;
+@property (strong, nonatomic) IBOutlet UILabel *content;
+
 @end

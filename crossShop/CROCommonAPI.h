@@ -13,5 +13,6 @@
 
 + (UIColor *) colorWithHexString: (NSString *) hexString;
 + (UIImageView *)findHairlineImageViewUnder:(UIView *)view;
++ (NSString *)setDateInfoByDouble: (double)dDate;
 
 @end

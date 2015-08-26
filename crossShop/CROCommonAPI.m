@@ -67,4 +67,70 @@
     return nil;
 }
 
++ (NSString *)setDateInfoByDouble: (double)dDate {
+    NSDate *datestr = [NSDate dateWithTimeIntervalSince1970:dDate];
+    NSCalendar * cal = [NSCalendar currentCalendar];
+    NSUInteger unitFlags = NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear;
+    NSDateComponents * component = [cal components:unitFlags fromDate:datestr];
+    
+    //NSInteger year = [component year];
+    NSInteger month = [component month];
+    NSInteger day = [component day];
+    NSString *monthStr;
+    switch (month) {
+        case 1:
+            monthStr = @"Jan.";
+            break;
+            
+        case 2:
+            monthStr = @"Feb.";
+            break;
+            
+        case 3:
+            monthStr = @"Mar.";
+            break;
+            
+        case 4:
+            monthStr = @"Apr.";
+            break;
+            
+        case 5:
+            monthStr = @"May.";
+            break;
+            
+        case 6:
+            monthStr = @"Jun.";
+            break;
+            
+        case 7:
+            monthStr = @"Jul.";
+            break;
+            
+        case 8:
+            monthStr = @"Aug.";
+            break;
+            
+        case 9:
+            monthStr = @"Sep.";
+            break;
+            
+        case 10:
+            monthStr = @"Oct.";
+            break;
+            
+        case 11:
+            monthStr = @"Nov.";
+            break;
+            
+        case 12:
+            monthStr = @"Dec.";
+            break;
+            
+        default:
+            break;
+    }
+    NSString *dateStr = [NSString stringWithFormat:@"%@%02ld", monthStr, (long)day];
+    return dateStr;
+}
+
 @end

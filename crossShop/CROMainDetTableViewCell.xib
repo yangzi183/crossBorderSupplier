@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
@@ -8,7 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="CROMainDetTableViewCell">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="434" id="KGk-i7-Jjw" customClass="CROMainDetTableViewCell">
             <rect key="frame" x="0.0" y="0.0" width="402" height="351"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -267,10 +267,12 @@
                             </mask>
                         </variation>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apr.07" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="74O-KZ-v9k">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jul.17" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="74O-KZ-v9k">
                         <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="35" id="3e5-rZ-fJZ"/>
+                            <constraint firstAttribute="width" constant="35" id="3e5-rZ-fJZ">
+                                <variation key="heightClass=regular-widthClass=compact" constant="33"/>
+                            </constraint>
                             <constraint firstAttribute="height" constant="36" id="LuA-Mq-XrL"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
@@ -399,7 +401,7 @@
                         <variation key="heightClass=regular-widthClass=compact" constant="30"/>
                     </constraint>
                     <constraint firstItem="74O-KZ-v9k" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="73" id="hDZ-qe-90U">
-                        <variation key="heightClass=regular-widthClass=compact" constant="63"/>
+                        <variation key="heightClass=regular-widthClass=compact" constant="58"/>
                     </constraint>
                     <constraint firstItem="RbY-FE-Z30" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="jic-7w-gEl"/>
                     <constraint firstItem="IaR-0o-MS7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="37" id="oqK-7C-r0Z"/>
@@ -560,7 +562,7 @@
                 <outlet property="tormorowLabel" destination="c2Y-R8-Id5" id="GkA-H9-3iz"/>
                 <outlet property="updateLabel" destination="h1Z-Gp-7e3" id="fy3-lR-vqC"/>
             </connections>
-            <point key="canvasLocation" x="443" y="299.5"/>
+            <point key="canvasLocation" x="443" y="341"/>
         </tableViewCell>
     </objects>
     <resources>

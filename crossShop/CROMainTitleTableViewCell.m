@@ -15,7 +15,7 @@
     self.frame = CGRectMake(0, 0, screenWidth, kTitleCellHeight);
     [self initUI];
     CGFloat width = self.frame.size.width - self.marginLeftScroll.constant - self.marginRightScroll.constant;
-    NSLog(@"\r\n awakeFromNibwidth:%f", width);
+   // NSLog(@"\r\n awakeFromNibwidth:%f", width);
     if (self.frame.size.width > 320) {
         self.flowHeight.constant = 260;
     }

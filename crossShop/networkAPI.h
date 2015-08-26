@@ -11,10 +11,11 @@
 
 #define NET_MODEL_GET           @"http://101.200.0.144/web/api/model.php"
 #define NET_ALL_GOODS_GET       @"http://101.200.0.144/web/api/goods.php"
-
+#define NET_GOOD_INFO_GET       @"http://101.200.0.144/web/api/goods.php"
 
 
 #define NET_DOMAIN              @"http://101.200.0.144/web"
 
 typedef void(^HTTPRequestArray)(id);
+typedef void(^HTTPRequestDic)(id);
 #endif

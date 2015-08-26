@@ -21,7 +21,7 @@
 }
 
 - (void)setDottedView {
-    NSLog(@"\r\n width:%f", self.view.bounds.size.width);
+    //NSLog(@"\r\n width:%f", self.view.bounds.size.width);
     CGSize size = CGSizeMake(self.dottedLineView1.frame.size.width, 60);
     CGSize size1 = CGSizeMake(size.width, 75);
     [self.dottedLineView1 setTitle:@"400 0000 00" content:@"请拨打我们的客服热线，接通后按5号键" imgTitle:@"1" toSize:size];

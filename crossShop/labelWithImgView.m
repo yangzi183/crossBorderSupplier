@@ -43,7 +43,7 @@
     }
     //NSLog(@"\r\n width:%f", toSize.width);
     CGFloat labelWidth = toSize.width - 40;
-    NSLog(@"\r\n labelwidth:%f", labelWidth);
+    //NSLog(@"\r\n labelwidth:%f", labelWidth);
     if (!contenLabel) {
         contenLabel = [UILabel new];
         
