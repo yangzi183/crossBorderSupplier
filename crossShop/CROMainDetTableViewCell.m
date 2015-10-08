@@ -41,10 +41,22 @@
         self.title.text = [dicData objectForKey:kTitle];
         self.curPrice.text = [NSString stringWithFormat:@"￥%@", [dicData objectForKey:kCurPrice]];
         self.oriPrice.text = [NSString stringWithFormat:@"￥%@", [dicData objectForKey:kOriPrice]];
+        
+        NSString *string = self.oriPrice.text;
+        NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:string];
+        [attrString addAttribute:NSStrikethroughColorAttributeName value:[UIColor grayColor] range:NSMakeRange(0, string.length)];
+        [attrString addAttribute:NSStrikethroughStyleAttributeName value:@(NSUnderlinePatternSolid | NSUnderlineStyleSingle) range:NSMakeRange(0, string.length)];
+        //[attrString addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:18] range:NSMakeRange(0, string.length)];
+        self.oriPrice.attributedText = attrString;
+
+        
         self.oriPrice.lineBreakMode = NSLineBreakByTruncatingTail;
         self.detail.text = [dicData objectForKey:kDetail];
-        
+#ifdef kDEBUG_DATA
+        [self.coverImg sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@", [dicData objectForKey:kCoverImg]]] placeholderImage:[UIImage imageNamed:@"coverImg.png"]];
+#else
         [self.coverImg sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", NET_DOMAIN, [dicData objectForKey:kCoverImg]]] placeholderImage:[UIImage imageNamed:@"coverImg.png"]];
+#endif
     }
 }
 

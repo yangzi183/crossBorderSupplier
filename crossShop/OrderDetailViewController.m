@@ -151,6 +151,7 @@ static NSString *orderCell = @"orderListCell";
         if (cell == nil) {
             cell = [[OrderDetailCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:orderDetailCell];
         }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
         
     } else if (indexPath.section == 1) {
@@ -166,6 +167,7 @@ static NSString *orderCell = @"orderListCell";
         NSArray *items = [itemDic objectForKey:@"list"];
         NSDictionary *itemData = [items objectAtIndex:indexPath.row];
         [cell setOrderItemInfoByDic:itemData];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
         
     } else if (indexPath.section == 2) {
@@ -175,6 +177,7 @@ static NSString *orderCell = @"orderListCell";
         }
         // = [UIColor blueColor];
         [cell setContentInfoByIndex:indexPath.row toMode:ORDER_MODE_DETAIL];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     } else if (indexPath.section == 3) {
         OrderDetailNormalCell *cell = [tableView dequeueReusableCellWithIdentifier:orderDetailNormalCell forIndexPath:indexPath];
@@ -183,14 +186,22 @@ static NSString *orderCell = @"orderListCell";
         }
         // = [UIColor blueColor];
         [cell setContentInfoByIndex:indexPath.row toMode:ORDER_MODE_LOGISTICS];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     } else {
         OrderDetailLogisticsCell *cell = [tableView dequeueReusableCellWithIdentifier:orderDetailLogisticsCell forIndexPath:indexPath];
         if (cell == nil) {
             cell = [[OrderDetailLogisticsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:orderDetailLogisticsCell];
         }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         //cell.backgroundColor = [UIColor blueColor];
         return cell;
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 1) {
+        [self performSegueWithIdentifier:@"showGoodsDetailView" sender:nil];
     }
 }
 

@@ -96,7 +96,7 @@
         self.reduceBtn.hidden = NO;
         self.editTxt.hidden = NO;
         self.plusBtn.hidden = NO;
-        self.deleteBtn.hidden = NO;
+        self.deleteBtn.hidden = YES;
     } else {
         self.xLabel.hidden = NO;
         self.realNumLabel.hidden = NO;

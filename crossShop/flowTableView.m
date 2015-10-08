@@ -8,6 +8,8 @@
 
 #import "flowTableView.h"
 #import "networkAPI.h"
+#import "CROCommonAPI.h"
+
 @implementation flowTableView {
     CGFloat srcollWidth;
     CGFloat img_height;
@@ -67,7 +69,11 @@
         CGRect viewFrame = CGRectMake(kIMGMARGIN, 0, imgWidth, img_height);
         [dataArray enumerateObjectsUsingBlock:^(NSDictionary *dic, NSUInteger idx, BOOL *stop) {
             //NSLog(@"\r\n index:%u,obj:%@", idx, obj);
+#ifndef kDEBUG_DATA
             NSString *obj = [NSString stringWithFormat:@"%@%@", NET_DOMAIN, [dic objectForKey:@"model_img"]];
+#else
+            NSString *obj = [dic objectForKey:@"model_img"];
+#endif
             UIImageView *backView = [[UIImageView alloc]initWithFrame:viewFrame];
             backView.frame = CGRectOffset(viewFrame, x, 0);
             backView.image = imgBack;

@@ -10,6 +10,7 @@
 #import "ReturnGoodsViewController.h"
 #import "ModelData.h"
 #import "SDWebImage/UIImageView+WebCache.h"
+#import "CROCommonAPI.h"
 
 static NSString *cellDetailGoodsName = @"detailGoodsCell";
 static NSString *cellDetailGoodsImageName = @"detailGoodsImage";
@@ -27,6 +28,7 @@ static NSString *detailGoodsSectionHeadCell = @"detailGoodsSectionHeadCell";
     NSArray *sectionHeadArray;
     NSIndexPath *detailIndexPath;
     NSInteger goodCount;
+    NSMutableArray *arrayImg;
 }
 
 @end
@@ -57,7 +59,7 @@ static NSString *detailGoodsSectionHeadCell = @"detailGoodsSectionHeadCell";
     [self.tableView registerNib:cellIntroNib forCellReuseIdentifier:cellDetailGoodsIntroName];
     UINib *cellQuestionNib = [UINib nibWithNibName:@"DetailGoodsQuestionCell" bundle:nil];
     [self.tableView registerNib:cellQuestionNib forCellReuseIdentifier:cellDetailGoodsQuestionName];
-    
+    arrayImg = [[NSMutableArray alloc] init];
     
     UINib *detailGoodsRecommendCellNib = [UINib nibWithNibName:@"DetailGoodsRecommendCell" bundle:nil];
     [self.tableView registerNib:detailGoodsRecommendCellNib forCellReuseIdentifier:detailGoodsRecommendCell];
@@ -78,12 +80,16 @@ static NSString *detailGoodsSectionHeadCell = @"detailGoodsSectionHeadCell";
     [self initBuyView];
     NSLog(@"\r\n goods detail id:%@", self.itemId);
     [self reloadInfo];
+    isSelectMode = ITEMDETAIL;
+    //[self setBuyViewConfig];
 }
 
 - (void)reloadInfo {
     HTTPRequestDic complete = ^(NSDictionary *dic) {
         self.dicDetailData = dic;
+        arrayImg = [NSMutableArray arrayWithArray:[dic objectForKey:@"detail_img"]];
         [self.tableView reloadData];
+        [self setBuyViewConfig];
     };
     [ModelData getGoodsDetailInfoWithBlock:complete goodId:self.itemId];
 }
@@ -107,8 +113,17 @@ static NSString *detailGoodsSectionHeadCell = @"detailGoodsSectionHeadCell";
     [self addItemsToBar];
     
 }
+
+- (void)setBuyViewConfig {
+    //NSLog(@"\r\n setbuyconfig,dic:%@", self.dicDetailData);
+    [self.imgIcon sd_setImageWithURL:[NSURL URLWithString:[self.dicDetailData objectForKey:@"cover_img"]]];
+    self.titleLabel.text = [self.dicDetailData objectForKey:@"title"];
+    self.priceLabel.text = [NSString stringWithFormat:@"%@", [self.dicDetailData objectForKey:@"price_cur"]];
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     self.buyView.hidden = YES;
+    goodCount = 1;
 }
 
 - (void)tapClearView {
@@ -132,16 +147,43 @@ static NSString *detailGoodsSectionHeadCell = @"detailGoodsSectionHeadCell";
         case 1:
             if (indexPath.row == 0) {
                 return kDetailGoodsSectionHeadHeight;
+            } else {
+                CGFloat cellWidth = screenWidth - 60;
+                UILabel *cellLabel = [[UILabel alloc] init];
+                cellLabel.text = [self.dicDetailData objectForKey:@"recommend_content"];
+                cellLabel.font = [UIFont systemFontOfSize:12];
+                cellLabel.numberOfLines = 0;
+                CGSize realSize = [cellLabel boundingRectWithSize:CGSizeMake(cellWidth, 0)];
+                //NSLog(@"\r\n cellWidth:%f,width:%f,height:%f", cellWidth, realSize.width, realSize.height);
+                return realSize.height + 52;
             }
             return DETAIL_CELL_RECOMMEND_HEIGHT;
         case 2:
             if (indexPath.row == 0) {
                 return kDetailGoodsSectionHeadHeight;
+            } else {
+                CGFloat cellWidth = screenWidth - 60;
+                UILabel *cellLabel = [[UILabel alloc] init];
+                cellLabel.text = [self.dicDetailData objectForKey:@"brand_introduce"];
+                cellLabel.font = [UIFont systemFontOfSize:12];
+                cellLabel.numberOfLines = 0;
+                CGSize realSize = [cellLabel boundingRectWithSize:CGSizeMake(cellWidth, 0)];
+                //NSLog(@"\r\n cellWidth:%f,width:%f,height:%f", cellWidth, realSize.width, realSize.height);
+                return realSize.height + 52;
             }
             return DETAIL_CELL_BRAND_HEIGHT;
         case 3:
             if (indexPath.row == 0) {
                 return kDetailGoodsSectionHeadHeight;
+            } else {
+                CGFloat cellWidth = screenWidth - 60;
+                UILabel *cellLabel = [[UILabel alloc] init];
+                cellLabel.text = [self.dicDetailData objectForKey:@"intro_guide"];
+                cellLabel.font = [UIFont systemFontOfSize:12];
+                cellLabel.numberOfLines = 0;
+                CGSize realSize = [cellLabel boundingRectWithSize:CGSizeMake(cellWidth, 0)];
+                //NSLog(@"\r\n cellWidth:%f,width:%f,height:%f", cellWidth, realSize.width, realSize.height);
+                return realSize.height + 327;
             }
             return DETAIL_CELL_INTRO_HEIGHT;
         case 4:
@@ -208,7 +250,7 @@ static NSString *detailGoodsSectionHeadCell = @"detailGoodsSectionHeadCell";
         return 2;
     } else if (section == 5){
         if (isSelectMode == ITEMDETAIL) {
-            return dataArray.count;
+            return arrayImg.count;
         } else {
             return 1;
         }
@@ -219,7 +261,7 @@ static NSString *detailGoodsSectionHeadCell = @"detailGoodsSectionHeadCell";
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    //NSLog(@"\r\n section:%ld, indexrow:%ld", indexPath.section, indexPath.row);
+    NSLog(@"\r\n section:%ld, indexrow:%ld", indexPath.section, indexPath.row);
     switch (indexPath.section) {
         case 0: {
             CRODetailGoodsHeadCell *cell = [tableView dequeueReusableCellWithIdentifier:cellDetailGoodsName forIndexPath:indexPath];
@@ -242,7 +284,11 @@ static NSString *detailGoodsSectionHeadCell = @"detailGoodsSectionHeadCell";
             cell.dispatchLabel.text = [self.dicDetailData objectForKey:@"dispatch"];
             cell.freightLabel.text = [NSString stringWithFormat:@"物流费用 : %@元", [self.dicDetailData objectForKey:@"freight"]];
             cell.taxLabel.text = [NSString stringWithFormat:@"该商品使用税率为%@，若订单总税额<=50元则免征关税", [self.dicDetailData objectForKey:@"tax"]];
+#ifndef kDEBUG_DATA
             [cell.coverImg sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", NET_DOMAIN, [self.dicDetailData objectForKey:@"cover_img"]]]];
+#else
+            [cell.coverImg sd_setImageWithURL:[NSURL URLWithString:[self.dicDetailData objectForKey:@"cover_img"]]];
+#endif
             return cell;
         }
         case 1: {
@@ -276,7 +322,12 @@ static NSString *detailGoodsSectionHeadCell = @"detailGoodsSectionHeadCell";
                 if (cell == nil) {
                     cell = [[DetailGoodsBrandCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:detailGoodsBrandCell];
                 }
-                cell.title.text = [self.dicDetailData objectForKey:@"brand_name"];
+                if (![[self.dicDetailData objectForKey:@"brand_name"] isKindOfClass:[NSNull class]]) {
+                    cell.title.text = [self.dicDetailData objectForKey:@"brand_name"];
+                } else {
+                    cell.title.text = @"";
+                }
+                
                 cell.content.text = [self.dicDetailData objectForKey:@"brand_introduce"];
                 return cell;
             }
@@ -295,6 +346,7 @@ static NSString *detailGoodsSectionHeadCell = @"detailGoodsSectionHeadCell";
                     cell = [[DetailGoodsIntroDetailCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:detailGoodsIntroDetailCell];
                 }
                 cell.intro_anaphylactic.text = [self.dicDetailData objectForKey:@"intro_anaphylactic"];
+                cell.brand.text = [self.dicDetailData objectForKey:@"brand_name"];
                 cell.intro_pro_place.text = [self.dicDetailData objectForKey:@"intro_pro_place"];
                 cell.intro_spec.text = [self.dicDetailData objectForKey:@"intro_spec"];
                 cell.intro_age.text = [self.dicDetailData objectForKey:@"intro_age"];
@@ -321,6 +373,12 @@ static NSString *detailGoodsSectionHeadCell = @"detailGoodsSectionHeadCell";
                 if (cell == nil) {
                     cell = [[DetailGoodsImageCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellDetailGoodsImageName];
                 }
+#ifndef kDEBUG_DATA
+                NSString *url = [NSString stringWithFormat:@"%@/%@", NET_DOMAIN, [[arrayImg objectAtIndex:indexPath.row] objectForKey:@"url"]];
+                [cell.infoImg sd_setImageWithURL:[NSURL URLWithString:url]];
+#else
+                [cell.infoImg sd_setImageWithURL:[NSURL URLWithString:[[arrayImg objectAtIndex:indexPath.row] objectForKey:@"url"]]];
+#endif
                 return cell;
             } else if (isSelectMode == BUYINTRO) {
                 DetailGoodsIntroCell *cell = [tableView dequeueReusableCellWithIdentifier:cellDetailGoodsIntroName forIndexPath:indexPath];
@@ -415,9 +473,13 @@ static NSString *detailGoodsSectionHeadCell = @"detailGoodsSectionHeadCell";
     //[self.view addSubview:self.clearBackView];
 }
 - (IBAction)addShoppingCartAct:(id)sender {
+    [self performSegueWithIdentifier:@"toShoppingCartView" sender:nil];
+    [self tapClearView];
 }
 
 - (IBAction)paymentAct:(id)sender {
+    [self tapClearView];
+    [self performSegueWithIdentifier:@"toShoppingCartView" sender:nil];
 }
 
 - (IBAction)backAct:(id)sender {

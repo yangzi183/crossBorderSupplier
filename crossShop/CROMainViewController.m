@@ -61,7 +61,7 @@ NSInteger g_iPage = 1;
 - (void)setupRefresh {
     __unsafe_unretained CROMainViewController *mainCtrl = self;
     [self.mainTableView addFooterWithCallback:^{
-        NSLog(@"\r\n footcallback");
+        //NSLog(@"\r\n footcallback");
         [mainCtrl footerRereshing];
     }];
     //[self.mainTableView addFooterWithTarget:self action:@selector(footerRereshing)];
@@ -144,6 +144,7 @@ NSInteger g_iPage = 1;
             NSDictionary *itemData = [itemsArray objectAtIndex:indexPath.row - 2];
             [cell setDicData:itemData tomorow:false];
         }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
 }
@@ -158,7 +159,6 @@ NSInteger g_iPage = 1;
 
 - (void)footerRereshing
 {
-    // 1.添加假数据
     g_iPage++;
     HTTPRequestDic completeBlock = ^(NSDictionary *dic) {
         //NSLog(@"\r\n all goods dic:%@", dic);

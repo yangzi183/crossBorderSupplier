@@ -12,6 +12,8 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    self.recoImg.layer.cornerRadius = self.recoImg.frame.size.width / 2;
+    self.recoImg.clipsToBounds = YES;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

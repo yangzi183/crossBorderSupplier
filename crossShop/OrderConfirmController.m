@@ -158,6 +158,7 @@ static NSString *orderCell = @"orderListCell";
         if (cell == nil) {
             cell = [[OrderConfirmMoreCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:orderConfirmMoreCell];
         }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         //cell.backgroundColor = [UIColor blueColor];
         return cell;
     } else {
@@ -165,6 +166,7 @@ static NSString *orderCell = @"orderListCell";
         if (cell == nil) {
             cell = [[OrderDetailNormalCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:orderDetailNormalCell];
         }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         [cell setContentInfoByIndex:indexPath.row toMode:ORDER_MODE_CONFIRM];
         return cell;
     }

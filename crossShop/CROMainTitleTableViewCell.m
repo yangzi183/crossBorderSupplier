@@ -48,7 +48,7 @@
     flowTableData = [[NSMutableArray alloc]init];
     
     HTTPRequestArray completeBlock = ^(NSMutableArray *array) {
-        //NSLog(@"\r\n array:%@", array);
+        //NSLog(@"\r\n initData flowTableData:%@", array);
         [self.flowTable setDataArray:array];
         flowTableData = array;
     };

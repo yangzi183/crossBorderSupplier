@@ -122,6 +122,7 @@ static NSString *orderPayMethodCell = @"orderPayMethodCell";
 }
 */
 - (IBAction)backAct:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 - (IBAction)payAct:(id)sender {
     backView.hidden = NO;

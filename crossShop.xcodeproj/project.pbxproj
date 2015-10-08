@@ -20,6 +20,8 @@
 		040E77E31B68AD6D00AFB0B6 /* ReturnGoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040E77E11B68AD6D00AFB0B6 /* ReturnGoodsViewController.m */; };
 		040E77E71B68CE6000AFB0B6 /* BuyProcessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040E77E61B68CE6000AFB0B6 /* BuyProcessViewController.m */; };
 		040E77EA1B68DA0900AFB0B6 /* ShoppingCartItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 040E77E91B68DA0900AFB0B6 /* ShoppingCartItem.m */; };
+		04141FC11BC5FE4600C4207B /* getAllGoods.js in Resources */ = {isa = PBXBuildFile; fileRef = 04141FC01BC5FE4600C4207B /* getAllGoods.js */; settings = {ASSET_TAGS = (); }; };
+		04141FC31BC61A7C00C4207B /* getGoodsDetail.js in Resources */ = {isa = PBXBuildFile; fileRef = 04141FC21BC61A7C00C4207B /* getGoodsDetail.js */; settings = {ASSET_TAGS = (); }; };
 		04196F121B5E501D001685C7 /* DetailGoodsSectionHeadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04196F101B5E501D001685C7 /* DetailGoodsSectionHeadCell.m */; };
 		04196F131B5E501D001685C7 /* DetailGoodsSectionHeadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04196F111B5E501D001685C7 /* DetailGoodsSectionHeadCell.xib */; };
 		04196F281B5F486D001685C7 /* dottedLineBorderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04196F271B5F486D001685C7 /* dottedLineBorderView.m */; };
@@ -180,6 +182,8 @@
 		040E77E61B68CE6000AFB0B6 /* BuyProcessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyProcessViewController.m; sourceTree = "<group>"; };
 		040E77E81B68DA0900AFB0B6 /* ShoppingCartItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingCartItem.h; sourceTree = "<group>"; };
 		040E77E91B68DA0900AFB0B6 /* ShoppingCartItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingCartItem.m; sourceTree = "<group>"; };
+		04141FC01BC5FE4600C4207B /* getAllGoods.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = getAllGoods.js; sourceTree = "<group>"; };
+		04141FC21BC61A7C00C4207B /* getGoodsDetail.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = getGoodsDetail.js; sourceTree = "<group>"; };
 		04196F0F1B5E501D001685C7 /* DetailGoodsSectionHeadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailGoodsSectionHeadCell.h; sourceTree = "<group>"; };
 		04196F101B5E501D001685C7 /* DetailGoodsSectionHeadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailGoodsSectionHeadCell.m; sourceTree = "<group>"; };
 		04196F111B5E501D001685C7 /* DetailGoodsSectionHeadCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailGoodsSectionHeadCell.xib; sourceTree = "<group>"; };
@@ -580,6 +584,8 @@
 			children = (
 				0434A24F1B74A0CE00125FC1 /* area.plist */,
 				047451EB1B11A089000A57B8 /* testData.plist */,
+				04141FC01BC5FE4600C4207B /* getAllGoods.js */,
+				04141FC21BC61A7C00C4207B /* getGoodsDetail.js */,
 				04B9F3F01B156AEB0011DBC2 /* test1.js */,
 				048ADC361B1EDDF0002641DC /* test2.js */,
 				041A1BAF1B3E5CDE00F68189 /* test3.js */,
@@ -978,6 +984,7 @@
 				04A8E6191B2BFB8F00A7CF0E /* TopicMode2ItemCell.xib in Resources */,
 				044345331B79D4D600ED1515 /* OrderPayMethodCell.xib in Resources */,
 				04F7BD041B326FA8001F2A79 /* PersonalCenterCell.xib in Resources */,
+				04141FC11BC5FE4600C4207B /* getAllGoods.js in Resources */,
 				04F7BCB61B2E776F001F2A79 /* TopicMode3FirstCell.xib in Resources */,
 				04A8E5FC1B2A6E6E00A7CF0E /* DetailGoodsImageCell.xib in Resources */,
 				0460DB461B4A527400220D4E /* test4.js in Resources */,
@@ -1000,6 +1007,7 @@
 				04B9F3F11B156AEB0011DBC2 /* test1.js in Resources */,
 				048ADC371B1EDDF0002641DC /* test2.js in Resources */,
 				049625B01B43C53D005D3A24 /* OrderDetailNormalCell.xib in Resources */,
+				04141FC31BC61A7C00C4207B /* getGoodsDetail.js in Resources */,
 				185CA19F1B3AEB4900ED418A /* PersonCenterFootCell.xib in Resources */,
 				04F7BCF51B31426D001F2A79 /* TopicMode3SecondCell.xib in Resources */,
 				04A8E6131B2AD52900A7CF0E /* TopicMode2HeadCell.xib in Resources */,

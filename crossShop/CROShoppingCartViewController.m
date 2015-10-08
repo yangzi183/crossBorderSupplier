@@ -142,6 +142,8 @@ static NSInteger totalOriPriceReal;
 }
 
 - (void)calculateTotalPriceByDicData {
+    totalOriPriceReal = 0;
+    totalPriceReal = 0;
     for (int section = 0; section < self.dataArray.count; section ++) {
         NSDictionary *sectionDic = self.dataArray[section];
         if ([sectionDic objectForKey:@"goods"]) {
@@ -210,6 +212,17 @@ static NSInteger totalOriPriceReal;
     [self setCellIntoEditStyle];
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [[[self.dataArray objectAtIndex:indexPath.section] objectForKey:@"goods"] removeObjectAtIndex:indexPath.row];
+        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [self calculateTotalPriceByDicData];
+    }
+}
 - (IBAction)selectAllAct:(id)sender {
     [self selectAllBtnIfSelect:(!isSelectAll)];
     for (CROShoppingCartTableViewCell *cell in self.tableView.visibleCells) {

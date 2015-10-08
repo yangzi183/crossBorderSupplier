@@ -1,0 +1,41 @@
+{
+	"id":"item1",
+	"discount":"9.5",
+	"cover_img":"http://m.360buyimg.com/n12/g13/M06/04/11/rBEhU1IAtFgIAAAAAALjgW4WLAsAAByJAJ8_zAAAuOZ804.jpg!q70.jpg",
+	"title":"Nestle雀巢全家营养甜奶粉300g（新旧包装交替发货）",
+	"label":"「全球好货」",
+	"price_cur":320,
+	"price_ori":443,
+	"freight":10,
+	"dispatch":"德国直采保税仓发货",
+	"tax":"10%",
+	"recommend_name":"王莉莉",
+	"recommend_content":"雀巢科学，营养升级配方。健心中老年奶粉（鱼油提取物）全新微孝预约，每天一杯，健康生活如此简单。",
+	"brand_name":"雀巢奶粉",
+	"brand_introduce":"一百多年来，雀巢呵护着一代代宝宝健康成长。今天，全球34个研发中心里，数千位营养专家致力于开发安全优质的营养产品，为宝宝解读真正的需要。先进的研发体系，让雀巢始终处于母婴营养领域的前沿，帮爸爸妈妈们给予小宝宝更多的健康与关爱。",
+	"intro_anaphylactic":"过敏原信息包含鲜牛奶，白砂糖，乳粉，乳清粉，玉米糖浆，食品添加剂（大豆磷脂），焦磷酸铁，维生素A（醋酸视黄脂），维生素D(胆钙化醇）",
+	"intro_pro_place":"德国",
+	"intro_spec":"800g",
+	"intro_age":"3",
+	"intro_stroe":"常温保存",
+	"intro_date":"340天",
+	"intro_guide":"1.将开水冷却至40和50度之间，将一半水倒入洗净消毒过的奶瓶。\n 2.使用奶粉纸桶包装内的小勺，将1勺奶粉加入30ml的水中。\n 3.顺时针或逆时针摇动奶瓶，直到奶粉完全溶解在水中。\n 4.再将另一半水倒入，再摇动奶瓶。\n 5.在手背滴几滴奶液，测试温度，体温37度为最佳温度。\n 参考水和奶粉的用量\n 6个月，210ml的水，奶粉勺奶粉，每天喂1-2次。\n 8个月，210ml的水，7奶粉勺奶粉，每天喂1-2次。\n 9个月以上，210ml的水，7奶粉勺奶粉，每天喂1-2次。\n 适合少量饮用\n 180ml的水，6奶粉勺奶粉\n 150ml的水，5奶粉勺奶粉\n 120ml的水，4奶粉勺奶粉\n 90ml的水，3勺奶粉",
+	"detail_img":
+	[
+		{
+			"url":"http://m.360buyimg.com/n12/g13/M06/04/11/rBEhU1IAtFgIAAAAAALjgW4WLAsAAByJAJ8_zAAAuOZ804.jpg!q70.jpg"
+		},
+		{
+			"url":"http://m.360buyimg.com/n12/g13/M06/04/11/rBEhUlIAtFkIAAAAAAK39jjoMHYAAByJAKjv6QAArgO467.jpg!q70.jpg"
+		},
+		{
+			"url":"http://m.360buyimg.com/n12/g13/M06/04/11/rBEhUlIAtFkIAAAAAAIPL2V0_1AAAByJALK8b4AAg9H573.jpg!q70.jpg"
+		},
+		{
+			"url":"http://m.360buyimg.com/n12/g13/M06/04/11/rBEhUlIAtFoIAAAAAAL2Kiq3Y6QAAByJALYs14AAvZC781.jpg!q70.jpg"
+		},
+		{
+			"url":"http://m.360buyimg.com/n12/g13/M06/04/11/rBEhU1IAtFsIAAAAAAOn8oXCzBkAAByJALw3y4AA6gK819.jpg!q70.jpg"
+		}	
+	]
+}

@@ -14,5 +14,6 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *title;
 @property (strong, nonatomic) IBOutlet UILabel *content;
+@property (strong, nonatomic) IBOutlet UIImageView *recoImg;
 
 @end

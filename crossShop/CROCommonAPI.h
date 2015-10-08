@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+#define kDEBUG_DATA     1
 @interface CROCommonAPI : NSObject
 
 + (UIColor *) colorWithHexString: (NSString *) hexString;

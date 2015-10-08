@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,7 +12,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="500"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="499.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="15K-TQ-zMU">
@@ -226,10 +227,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9c0-eT-Zvf">
-                        <rect key="frame" x="40" y="313" width="265" height="162"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="162" id="7ae-c9-FnV"/>
-                        </constraints>
+                        <rect key="frame" x="40" y="313" width="265" height="173.5"/>
                         <string key="text">1.将开水冷却至40和50度之间，将一半水倒入洗净消毒过的奶瓶。
 2.使用奶粉纸桶包装内的小勺，将1勺奶粉加入30ml的水中。
 3.顺时针或逆时针摇动奶瓶，直到奶粉完全溶解在水中。
@@ -271,6 +269,7 @@
                     <constraint firstItem="15K-TQ-zMU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="1" id="I61-Vn-voy"/>
                     <constraint firstItem="fT2-E1-rFj" firstAttribute="top" secondItem="uhJ-Xp-KRE" secondAttribute="bottom" constant="10" id="Jcw-x1-c6P"/>
                     <constraint firstAttribute="trailing" secondItem="15K-TQ-zMU" secondAttribute="trailing" id="Lk1-lK-Z0A"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="9c0-eT-Zvf" secondAttribute="bottom" constant="5" id="NTs-XC-1cc"/>
                     <constraint firstItem="y4u-Pv-Li2" firstAttribute="top" secondItem="giE-8E-DXe" secondAttribute="bottom" constant="9" id="OOK-YB-2Ce"/>
                     <constraint firstItem="zEb-eE-Jql" firstAttribute="leading" secondItem="doc-m7-Ors" secondAttribute="trailing" constant="10" id="P6G-NQ-AIM"/>
                     <constraint firstItem="m8a-OQ-PiO" firstAttribute="leading" secondItem="doc-m7-Ors" secondAttribute="trailing" constant="10" id="PBh-88-LVc"/>

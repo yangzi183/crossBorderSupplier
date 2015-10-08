@@ -68,6 +68,7 @@
 }
 
 + (NSString *)setDateInfoByDouble: (double)dDate {
+
     NSDate *datestr = [NSDate dateWithTimeIntervalSince1970:dDate];
     NSCalendar * cal = [NSCalendar currentCalendar];
     NSUInteger unitFlags = NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear;

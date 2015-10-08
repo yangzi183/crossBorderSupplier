@@ -6,18 +6,18 @@
             {
                 "itemID":"301",
                 "itemCount":5,
-                "itemCover":"http://img4q.duitang.com/uploads/item/201202/12/20120212145057_yKtnj.thumb.700_0.jpg",
-                "itemPrice":134,
-                "itemName":"读者文摘",
-                "itemOriPrice":234
+                "itemCover":"http://a.hiphotos.baidu.com/image/h%3D200/sign=21ce946eb651f819ee25044aeab54a76/7acb0a46f21fbe0973bfd1516d600c338644ad95.jpg",
+                "itemPrice":320,
+                "itemName":"天籁牧牛奶粉820g",
+                "itemOriPrice":443
             },
             {
                 "itemID":"304",
                 "itemCount":1,
-                "itemCover":"http://img4q.duitang.com/uploads/item/201202/12/20120212145057_yKtnj.thumb.700_0.jpg",
-                "itemPrice":1314,
-                "itemName":"中国青年出版社",
-                "itemOriPrice":1914
+                "itemCover":"http://img10.3lian.com/c1/newpic/05/14/08.jpg",
+                "itemPrice":221,
+                "itemName":"雀巢成长奶粉800g",
+                "itemOriPrice":300
             }
         ]
     },
@@ -28,10 +28,10 @@
             {
                 "itemID":"501",
                 "itemCount":5,
-                "itemCover":"http://img4q.duitang.com/uploads/item/201202/12/20120212145057_yKtnj.thumb.700_0.jpg",
-                "itemPrice":134,
-                "itemName":"人生谋略全书",
-                "itemOriPrice":234
+                "itemCover":"http://m.360buyimg.com/n12/g13/M06/04/11/rBEhU1IAtFgIAAAAAALjgW4WLAsAAByJAJ8_zAAAuOZ804.jpg!q70.jpg",
+                "itemPrice":320,
+                "itemName":"Nestle雀巢全家营养甜奶粉300g（新旧包装交替发货）",
+                "itemOriPrice":443
             }
         ]
     }
