@@ -11,5 +11,5 @@
 @interface UILabel (textFrame)
 
 - (CGSize)boundingRectWithSize:(CGSize)size;
-
+- (void)insertLineToText: (NSString *)labelTxt;
 @end

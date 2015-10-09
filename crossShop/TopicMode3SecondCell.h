@@ -12,5 +12,6 @@
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *titleLeading;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *trailConstraint;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *leadConstraint;
+@property (strong, nonatomic) IBOutlet UILabel *oriLabel;
 - (void)setConstraintByIndex: (NSInteger)row;
 @end

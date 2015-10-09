@@ -7,6 +7,7 @@
 //
 
 #import "ReceiptListCell.h"
+#import "ModelData.h"
 
 @implementation ReceiptListCell
 
@@ -21,6 +22,16 @@
     [super setSelected:selected animated:animated];
     //self.selectBtn.selected = YES;
     // Configure the view for the selected state
+}
+
+- (void)configCellByDic:(NSDictionary *)dicData {
+    self.username.text = [dicData objectForKey:kReceiptUser];
+    self.telephone.text = [dicData objectForKey:kReceiptTel];
+    self.address.text = [dicData objectForKey:kReceiptAddr];
+}
+
+- (IBAction)selectReceiptAct:(id)sender {
+    
 }
 
 @end

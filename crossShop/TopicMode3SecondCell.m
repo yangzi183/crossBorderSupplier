@@ -7,8 +7,13 @@
 //
 
 #import "TopicMode3SecondCell.h"
+#import "UILabel+textFrame.h"
 
 @implementation TopicMode3SecondCell
+
+- (void)awakeFromNib {
+    [self.oriLabel insertLineToText:self.oriLabel.text];
+}
 
 - (void)setConstraintByIndex: (NSInteger)row {
     if (row % 2 == 0) {

@@ -60,7 +60,7 @@ static NSString *topicMode2ItemCell = @"topicMode2Item";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
+    return 4;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -77,12 +77,14 @@ static NSString *topicMode2ItemCell = @"topicMode2Item";
         if (cell == nil) {
             cell = [[TopicMode2HeadCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:topicMode2HeadCell];
         }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     } else {
         TopicMode2ItemCell *cell = [tableView dequeueReusableCellWithIdentifier:topicMode2ItemCell forIndexPath:indexPath];
         if (cell == nil) {
             cell = [[TopicMode2ItemCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:topicMode2ItemCell];
         }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
 }
@@ -95,6 +97,11 @@ static NSString *topicMode2ItemCell = @"topicMode2Item";
     }
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row != 0) {
+        [self performSegueWithIdentifier:@"showGoodsDetailView" sender:nil];
+    }
+}
 - (void)shareAct {
     
 }

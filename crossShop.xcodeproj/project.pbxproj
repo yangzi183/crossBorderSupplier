@@ -533,8 +533,8 @@
 				046CD9441B10597100392F3F /* CROCommonAPI.h */,
 				046CD9451B10597100392F3F /* CROCommonAPI.m */,
 				04F7BCBA1B2EB569001F2A79 /* UILabel+textFrame.h */,
-				04D9EA021B8C4E1200B474A4 /* networkAPI.h */,
 				04F7BCBB1B2EB569001F2A79 /* UILabel+textFrame.m */,
+				04D9EA021B8C4E1200B474A4 /* networkAPI.h */,
 			);
 			name = commonAPI;
 			sourceTree = "<group>";

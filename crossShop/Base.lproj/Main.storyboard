@@ -42,9 +42,9 @@
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="关于全民阅读" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="USg-nh-WP9">
-                                    <rect key="frame" x="278" y="15" width="100" height="20"/>
+                                    <rect key="frame" x="278" y="15" width="120" height="20"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="100" id="ePx-hx-e2m"/>
+                                        <constraint firstAttribute="width" constant="120" id="ePx-hx-e2m"/>
                                         <constraint firstAttribute="height" constant="20" id="f6M-wA-shF"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -80,6 +80,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <segue destination="bXg-bK-NO3" kind="show" identifier="showShoppingCartView" id="Uti-h7-uFm"/>
+                        <segue destination="fDP-o4-M4J" kind="show" identifier="showGoodsDetailView" id="8FY-fi-hRX"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yby-IL-goT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -121,6 +122,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <segue destination="bXg-bK-NO3" kind="show" identifier="showShoppingCartView" id="8IM-Zk-gFH"/>
+                        <segue destination="fDP-o4-M4J" kind="show" identifier="showGoodsDetailView" id="fj2-TY-4Ea"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sFH-ep-8bW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2005,7 +2007,7 @@
                                     <constraint firstAttribute="width" constant="75" id="vob-m2-new"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请在1小时内完成付款，否则订单将会失效哦。" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G4U-NU-R0g">
@@ -2015,7 +2017,7 @@
                                     <constraint firstAttribute="height" constant="20" id="paZ-Bq-g1G"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dotted_line" translatesAutoresizingMaskIntoConstraints="NO" id="Q1g-V5-kaa">
@@ -2055,7 +2057,7 @@
                                     <constraint firstAttribute="height" constant="20" id="MJZ-6R-O7t"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kG9-Pk-hKT">
@@ -2277,9 +2279,9 @@
         <image name="test_img" width="390" height="398"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="x57-Mx-9Ae"/>
-        <segue reference="BHL-mA-gs2"/>
+        <segue reference="ggi-Db-iXt"/>
         <segue reference="9cI-br-wqz"/>
         <segue reference="N5K-vg-A2i"/>
+        <segue reference="x57-Mx-9Ae"/>
     </inferredMetricsTieBreakers>
 </document>

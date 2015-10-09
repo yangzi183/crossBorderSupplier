@@ -71,6 +71,9 @@
                         <state key="normal" image="item_select_false">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
+                        <connections>
+                            <action selector="selectReceiptAct:" destination="goL-ZD-rMu" eventType="touchUpInside" id="jSm-jh-9o5"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>

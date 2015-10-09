@@ -34,7 +34,7 @@
         countPrice = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.size.width - 17 - 45, 7, 45, 20)];
         countPrice.font = [UIFont systemFontOfSize:15];
         countPrice.textColor = [CROCommonAPI colorWithHexString:@"#8C8C8C"];
-        UILabel *symbol = [[UILabel alloc] initWithFrame:CGRectMake(countPrice.frame.origin.x - 16, 8, 15, 20)];
+        UILabel *symbol = [[UILabel alloc] initWithFrame:CGRectMake(countPrice.frame.origin.x - 16, 8, 18, 20)];
         symbol.font = [UIFont systemFontOfSize:16];
         symbol.text = @"￥";
         symbol.textColor = countPrice.textColor;

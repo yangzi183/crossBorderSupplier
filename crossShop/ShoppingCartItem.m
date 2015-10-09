@@ -51,6 +51,6 @@
 }
 
 - (NSInteger)getNumberItems {
-    return 95;
+    return 11;
 }
 @end

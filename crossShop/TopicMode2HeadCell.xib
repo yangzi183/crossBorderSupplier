@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="topicMode2Head" id="KGk-i7-Jjw" customClass="TopicMode2HeadCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="350"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="420"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="419.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gIg-si-9fx">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mode2_test" translatesAutoresizingMaskIntoConstraints="NO" id="gIg-si-9fx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="130"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="130" id="vP7-26-y5X"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="全民阅读10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KHr-NZ-gwp">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="雀巢奶粉推荐篇" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KHr-NZ-gwp">
                         <rect key="frame" x="8" y="138" width="304" height="25"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="25" id="Dpe-mi-4Bx"/>
@@ -30,7 +30,7 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="龙源" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbK-kn-TXu">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="雀巢" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbK-kn-TXu">
                         <rect key="frame" x="163" y="171" width="50" height="20"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="50" id="cQ4-9l-u2C"/>
@@ -47,9 +47,10 @@
                             <constraint firstAttribute="width" constant="20" id="ghy-cd-UF4"/>
                         </constraints>
                     </imageView>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="一个常量或者变量必须和你所为它赋的值拥有相同的类型。但是你不需要显式指定它的类型。编译器可以通过你的赋值推断出你所创建的常量或者变量的类型。在上面的例子中，编译器推断出`myVariable`的类型为整型，因为我们为它赋的初始值是一个整数" translatesAutoresizingMaskIntoConstraints="NO" id="qN9-VV-qsy">
-                        <rect key="frame" x="25" y="199" width="270" height="150"/>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qN9-VV-qsy">
+                        <rect key="frame" x="25" y="199" width="270" height="220"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <string key="text">总部位于瑞士的雀巢集团，是世界上最大的食品公司，在中国有着长久的历史。雀巢公司，由亨利·内斯特莱(Henri Nestle)于1867年创建，总部设在瑞士日内瓦湖畔的沃韦(Vevey)，是世界最大的食品制造商。拥有138年历史的雀巢公司起源于瑞士，它最初是以生产婴儿食品起家的。2005年，雀巢公司在全球拥有500多家工厂，25万名员工，年销售额高达910亿瑞士法郎。从一个生产婴儿食品的乡村作坊发展成今天领先世界的食品公司，雀巢走过了130多年的发展历程</string>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -77,5 +78,6 @@
     </objects>
     <resources>
         <image name="diaper_icon" width="37" height="37"/>
+        <image name="mode2_test" width="1024" height="512"/>
     </resources>
 </document>

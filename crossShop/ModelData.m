@@ -126,4 +126,21 @@
     [jsonParser parse:[NSData dataWithContentsOfFile:jsonPath]];
 #endif
 }
+
++ (void)getReceiptsList: (HTTPRequestArray)complete {
+    __block NSMutableArray *dataArray = [[NSMutableArray alloc] init];
+    NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"test4" ofType:@"js"];
+    SBJson4ValueBlock parseBlock = ^(id item, BOOL *stop) {
+        if ([item isKindOfClass:[NSArray class]] || [item isKindOfClass:[NSMutableArray class]]) {
+            dataArray = [NSMutableArray arrayWithArray:item];
+            complete(dataArray);
+        }
+    };
+    SBJson4ErrorBlock parseError = ^(NSError *error) {
+        NSLog(@"\r\n func:%s,error:%@", __func__, error);
+    };
+    SBJson4Parser *jsonParser = [SBJson4Parser parserWithBlock:parseBlock allowMultiRoot:NO unwrapRootArray:NO errorHandler:parseError];
+    [jsonParser parse:[NSData dataWithContentsOfFile:jsonPath]];
+}
+
 @end

@@ -32,4 +32,12 @@
     return retSize;
 }
 
+- (void)insertLineToText: (NSString *)labelTxt {
+    NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:labelTxt];
+    [attrString addAttribute:NSStrikethroughColorAttributeName value:[UIColor grayColor] range:NSMakeRange(0, labelTxt.length)];
+    [attrString addAttribute:NSStrikethroughStyleAttributeName value:@(NSUnderlinePatternSolid | NSUnderlineStyleSingle) range:NSMakeRange(0, labelTxt.length)];
+    //[attrString addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:18] range:NSMakeRange(0, string.length)];
+    self.attributedText = attrString;
+}
+
 @end

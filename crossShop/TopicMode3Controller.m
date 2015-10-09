@@ -77,7 +77,7 @@ static NSString * const reuseIdentifier = @"Cell";
     headView.backgroundColor = [UIColor clearColor];
     if (indexPath.section == 0) {
         NSMutableDictionary *dicData = [[NSMutableDictionary alloc]init];
-        [dicData setValue:@"关于全民阅读2" forKey:@"title"];
+        [dicData setValue:@"关于Aptamil奶粉" forKey:@"title"];
         [dicData setValue:@"about_icon" forKey:@"image"];
         [headView setSectionHeadInfo:dicData];
     } else if (indexPath.section == 1){
@@ -113,7 +113,7 @@ static NSString * const reuseIdentifier = @"Cell";
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
         UILabel *strLabel = [UILabel new];
-        NSString *str = @"日落时分，沏上一杯山茶，听一曲意境空远的《禅》，心神随此天籁，沉溺于玄妙的幻境里。仿佛我就是那穿梭于葳蕤山林中的一只飞鸟，时而盘旋穿梭，时而引吭高歌；仿佛我就是那潺潺流泻于山涧的一汪清泉，涟漪轻盈，浩淼长流；仿佛我就是那竦峙在天地间的一座山峦，伟岸高耸，从容绵延。我不相信佛，只是喜欢玄冥空灵的梵音经贝，与慈悲淡然的佛境禅心，在清欢中，从容幽静，自在安然。一直向往走进青的山，碧的水，体悟山水的绚丽多姿，领略草木的兴衰荣枯，倾听黄天厚土之声，探寻宇宙自然的妙趣。走进了山水，也就走出了喧嚣，给身心以清凉，给精神以沉淀，给灵魂以升华。";
+        NSString *str = @"牛初乳奶粉牛初乳奶粉采用天然牧场高免疫力健康乳牛产后24小时内的新鲜初乳粉为原料，经脱脂浓缩后采用确保免疫组分活性的低温喷雾干燥技术精制而成。本品除含有丰富的蛋白质营养外，还富含免疫球蛋白(主要是IgG)等活性免疫物质智力精华。免疫不上火 ，特别添加新西兰独有的珍贵MANUKA智力精华，富含独特的抗菌、抗感染和滋养因子，提升免疫不上火。调节肠胃·宝宝肠胃舒服，远离烦躁哭闹，促进有效吸收、充分利用，增加免疫更营养。超级合生素奶粉添加超级合生素全新突破性配方，根据不同阶段宝宝的营养健康要求，促进激发宝宝自身免疫力及肠道功能的完善，挖掘宝宝生长潜能，促进生长发育。";
         strLabel.text = str;
         strLabel.font = [UIFont systemFontOfSize:15];
         CGSize size = [strLabel boundingRectWithSize:CGSizeMake(self.collectionView.frame.size.width - 50, 0)];
@@ -145,7 +145,7 @@ static NSString * const reuseIdentifier = @"Cell";
     //self.collectionView.backgroundColor = [UIColor whiteColor];
     if (indexPath.section == 0) {
         TopicMode3HeadCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:topicMode3HeadCell forIndexPath:indexPath];
-        NSString *str = @"日落时分，沏上一杯山茶，听一曲意境空远的《禅》，心神随此天籁，沉溺于玄妙的幻境里。仿佛我就是那穿梭于葳蕤山林中的一只飞鸟，时而盘旋穿梭，时而引吭高歌；仿佛我就是那潺潺流泻于山涧的一汪清泉，涟漪轻盈，浩淼长流；仿佛我就是那竦峙在天地间的一座山峦，伟岸高耸，从容绵延。我不相信佛，只是喜欢玄冥空灵的梵音经贝，与慈悲淡然的佛境禅心，在清欢中，从容幽静，自在安然。一直向往走进青的山，碧的水，体悟山水的绚丽多姿，领略草木的兴衰荣枯，倾听黄天厚土之声，探寻宇宙自然的妙趣。走进了山水，也就走出了喧嚣，给身心以清凉，给精神以沉淀，给灵魂以升华。";
+        NSString *str = @"牛初乳奶粉牛初乳奶粉采用天然牧场高免疫力健康乳牛产后24小时内的新鲜初乳粉为原料，经脱脂浓缩后采用确保免疫组分活性的低温喷雾干燥技术精制而成。本品除含有丰富的蛋白质营养外，还富含免疫球蛋白(主要是IgG)等活性免疫物质智力精华。免疫不上火 ，特别添加新西兰独有的珍贵MANUKA智力精华，富含独特的抗菌、抗感染和滋养因子，提升免疫不上火。调节肠胃·宝宝肠胃舒服，远离烦躁哭闹，促进有效吸收、充分利用，增加免疫更营养。超级合生素奶粉添加超级合生素全新突破性配方，根据不同阶段宝宝的营养健康要求，促进激发宝宝自身免疫力及肠道功能的完善，挖掘宝宝生长潜能，促进生长发育。";
         
         NSLog(@"\r\n frame:%f-%f-%f-%f", cell.frame.origin.x, cell.frame.origin.y, cell.frame.size.width, cell.frame.size.height);
         [cell setContentString:str];
@@ -159,6 +159,12 @@ static NSString * const reuseIdentifier = @"Cell";
         cell.backgroundColor = [CROCommonAPI colorWithHexString:@"e8e8e8"];
         [cell setConstraintByIndex:indexPath.row];
         return cell;
+    }
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 2) {
+        [self performSegueWithIdentifier:@"showGoodsDetailView" sender:nil];
     }
 }
 

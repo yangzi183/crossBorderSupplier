@@ -10,6 +10,7 @@
 #import "CROCommonAPI.h"
 #import "commonConfig.h"
 #import "ReceiptListCell.h"
+#import "ModelData.h"
 
 static NSString *receiptListCell = @"receiptListCell";
 
@@ -17,6 +18,7 @@ static NSString *receiptListCell = @"receiptListCell";
     UIImageView *barLineView;
     UIView *lineView;
     UIImageView *lineImgView;
+    NSMutableArray *dataArray;
 }
 
 @end
@@ -31,6 +33,12 @@ static NSString *receiptListCell = @"receiptListCell";
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.view.backgroundColor = [UIColor whiteColor];
     self.tableView.backgroundColor = [CROCommonAPI colorWithHexString:@"#f5f6f6"];
+    dataArray = [[NSMutableArray alloc] init];
+    HTTPRequestArray complete = ^(NSMutableArray *returnData) {
+        dataArray = [NSMutableArray arrayWithArray:returnData];
+        [self.tableView reloadData];
+    };
+    [ModelData getReceiptsList:complete];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -57,7 +65,7 @@ static NSString *receiptListCell = @"receiptListCell";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    return dataArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -69,16 +77,15 @@ static NSString *receiptListCell = @"receiptListCell";
     if (indexPath.row == 0) {
         cell.selected = YES;
     }
+    [cell configCellByDic:[dataArray objectAtIndex:indexPath.row]];
     return cell;
-}
-
-- (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     ReceiptListCell *cell = (ReceiptListCell *)[tableView cellForRowAtIndexPath:indexPath];
     cell.selectBtn.selected = YES;
+    NSUserDefaults *userDef = [NSUserDefaults standardUserDefaults];
+    [userDef setObject:[dataArray objectAtIndex:indexPath.row] forKey:kReceipt];
 }
 
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {

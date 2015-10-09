@@ -15,26 +15,26 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="347.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test_img" translatesAutoresizingMaskIntoConstraints="NO" id="m9F-0j-xyf">
-                        <rect key="frame" x="90" y="25" width="140" height="145"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mode2_test_1" translatesAutoresizingMaskIntoConstraints="NO" id="m9F-0j-xyf">
+                        <rect key="frame" x="95" y="25" width="130" height="145"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="140" id="3ZV-Ve-TSi"/>
+                            <constraint firstAttribute="width" constant="130" id="3ZV-Ve-TSi"/>
                             <constraint firstAttribute="height" constant="145" id="KYO-9p-lf9"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="全民阅读移动书库全民阅读移动书库全民阅读移动书库全民阅读移动书库全民阅读移动书库全民阅读移动书库" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nay-8Y-zjx">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="雀巢l营养甜奶粉800g（新旧包装交替发货）" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nay-8Y-zjx">
                         <rect key="frame" x="25" y="178" width="270" height="40"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="GKV-Iv-ehz"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ni-YY-fTr">
-                        <rect key="frame" x="104" y="224" width="15" height="20"/>
+                        <rect key="frame" x="101" y="224" width="18" height="20"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="15" id="T5o-OW-t9p"/>
+                            <constraint firstAttribute="width" constant="18" id="T5o-OW-t9p"/>
                             <constraint firstAttribute="height" constant="20" id="wBg-FT-fDY"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -42,17 +42,17 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JTs-6L-m0G">
-                        <rect key="frame" x="161" y="224" width="13" height="20"/>
+                        <rect key="frame" x="161" y="224" width="15" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="7Aw-uj-KnG"/>
-                            <constraint firstAttribute="width" constant="13" id="cUb-ap-HmR"/>
+                            <constraint firstAttribute="width" constant="15" id="cUb-ap-HmR"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3333" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eID-U2-p9A">
-                        <rect key="frame" x="174" y="223" width="42" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="335" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eID-U2-p9A">
+                        <rect key="frame" x="176" y="223" width="42" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="d15-s9-iyI"/>
                             <constraint firstAttribute="width" constant="42" id="yEl-ye-vfN"/>
@@ -61,7 +61,7 @@
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="一个常量或者变量必须和你所为它赋的值拥有相同的类型。但是你不需要显式指定它的类型。编译器可以通过你的赋值推断出你所创建的常量或者变量的类型。在上面的例子中，编译器推断出`myVariable`的类型为整型，因为我们为它赋的初始值是一个整数" translatesAutoresizingMaskIntoConstraints="NO" id="fCb-Af-FU5">
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="雀巢成长奶粉是从三个方面帮助幼儿得到全面而均衡的营养：即好吸收、好脑力、和好身体,营养更丰富，口感更润滑。" translatesAutoresizingMaskIntoConstraints="NO" id="fCb-Af-FU5">
                         <rect key="frame" x="8" y="249" width="304" height="66.5"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -84,7 +84,7 @@
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2267" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yAO-zD-1Mq">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="223" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yAO-zD-1Mq">
                         <rect key="frame" x="119" y="223" width="40" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="40" id="062-hb-eBu"/>
@@ -116,9 +116,12 @@
                     <constraint firstAttribute="centerX" secondItem="yAO-zD-1Mq" secondAttribute="trailing" constant="1" id="tUM-XL-KFP"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="oriLabel" destination="eID-U2-p9A" id="pRB-ZY-YBq"/>
+            </connections>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="test_img" width="390" height="398"/>
+        <image name="mode2_test_1" width="625" height="800"/>
     </resources>
 </document>

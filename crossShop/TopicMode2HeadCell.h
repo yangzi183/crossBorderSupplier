@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#define kTopicMode2HeadCellHeight               350
+#define kTopicMode2HeadCellHeight               400
 
 @interface TopicMode2HeadCell : UITableViewCell
 

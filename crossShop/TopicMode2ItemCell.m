@@ -7,11 +7,13 @@
 //
 
 #import "TopicMode2ItemCell.h"
+#import "UILabel+textFrame.h"
 
 @implementation TopicMode2ItemCell
 
 - (void)awakeFromNib {
     // Initialization code
+    [self.oriLabel insertLineToText:self.oriLabel.text];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

@@ -8,6 +8,7 @@
 
 #import "OrderConfirmHeadCell.h"
 #import "CROReceipt.h"
+#import "ModelData.h"
 
 @implementation OrderConfirmHeadCell {
     UITapGestureRecognizer *tap;
@@ -44,6 +45,12 @@
     CROReceipt *receiptInstance = [CROReceipt shareInstance];
     receipts = [receiptInstance getAllReceipts];
     NSLog(@"\r\n receipts:%@", receipts);
+    NSDictionary *receipt = [[NSUserDefaults standardUserDefaults] objectForKey:kReceipt];
+    if (receipt && receipt != nil) {
+        self.username.text = [receipt objectForKey:kReceiptUser];
+        self.telephone.text = [receipt objectForKey:kReceiptTel];
+        self.address.text = [receipt objectForKey:kReceiptAddr];
+    }
     if (receipts.count > 1) {
         self.goodsReceiptNew.hidden = NO;
         self.username.hidden = YES;

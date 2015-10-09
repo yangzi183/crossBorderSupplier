@@ -11,5 +11,6 @@
 #define kTopicMode2ItemCellHeight               340
 
 @interface TopicMode2ItemCell : UITableViewCell
+@property (strong, nonatomic) IBOutlet UILabel *oriLabel;
 
 @end

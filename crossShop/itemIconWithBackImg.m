@@ -41,7 +41,7 @@
         imgView = [[UIImageView alloc] initWithFrame:CGRectMake((self.frame.size.width - kITEMICONWITHBACKIMG_IMG_WIDTH) / 2, (self.frame.size.height - kITEMICONWITHBACKIMG_IMG_HEIGHT) / 2, kITEMICONWITHBACKIMG_IMG_WIDTH, kITEMICONWITHBACKIMG_IMG_HEIGHT)];
         [self addSubview:imgView];
     }
-    NSLog(@"\r\n url:%@", url);
+    //NSLog(@"\r\n url:%@", url);
     [imgView sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"orderItem.png"]];
 }
 

@@ -16,5 +16,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *telephone;
 @property (strong, nonatomic) IBOutlet UILabel *address;
 @property (strong, nonatomic) IBOutlet UIButton *selectBtn;
+- (void)configCellByDic:(NSDictionary *)dicData;
+- (IBAction)selectReceiptAct:(id)sender;
 
 @end

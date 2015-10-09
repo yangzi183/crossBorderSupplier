@@ -61,6 +61,7 @@ static NSString *orderCell = @"orderListCell";
      
      barLineView.hidden = YES;*/
     willLoadAddOrderLine
+    [self.tableView reloadData];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
