@@ -74,6 +74,7 @@ NSString *orderListCell = @"orderListCell";
     NSArray *items = [itemDic objectForKey:@"list"];
     NSDictionary *itemData = [items objectAtIndex:indexPath.row];
     [cell setOrderItemInfoByDic:itemData];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "labelWithImgView.h"
 
-#define kDetailGoodsQuestionCellHeight          1000
+#define kDetailGoodsQuestionCellHeight          750
 
 @protocol DetailGoodsQuestionCellDelegate <NSObject>
 
