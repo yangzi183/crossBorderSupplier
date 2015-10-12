@@ -96,6 +96,10 @@ static NSString *topicMode3SecondCell = @"topicMode3SecondCell";
     return cell;
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:@"showGoodsDetailView" sender:nil];
+}
+
 - (void)updateGoods: (NSNotification *)sender {
     NSNumber *tagNumber = (NSNumber *)[sender object];
     goodsArray = [CategoryGoods getGoodsByBrandId:[tagNumber integerValue]];

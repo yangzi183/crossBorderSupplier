@@ -100,7 +100,7 @@
                                 <rect key="frame" x="0.0" y="86" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5eR-f3-qeu" id="JxB-jY-1N0">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -153,7 +153,7 @@
                                         <rect key="frame" x="0.0" y="86" width="600" height="425"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="h7O-xL-txC" id="s8n-j8-awC">
-                                            <rect key="frame" x="0.0" y="0.0" width="567" height="424.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="424"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
@@ -164,7 +164,7 @@
                                         <rect key="frame" x="0.0" y="511" width="600" height="430"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iFQ-oi-IrR" id="GXK-HW-xJJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="429.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="429"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -212,7 +212,7 @@
                                 <rect key="frame" x="0.0" y="86" width="600" height="54"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XRB-dl-NQs" id="HJs-00-5jv">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="53.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="53"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -262,14 +262,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0J4-nl-s1D">
-                                <rect key="frame" x="0.0" y="60" width="600" height="0.5"/>
+                                <rect key="frame" x="0.0" y="60" width="600" height="1"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="0.5" id="Jgv-nU-LcN"/>
                                 </constraints>
                             </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="手机号" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="yki-6m-bVr">
-                                <rect key="frame" x="30" y="70.5" width="570" height="30"/>
+                                <rect key="frame" x="30" y="71" width="570" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="HHB-Uw-pBh"/>
                                 </constraints>
@@ -277,14 +277,14 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vzJ-2C-3IP">
-                                <rect key="frame" x="0.0" y="105.5" width="600" height="0.5"/>
+                                <rect key="frame" x="0.0" y="106" width="600" height="1"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="0.5" id="gaf-Pp-cbM"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jTM-JM-hUi">
-                                <rect key="frame" x="150" y="210.5" width="300" height="40"/>
+                                <rect key="frame" x="150" y="211" width="300" height="40"/>
                                 <color key="backgroundColor" red="0.50980392159999999" green="0.83921568629999999" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="8nJ-1t-2Wd"/>
@@ -356,7 +356,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jop-Oy-TdS">
-                                <rect key="frame" x="0.0" y="65" width="600" height="0.5"/>
+                                <rect key="frame" x="0.0" y="65" width="600" height="1"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="0.5" id="6Sx-42-SpW"/>
@@ -532,14 +532,14 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nxe-Q7-xfH">
-                                <rect key="frame" x="0.0" y="65" width="600" height="0.5"/>
+                                <rect key="frame" x="0.0" y="65" width="600" height="1"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="0.5" id="NnN-t3-emf"/>
                                 </constraints>
                             </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="再次确认密码" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="2UJ-1p-lUx">
-                                <rect key="frame" x="30" y="75.5" width="570" height="30"/>
+                                <rect key="frame" x="30" y="76" width="570" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="b9N-Ey-SY0"/>
                                 </constraints>
@@ -547,7 +547,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uge-Ob-i91">
-                                <rect key="frame" x="0.0" y="110.5" width="600" height="0.5"/>
+                                <rect key="frame" x="0.0" y="111" width="600" height="1"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="0.5" id="CPF-oB-Nwk"/>
@@ -841,10 +841,10 @@
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="orderListCell" id="uuw-s6-Qla" customClass="OrderListCell">
-                                <rect key="frame" x="0.0" y="113.5" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="114" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uuw-s6-Qla" id="qdg-VK-xvz">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -1404,7 +1404,7 @@
                                         <rect key="frame" x="0.0" y="86" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Czf-kH-pEH" id="rZv-5r-aPg">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -2257,6 +2257,7 @@
                         <outlet property="categoryFlow" destination="hOO-OJ-3I8" id="IwM-Ed-5Ny"/>
                         <outlet property="collectionView" destination="AlX-r7-YM0" id="uev-Lh-NZq"/>
                         <segue destination="bXg-bK-NO3" kind="show" identifier="showShoppingCartView" id="UVo-Ce-b75"/>
+                        <segue destination="fDP-o4-M4J" kind="show" identifier="showGoodsDetailView" id="HJR-8T-4s2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UJQ-mm-zwL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2279,9 +2280,9 @@
         <image name="test_img" width="390" height="398"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ggi-Db-iXt"/>
+        <segue reference="HJR-8T-4s2"/>
+        <segue reference="UVo-Ce-b75"/>
         <segue reference="9cI-br-wqz"/>
         <segue reference="N5K-vg-A2i"/>
-        <segue reference="x57-Mx-9Ae"/>
     </inferredMetricsTieBreakers>
 </document>
